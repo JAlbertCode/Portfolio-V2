@@ -3,7 +3,29 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+      <div className='page container'>
+        <h1>Jonathan Albert's Portfolio</h1>
+        <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today confronting any challenge that gets in the way. </p>
+        <div className='flex flex-row'>
+          <Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/>
+          <Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/>
+          <Image src="/images/linkedin.png" className='icon' width='72' height='72' alt='linkedin'/>
+          <Image src="/images/twitter.png" className='icon' width='72' height='72' alt='twitter'/>
+          <Image src="/images/facebook.png" className='icon' width='72' height='72' alt='facebook'/>
+          <Image src="/images/instagram.png" className='icon' width='72' height='72' alt='instagram'/>
+          <Image src="/images/github.png" className='icon' width='72' height='72' alt='github'/>
+          <Image src="/images/medium.png" className='icon' width='72' height='72' alt='medium'/>
+          <Image src="/images/mirror.png" className='icon' width='72' height='72' alt='mirror'/>
+          <Image src="/images/opensea.png" className='icon' width='72' height='72' alt='opensea'/>
+          <Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/>
+        </div>
+      </div>
+
+
+
+
+
+      {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">app/page.tsx</code>
@@ -107,7 +129,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
     </main>
   )
 }

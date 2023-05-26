@@ -19,10 +19,10 @@ export default function RootLayout({
       
       <body className={inter.className}>
         
-        <nav>
+        <nav className='text-right'>
           <Link href="/">Portfolio</Link>
-          <Link href="/pages/resources">Resources</Link>
-          <Link href="/pages/lifestyle">Lifestyle</Link>
+          {/* <Link href="/resources">Resources</Link>
+          <Link href="/lifestyle">Lifestyle</Link> */}
         </nav>
 
         {children}
