@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -7,17 +8,17 @@ export default function Home() {
         <h1>Jonathan Albert's Portfolio</h1>
         <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today confronting any challenge that gets in the way. </p>
         <div className='flex flex-row gap-4 mt-10'>
-          <Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/>
-          <Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/>
-          <Image src="/images/linkedin.png" className='icon' width='72' height='72' alt='linkedin'/>
-          <Image src="/images/twitter.png" className='icon' width='72' height='72' alt='twitter'/>
-          <Image src="/images/facebook.png" className='icon' width='72' height='72' alt='facebook'/>
-          <Image src="/images/instagram.png" className='icon' width='72' height='72' alt='instagram'/>
-          <Image src="/images/github.png" className='icon' width='72' height='72' alt='github'/>
-          <Image src="/images/medium.png" className='icon' width='72' height='72' alt='medium'/>
-          <Image src="/images/mirror.png" className='icon' width='72' height='72' alt='mirror'/>
-          <Image src="/images/opensea.png" className='icon' width='72' height='72' alt='opensea'/>
-          <Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/>
+          <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf"><Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/></Link>
+          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com"><Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/></Link>
+          <Link target='_blank' href="https://www.linkedin.com/in/jonathan-albert-profile/"><Image src="/images/linkedin.png" className='icon' width='72' height='72' alt='linkedin'/></Link>
+          <Link target='_blank' href="https://github.com/JAlbertCode"><Image src="/images/github.png" className='icon' width='72' height='72' alt='github'/></Link>
+          <Link target='_blank' href="https://jonathan-albert.medium.com/"><Image src="/images/medium.png" className='icon' width='72' height='72' alt='medium'/></Link>
+          <Link target='_blank' href="https://mirror.xyz/jay-albert.eth"><Image src="/images/mirror.png" className='icon' width='72' height='72' alt='mirror'/></Link>
+          <Link target='_blank' href="https://twitter.com/Jay_Albert_"><Image src="/images/twitter.png" className='icon' width='72' height='72' alt='twitter'/></Link>
+          <Link target='_blank' href="https://www.facebook.com/profile.php?id=100084317730771"><Image src="/images/facebook.png" className='icon' width='72' height='72' alt='facebook'/></Link>
+          <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/"><Image src="/images/instagram.png" className='icon' width='72' height='72' alt='instagram'/></Link>
+          <Link target='_blank' href="https://opensea.io/Jay-Albert"><Image src="/images/opensea.png" className='icon' width='72' height='72' alt='opensea'/></Link>
+          <Link target='_blank' href="https://open.spotify.com/user/1217936908?si=a3a2125c832b48ff&nd=1"><Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/></Link>
         </div>
       </div>
 
