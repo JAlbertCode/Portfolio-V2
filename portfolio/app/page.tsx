@@ -6,7 +6,7 @@ export default function Home() {
       <div className='page container'>
         <h1>Jonathan Albert's Portfolio</h1>
         <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today confronting any challenge that gets in the way. </p>
-        <div className='flex flex-row'>
+        <div className='flex flex-row gap-4 mt-10'>
           <Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/>
           <Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/>
           <Image src="/images/linkedin.png" className='icon' width='72' height='72' alt='linkedin'/>
