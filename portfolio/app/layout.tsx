@@ -18,11 +18,12 @@ export default function RootLayout({
     <html lang="en">
       
       <body className={inter.className}>
-        
-        <nav className='text-right mr-10'>
-          <Link href="/">Portfolio</Link>
-          {/* <Link href="/resources">Resources</Link>
-          <Link href="/lifestyle">Lifestyle</Link> */}
+              
+        {/*This is the navigation bar for portfolio, resources, and lifestyle*/}
+        <nav className='text-right mr-10 mt-5'>
+          <Link href="/" className='mx-2'>Portfolio</Link>
+          <Link href="/resources" className='mx-2'>Resources</Link>
+          <Link href="/lifestyle" className='mx-2'>Lifestyle</Link>
         </nav>
 
         {children}
