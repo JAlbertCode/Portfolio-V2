@@ -19,7 +19,7 @@ export default function RootLayout({
       
       <body className={inter.className}>
         
-        <nav className='text-right'>
+        <nav className='text-right mr-10'>
           <Link href="/">Portfolio</Link>
           {/* <Link href="/resources">Resources</Link>
           <Link href="/lifestyle">Lifestyle</Link> */}
