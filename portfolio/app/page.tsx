@@ -31,7 +31,7 @@ export default function Home() {
         <div id='cards' className='flex flex-wrap gap-10 mt-10 place-content-center'>
 
           {/*This is the card for the invisible maze game*/}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/>
             <CardContent>
               <Typography variant='h6'>
@@ -40,11 +40,14 @@ export default function Home() {
               <Typography>
                 An invisible maze game to onboard users to Metamask and Decentraland.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                January 2022
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Mix3d */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/mix3d.png' alt='A logo of circles in a spiral with varrying colors'/>
             <CardContent>
               <Typography variant='h6'>
@@ -53,11 +56,14 @@ export default function Home() {
               <Typography>
                 Mix3d is a community connecting, organizing, and building on Web 3.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                January 2022
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Werewolf */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/werewolf.png' alt='A sign in screen with the word Werewolf at the top in a font that looks like bloody letters'/>
             <CardContent>
               <Typography variant='h6'>
@@ -66,11 +72,14 @@ export default function Home() {
               <Typography>
                 A social deduction game utilizing webcams on a browser.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                September 2020
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Grace Potter */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/grace-potter.png' alt='An icon of a pottery vase'/>
             <CardContent>
               <Typography variant='h6'>
@@ -79,11 +88,14 @@ export default function Home() {
               <Typography>
                 An ecommerce website selling hand made pottery
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                August 2020
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Mobile Vendor */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/mobile-vendor.png' alt='A smart phone overlayed on top of a map with icons for mobile vendors'/>
             <CardContent>
               <Typography variant='h6'>
@@ -92,11 +104,14 @@ export default function Home() {
               <Typography>
                 A platform to connect mobile vendors to potential customers.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                August 2020
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Thought Card */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/thought-card.png' alt="A blue business card with a quote that reads 'The convential mind is passive - it consumes information and regurgitates it in familiar forms. The dimensional mind is active. Transforming everything it digests into something new and original, creating instead of consuming' by Robert Greene from the book Mastery on page 177."/>
             <CardContent>
               <Typography variant='h6'>
@@ -105,11 +120,14 @@ export default function Home() {
               <Typography>
                 Augmented Reality (AR) technologies allow developers to pack information into images. Business cards can now contain links, videos, 3d objects, scenes, games and more.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                April 2020
+              </Typography>
             </CardContent>
           </Card>
           
           {/* This is the card for Wix */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/wix.png' alt='The wix website logo'/>
             <CardContent>
               <Typography variant='h6'>
@@ -118,11 +136,14 @@ export default function Home() {
               <Typography>
                 A freelance stint of wix websites fueled by word of mouth recommendations
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                March 2020
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Blotto */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/blotto.png' alt="A flat image of a body with its head in a toilet and the words 'Blotto' written under the image."/>
             <CardContent>
               <Typography variant='h6'>
@@ -131,11 +152,14 @@ export default function Home() {
               <Typography>
                 A simple drinking card game that served as a proof of concept for launching applications using Unity on the Google Playstore.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                January 2020
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for LiveIn */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/livein.png' alt='A logo of a leaf that has lines across it similar to that of a circuit board'/>
             <CardContent>
               <Typography variant='h6'>
@@ -144,11 +168,14 @@ export default function Home() {
               <Typography>
                 LiveIn was a real estate brokerage that utilized augmented reality to engage with potential clients.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                October 2019
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Augmented Piano Lessons */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/augmented-piano-lessons.png' alt='Piano keys on with a background of musical notes'/>
             <CardContent>
               <Typography variant='h6'>
@@ -157,11 +184,14 @@ export default function Home() {
               <Typography>
                 The future of learning how to play music will involve projections that augment the instrument to gamify the learning process.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                December 2017
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Traffic Jam VR */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/traffic-jam-vr.png' alt='A low poly image of a street corner'/>
             <CardContent>
               <Typography variant='h6'>
@@ -170,11 +200,14 @@ export default function Home() {
               <Typography>
                 Traffic Jam VR is the product of a 3-day virtual reality game jam where professionals from various backgrounds came together to create virtual reality games.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                August 2017
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for The Fourth Branch */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/the-fourth-branch.png' alt='A logo with two parallel blue lines at the forefront and a red line in the background in the shape of a staple'/>
             <CardContent>
               <Typography variant='h6'>
@@ -183,11 +216,14 @@ export default function Home() {
               <Typography>
                 The Fourth Branch summarizes bills being debated in Congress and allows users to vote on the summaries. After the users vote they can compare their votes to their Congressmen to see how often they are accurately represented.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                January 2017
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Memorial Website */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/memorial-website.jpg' alt="A painted mural of a person with a hat, and the word 'Ferle' written under it"/>
             <CardContent>
               <Typography variant='h6'>
@@ -196,11 +232,14 @@ export default function Home() {
               <Typography>
                 There are many ways to remember a lost relative and with modern technology, we can immortalize their experiences.
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                October 2014
+              </Typography>
             </CardContent>
           </Card>
 
           {/* This is the card for Customizable Phone Case */}
-          <Card sx={{width: 340}}>
+          <Card sx={{width: 357}}>
             <CardMedia component="img" image='/images/custom-phone-case.png' alt="A mechanical engineering mockup of an old iphone with a case"/>
             <CardContent>
               <Typography variant='h6'>
@@ -208,6 +247,9 @@ export default function Home() {
               </Typography>
               <Typography>
                 In the early 2010s, the iPhone had a small battery and owners were seeking to protect their phones while customizing the look. The customizable phone case sought to provide a dynamic look and improved battery life for iPhones.
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                July 2014
               </Typography>
             </CardContent>
           </Card>
