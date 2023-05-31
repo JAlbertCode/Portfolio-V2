@@ -43,6 +43,11 @@ export default function Home() {
               <Typography variant="body2" color="text.secondary">
                 January 2022
               </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Decentraland</Typography>
+                <Typography variant='body2' className='skills'>MetaMask</Typography>
+                <Typography variant='body2' className='skills'>Notion</Typography>
+              </div>
             </CardContent>
           </Card>
 

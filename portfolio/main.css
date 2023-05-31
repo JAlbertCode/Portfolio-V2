@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .skills {
+    background-color: theme('colors.dark-turquoise');
+    border-radius: theme('borderRadius.md');
+    padding: theme('spacing.1');
+    color: white;
+  }
+  /* ... */
+}
