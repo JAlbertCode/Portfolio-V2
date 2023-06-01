@@ -15,8 +15,10 @@ export default function Home() {
         {/*This div conatains the row of icons for professional and social media links*/}
         <div className='flex flex-wrap gap-4 mt-10'>
           <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf"><Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/></Link>
-          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com"><Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/></Link>
           <Link target='_blank' href="https://www.linkedin.com/in/jonathan-albert-profile/"><Image src="/images/linkedin.png" className='icon' width='72' height='72' alt='linkedin'/></Link>
+          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com"><Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/></Link>
+          <Link target='_blank' href="https://t.me/Jay_Albert"><Image src="/images/telegram.png" className='icon' width='72' height='72' alt='telegram'/></Link>
+          <Link target='_blank' href="https://discordapp.com/users/649469511749337089"><Image src="/images/discord.png" className='icon' width='72' height='72' alt='discord'/></Link>
           <Link target='_blank' href="https://github.com/JAlbertCode"><Image src="/images/github.png" className='icon' width='72' height='72' alt='github'/></Link>
           <Link target='_blank' href="https://jonathan-albert.medium.com/"><Image src="/images/medium.png" className='icon' width='72' height='72' alt='medium'/></Link>
           <Link target='_blank' href="https://mirror.xyz/jay-albert.eth"><Image src="/images/mirror.png" className='icon' width='72' height='72' alt='mirror'/></Link>
