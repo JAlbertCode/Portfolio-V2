@@ -94,11 +94,12 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>JSX</Typography>
                 <Typography variant='body2' className='skills'>HTML</Typography>
                 <Typography variant='body2' className='skills'>CSS</Typography>
-                <Typography variant='body2' className='skills'>Material UI</Typography>
                 <Typography variant='body2' className='skills'>Dafont</Typography>
+                <Typography variant='body2' className='skills'>Material UI</Typography>
                 <Typography variant='body2' className='skills'>AniJS</Typography>
                 <Typography variant='body2' className='skills'>Express</Typography>
                 <Typography variant='body2' className='skills'>Morgan</Typography>
+                <Typography variant='body2' className='skills'>Sequelize</Typography>
                 <Typography variant='body2' className='skills'>Firebase</Typography>
                 <Typography variant='body2' className='skills'>Twilio</Typography>
                 <Typography variant='body2' className='skills'>Github</Typography>
