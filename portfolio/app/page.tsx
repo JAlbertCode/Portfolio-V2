@@ -121,6 +121,24 @@ export default function Home() {
               <Typography variant="body2" color="text.secondary">
                 August 2020
               </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Javascript</Typography>
+                <Typography variant='body2' className='skills'>React</Typography>
+                <Typography variant='body2' className='skills'>JSX</Typography>
+                <Typography variant='body2' className='skills'>HTML</Typography>
+                <Typography variant='body2' className='skills'>CSS</Typography>
+                <Typography variant='body2' className='skills'>Redux</Typography>
+                <Typography variant='body2' className='skills'>Reactstrap</Typography>
+                <Typography variant='body2' className='skills'>WebSocket</Typography>
+                <Typography variant='body2' className='skills'>Express</Typography>
+                <Typography variant='body2' className='skills'>Sequelize</Typography>
+                <Typography variant='body2' className='skills'>Axios</Typography>
+                <Typography variant='body2' className='skills'>PostgreSQL</Typography>
+                <Typography variant='body2' className='skills'>Postman</Typography>
+                <Typography variant='body2' className='skills'>Nodemailer</Typography>
+                <Typography variant='body2' className='skills'>Stripe</Typography>
+                <Typography variant='body2' className='skills'>Github</Typography>
+              </div>
             </CardContent>
           </Card>
 
