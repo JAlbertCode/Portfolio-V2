@@ -210,6 +210,7 @@ export default function Home() {
               </Typography>
               <div className='gap-1 flex flex-wrap mt-1'>
                 <Typography variant='body2' className='skills'>Wix</Typography>
+                <Typography variant='body2' className='skills'>UI</Typography>
                 <Typography variant='body2' className='skills'>Client Relations</Typography>
                 <Typography variant='body2' className='skills'>Business Analysis</Typography>
                 <Typography variant='body2' className='skills'>Project Management</Typography>
@@ -260,6 +261,7 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Project Management</Typography>
                 <Typography variant='body2' className='skills'>Business Analysis</Typography>
                 <Typography variant='body2' className='skills'>UX</Typography>
+                <Typography variant='body2' className='skills'>Trello</Typography>
                 <Typography variant='body2' className='skills'>Real Estate</Typography>
                 <Typography variant='body2' className='skills'>Documentation</Typography>
                 <Typography variant='body2' className='skills'>Augmented Reality</Typography>
@@ -321,11 +323,28 @@ export default function Home() {
                 The Fourth Branch
               </Typography>
               <Typography>
-                The Fourth Branch summarizes bills being debated in Congress and allows users to vote on the summaries. After the users vote they can compare their votes to their Congressmen to see how often they are accurately represented.
+                The Fourth Branch summarizes bills debated in Congress and allows users to vote on the summaries and compare their votes to their Congressmen.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 January 2017
               </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Product Management</Typography>
+                <Typography variant='body2' className='skills'>Project Management</Typography>
+                <Typography variant='body2' className='skills'>Business Analysis</Typography>
+                <Typography variant='body2' className='skills'>Basecamp</Typography>
+                <Typography variant='body2' className='skills'>Slack</Typography>
+                <Typography variant='body2' className='skills'>UX</Typography>
+                <Typography variant='body2' className='skills'>QA</Typography>
+                <Typography variant='body2' className='skills'>Mockups</Typography>
+                <Typography variant='body2' className='skills'>Marketing</Typography>
+                <Typography variant='body2' className='skills'>Content Creation</Typography>
+                <Typography variant='body2' className='skills'>Twitter</Typography>
+                <Typography variant='body2' className='skills'>Instagram</Typography>
+                <Typography variant='body2' className='skills'>Facebook</Typography>
+                <Typography variant='body2' className='skills'>LinkedIn</Typography>
+                <Typography variant='body2' className='skills'>Event Planning</Typography>
+              </div>
             </CardContent>
           </Card>
 
@@ -342,6 +361,11 @@ export default function Home() {
               <Typography variant="body2" color="text.secondary">
                 October 2014
               </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Wix</Typography>
+                <Typography variant='body2' className='skills'>UX</Typography>
+                <Typography variant='body2' className='skills'>UI</Typography>
+              </div>
             </CardContent>
           </Card>
 
@@ -358,6 +382,11 @@ export default function Home() {
               <Typography variant="body2" color="text.secondary">
                 July 2014
               </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Product Management</Typography>
+                <Typography variant='body2' className='skills'>Project Management</Typography>
+                <Typography variant='body2' className='skills'>Hardware Design</Typography>
+              </div>
             </CardContent>
           </Card>
 
