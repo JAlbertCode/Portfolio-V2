@@ -21,11 +21,13 @@ export default function RootLayout({
       <body className={inter.className}>
               
         {/*This is the navigation bar for portfolio, resources, and lifestyle*/}
-        <nav className='text-right mr-10 mt-5'>
-          <Link href="/" className='mx-2'>Portfolio</Link>
-          <Link href="/resources" className='mx-2'>Resources</Link>
-          <Link href="/lifestyle" className='mx-2'>Lifestyle</Link>
-        </nav>
+        <div className='flex flex-col max-w-screen-2xl'>
+          <nav className='text-right py-10 px-24'>
+            <Link href="/" className='mx-2'>Portfolio</Link>
+            <Link href="/resources" className='mx-2'>Resources</Link>
+            <Link href="/lifestyle" className='mx-2'>Lifestyle</Link>
+          </nav>
+        </div>
 
         {children}
 

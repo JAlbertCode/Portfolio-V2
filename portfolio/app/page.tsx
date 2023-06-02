@@ -5,7 +5,7 @@ import { Card, CardContent, CardMedia, Typography } from "../lib/mui"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex min-h-screen flex-col items-center pt-16 p-24">
       <div className='mx-10 max-w-6xl'>
 
         {/*This is the introduction to the landing page*/}
@@ -26,7 +26,7 @@ export default function Home() {
           <Link target='_blank' href="https://www.facebook.com/profile.php?id=100084317730771"><Image src="/images/facebook.png" className='icon' width='72' height='72' alt='facebook'/></Link>
           <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/"><Image src="/images/instagram.png" className='icon' width='72' height='72' alt='instagram'/></Link>
           <Link target='_blank' href="https://opensea.io/Jay-Albert"><Image src="/images/opensea.png" className='icon' width='72' height='72' alt='opensea'/></Link>
-          <Link target='_blank' href="https://open.spotify.com/user/1217936908?si=a3a2125c832b48ff&nd=1"><Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/></Link>
+          {/* <Link target='_blank' href="https://open.spotify.com/user/1217936908?si=a3a2125c832b48ff&nd=1"><Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/></Link> */}
         </div>
       
         {/*The section for the project cards starts here and is in one div to contain all of the projects.*/}      
@@ -34,7 +34,7 @@ export default function Home() {
 
           {/*This is the card for the invisible maze game*/}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/>
+            <Link href={"./invisible-maze-game"}> <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/> </Link>
             <CardContent>
               <Typography variant='h6'>
                 Invisible Maze Game
