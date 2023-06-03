@@ -120,7 +120,9 @@ export default function Home() {
 
           {/* This is the card for Grace Potter */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/grace-potter.png' alt='An icon of a pottery vase'/>
+            <Link href={"./grace-potter"}>
+              <CardMedia component="img" image='/images/grace-potter.png' alt='An icon of a pottery vase'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Grace Potter

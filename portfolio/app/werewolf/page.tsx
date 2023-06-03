@@ -42,7 +42,7 @@ export default function Werewolf() {
                     The werewolves win if they kill enough villagers so that the numbers are even. (Example: Two werewolves and two villagers)
                     </p>
                     <div className="links">
-                    <Link target="_blank" href={"https://bejewled-butternut-e77.notion.site/Mix3d-81ffeb7a8e6d48f1b2f7c85f9ca06924?pvs=4"}>View the Code</Link>
+                    <Link target="_blank" href={"https://github.com/Werewolf-Capstone/Werewolf-Final"}>View the Code</Link>
                     </div>
                 </div>
             </div>
