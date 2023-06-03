@@ -235,7 +235,9 @@ export default function Home() {
 
           {/* This is the card for Blotto */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/blotto.png' alt="A flat image of a body with its head in a toilet and the words 'Blotto' written under the image."/>
+            <Link href={"./blotto"}>
+              <CardMedia component="img" image='/images/blotto.png' alt="A flat image of a body with its head in a toilet and the words 'Blotto' written under the image."/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Blotto
