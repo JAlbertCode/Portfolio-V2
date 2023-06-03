@@ -1,4 +1,3 @@
-import { Card, CardMedia } from "../../lib/mui";
 import "/main.css"
 import YoutubeEmbed from "../../components/youtube-embed";
 import Link from "next/link";

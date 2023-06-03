@@ -34,7 +34,9 @@ export default function Home() {
 
           {/*This is the card for the invisible maze game*/}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <Link href={"./invisible-maze-game"}> <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/> </Link>
+            <Link href={"./invisible-maze-game"}> 
+              <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/> 
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Invisible Maze Game
@@ -56,7 +58,9 @@ export default function Home() {
 
           {/* This is the card for Mix3d */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/mix3d.png' alt='A logo of circles in a spiral with varrying colors'/>
+            <Link href={"./mix3d"}>
+              <CardMedia component="img" image='/images/mix3d.png' alt='A logo of circles in a spiral with varrying colors'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Mix3d
