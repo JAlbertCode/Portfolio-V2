@@ -156,7 +156,9 @@ export default function Home() {
 
           {/* This is the card for Mobile Vendor */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/mobile-vendor.png' alt='A smart phone overlayed on top of a map with icons for mobile vendors'/>
+            <Link href={"./mobile-vendor"}>
+              <CardMedia component="img" image='/images/mobile-vendor.png' alt='A smart phone overlayed on top of a map with icons for mobile vendors'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Mobile Vendor

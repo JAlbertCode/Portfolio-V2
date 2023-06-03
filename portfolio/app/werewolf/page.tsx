@@ -16,9 +16,11 @@ export default function Werewolf() {
                     <p>For the final project at Fullstack Academy, we were split into teams of four and given two and a half weeks to define and develop a project. Everyone in our group were fans of table top games and we decided to give new life to an old concept. The game we settled on was Werewolf. Werewolf is a social deduction game where some players are on the `bad` team and others are on the `good` team but neither player knows the other`s identity. Throughout the game players vote to kill each other based on their suspicions and the last team standing wins the game. Our team created a new spin on the game by allowing groups to form in online video conferences and by programmatically managing all of the events in the game.
                     </p>
                     <h2>Gameplay Demo</h2>
-                    <video controls>
-                        <source src="./videos/werewolf-preview.mp4"/>
-                    </video>
+                    <div className="video-responsive">
+                        <video controls>
+                            <source src="./videos/werewolf-preview.mp4"/>
+                        </video>
+                    </div>
                     <h2>Game Rules</h2>
                     <p>The game proceeds in alternating night and day rounds, beginning with night.
                     <br/><br/>
