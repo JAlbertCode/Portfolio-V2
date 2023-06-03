@@ -209,7 +209,9 @@ export default function Home() {
           
           {/* This is the card for Wix */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/wix.png' alt='The wix website logo'/>
+            <Link href={"./wix"}>
+              <CardMedia component="img" image='/images/wix.png' alt='The wix website logo'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Wix

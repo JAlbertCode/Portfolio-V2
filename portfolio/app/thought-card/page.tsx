@@ -1,5 +1,4 @@
 import "/main.css"
-import Link from "next/link";
 import ProjectCover from "../../components/project-cover";
 
 
