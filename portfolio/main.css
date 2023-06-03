@@ -9,12 +9,22 @@
     padding: theme('spacing.1');
     color: white;
   }
+
+  .links {
+    background-color: theme('colors.dark-turquoise');
+    border-radius: theme('borderRadius.md');
+    padding: theme('spacing.1');
+    color: white;
+    width: fit-content;
+    margin-top: 1rem;
+  }
   
   .video-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
+    border-radius: 1rem;
   }
   
   .video-responsive iframe {
