@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProjectCover from "../../components/project-cover";
 
 
-export default function Maze() {
+export default function Mixed() {
     return (
         <main className="flex min-h-screen flex-col items-center pt-5">      
 

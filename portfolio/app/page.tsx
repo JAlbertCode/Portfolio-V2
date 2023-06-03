@@ -85,7 +85,9 @@ export default function Home() {
 
           {/* This is the card for Werewolf */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/werewolf.png' alt='A sign in screen with the word Werewolf at the top in a font that looks like bloody letters'/>
+            <Link href={"./werewolf"}>
+              <CardMedia component="img" image='/images/werewolf.png' alt='A sign in screen with the word Werewolf at the top in a font that looks like bloody letters'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Werewolf
