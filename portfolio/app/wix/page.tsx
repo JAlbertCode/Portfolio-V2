@@ -18,21 +18,21 @@ export default function Wix() {
                     </p>
                     <br/>
                     <div className="flex flex-col">
-                        <div className="flex">
-                            <div className="basis-3/10">                                
-                                <Image width={900} height={900} src="/images/spike.png" alt="A long triangle piercing two circles. One circle is inside another."></Image>
+                        <div className="clients flex">
+                            <div>                                
+                                <Image className="max-w-xs" width={250} height={250} src="/images/spike.png" alt="A long triangle piercing two circles. One circle is inside another."/>
                             </div>
-                            <div className="basis-7/10">                                
+                            <div className="w-30">                                
                                 <h2>Health Shield Solutions</h2>
                                 <p>Health Shield Solutions’ unique two-step process disinfects to kill existing viruses, bacteria and other pathogens on surfaces and then immediately re-surfaces the entire area and objects with a nano barrier protectant that provides continuous protection from re-infection for 30-90 days</p>
                             </div>
                         </div>
                         <br/>
-                        <div className="flex">
-                            <div className="basis-3/10">                                
-                                <Image width={600} height={600} src="/images/RT.png" alt="A black box with the letters RT in bold"></Image>
+                        <div className="clients flex">
+                            <div>                                
+                                <Image className="max-w-xs" width={250} height={250} src="/images/RT.png" alt="A black box with the letters RT in bold"/>
                             </div>
-                            <div className="basis-7/10">                                
+                            <div>                                
                                 <h2>RT Advisory Team</h2>
                                 <p>RT Advisory Team is a growth and compliance consulting firm. The firm's services include consulting for patents, branding, product manufacturing, product placement, and much more.</p>
                             </div>

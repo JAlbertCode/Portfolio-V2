@@ -56,5 +56,11 @@
     padding-bottom: 1rem;
     padding-top: 1rem;
   }
+
+  @media screen and (max-width: 750px) {
+    .clients {
+      flex-direction: column;
+    }
+  }
   
 }
