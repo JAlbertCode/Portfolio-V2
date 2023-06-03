@@ -289,7 +289,9 @@ export default function Home() {
 
           {/* This is the card for Augmented Piano Lessons */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/augmented-piano-lessons.png' alt='Piano keys on with a background of musical notes'/>
+            <Link href={"./ar-piano-lessons"}>
+              <CardMedia component="img" image='/images/ar-piano-lessons.png' alt='Piano keys on with a background of musical notes'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Augmented Piano Lessons
