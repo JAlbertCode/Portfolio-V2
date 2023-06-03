@@ -15,11 +15,11 @@ export default function Werewolf() {
                     <h1>Fullstack Academy Capstone</h1>
                     <p>For the final project at Fullstack Academy, we were split into teams of four and given two and a half weeks to define and develop a project. Everyone in our group were fans of table top games and we decided to give new life to an old concept. The game we settled on was Werewolf. Werewolf is a social deduction game where some players are on the `bad` team and others are on the `good` team but neither player knows the other`s identity. Throughout the game players vote to kill each other based on their suspicions and the last team standing wins the game. Our team created a new spin on the game by allowing groups to form in online video conferences and by programmatically managing all of the events in the game.
                     </p>
-                    <h1>Gameplay Demo</h1>
+                    <h2>Gameplay Demo</h2>
                     <video controls>
                         <source src="./videos/werewolf-preview.mp4"/>
                     </video>
-                    <h1>Game Rules</h1>
+                    <h2>Game Rules</h2>
                     <p>The game proceeds in alternating night and day rounds, beginning with night.
                     <br/><br/>
                     In the beginning of the night only the werewolves can see. Everyone else is sleeping and so their video is stopped. While everyone sleeps the werewolves will choose a villager to kill. When the werewolves have made their kill, they too sleep.
@@ -36,7 +36,7 @@ export default function Werewolf() {
                     <br/><br/>
                     Once a player is killed, night falls and the cycle repeats.
                     </p>
-                    <h1>Winning:</h1>
+                    <h2>Winning:</h2>
                     <p>The villagers win if they kill all of the werewolves.
                     <br/><br/>
                     The werewolves win if they kill enough villagers so that the numbers are even. (Example: Two werewolves and two villagers)

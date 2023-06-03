@@ -34,5 +34,19 @@
     width: 100%;
     position: absolute;
   }
+
+  h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  h2 {
+    font-size: x-large;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
   
 }
