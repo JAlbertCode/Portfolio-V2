@@ -185,7 +185,9 @@ export default function Home() {
 
           {/* This is the card for Thought Card */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/thought-card.png' alt="A blue business card with a quote that reads 'The convential mind is passive - it consumes information and regurgitates it in familiar forms. The dimensional mind is active. Transforming everything it digests into something new and original, creating instead of consuming' by Robert Greene from the book Mastery on page 177."/>
+            <Link href={"./thought-card"}>
+              <CardMedia component="img" image='/images/thought-card.png' alt="A blue business card with a quote that reads 'The convential mind is passive - it consumes information and regurgitates it in familiar forms. The dimensional mind is active. Transforming everything it digests into something new and original, creating instead of consuming' by Robert Greene from the book Mastery on page 177."/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Thought Card
