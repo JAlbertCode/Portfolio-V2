@@ -2,6 +2,7 @@ import { Card, CardMedia } from "../../lib/mui";
 import "/main.css"
 import YoutubeEmbed from "../../components/youtube-embed";
 import Link from "next/link";
+import ProjectCover from "../../components/project-cover";
 
 
 export default function Maze() {
@@ -10,9 +11,7 @@ export default function Maze() {
 
             {/* This is the image card that appears at the top of every project page.  */}
             <div className="mx-4 max-w-5xl">
-                <Card sx={{borderRadius: 3}}>
-                    <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'></CardMedia>
-                </Card>
+                <ProjectCover coverImage="invisible-maze.png" alt="A view of an invisible maze game made in Decentraland"/>                
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>Discovering the Metaverse</h1>
