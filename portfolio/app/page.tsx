@@ -262,7 +262,9 @@ export default function Home() {
 
           {/* This is the card for LiveIn */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/livein.png' alt='A logo of a leaf that has lines across it similar to that of a circuit board'/>
+            <Link href={"./livein"}>
+              <CardMedia component="img" image='/images/livein.png' alt='A logo of a leaf that has lines across it similar to that of a circuit board'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 LiveIn
