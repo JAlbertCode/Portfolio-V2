@@ -35,7 +35,7 @@ export default function Home() {
           {/*This is the card for the mix3d clothing*/}
           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./mix3d-clothing"}> 
-              <CardMedia component="img" image='/images/mix3d-clothing.png' alt='A 3d model of a light pink sweater on the left of the image, and a voxel version of the sweater on the right of the image.'/> 
+              <CardMedia component="img" image='/images/mix3d-shirt.png' alt='A 3d model of a light pink sweater on the left of the image, and a voxel version of the sweater on the right of the image.'/> 
             </Link>
             <CardContent>
               <Typography variant='h6'>
@@ -54,10 +54,11 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Javascript</Typography>
                 <Typography variant='body2' className='skills'>HTML</Typography>
                 <Typography variant='body2' className='skills'>CSS</Typography>
+                <Typography variant='body2' className='skills'>Figma</Typography>
                 <Typography variant='body2' className='skills'>Clo3d</Typography>
                 <Typography variant='body2' className='skills'>Spark AR</Typography>
                 <Typography variant='body2' className='skills'>Augmented Reality</Typography>
-                <Typography variant='body2' className='skills'>Vectory</Typography>
+                <Typography variant='body2' className='skills'>Vectary</Typography>
                 <Typography variant='body2' className='skills'>Magica Voxel</Typography>
               </div>
             </CardContent>
