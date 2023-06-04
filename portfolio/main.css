@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  .icon {
+    box-shadow: 20;
+  }
+
   .skills {
     background-color: theme('colors.dark-turquoise');
     border-radius: theme('borderRadius.md');

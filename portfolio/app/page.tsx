@@ -5,13 +5,13 @@ import { Card, CardContent, CardMedia, Typography } from "../lib/mui"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center pt-16 p-24">
+    <main className="flex min-h-screen flex-col items-center px-24">
       <div className='mx-10 max-w-6xl'>
 
         {/*This is the introduction to the landing page*/}
         <h1>Jonathan Albert's Portfolio</h1>
         <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today confronting any challenge that gets in the way. </p>
-        
+        {/* <h2>Get in Contact</h2> */}
         {/*This div conatains the row of icons for professional and social media links*/}
         <div className='flex flex-wrap gap-4 mt-10'>
           <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf"><Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/></Link>
@@ -33,7 +33,7 @@ export default function Home() {
         <div id='cards' className='flex flex-wrap gap-10 mt-10 place-content-center'>
 
           {/*This is the card for the invisible maze game*/}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./invisible-maze-game"}> 
               <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/> 
             </Link>
@@ -57,7 +57,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Mix3d */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./mix3d"}>
               <CardMedia component="img" image='/images/mix3d.png' alt='A logo of circles in a spiral with varrying colors'/>
             </Link>
@@ -84,7 +84,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Werewolf */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./werewolf"}>
               <CardMedia component="img" image='/images/werewolf.png' alt='A sign in screen with the word Werewolf at the top in a font that looks like bloody letters'/>
             </Link>
@@ -119,7 +119,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Grace Potter */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./grace-potter"}>
               <CardMedia component="img" image='/images/grace-potter.png' alt='An icon of a pottery vase'/>
             </Link>
@@ -155,7 +155,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Mobile Vendor */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./mobile-vendor"}>
               <CardMedia component="img" image='/images/mobile-vendor.png' alt='A smart phone overlayed on top of a map with icons for mobile vendors'/>
             </Link>
@@ -184,7 +184,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Thought Card */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./thought-card"}>
               <CardMedia component="img" image='/images/thought-card.png' alt="A blue business card with a quote that reads 'The convential mind is passive - it consumes information and regurgitates it in familiar forms. The dimensional mind is active. Transforming everything it digests into something new and original, creating instead of consuming' by Robert Greene from the book Mastery on page 177."/>
             </Link>
@@ -208,7 +208,7 @@ export default function Home() {
           </Card>
           
           {/* This is the card for Wix */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./wix"}>
               <CardMedia component="img" image='/images/wix.png' alt='The wix website logo'/>
             </Link>
@@ -234,7 +234,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Blotto */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./blotto"}>
               <CardMedia component="img" image='/images/blotto.png' alt="A flat image of a body with its head in a toilet and the words 'Blotto' written under the image."/>
             </Link>
@@ -261,7 +261,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for LiveIn */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./livein"}>
               <CardMedia component="img" image='/images/livein.png' alt='A logo of a leaf that has lines across it similar to that of a circuit board'/>
             </Link>
@@ -288,7 +288,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Augmented Piano Lessons */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./ar-piano-lessons"}>
               <CardMedia component="img" image='/images/ar-piano-lessons.png' alt='Piano keys on with a background of musical notes'/>
             </Link>
@@ -313,7 +313,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Traffic Jam VR */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./traffic-jam-vr"}>
               <CardMedia component="img" image='/images/traffic-jam-vr.png' alt='A low poly image of a street corner'/>
             </Link>
@@ -338,7 +338,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for The Fourth Branch */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./the-fourth-branch"}>
               <CardMedia component="img" image='/images/the-fourth-branch.png' alt='A logo with two parallel blue lines at the forefront and a red line in the background in the shape of a staple'/>
             </Link>
@@ -373,7 +373,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Memorial Website */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./memorial-website"}>
               <CardMedia component="img" image='/images/memorial-website.jpg' alt="A painted mural of a person with a hat, and the word 'Ferle' written under it"/>
             </Link>
@@ -396,7 +396,7 @@ export default function Home() {
           </Card>
 
           {/* This is the card for Customizable Phone Case */}
-          <Card sx={{width: 357, borderRadius: 3}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./customizable-phone-case"}>
               <CardMedia component="img" image='/images/custom-phone-case.png' alt="A mechanical engineering mockup of an old iphone with a case"/>
             </Link>

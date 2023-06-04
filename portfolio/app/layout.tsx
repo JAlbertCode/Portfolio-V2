@@ -21,8 +21,8 @@ export default function RootLayout({
       <body className={inter.className}>
               
         {/*This is the navigation bar for portfolio, resources, and lifestyle*/}
-        <div className='flex flex-col max-w-screen-2xl'>
-          <nav className='text-right py-10 px-24'>
+        <div className='flex flex-row-reverse max-w-screen-2xl'>
+          <nav className='text-right my-10 mx-1 w-min skills font-semibold'>
             <Link href="/" className='mx-2'>Portfolio</Link>
             <Link href="/resources" className='mx-2'>Resources</Link>
             <Link href="/lifestyle" className='mx-2'>Lifestyle</Link>
