@@ -32,6 +32,37 @@ export default function Home() {
         {/*The section for the project cards starts here and is in one div to contain all of the projects.*/}      
         <div id='cards' className='flex flex-wrap gap-10 mt-10 place-content-center'>
 
+          {/*This is the card for the mix3d clothing*/}
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+            <Link href={"./mix3d-clothing"}> 
+              <CardMedia component="img" image='/images/mix3d-clothing.png' alt='A 3d model of a light pink sweater on the left of the image, and a voxel version of the sweater on the right of the image.'/> 
+            </Link>
+            <CardContent>
+              <Typography variant='h6'>
+                Mix3d Clothing
+              </Typography>
+              <Typography>
+                A clothing brand from the Mix3d community.
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                December 2022
+              </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Moralis</Typography>
+                <Typography variant='body2' className='skills'>Meta Mask</Typography>
+                <Typography variant='body2' className='skills'>Goerli Test Network</Typography>
+                <Typography variant='body2' className='skills'>Javascript</Typography>
+                <Typography variant='body2' className='skills'>HTML</Typography>
+                <Typography variant='body2' className='skills'>CSS</Typography>
+                <Typography variant='body2' className='skills'>Clo3d</Typography>
+                <Typography variant='body2' className='skills'>Spark AR</Typography>
+                <Typography variant='body2' className='skills'>Augmented Reality</Typography>
+                <Typography variant='body2' className='skills'>Vectory</Typography>
+                <Typography variant='body2' className='skills'>Magica Voxel</Typography>
+              </div>
+            </CardContent>
+          </Card>
+
           {/*This is the card for the invisible maze game*/}
           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./invisible-maze-game"}> 
@@ -77,7 +108,6 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Metamask</Typography>
                 <Typography variant='body2' className='skills'>Partybid</Typography>
                 <Typography variant='body2' className='skills'>Mirror</Typography>
-                <Typography variant='body2' className='skills'>MagicaVoxel</Typography>
                 <Typography variant='body2' className='skills'>Community Management</Typography>
               </div>
             </CardContent>

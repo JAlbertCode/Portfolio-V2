@@ -24,8 +24,8 @@ export default function RootLayout({
         <div className='flex flex-row-reverse max-w-screen-2xl'>
           <nav className='text-right my-10 mx-1 w-min skills font-semibold'>
             <Link href="/" className='mx-2'>Portfolio</Link>
-            <Link href="/resources" className='mx-2'>Resources</Link>
-            <Link href="/lifestyle" className='mx-2'>Lifestyle</Link>
+            {/* <Link href="/resources" className='mx-2'>Resources</Link>
+            <Link href="/lifestyle" className='mx-2'>Lifestyle</Link> */}
           </nav>
         </div>
 
