@@ -339,7 +339,9 @@ export default function Home() {
 
           {/* This is the card for The Fourth Branch */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/the-fourth-branch.png' alt='A logo with two parallel blue lines at the forefront and a red line in the background in the shape of a staple'/>
+            <Link href={"./the-fourth-branch"}>
+              <CardMedia component="img" image='/images/the-fourth-branch.png' alt='A logo with two parallel blue lines at the forefront and a red line in the background in the shape of a staple'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 The Fourth Branch
