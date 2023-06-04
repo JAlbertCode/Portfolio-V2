@@ -397,7 +397,9 @@ export default function Home() {
 
           {/* This is the card for Customizable Phone Case */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/custom-phone-case.png' alt="A mechanical engineering mockup of an old iphone with a case"/>
+            <Link href={"./customizable-phone-case"}>
+              <CardMedia component="img" image='/images/custom-phone-case.png' alt="A mechanical engineering mockup of an old iphone with a case"/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Customizable Phone Case
