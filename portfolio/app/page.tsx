@@ -5,7 +5,7 @@ import { Card, CardContent, CardMedia, Typography } from "../lib/mui"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-24">
+    <main className="flex min-h-screen flex-col items-center px-24 mb-20">
       <div className='mx-10 max-w-6xl'>
 
         {/*This is the introduction to the landing page*/}

@@ -3,9 +3,29 @@
 @tailwind utilities;
 
 @layer components {
-  .icon {
-    box-shadow: 20;
+
+  html,body{
+    touch-action: manipulation;
   }
+
+  .icon {
+    border-radius: 100%;
+    outline:none;
+    background-color:#f4f5f6;
+    box-shadow:  -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 0px 0px 10px rgba(0,0,0,1);
+    transition: .13s ease-in-out;
+    &:active{
+      box-shadow:none;
+      .button__content{
+        box-shadow: none;
+        .button__text, .button__icon{
+          transform:translate3d(0px, 0px, 0px);
+          }
+        }
+      }
+    }
+
+  
 
   .skills {
     background-color: theme('colors.dark-turquoise');
