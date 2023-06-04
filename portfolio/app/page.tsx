@@ -314,7 +314,9 @@ export default function Home() {
 
           {/* This is the card for Traffic Jam VR */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/traffic-jam-vr.png' alt='A low poly image of a street corner'/>
+            <Link href={"./traffic-jam-vr"}>
+              <CardMedia component="img" image='/images/traffic-jam-vr.png' alt='A low poly image of a street corner'/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Traffic Jam VR
