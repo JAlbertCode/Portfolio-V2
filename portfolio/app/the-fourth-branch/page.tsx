@@ -1,5 +1,4 @@
 import "/main.css"
-import Link from "next/link";
 import ProjectCover from "../../components/project-cover";
 
 
@@ -9,7 +8,7 @@ export default function Fourth() {
 
             {/* This is the image card that appears at the top of every project page.  */}
             <div className="mx-4 max-w-5xl">
-                <ProjectCover coverImage="the-fourth-branch.png" alt="Piano keys on with a background of musical notes"/>                
+                <ProjectCover coverImage="the-fourth-branch.png" alt="A logo with two parallel blue lines at the forefront and a red line in the background in the shape of a staple"/>                
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>What is The Fourth Branch?</h1>

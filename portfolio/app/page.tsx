@@ -374,7 +374,9 @@ export default function Home() {
 
           {/* This is the card for Memorial Website */}
           <Card sx={{width: 357, borderRadius: 3}}>
-            <CardMedia component="img" image='/images/memorial-website.jpg' alt="A painted mural of a person with a hat, and the word 'Ferle' written under it"/>
+            <Link href={"./memorial-website"}>
+              <CardMedia component="img" image='/images/memorial-website.jpg' alt="A painted mural of a person with a hat, and the word 'Ferle' written under it"/>
+            </Link>
             <CardContent>
               <Typography variant='h6'>
                 Memorial Website
