@@ -60,6 +60,32 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Augmented Reality</Typography>
                 <Typography variant='body2' className='skills'>Vectary</Typography>
                 <Typography variant='body2' className='skills'>Magica Voxel</Typography>
+                <Typography variant='body2' className='skills'>Github</Typography>
+              </div>
+            </CardContent>
+          </Card>
+
+           {/*This is the card for tokensets*/}
+           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+            <Link href={"./tokensets"}> 
+              <CardMedia component="img" image='/images/tokensets.png' alt='Two blue circle overlaping eachother with the top circle containing a fade on the right side and the bottom circle containing a fade on the left side. The fades make the circles appear vaguely in the shape of an S'/> 
+            </Link>
+            <CardContent>
+              <Typography variant='h6'>
+                Exploring DeFi
+              </Typography>
+              <Typography>
+                Snapshots of my experiences in DeFi.
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                October 2022
+              </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Tokensets</Typography>
+                <Typography variant='body2' className='skills'>Meta Mask</Typography>
+                <Typography variant='body2' className='skills'>Polygon</Typography>
+                <Typography variant='body2' className='skills'>Writing</Typography>
+                <Typography variant='body2' className='skills'>Investment Analysis</Typography>
               </div>
             </CardContent>
           </Card>
