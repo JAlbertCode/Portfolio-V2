@@ -13,7 +13,7 @@
   .links {
     background-color: theme('colors.dark-turquoise');
     border-radius: theme('borderRadius.md');
-    padding: theme('spacing.1');
+    padding: theme('spacing.2');
     color: white;
     width: fit-content;
     margin-top: 1rem;
