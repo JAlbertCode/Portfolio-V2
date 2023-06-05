@@ -24,7 +24,7 @@ export default function Wix() {
                             </div>
                             <div className="w-30">                                
                                 <h2>Health Shield Solutions</h2>
-                                <p>Health Shield Solutions’ unique two-step process disinfects to kill existing viruses, bacteria, and other pathogens on surfaces and then immediately re-surfaces the entire area and objects with a nano barrier protectant that provides continuous protection from re-infection for 30-90 days</p>
+                                <p>Health Shield Solutions&apos; unique two-step process disinfects to kill existing viruses, bacteria, and other pathogens on surfaces and then immediately re-surfaces the entire area and objects with a nano barrier protectant that provides continuous protection from re-infection for 30-90 days</p>
                             </div>
                         </div>
                         <br/>
@@ -34,7 +34,7 @@ export default function Wix() {
                             </div>
                             <div>                                
                                 <h2>RT Advisory Team</h2>
-                                <p>RT Advisory Team is a growth and compliance consulting firm. The firm's services include consulting for patents, branding, product manufacturing, product placement, and much more.</p>
+                                <p>RT Advisory Team is a growth and compliance consulting firm. The firm&apos;s services include consulting for patents, branding, product manufacturing, product placement, and much more.</p>
                             </div>
                         </div>
                     </div>

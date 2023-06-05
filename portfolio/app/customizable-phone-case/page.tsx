@@ -14,7 +14,7 @@ export default function Phone() {
                     <h1>Unlimited Styles for an Unlimited Phone</h1>
                     <p>The iPhone case our team sought to design would place a screen on the back of an iPhone that the user could customize with an application. The user would have been able to send a static image to the screen or an animation. We also entertained the idea of building applications designed to utilize both screens, like a game of Guess Who or Battleship.</p>
                     <h2>Preview</h2>
-                    <p>The dimensions for the inner casing were taken from Apple's website. The extension at the bottom of the case would contain the chip to control the screen on the back of the phone. The screen is protected by a transparent shell.</p>
+                    <p>The dimensions for the inner casing were taken from Apple&apos;s website. The extension at the bottom of the case would contain the chip to control the screen on the back of the phone. The screen is protected by a transparent shell.</p>
                     
                     <div className="video-responsive">
                         <video autoPlay>

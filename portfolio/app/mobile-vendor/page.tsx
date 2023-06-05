@@ -23,7 +23,7 @@ export default function Vendor() {
                             <source src="./videos/mobile-vendor.mp4"/>
                         </video>
                     </div>
-                    <h2>Toyota's Vision</h2>
+                    <h2>Toyota&apos;s Vision</h2>
                     <p>Toyota is already anticipating mobile distribution centers and mobile service providers. The video below shares the full vision of a Mobile Electronic Marketplace (MEM).</p>
                     <br/>
                     <div className="video-responsive">
