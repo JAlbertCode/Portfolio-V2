@@ -10,7 +10,7 @@ export default function Home() {
 
         {/*This is the introduction to the landing page*/}
         <h1>Jonathan Albert's Portfolio</h1>
-        <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today confronting any challenge that gets in the way. </p>
+        <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today, confronting any challenge that gets in the way. </p>
         {/* <h2>Get in Contact</h2> */}
         {/*This div conatains the row of icons for professional and social media links*/}
         <div className='flex flex-wrap gap-4 mt-10'>
@@ -185,7 +185,7 @@ export default function Home() {
                 Grace Potter
               </Typography>
               <Typography>
-                An ecommerce website selling hand made pottery
+                An e-commerce website selling handmade pottery.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 August 2020
@@ -250,7 +250,7 @@ export default function Home() {
                 Thought Card
               </Typography>
               <Typography>
-                Augmented Reality (AR) technologies allow developers to pack information into images. Business cards can now contain links, videos, 3d objects, scenes, games and more.
+                Augmented Reality (AR) technologies allow developers to pack information into images. Business cards can now contain links, videos, 3D objects, scenes, games, and more.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 April 2020
@@ -274,7 +274,7 @@ export default function Home() {
                 Wix
               </Typography>
               <Typography>
-                A freelance stint of wix websites fueled by word of mouth recommendations
+                A stint as a freelancer for Wix websites fueled by word-of-mouth recommendations.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 March 2020
@@ -300,7 +300,7 @@ export default function Home() {
                 Blotto
               </Typography>
               <Typography>
-                A simple drinking card game that served as a proof of concept for launching applications using Unity on the Google Playstore.
+                A simple drinking card game that served as a proof of concept for launching applications using Unity on the Google Play store.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 January 2020
@@ -404,7 +404,7 @@ export default function Home() {
                 The Fourth Branch
               </Typography>
               <Typography>
-                The Fourth Branch summarizes bills debated in Congress and allows users to vote on the summaries and compare their votes to their Congressmen.
+                The Fourth Branch summarizes bills debated in Congress and allows users to vote on the summaries and compare their votes to those of their Congressmen.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 January 2017
@@ -439,7 +439,7 @@ export default function Home() {
                 Memorial Website
               </Typography>
               <Typography>
-                There are many ways to remember a lost relative and with modern technology, we can immortalize their experiences.
+                There are many ways to remember a lost relative, and with modern technology, we can immortalize their experiences.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 October 2014
@@ -462,7 +462,7 @@ export default function Home() {
                 Customizable Phone Case
               </Typography>
               <Typography>
-                In the early 2010s, the iPhone had a small battery and owners were seeking to protect their phones while customizing the look. The customizable phone case sought to provide a dynamic look and improved battery life for iPhones.
+                In the early 2010s, the iPhone had a small battery, and owners were seeking to protect their phones while customizing the look. The customizable phone case sought to provide a dynamic look and improve battery life for iPhones.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 July 2014

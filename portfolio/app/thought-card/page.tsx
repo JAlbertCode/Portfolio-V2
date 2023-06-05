@@ -12,9 +12,9 @@ export default function Thought() {
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>Augmented Business Card</h1>
-                    <p>After sharing some Augmented Reality ideas with a friend, he requested that I augment his business card. Over several years he compiled quotes that he felt moved by and wanted to share the quotes with the people who had his business card. He called the idea a "Thought Card".
+                    <p>After sharing some augmented reality ideas with a friend, he requested that I augment his business card. Over several years, he compiled quotes that he felt moved by and wanted to share the quotes with the people who had his business card. He called the idea a "Thought Card".
                     <br/><br/>
-                    After a couple of weeks, I was able to include the quotes using an image target and I decided to include a virtual button that would link viewers to a store where they could purchase the book. The links can be swapped out for affiliated marketing links, allowing the card owner to profit from viewers who bought the book.
+                    After a couple of weeks, I was able to include the quotes using an image target, and I decided to include a virtual button that would link viewers to a store where they could purchase the book. The links can be swapped out for affiliated marketing links, allowing the card owner to profit from viewers who bought the book.
                     </p>                    
                     <h2>Application Preview</h2>
                     <div className="video-responsive">

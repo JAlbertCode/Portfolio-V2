@@ -12,7 +12,7 @@ export default function Fourth() {
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>What is The Fourth Branch?</h1>
-                    <p>The Fourth Branch summarizes bills being debated in Congress, allows users to vote on the summaries, and compare their votes to their Congressmen.</p>
+                    <p>The Fourth Branch summarizes bills being debated in Congress, allows users to vote on the summaries, and compares their votes to those of their Congressmen.</p>
                     <h2>Demo</h2>
                     <p>The video below is a demo I recorded of the final product for desktops.</p>
                     <div className="video-responsive">

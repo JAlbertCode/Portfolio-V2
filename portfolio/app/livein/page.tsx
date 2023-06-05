@@ -13,7 +13,7 @@ export default function Livein() {
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>LiveIn Vision</h1>
-                    <p>LIVEIN sought to allow real estate buyers and renters to discover available units within a building by scanning the facade of the building using their smartphone. Potential clients would then be offered augmented reality tours and an opportunity to book a viewing via mobile application. Once a client finds a property that suits their needs, they would be able to make an offer and come to an agreement with the owner via the app, eliminating the need for a broker and reducing the cost to transact.                
+                    <p>LIVEIN sought to allow real estate buyers and renters to discover available units within a building by scanning the facade of the building using their smartphones. Potential clients would then be offered augmented reality tours and the opportunity to book a viewing via a mobile application. Once a client finds a property that suits their needs, they would be able to make an offer and come to an agreement with the owner via the app, eliminating the need for a broker and reducing the cost to transact.                
                     </p>
                     <div className="flex gap-2">
                         <div className="links">

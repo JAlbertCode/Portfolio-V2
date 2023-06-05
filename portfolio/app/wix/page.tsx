@@ -14,17 +14,17 @@ export default function Wix() {
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>Freelance Work</h1>
-                    <p>While searching for my next career, I reached out to a few friends and family letting everyone know that I was open to new opportunities. During that time, a friend connected me with a couple of businesses that were looking to create websites for their services. The following are the businesses I worked with and the websites I delivered using wix website builder.
+                    <p>While searching for my next career, I reached out to a few friends and family, letting everyone know that I was open to new opportunities. During that time, a friend connected me with a couple of businesses that were looking to create websites for their services. Below are the businesses I worked with and the websites I delivered using the Wix website builder.
                     </p>
                     <br/>
                     <div className="flex flex-col">
                         <div className="clients flex">
                             <div>                                
-                                <Image className="max-w-xs" width={250} height={250} src="/images/spike.png" alt="A long triangle piercing two circles. One circle is inside another."/>
+                                <Image className="max-w-xs" width={250} height={250} src="/images/spike.png" alt="A long triangle pierces two circles. One circle is inside another."/>
                             </div>
                             <div className="w-30">                                
                                 <h2>Health Shield Solutions</h2>
-                                <p>Health Shield Solutions’ unique two-step process disinfects to kill existing viruses, bacteria and other pathogens on surfaces and then immediately re-surfaces the entire area and objects with a nano barrier protectant that provides continuous protection from re-infection for 30-90 days</p>
+                                <p>Health Shield Solutions’ unique two-step process disinfects to kill existing viruses, bacteria, and other pathogens on surfaces and then immediately re-surfaces the entire area and objects with a nano barrier protectant that provides continuous protection from re-infection for 30-90 days</p>
                             </div>
                         </div>
                         <br/>
