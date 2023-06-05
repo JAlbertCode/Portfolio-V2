@@ -72,7 +72,7 @@ export default function Home() {
             </Link>
             <CardContent>
               <Typography variant='h6'>
-                Exploring DeFi
+                Exploring Web3 Finance
               </Typography>
               <Typography>
                 Snapshots of my experiences in DeFi.

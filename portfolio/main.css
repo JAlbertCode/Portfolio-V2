@@ -67,6 +67,20 @@
     position: absolute;
   }
 
+  .pdf-responsive {
+    overflow: hidden;
+    padding-bottom: 129%;
+    position: relative;
+    height: 0;
+  }
+
+  .pdf-responsive iframe{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  
+
   h1 {
     font-size: xx-large;
     font-weight: bold;
