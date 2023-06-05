@@ -24,18 +24,18 @@ export default function Home() {
         {/* <h2>Get in Contact</h2> */}
         {/*This div conatains the row of icons for professional and social media links*/}
         <div className='flex flex-wrap gap-4 mt-10'>
-          <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf"><Image src="/images/resume.png" className='icon' width='72' height='72' alt='resume'/></Link>
-          <Link target='_blank' href="https://www.linkedin.com/in/jonathan-albert-profile/"><Image src="/images/linkedin.png" className='icon' width='72' height='72' alt='linkedin'/></Link>
-          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com"><Image src="/images/email.png" className='icon' width='72' height='72' alt='email'/></Link>
-          <Link target='_blank' href="https://t.me/Jay_Albert"><Image src="/images/telegram.png" className='icon' width='72' height='72' alt='telegram'/></Link>
-          <Link target='_blank' href="https://discordapp.com/users/649469511749337089"><Image src="/images/discord.png" className='icon' width='72' height='72' alt='discord'/></Link>
-          <Link target='_blank' href="https://github.com/JAlbertCode"><Image src="/images/github.png" className='icon' width='72' height='72' alt='github'/></Link>
-          <Link target='_blank' href="https://jonathan-albert.medium.com/"><Image src="/images/medium.png" className='icon' width='72' height='72' alt='medium'/></Link>
-          <Link target='_blank' href="https://mirror.xyz/jay-albert.eth"><Image src="/images/mirror.png" className='icon' width='72' height='72' alt='mirror'/></Link>
-          <Link target='_blank' href="https://twitter.com/Jay_Albert_"><Image src="/images/twitter.png" className='icon' width='72' height='72' alt='twitter'/></Link>
-          <Link target='_blank' href="https://www.facebook.com/profile.php?id=100084317730771"><Image src="/images/facebook.png" className='icon' width='72' height='72' alt='facebook'/></Link>
-          <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/"><Image src="/images/instagram.png" className='icon' width='72' height='72' alt='instagram'/></Link>
-          <Link target='_blank' href="https://opensea.io/Jay-Albert"><Image src="/images/opensea.png" className='icon' width='72' height='72' alt='opensea'/></Link>
+          <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf"><Image src="/images/resume.png" width='72' height='72' alt='resume'/></Link>
+          <Link target='_blank' href="https://www.linkedin.com/in/jonathan-albert-profile/"><Image src="/images/linkedin.png" width='72' height='72' alt='linkedin'/></Link>
+          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com"><Image src="/images/email.png" width='72' height='72' alt='email'/></Link>
+          <Link target='_blank' href="https://t.me/Jay_Albert"><Image src="/images/telegram.png" width='72' height='72' alt='telegram'/></Link>
+          <Link target='_blank' href="https://discordapp.com/users/649469511749337089"><Image src="/images/discord.png" width='72' height='72' alt='discord'/></Link>
+          <Link target='_blank' href="https://github.com/JAlbertCode"><Image src="/images/github.png" width='72' height='72' alt='github'/></Link>
+          <Link target='_blank' href="https://jonathan-albert.medium.com/"><Image src="/images/medium.png" width='72' height='72' alt='medium'/></Link>
+          <Link target='_blank' href="https://mirror.xyz/jay-albert.eth"><Image src="/images/mirror.png" width='72' height='72' alt='mirror'/></Link>
+          <Link target='_blank' href="https://twitter.com/Jay_Albert_"><Image src="/images/twitter.png" width='72' height='72' alt='twitter'/></Link>
+          <Link target='_blank' href="https://www.facebook.com/profile.php?id=100084317730771"><Image src="/images/facebook.png" width='72' height='72' alt='facebook'/></Link>
+          <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/"><Image src="/images/instagram.png" width='72' height='72' alt='instagram'/></Link>
+          <Link target='_blank' href="https://opensea.io/Jay-Albert"><Image src="/images/opensea.png" width='72' height='72' alt='opensea'/></Link>
           {/* <Link target='_blank' href="https://open.spotify.com/user/1217936908?si=a3a2125c832b48ff&nd=1"><Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/></Link> */}
         </div>
       
@@ -85,7 +85,7 @@ export default function Home() {
                 Exploring Web3 Finance
               </Typography>
               <Typography>
-                Snapshots of my experiences in DeFi.
+                Snapshots of my experiences in cryptocurrency investing using DeFi tools and working with TradFi organizations.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 October 2022
@@ -94,8 +94,11 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Tokensets</Typography>
                 <Typography variant='body2' className='skills'>Meta Mask</Typography>
                 <Typography variant='body2' className='skills'>Polygon</Typography>
-                <Typography variant='body2' className='skills'>Writing</Typography>
+                <Typography variant='body2' className='skills'>DeFi</Typography>
+                <Typography variant='body2' className='skills'>TradFi</Typography>
+                <Typography variant='body2' className='skills'>Indexes</Typography>
                 <Typography variant='body2' className='skills'>Investment Analysis</Typography>
+                <Typography variant='body2' className='skills'>Writing</Typography>
               </div>
             </CardContent>
           </Card>
@@ -117,7 +120,9 @@ export default function Home() {
               </Typography>
               <div className='gap-1 flex flex-wrap mt-1'>
                 <Typography variant='body2' className='skills'>Decentraland</Typography>
-                <Typography variant='body2' className='skills'>MetaMask</Typography>
+                <Typography variant='body2' className='skills'>Meta Mask</Typography>
+                <Typography variant='body2' className='skills'>Ethereum Network</Typography>
+                <Typography variant='body2' className='skills'>Etherscan</Typography>
                 <Typography variant='body2' className='skills'>Notion</Typography>
                 <Typography variant='body2' className='skills'>Game Design</Typography>
               </div>
@@ -142,10 +147,13 @@ export default function Home() {
               <div className='gap-1 flex flex-wrap mt-1'>
                 <Typography variant='body2' className='skills'>Notion</Typography>
                 <Typography variant='body2' className='skills'>Discord</Typography>
-                <Typography variant='body2' className='skills'>Metamask</Typography>
+                <Typography variant='body2' className='skills'>Meta Mask</Typography>
                 <Typography variant='body2' className='skills'>Partybid</Typography>
                 <Typography variant='body2' className='skills'>Mirror</Typography>
                 <Typography variant='body2' className='skills'>Community Management</Typography>
+                <Typography variant='body2' className='skills'>Consulting</Typography>
+                <Typography variant='body2' className='skills'>Project Management</Typography>
+                <Typography variant='body2' className='skills'>Educational Content</Typography>
               </div>
             </CardContent>
           </Card>
@@ -260,7 +268,7 @@ export default function Home() {
                 Thought Card
               </Typography>
               <Typography>
-                Augmented Reality (AR) technologies allow developers to pack information into images. Business cards can now contain links, videos, 3D objects, scenes, games, and more.
+                Augmented Reality (AR) allows developers to pack information into images. Business cards can now contain links, videos, 3D objects, scenes, games, and more.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 April 2020
@@ -310,7 +318,7 @@ export default function Home() {
                 Blotto
               </Typography>
               <Typography>
-                A simple drinking card game that served as a proof of concept for launching applications using Unity on the Google Play store.
+                A drinking card game that served as a proof of concept for launching applications using Unity on the Google Play store.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 January 2020
@@ -348,7 +356,7 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>UX</Typography>
                 <Typography variant='body2' className='skills'>Trello</Typography>
                 <Typography variant='body2' className='skills'>Real Estate</Typography>
-                <Typography variant='body2' className='skills'>Documentation</Typography>
+                {/* <Typography variant='body2' className='skills'>Documentation</Typography> */}
                 <Typography variant='body2' className='skills'>Augmented Reality</Typography>
               </div>
             </CardContent>
@@ -399,7 +407,9 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>C#</Typography>
                 <Typography variant='body2' className='skills'>Virtual Reality</Typography>
                 <Typography variant='body2' className='skills'>Game Design</Typography>
+                <Typography variant='body2' className='skills'>Sound</Typography>
                 <Typography variant='body2' className='skills'>Scene Design</Typography>
+                <Typography variant='body2' className='skills'>Level Design</Typography>
               </div>
             </CardContent>
           </Card>
