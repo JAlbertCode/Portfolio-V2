@@ -10,7 +10,7 @@ export default function Clothing() {
 
             {/* This is the image card that appears at the top of every project page.  */}
             <div className="mx-4 max-w-5xl">
-                <ProjectCover coverImage="mix3d-shirt.png" alt="A 3D model of a light pink sweater on the left of the image, and a voxel version of the sweater on the right of the image."/>                
+                <ProjectCover coverImage="mix3d-shirt.png" alt="A 3D model of a black shirt with the Mix3d community logo on the front."/>                
             
                 <div className="w-4/5 mx-auto my-10">
                     <h1>The Start of the Phygital Movement</h1>
