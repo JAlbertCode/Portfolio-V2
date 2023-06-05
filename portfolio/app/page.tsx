@@ -45,7 +45,7 @@ export default function Home() {
           {/*This is the card for the mix3d clothing*/}
           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./mix3d-clothing"}> 
-              <CardMedia component="img" image='/images/mix3d-shirt.png' alt='A 3D model of a black shirt with the Mix3d community logo on the front.'/> 
+              <CardMedia component="img" image='/images/shirt.png' alt='A 3D model of a black shirt with the Mix3d community logo on the front.'/> 
             </Link>
             <CardContent>
               <Typography variant='h6'>
