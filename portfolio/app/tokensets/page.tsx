@@ -20,7 +20,7 @@ export default function Tokensets() {
                     While Token Sets is an incredible tool, ultimately I was unsure of the legal implications and did not want to take the leap of being responsible for the funds of family and friends. Luckily, I did not move forward because LUNA imploded months later. 
                     </p>
                     <div className="links">
-                    <Link target="_blank" href={"https://www.tokensets.com/v2/set/polygon/0x018AB17B6f9403C972DAAfcc6155EfED54169129"}>View the Strategy</Link>
+                    <Link target="_blank" href={"https://www.tokensets.com/?show=managed-sets#/v2/set/polygon/0x018ab17b6f9403c972daafcc6155efed54169129"}>View the Strategy</Link>
                     </div>
                     <h2>Institutional Web3 Investing</h2>
                     <p>In late 2022, I was searching for my next role and applied to a firm that creates crypto indexes for ETF issuers. The firm asked me to put together an index, and I chose to create an index for smart contracts. I provided the document below, and it led me to the next round of the interview process. I was in the last rounds of interviewing for a few different companies and decided to accept an offer at another organization instead of continuing the interview process. Below is the strategy, and my rationalization for investing in a Smart Contract Index.</p>
