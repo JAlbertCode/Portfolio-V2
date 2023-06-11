@@ -42,6 +42,38 @@ export default function Home() {
         {/*The section for the project cards starts here and is in one div to contain all of the projects.*/}      
         <div id='cards' className='flex flex-wrap gap-10 mt-10 place-content-center'>
 
+          {/*This is the card for the art bot*/}
+          {/* <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+            <Link href={"./art-bot"}> 
+              <CardMedia component="img" image='/images/shirt.png' alt='A 3D model of a black shirt with the Mix3d community logo on the front.'/> 
+            </Link>
+            <CardContent>
+              <Typography variant='h6'>
+                Art Bot
+              </Typography>
+              <Typography>
+                An art bot
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                July 2023
+              </Typography>
+              <div className='gap-1 flex flex-wrap mt-1'>
+                <Typography variant='body2' className='skills'>Python</Typography>
+                <Typography variant='body2' className='skills'>Twitter API</Typography>
+                <Typography variant='body2' className='skills'>Instagram</Typography>
+                <Typography variant='body2' className='skills'>Stability AI SDK</Typography>
+                <Typography variant='body2' className='skills'>Goerli Test Network</Typography>
+                <Typography variant='body2' className='skills'>Openzeppelin</Typography>
+                <Typography variant='body2' className='skills'>Solidity</Typography>
+                <Typography variant='body2' className='skills'>Ethereum Network</Typography>
+                <Typography variant='body2' className='skills'>IPFS</Typography>
+                <Typography variant='body2' className='skills'>NFT.storage</Typography>
+                <Typography variant='body2' className='skills'>Chainlink</Typography>
+                <Typography variant='body2' className='skills'>Github</Typography>
+              </div>
+            </CardContent>
+          </Card> */}
+
           {/*This is the card for the mix3d clothing*/}
           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
             <Link href={"./mix3d-clothing"}> 
