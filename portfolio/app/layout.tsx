@@ -34,7 +34,7 @@ export default function RootLayout({
         <div className="container">
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+            src="https://www.googletagmanager.com/gtag/js?id=G-JMRY14WSQ5"
             strategy="afterInteractive"
           />
           <Script id="google-analytics" strategy="afterInteractive">
@@ -43,7 +43,7 @@ export default function RootLayout({
               function gtag(){window.dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'GA_MEASUREMENT_ID');
+              gtag('config', 'G-JMRY14WSQ5');
             `}
           </Script>
         </div>
