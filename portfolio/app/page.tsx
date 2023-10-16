@@ -33,10 +33,10 @@ export default function Home() {
           <Link target='_blank' href="https://jonathan-albert.medium.com/"><Image src="/images/medium.png" width='72' height='72' alt='medium'/></Link>
           <Link target='_blank' href="https://mirror.xyz/jay-albert.eth"><Image src="/images/mirror.png" width='72' height='72' alt='mirror'/></Link>
           <Link target='_blank' href="https://twitter.com/Jay_Albert_"><Image src="/images/twitter.png" width='72' height='72' alt='twitter'/></Link>
-          <Link target='_blank' href="https://www.facebook.com/profile.php?id=100084317730771"><Image src="/images/facebook.png" width='72' height='72' alt='facebook'/></Link>
+          <Link target='_blank' href="https://www.tiktok.com/@jay_albert_?_t=8gYzNbPEty6&_r=1"><Image src="/images/Tiktok.png" width='72' height='72' alt='tiktok'/></Link>
           <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/"><Image src="/images/instagram.png" width='72' height='72' alt='instagram'/></Link>
-          <Link target='_blank' href="https://opensea.io/Jay-Albert"><Image src="/images/opensea.png" width='72' height='72' alt='opensea'/></Link>
-          {/* <Link target='_blank' href="https://open.spotify.com/user/1217936908?si=a3a2125c832b48ff&nd=1"><Image src="/images/spotify.png" className='icon' width='72' height='72' alt='spotify'/></Link> */}
+          <Link target='_blank' href="https://www.facebook.com/profile.php?id=100084317730771"><Image src="/images/facebook.png" width='72' height='72' alt='facebook'/></Link>
+          {/* <Link target='_blank' href="https://opensea.io/Jay-Albert"><Image src="/images/opensea.png" width='72' height='72' alt='opensea'/></Link> */}
         </div>
       
         {/*The section for the project cards starts here and is in one div to contain all of the projects.*/}      
