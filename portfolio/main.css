@@ -25,13 +25,19 @@
       }
     }
 
-  
-
   .skills {
     background-color: theme('colors.dark-turquoise');
     border-radius: theme('borderRadius.md');
     padding: theme('spacing.1');
     color: white;
+  }
+
+  .view-project {
+    background-color: theme('colors.dark-turquoise');
+    padding: .5em;
+    color: white;
+    text-align: center;
+    font-weight: 200;
   }
 
   .links {

@@ -75,7 +75,7 @@ export default function Home() {
           </Card> */}
 
           {/*This is the card for the mix3d clothing*/}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./mix3d-clothing"}> 
               <CardMedia component="img" image='/images/shirt.png' alt='A 3D model of a black shirt with the Mix3d community logo on the front.'/> 
             </Link>
@@ -105,10 +105,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Github</Typography>
               </div>
             </CardContent>
+            <Link href={"./mix3d-clothing"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
            {/*This is the card for tokensets*/}
-           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./tokensets"}> 
               <CardMedia component="img" image='/images/tokensets.png' alt='Two blue circle overlaping eachother with the top circle containing a fade on the right side and the bottom circle containing a fade on the left side. The fades make the circles appear vaguely in the shape of an S'/> 
             </Link>
@@ -133,10 +136,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Writing</Typography>
               </div>
             </CardContent>
+            <Link href={"./tokensets"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/*This is the card for the invisible maze game*/}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./invisible-maze-game"}> 
               <CardMedia component="img" image='/images/invisible-maze.png' alt='A view of an invisible maze game made in Decentraland'/> 
             </Link>
@@ -159,10 +165,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Game Design</Typography>
               </div>
             </CardContent>
+            <Link href={"./invisible-maze-game"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Mix3d */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./mix3d"}>
               <CardMedia component="img" image='/images/mix3d.png' alt='A logo of circles in a spiral with varrying colors'/>
             </Link>
@@ -188,10 +197,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Educational Content</Typography>
               </div>
             </CardContent>
+            <Link href={"./mix3d"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Werewolf */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./werewolf"}>
               <CardMedia component="img" image='/images/werewolf.png' alt='A sign in screen with the word Werewolf at the top in a font that looks like bloody letters'/>
             </Link>
@@ -223,10 +235,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Game Design</Typography>
               </div>
             </CardContent>
+            <Link href={"./werewolf"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Grace Potter */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./grace-potter"}>
               <CardMedia component="img" image='/images/grace-potter.png' alt='An icon of a pottery vase'/>
             </Link>
@@ -259,10 +274,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Github</Typography>
               </div>
             </CardContent>
+            <Link href={"./grace-potter"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Mobile Vendor */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./mobile-vendor"}>
               <CardMedia component="img" image='/images/mobile-vendor.png' alt='A smart phone overlayed on top of a map with icons for mobile vendors'/>
             </Link>
@@ -288,10 +306,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Github</Typography>
               </div>
             </CardContent>
+            <Link href={"./mobile-vendor"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Thought Card */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./thought-card"}>
               <CardMedia component="img" image='/images/thought-card.png' alt="A blue business card with a quote that reads 'The convential mind is passive - it consumes information and regurgitates it in familiar forms. The dimensional mind is active. Transforming everything it digests into something new and original, creating instead of consuming' by Robert Greene from the book Mastery on page 177."/>
             </Link>
@@ -312,10 +333,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Augmented Reality</Typography>
               </div>
             </CardContent>
+            <Link href={"./thought-card"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
           
           {/* This is the card for Wix */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./wix"}>
               <CardMedia component="img" image='/images/wix.png' alt='The wix website logo'/>
             </Link>
@@ -338,10 +362,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Budgeting</Typography>
               </div>
             </CardContent>
+            <Link href={"./wix"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Blotto */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./blotto"}>
               <CardMedia component="img" image='/images/blotto.png' alt="A flat image of a body with its head in a toilet and the words 'Blotto' written under the image."/>
             </Link>
@@ -365,10 +392,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Project Management</Typography>
               </div>
             </CardContent>
+            <Link href={"./blotto"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for LiveIn */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./livein"}>
               <CardMedia component="img" image='/images/livein.png' alt='A logo of a leaf that has lines across it similar to that of a circuit board'/>
             </Link>
@@ -392,10 +422,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Augmented Reality</Typography>
               </div>
             </CardContent>
+            <Link href={"./livein"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Augmented Piano Lessons */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./ar-piano-lessons"}>
               <CardMedia component="img" image='/images/ar-piano-lessons.png' alt='Piano keys on with a background of musical notes'/>
             </Link>
@@ -417,10 +450,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Sound</Typography>
               </div>
             </CardContent>
+            <Link href={"./ar-piano-lessons"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Traffic Jam VR */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./traffic-jam-vr"}>
               <CardMedia component="img" image='/images/traffic-jam-vr.png' alt='A low poly image of a street corner'/>
             </Link>
@@ -444,10 +480,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Level Design</Typography>
               </div>
             </CardContent>
+            <Link href={"./traffic-jam-vr"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for The Fourth Branch */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./the-fourth-branch"}>
               <CardMedia component="img" image='/images/the-fourth-branch.png' alt='A logo with two parallel blue lines at the forefront and a red line in the background in the shape of a staple'/>
             </Link>
@@ -479,10 +518,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Event Planning</Typography>
               </div>
             </CardContent>
+            <Link href={"./the-fourth-branch"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Memorial Website */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./memorial-website"}>
               <CardMedia component="img" image='/images/memorial-website.jpg' alt="A painted mural of a person with a hat, and the word 'Ferle' written under it"/>
             </Link>
@@ -502,10 +544,13 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>UI</Typography>
               </div>
             </CardContent>
+            <Link href={"./memorial-website"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
           {/* This is the card for Customizable Phone Case */}
-          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
             <Link href={"./customizable-phone-case"}>
               <CardMedia component="img" image='/images/custom-phone-case.png' alt="A mechanical engineering mockup of an old iphone with a case"/>
             </Link>
@@ -525,6 +570,9 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Hardware Design</Typography>
               </div>
             </CardContent>
+            <Link href={"./customizable-phone-case"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card>
 
         </div>
