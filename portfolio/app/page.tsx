@@ -62,7 +62,7 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Twitter API</Typography>
                 <Typography variant='body2' className='skills'>Instagram</Typography>
                 <Typography variant='body2' className='skills'>Stability AI SDK</Typography>
-                <Typography variant='body2' className='skills'>Goerli Test Network</Typography>
+                <Typography variant='body2' className='skills'>Sepolia Test Network</Typography>
                 <Typography variant='body2' className='skills'>Openzeppelin</Typography>
                 <Typography variant='body2' className='skills'>Solidity</Typography>
                 <Typography variant='body2' className='skills'>Ethereum Network</Typography>
@@ -72,6 +72,9 @@ export default function Home() {
                 <Typography variant='body2' className='skills'>Github</Typography>
               </div>
             </CardContent>
+            <Link href={"https://www.themachinedreams.com/about"} className='mt-auto'>
+              <Typography className='view-project'>View Project</Typography>
+            </Link>
           </Card> */}
 
           {/*This is the card for the mix3d clothing*/}
