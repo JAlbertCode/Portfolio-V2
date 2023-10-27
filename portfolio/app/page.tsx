@@ -43,39 +43,41 @@ export default function Home() {
         <div id='cards' className='flex flex-wrap gap-10 mt-10 place-content-center'>
 
           {/*This is the card for the art bot*/}
-          {/* <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}}>
-            <Link href={"./art-bot"}> 
-              <CardMedia component="img" image='/images/shirt.png' alt='A 3D model of a black shirt with the Mix3d community logo on the front.'/> 
+          <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
+            <Link href={"https://www.themachinedreams.com/about"} target='_blank'> 
+              <CardMedia component="img" image='/images/machine_dream.jpg' alt='A circular logo with an M in the middle and colorful clouds at the bottom.' width={357} height={357}/> 
             </Link>
             <CardContent>
               <Typography variant='h6'>
-                Art Bot
+                The Machine Dreams
               </Typography>
               <Typography>
-                An art bot
+                An art project that uses AI to generate art every hour based on what is trending on Google in the U.S.
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                July 2023
+                October 2023
               </Typography>
               <div className='gap-1 flex flex-wrap mt-1'>
                 <Typography variant='body2' className='skills'>Python</Typography>
+                <Typography variant='body2' className='skills'>Typescript</Typography>
                 <Typography variant='body2' className='skills'>Twitter API</Typography>
-                <Typography variant='body2' className='skills'>Instagram</Typography>
                 <Typography variant='body2' className='skills'>Stability AI SDK</Typography>
-                <Typography variant='body2' className='skills'>Sepolia Test Network</Typography>
-                <Typography variant='body2' className='skills'>Openzeppelin</Typography>
-                <Typography variant='body2' className='skills'>Solidity</Typography>
-                <Typography variant='body2' className='skills'>Ethereum Network</Typography>
+                <Typography variant='body2' className='skills'>Thirdweb SDK</Typography>
                 <Typography variant='body2' className='skills'>IPFS</Typography>
                 <Typography variant='body2' className='skills'>NFT.storage</Typography>
+                <Typography variant='body2' className='skills'>Solidity</Typography>
+                <Typography variant='body2' className='skills'>Openzeppelin</Typography>
+                <Typography variant='body2' className='skills'>Sepolia</Typography>
+                <Typography variant='body2' className='skills'>Ethereum</Typography>
+                <Typography variant='body2' className='skills'>Opensea</Typography>
                 <Typography variant='body2' className='skills'>Chainlink</Typography>
-                <Typography variant='body2' className='skills'>Github</Typography>
+                <Typography variant='body2' className='skills'>Google Cloud Platform</Typography>
               </div>
             </CardContent>
-            <Link href={"https://www.themachinedreams.com/about"} className='mt-auto'>
+            <Link href={"https://www.themachinedreams.com/about"} className='mt-auto' target='_blank'>
               <Typography className='view-project'>View Project</Typography>
             </Link>
-          </Card> */}
+          </Card>
 
           {/*This is the card for the mix3d clothing*/}
           <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
