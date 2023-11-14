@@ -89,7 +89,7 @@ export default function Home() {
                 Mix3d Clothing
               </Typography>
               <Typography>
-                A clothing brand from the Mix3d community.
+                A clothing brand concept from the Mix3d community.
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 December 2022
