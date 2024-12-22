@@ -12,17 +12,13 @@
     outline:none;
     background-color:#f4f5f6;
     box-shadow:  -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 0px 0px 10px rgba(0,0,0,1);
-    transition: .13s ease-in-out;
-    &:active{
-      box-shadow:none;
-      .button__content{
-        box-shadow: none;
-        .button__text, .button__icon{
-          transform:translate3d(0px, 0px, 0px);
-          }
-        }
-      }
-    }
+    transition: all 0.3s ease;
+  }
+
+  .icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
 
   .skills {
     background-color: theme('colors.dark-turquoise');
@@ -53,6 +49,16 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
+  .linked-image {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .linked-image:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
   .view-project {
     background-color: theme('colors.dark-turquoise');
     padding: .5em;
@@ -63,7 +69,8 @@
   }
 
   .view-project:hover {
-    background-color: #28b5aa;
+    opacity: 0.9;
+    transform: scale(1.02);
   }
 
   .links {
@@ -73,6 +80,12 @@
     color: white;
     width: fit-content;
     margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .links:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
   }
   
   .video-responsive {

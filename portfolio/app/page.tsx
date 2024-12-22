@@ -24,7 +24,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center px-24 mb-20">
       <div className='mx-10 max-w-6xl'>
-        {/*This is the introduction to the landing page*/}
         <h1>Jonathan Albert&apos;s Portfolio</h1>
         <p>I am a futurist, reverse engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks providing software development teams with roadmaps to the future. Nine years of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today, confronting any challenge that gets in the way. </p>
         <br/>
@@ -39,29 +38,26 @@ export default function Home() {
           </div>
         </div>
 
-        {/*This div contains the row of icons for professional and social media links*/}
         <div className='flex flex-wrap gap-4 mt-10'>
-          <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf"><Image src="/images/resume.png" width='72' height='72' alt='resume'/></Link>
-          <Link target='_blank' href="https://www.linkedin.com/in/jonathan-albert-profile/"><Image src="/images/linkedin.png" width='72' height='72' alt='linkedin'/></Link>
-          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com"><Image src="/images/email.png" width='72' height='72' alt='email'/></Link>
-          <Link target='_blank' href="https://t.me/Jay_Albert"><Image src="/images/telegram.png" width='72' height='72' alt='telegram'/></Link>
-          <Link target='_blank' href="https://discordapp.com/users/649469511749337089"><Image src="/images/discord.png" width='72' height='72' alt='discord'/></Link>
-          <Link target='_blank' href="https://github.com/JAlbertCode"><Image src="/images/github.png" width='72' height='72' alt='github'/></Link>
-          <Link target='_blank' href="https://jonathan-albert.medium.com/"><Image src="/images/medium.png" width='72' height='72' alt='medium'/></Link>
-          <Link target='_blank' href="https://mirror.xyz/jay-albert.eth"><Image src="/images/mirror.png" width='72' height='72' alt='mirror'/></Link>
-          <Link target='_blank' href="https://twitter.com/Jay_Albert_"><Image src="/images/twitter.png" width='72' height='72' alt='twitter'/></Link>
-          <Link target='_blank' href="https://www.tiktok.com/@jay_albert_?_t=8gYzNbPEty6&_r=1"><Image src="/images/tiktok.png" width='72' height='72' alt='tiktok'/></Link>
-          <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/"><Image src="/images/instagram.png" width='72' height='72' alt='instagram'/></Link>
+          <Link target='_blank' href="/documents/Jonathan_Albert_Resume.pdf" className='linked-image'><Image src="/images/resume.png" width='72' height='72' alt='resume'/></Link>
+          <Link target='_blank' href="https://www.linkedin.com/in/jonathan-albert-profile/" className='linked-image'><Image src="/images/linkedin.png" width='72' height='72' alt='linkedin'/></Link>
+          <Link target='_blank' href="mailto: JonathanAlbert0115@gmail.com" className='linked-image'><Image src="/images/email.png" width='72' height='72' alt='email'/></Link>
+          <Link target='_blank' href="https://t.me/Jay_Albert" className='linked-image'><Image src="/images/telegram.png" width='72' height='72' alt='telegram'/></Link>
+          <Link target='_blank' href="https://discordapp.com/users/649469511749337089" className='linked-image'><Image src="/images/discord.png" width='72' height='72' alt='discord'/></Link>
+          <Link target='_blank' href="https://github.com/JAlbertCode" className='linked-image'><Image src="/images/github.png" width='72' height='72' alt='github'/></Link>
+          <Link target='_blank' href="https://jonathan-albert.medium.com/" className='linked-image'><Image src="/images/medium.png" width='72' height='72' alt='medium'/></Link>
+          <Link target='_blank' href="https://mirror.xyz/jay-albert.eth" className='linked-image'><Image src="/images/mirror.png" width='72' height='72' alt='mirror'/></Link>
+          <Link target='_blank' href="https://twitter.com/Jay_Albert_" className='linked-image'><Image src="/images/twitter.png" width='72' height='72' alt='twitter'/></Link>
+          <Link target='_blank' href="https://www.tiktok.com/@jay_albert_?_t=8gYzNbPEty6&_r=1" className='linked-image'><Image src="/images/tiktok.png" width='72' height='72' alt='tiktok'/></Link>
+          <Link target='_blank' href="https://www.instagram.com/jonathanalbert0115/" className='linked-image'><Image src="/images/instagram.png" width='72' height='72' alt='instagram'/></Link>
         </div>
 
-        {/* Skills Filter */}
         <SkillsFilter 
           skills={allSkills}
           selectedSkills={selectedSkills}
           onSkillClick={handleSkillClick}
         />
       
-        {/*The section for the project cards*/}      
         <div id='cards' className='flex flex-wrap gap-10 mt-10 place-content-center'>
           {filteredProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
