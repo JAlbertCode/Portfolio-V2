@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col'>
+    <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col project-card'>
       <Link href={project.link}>
         <CardMedia component="img" image={project.image} alt={project.imageAlt}/>
       </Link>

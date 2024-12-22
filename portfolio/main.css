@@ -31,7 +31,6 @@
     color: white;
   }
 
-  /* New class specifically for filter tags */
   .filter-tag {
     background-color: theme('colors.dark-turquoise');
     border-radius: theme('borderRadius.md');
@@ -45,12 +44,26 @@
     background-color: rgb(37 99 235);
   }
 
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
   .view-project {
     background-color: theme('colors.dark-turquoise');
     padding: .5em;
     color: white;
     text-align: center;
     font-weight: 200;
+    transition: all 0.3s ease;
+  }
+
+  .view-project:hover {
+    background-color: #28b5aa;
   }
 
   .links {
