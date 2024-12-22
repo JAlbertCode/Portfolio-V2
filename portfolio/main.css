@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-
   html,body{
     touch-action: manipulation;
   }
@@ -30,6 +29,20 @@
     border-radius: theme('borderRadius.md');
     padding: theme('spacing.1');
     color: white;
+  }
+
+  /* New class specifically for filter tags */
+  .filter-tag {
+    background-color: theme('colors.dark-turquoise');
+    border-radius: theme('borderRadius.md');
+    padding: theme('spacing.1');
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-tag:hover {
+    background-color: rgb(37 99 235);
   }
 
   .view-project {
@@ -85,7 +98,6 @@
     width: 100%;
     position: absolute;
   }
-  
 
   h1 {
     font-size: xx-large;
