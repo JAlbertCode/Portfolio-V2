@@ -21,8 +21,8 @@ export default function Lilypad() {
         <h2>Key Contributions</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li>Collaborated with the development team to identify and document core use cases for the platform</li>
-          <li>Created comprehensive documentation explaining how to leverage Lilypad's distributed compute capabilities</li>
-          <li>Helped articulate the platform's value proposition for different user segments</li>
+          <li>Created comprehensive documentation explaining how to leverage Lilypad&apos;s distributed compute capabilities</li>
+          <li>Helped articulate the platform&apos;s value proposition for different user segments</li>
           <li>Contributed to improving the user onboarding experience</li>
         </ul>
 

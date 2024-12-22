@@ -2,6 +2,25 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    title: "Lilypad Frontend Guide",
+    description: "Created a comprehensive guide for developers to set up and customize their Lilypad Network frontend, improving the developer experience for the platform.",
+    date: "December 2023",
+    image: "/images/lilypad-frontend.avif",
+    imageAlt: "Screenshot of a code editor showing React components for Lilypad Network",
+    link: "./lilypad-frontend",
+    skills: [
+      "Technical Writing",
+      "Documentation",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Frontend Development",
+      "UI Development",
+      "Git",
+      "Developer Relations"
+    ]
+  },
+  {
     title: "Lilypad Network",
     description: "Contributed to the development of a decentralized compute network, focusing on improving user experience and documentation.",
     date: "December 2023",
@@ -20,7 +39,6 @@ export const projects: Project[] = [
       "Project Management"
     ]
   },
-  // Rest of your existing projects...
   {
     title: "The Machine Dreams",
     description: "An art project that uses AI to generate art every hour based on what is trending on Google in the U.S.",
