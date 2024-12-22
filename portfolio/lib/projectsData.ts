@@ -20,6 +20,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'ChainSafe Gaming SDK Updates',
+    description:
+      "Presented major updates to ChainSafe's Web3.Unity SDK and demonstrated token streaming functionality in a live technical session.",
+    date: 'November 2024',
+    image: '/images/sdk-updates.png',
+    imageAlt: 'ChainSafe Gaming SDK Updates stream screenshot',
+    link: './sdk-updates',
+    skills: [
+      'Unity',
+      'Web3',
+      'Blockchain Gaming',
+      'SDK Development',
+      'Live Demo',
+      'Technical Communication',
+      'Token Streaming',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'On-Chain Lootboxes at GDC',
     description:
       'Collaborated with ChainSafe to develop and present a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
@@ -37,25 +56,6 @@ export const projects: Project[] = [
       'Documentation',
       'Public Speaking',
       'Game Development',
-    ],
-  },
-  {
-    title: 'ChainSafe Gaming SDK Updates',
-    description:
-      "Presented major updates to ChainSafe's Web3.Unity SDK and demonstrated token streaming functionality in a live technical session.",
-    date: 'December 2023',
-    image: '/images/sdk-updates.png',
-    imageAlt: 'ChainSafe Gaming SDK Updates stream screenshot',
-    link: './sdk-updates',
-    skills: [
-      'Unity',
-      'Web3',
-      'Blockchain Gaming',
-      'SDK Development',
-      'Live Demo',
-      'Technical Communication',
-      'Token Streaming',
-      'Developer Relations',
     ],
   },
   {
