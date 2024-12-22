@@ -2,6 +2,26 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    title: "Lilypad Network",
+    description: "Contributed to the development of a decentralized compute network, focusing on improving user experience and documentation.",
+    date: "December 2023",
+    image: "/images/lilypad.avif",
+    imageAlt: "Lilypad Network logo showing a modern, stylized lily pad",
+    link: "./lilypad",
+    skills: [
+      "Technical Writing",
+      "Documentation",
+      "Distributed Computing",
+      "Blockchain",
+      "Docker",
+      "Go",
+      "Linux",
+      "Content Creation",
+      "Project Management"
+    ]
+  },
+  // Rest of your existing projects...
+  {
     title: "The Machine Dreams",
     description: "An art project that uses AI to generate art every hour based on what is trending on Google in the U.S.",
     date: "October 2023",
