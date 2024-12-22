@@ -40,6 +40,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'ChainSafe Gaming SDK Updates',
+    description:
+      "Presented major updates to ChainSafe's Web3.Unity SDK and demonstrated token streaming functionality in a live technical session.",
+    date: 'December 2023',
+    image: '/images/sdk-updates.png',
+    imageAlt: 'ChainSafe Gaming SDK Updates stream screenshot',
+    link: './sdk-updates',
+    skills: [
+      'Unity',
+      'Web3',
+      'Blockchain Gaming',
+      'SDK Development',
+      'Live Demo',
+      'Technical Communication',
+      'Token Streaming',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'Lilypad Frontend Guide',
     description:
       'Created a comprehensive guide for developers to set up and customize their Lilypad Network frontend, improving the developer experience for the platform.',
@@ -104,6 +123,25 @@ export const projects: Project[] = [
       'Opensea',
       'Chainlink',
       'Google Cloud Platform',
+    ],
+  },
+  {
+    title: 'Web2 to Web3 Game Development Workshop',
+    description:
+      'Led a hands-on workshop at ETHDenver demonstrating how to transform traditional web games into blockchain-enabled experiences.',
+    date: 'February 2023',
+    image: '/images/ethdenver-workshop.avif',
+    imageAlt: 'ETHDenver Workshop presentation screenshot',
+    link: './web3-game-workshop',
+    skills: [
+      'Game Development',
+      'Web3',
+      'Smart Contracts',
+      'Public Speaking',
+      'Technical Education',
+      'Live Coding',
+      'Workshop Facilitation',
+      'Blockchain',
     ],
   },
   {
