@@ -406,7 +406,7 @@ export const projects: Project[] = [
     description:
       'Authored a comprehensive guide on maximizing interest earnings through crypto banking platforms and stablecoins.',
     date: 'May 2021',
-    image: '/images/crypto-banking.webp',
+    image: '/images/crypto-banking.jpeg',
     imageAlt:
       'Graph showing crypto interest rates compared to traditional banking',
     link: 'https://jonathan-albert.medium.com/earn-more-interest-with-crypto-banking-4657bb167a32',
