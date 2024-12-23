@@ -9,7 +9,7 @@ export const projects: Project[] = [
     image: '/images/playerchain.png',
     imageAlt:
       'Chainsafe stream banner featuring David Amor, Martin Maurer, and Jay Albert',
-    link: './playerchain',
+    link: 'https://www.youtube.com/watch?v=1AgjLWaMQvw',
     skills: [
       'Blockchain Gaming',
       'Distributed Systems',
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     date: 'November 2024',
     image: '/images/sdk-updates.png',
     imageAlt: 'ChainSafe Gaming SDK Updates stream screenshot',
-    link: './sdk-updates',
+    link: 'https://www.youtube.com/live/rgArGYfoT8o',
     skills: [
       'Unity',
       'Web3',
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     date: 'October 2024',
     image: '/images/hatchyverse.png',
     imageAlt: 'Hatchyverse platform analysis and overview',
-    link: './hatchyverse',
+    link: 'https://www.youtube.com/watch?v=QNr3moS0B3o',
     skills: [
       'Blockchain Gaming',
       'Game Development',
