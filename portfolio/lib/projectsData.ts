@@ -23,8 +23,8 @@ export const projects: Project[] = [
   {
     title: 'Rock Paper Scissors Workshop',
     description:
-      'Led an interactive workshop teaching students how to build a blockchain-powered Rock Paper Scissors game using Unity and Chainlink VRF for verifiable random opponent choices.',
-    date: 'November 2024',
+      'Led an interactive workshop teaching students how to build a blockchain-powered Rock Paper Scissors game using Unity and Chainlink VRF.',
+    date: 'December 2024',
     image: '/images/rps-workshop.jpeg',
     imageAlt: 'Rock Paper Scissors Workshop Tutorial Screenshot',
     link: 'https://www.youtube.com/watch?v=V9hxpnm-zEc',
