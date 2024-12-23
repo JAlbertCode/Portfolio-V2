@@ -363,6 +363,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Crypto Banking Guide',
+    description:
+      'Authored a comprehensive guide on maximizing interest earnings through crypto banking platforms and stablecoins.',
+    date: 'May 2021',
+    image: '/images/crypto-banking.webp',
+    imageAlt:
+      'Graph showing crypto interest rates compared to traditional banking',
+    link: 'https://jonathan-albert.medium.com/earn-more-interest-with-crypto-banking-4657bb167a32',
+    skills: [
+      'DeFi',
+      'Crypto Banking',
+      'Technical Writing',
+      'Yield Farming',
+      'Research',
+      'Financial Education',
+      'Content Creation',
+    ],
+  },
+  {
     title: 'Werewolf',
     description: 'A social deduction game utilizing webcams on a browser.',
     date: 'September 2020',
