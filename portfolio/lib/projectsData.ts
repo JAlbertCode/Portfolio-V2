@@ -2,27 +2,28 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
-    title: 'PlayerChain Analysis',
+    title: 'Playermint Stream',
     description:
-      "Analyzed Playmint's revolutionary PlayerChain technology, exploring a new approach where each player operates their own blockchain instead of relying on a global shared state.",
+      'Explored a new approach to decentralized gaming where each player operates their own blockchain instead of relying on a global shared state.',
     date: 'December 2024',
     image: '/images/playerchain.png',
-    imageAlt: 'PlayerChain development diagram',
+    imageAlt:
+      'Chainsafe stream banner featuring David Amor, Martin Maurer, and Jay Albert',
     link: './playerchain',
     skills: [
       'Blockchain Gaming',
       'Distributed Systems',
       'Game Development',
-      'Technical Analysis',
       'Architecture Design',
-      'Technical Writing',
       'Research',
+      'Streaming',
+      'Developer Relations',
     ],
   },
   {
-    title: 'ChainSafe Gaming SDK Updates',
+    title: 'ChainSafe Gaming SDK Update Stream',
     description:
-      "Presented major updates to ChainSafe's Web3.Unity SDK and demonstrated token streaming functionality in a live technical session.",
+      "Presented major updates to ChainSafe's Web3.Unity SDK and demonstrated token streaming functionality in a live stream",
     date: 'November 2024',
     image: '/images/sdk-updates.png',
     imageAlt: 'ChainSafe Gaming SDK Updates stream screenshot',
@@ -34,14 +35,13 @@ export const projects: Project[] = [
       'SDK Development',
       'Live Demo',
       'Technical Communication',
-      'Token Streaming',
       'Developer Relations',
     ],
   },
   {
     title: 'On-Chain Lootboxes at GDC',
     description:
-      'Collaborated with ChainSafe to develop and present a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
+      'Developed and presented a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
     date: 'April 2024',
     image: '/images/loot-gdc.png',
     imageAlt: 'ChainSafe GDC Lootboxes presentation',
