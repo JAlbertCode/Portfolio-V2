@@ -228,11 +228,10 @@ export const projects: Project[] = [
       'Documentation',
       'Distributed Computing',
       'Blockchain',
-      'Docker',
       'Linux',
       'Content Creation',
-      'Project Management',
       'Developer Relations',
+      'Technical Writing',
     ],
   },
   {
