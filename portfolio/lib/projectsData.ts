@@ -39,13 +39,33 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Hatchyverse Stream',
+    description:
+      'An in-depth analysis of Hatchyverse, a decentralized gaming ecosystem that allows community members to build games using shared IP.',
+    date: 'October 2024',
+    image: '/images/hatchyverse.png',
+    imageAlt: 'Hatchyverse platform analysis and overview',
+    link: './hatchyverse',
+    skills: [
+      'Blockchain Gaming',
+      'Game Development',
+      'Web3',
+      'Content Creation',
+      'Analysis',
+      'Research',
+      'DAO',
+      'NFTs',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'On-Chain Lootboxes at GDC',
     description:
       'Developed and presented a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
     date: 'April 2024',
     image: '/images/loot-gdc.png',
     imageAlt: 'ChainSafe GDC Lootboxes presentation',
-    link: './loot-gdc',
+    link: 'https://blog.chainsafe.io/onchain-lootboxes-gdc/',
     skills: [
       'Blockchain Gaming',
       'Unity',
@@ -88,15 +108,14 @@ export const projects: Project[] = [
     imageAlt: 'Lilypad Network logo showing a modern, stylized lily pad',
     link: './lilypad',
     skills: [
-      'Technical Writing',
       'Documentation',
       'Distributed Computing',
       'Blockchain',
       'Docker',
-      'Go',
       'Linux',
       'Content Creation',
       'Project Management',
+      'Developer Relations',
     ],
   },
   {
@@ -128,7 +147,7 @@ export const projects: Project[] = [
   {
     title: 'Web2 to Web3 Game Development Workshop',
     description:
-      'Led a hands-on workshop at ETHDenver demonstrating how to transform traditional web games into blockchain-enabled experiences.',
+      'Led a hands-on workshop at ETHDenver demonstrating how to transform a traditional game into a blockchain-enabled experience.',
     date: 'February 2023',
     image: '/images/ethdenver-workshop.avif',
     imageAlt: 'ETHDenver Workshop presentation screenshot',
@@ -142,6 +161,7 @@ export const projects: Project[] = [
       'Live Coding',
       'Workshop Facilitation',
       'Blockchain',
+      'Developer Relations',
     ],
   },
   {
