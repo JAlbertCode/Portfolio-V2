@@ -21,6 +21,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Rock Paper Scissors Workshop',
+    description:
+      'Led an interactive workshop teaching students how to build a blockchain-powered Rock Paper Scissors game using Unity and Chainlink VRF for verifiable random opponent choices.',
+    date: 'November 2024',
+    image: '/images/rps-workshop.jpeg',
+    imageAlt: 'Rock Paper Scissors Workshop Tutorial Screenshot',
+    link: 'https://www.youtube.com/watch?v=V9hxpnm-zEc',
+    skills: [
+      'Unity',
+      'Blockchain Gaming',
+      'Chainlink VRF',
+      'Smart Contracts',
+      'Game Development',
+      'Technical Education',
+      'Workshop Facilitation',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'ChainSafe Gaming SDK Update Stream',
     description:
       "Presented major updates to ChainSafe's Web3.Unity SDK and demonstrated token streaming functionality in a live stream",
@@ -55,6 +74,25 @@ export const projects: Project[] = [
       'Research',
       'DAO',
       'NFTs',
+      'Developer Relations',
+    ],
+  },
+  {
+    title: 'Trumen World Stream',
+    description:
+      'Explored Trumen World, an AR geo-location game that combines NFTs with real-world exploration. Similar to Pokemon Go but with blockchain integration, allowing players to claim and leave NFTs in physical locations.',
+    date: 'October 2024',
+    image: '/images/trumen-world.png',
+    imageAlt: 'Trumen World stream showcase',
+    link: 'https://www.youtube.com/watch?v=Y9EHHzF6Rzw',
+    skills: [
+      'AR Gaming',
+      'Web3',
+      'Blockchain Gaming',
+      'NFTs',
+      'Geo-location',
+      'Game Development',
+      'Content Creation',
       'Developer Relations',
     ],
   },
