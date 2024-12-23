@@ -97,6 +97,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'CLUAIDO Stream',
+    description:
+      'Explored CLUAIDO, an AI-powered detective game where players solve procedurally generated murder cases by freely interrogating AI-driven suspects.',
+    date: 'September 2024',
+    image: '/images/cluaido-stream.png',
+    imageAlt: 'CLUAIDO game stream showcase',
+    link: 'https://www.youtube.com/watch?v=SdJ9oo9d2Os',
+    skills: [
+      'AI Gaming',
+      'ChatGPT Integration',
+      'Game Development',
+      'Procedural Generation',
+      'Steam Development',
+      'Content Creation',
+      'Game Analysis',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'On-Chain Lootboxes at GDC',
     description:
       'Developed and presented a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
@@ -106,7 +125,6 @@ export const projects: Project[] = [
     link: 'https://blog.chainsafe.io/onchain-lootboxes-gdc/',
     skills: [
       'Blockchain Gaming',
-      'Unity',
       'Smart Contracts',
       'Solidity',
       'Web3',
