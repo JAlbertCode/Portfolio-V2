@@ -55,6 +55,7 @@ export const projects: Project[] = [
       'Live Demo',
       'Technical Communication',
       'Developer Relations',
+      'Streaming',
     ],
   },
   {
@@ -75,15 +76,16 @@ export const projects: Project[] = [
       'DAO',
       'NFTs',
       'Developer Relations',
+      'Streaming',
     ],
   },
   {
-    title: 'Trumen World Stream',
+    title: 'TruWorld Stream',
     description:
-      'Explored Trumen World, an AR geo-location game that combines NFTs with real-world exploration. Similar to Pokemon Go but with blockchain integration, allowing players to claim and leave NFTs in physical locations.',
+      'Explored TruWorld, an AR geo-location game that combines NFTs with real-world exploration. Similar to Pokemon Go but with blockchain integration, allowing players to claim and leave NFTs in physical locations.',
     date: 'October 2024',
     image: '/images/trumen-world.png',
-    imageAlt: 'Trumen World stream showcase',
+    imageAlt: 'TruWorld stream showcase',
     link: 'https://www.youtube.com/watch?v=Y9EHHzF6Rzw',
     skills: [
       'AR Gaming',
@@ -94,6 +96,7 @@ export const projects: Project[] = [
       'Game Development',
       'Content Creation',
       'Developer Relations',
+      'Streaming',
     ],
   },
   {
@@ -113,6 +116,7 @@ export const projects: Project[] = [
       'Content Creation',
       'Game Analysis',
       'Developer Relations',
+      'Streaming',
     ],
   },
   {
@@ -130,6 +134,46 @@ export const projects: Project[] = [
       'Game Development',
       'Content Creation',
       'Developer Relations',
+      'Streaming',
+    ],
+  },
+  {
+    title: 'HackFS Winner Stream',
+    description:
+      'Featured the winning project from HackFS, showcasing a PvP battle game that combines Monaverse maps with ChainSafe SDK.',
+    date: 'July 2024',
+    image: '/images/hackfs-winner.png',
+    imageAlt: 'HackFS Winner stream showing NFT battle game demo',
+    link: 'https://www.youtube.com/watch?v=rTQhJHbDaWM',
+    skills: [
+      'Blockchain Gaming',
+      'NFTs',
+      'Monaverse',
+      'ChainSafe SDK',
+      'Game Development',
+      'Hackathon Projects',
+      'Content Creation',
+      'Developer Relations',
+      'Streaming',
+    ],
+  },
+  {
+    title: 'Hyperplay & Coinracer Stream',
+    description:
+      'Explored Hyperplay, a trusted game launcher for blockchain games, featuring Coinracer. Demonstrated how ChainSafe Gaming SDK supports Hyperplay login and discussed how the platform vets and curates trusted Web3 games for players.',
+    date: 'July 2024',
+    image: '/images/hyperplay-stream.jpeg',
+    imageAlt: 'Hyperplay and Coinracer platform showcase stream',
+    link: 'https://www.youtube.com/watch?v=70DahC2GHXs',
+    skills: [
+      'Game Distribution',
+      'Platform Development',
+      'SDK Integration',
+      'Blockchain Gaming',
+      'Game Curation',
+      'Content Creation',
+      'Developer Relations',
+      'Streaming',
     ],
   },
   {
