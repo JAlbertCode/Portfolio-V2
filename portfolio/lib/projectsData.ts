@@ -116,6 +116,23 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Quantum Command Stream',
+    description:
+      'Streamed with Quantum Command, a shooter game that adapts its maps based on player behavior and equipment. The game features innovative prize pool mechanics where players can compete for rewards generated from optional pay-to-play entries.',
+    date: 'September 2024',
+    image: '/images/quantum-command.png',
+    imageAlt: 'Quantum Command game analysis stream',
+    link: 'https://www.youtube.com/watch?v=RMemvjcBoNE',
+    skills: [
+      'Game Analysis',
+      'Player Analytics',
+      'Blockchain Gaming',
+      'Game Development',
+      'Content Creation',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'On-Chain Lootboxes at GDC',
     description:
       'Developed and presented a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
