@@ -363,6 +363,26 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Hunting for Art',
+    description:
+      'A detailed exploration of NFT trading safety, following my experience of safely executing a peer-to-peer NFT swap of Smilesssvrs artwork using SudoSwap.',
+    date: 'December 2021',
+    image: '/images/hunting-art.webp',
+    imageAlt:
+      'Screenshot of Smilesssvrs NFT artwork from the trading experience',
+    link: 'https://jonathan-albert.medium.com/hunting-for-art-b804d2f55dbb',
+    skills: [
+      'NFTs',
+      'Web3 Security',
+      'DeFi',
+      'Digital Art',
+      'Smart Contracts',
+      'Technical Writing',
+      'Blockchain',
+      'Community Building',
+    ],
+  },
+  {
     title: 'Crypto Banking Guide',
     description:
       'Authored a comprehensive guide on maximizing interest earnings through crypto banking platforms and stablecoins.',
