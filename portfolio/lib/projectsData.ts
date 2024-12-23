@@ -306,6 +306,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Understanding ENS',
+    description:
+      'A guide explaining the Ethereum Name Service (ENS), its parallels with DNS, and its importance for Web3 adoption.',
+    date: 'October 2022',
+    image: '/images/ens-guide.png',
+    imageAlt: 'Visualization comparing DNS and ENS domain systems',
+    link: 'https://mirror.xyz/jay-albert.eth/VhAJt973aV6vHZ-0-oMqxPML52f-unYe5rE1h0TsmaU',
+    skills: [
+      'Web3',
+      'ENS',
+      'Blockchain',
+      'Technical Writing',
+      'Domain Systems',
+      'Ethereum',
+      'Educational Content',
+      'Content Creation',
+    ],
+  },
+  {
     title: 'Exploring Web3 Finance',
     description:
       'Snapshots of my experiences in cryptocurrency investing using DeFi tools and working with TradFi organizations.',
