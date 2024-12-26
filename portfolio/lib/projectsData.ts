@@ -2,9 +2,9 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
-    title: 'Game Development Streams',
+    title: 'The Future of Gaming Series',
     description:
-      'Host regular live streams focused on blockchain gaming, game development, and Web3 technology. These sessions cover various projects, technologies, and provide educational content for the gaming community.',
+      'Host regular live streams focused on blockchain gaming, game development, and Web3 technology.',
     date: 'Present',
     image: '/images/playerchain.png',
     imageAlt: 'Stream banner featuring game development content',
