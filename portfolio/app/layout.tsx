@@ -19,16 +19,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/*This is the navigation bar for portfolio, resources, and lifestyle*/}
-        <div className='flex justify-center px-24'>
-          <div className='w-full max-w-6xl flex justify-end'>
-            <nav className='my-10 skills font-semibold'>
-              <Link href="/" className='mx-2'>Portfolio</Link>
+        <main className="flex min-h-screen flex-col items-center px-24">
+          <div className='mx-10 max-w-6xl w-full'>
+            <div className='my-10 flex justify-end'>
+              <Link href="/" className='skills font-semibold inline-block px-2'>Portfolio</Link>
               {/* <Link href="/resources" className='mx-2'>Resources</Link>
               <Link href="/lifestyle" className='mx-2'>Lifestyle</Link> */}
-            </nav>
+            </div>
           </div>
-        </div>
+          
+          {children}
+        </main>
 
         <div className="container">
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
@@ -46,8 +47,6 @@ export default function RootLayout({
             `}
           </Script>
         </div>
-
-        {children}
       </body>
     </html>
   )
