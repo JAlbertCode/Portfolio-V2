@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex min-h-screen flex-col items-center px-24">
-          <div className='mx-10 max-w-6xl w-full'>
+        <main className="flex min-h-screen flex-col items-center px-4 sm:px-8 md:px-12 lg:px-24">
+          <div className='mx-4 sm:mx-6 md:mx-8 lg:mx-10 max-w-6xl w-full'>
             <div className='my-10 flex justify-end'>
               <Link href="/" className='skills font-semibold inline-block px-2'>Portfolio</Link>
               {/* <Link href="/resources" className='mx-2'>Resources</Link>
