@@ -28,7 +28,7 @@ export const projects: Project[] = [
     date: 'December 2024',
     image: '/images/rps-workshop.jpeg',
     imageAlt: 'Rock Paper Scissors Workshop Tutorial Screenshot',
-    link: 'https://www.youtube.com/watch?v=V9hxpnm-zEc',
+    link: 'https://www.youtube.com/live/V9hxpnm-zEc?si=TLQBMCemCBTqvX6x&t=1',
     skills: [
       'Unity',
       'Blockchain Gaming',
