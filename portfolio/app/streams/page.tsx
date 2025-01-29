@@ -6,6 +6,33 @@ import Image from 'next/image'
 export default function StreamsPage() {
   const streams = [
     {
+      title: 'Moddio Game Engine Stream',
+      date: 'January 2025',
+      description:
+        'Explored how Moddio is transforming game development with AI-powered tools and innovative funding through indie.fun. Discussed their vision for the future of game creation and upcoming developments in the space.',
+      link: 'https://www.youtube.com/watch?v=OsfmODTBQaA',
+      image: '/images/Moddio.png',
+      imageAlt: 'Moddio Game Engine Stream',
+    },
+    {
+      title: 'Discover Games & Whalepass Stream',
+      date: 'January 2025',
+      description:
+        'A deep dive with Hayder from Discover Games and Whalepass, exploring their platform that bridges Web2 and Web3 gaming. Featured their developer tools including battle passes and strategies for enhancing player engagement.',
+      link: 'https://www.youtube.com/watch?v=eOjg6ZJvpTM',
+      image: '/images/discover-games.png',
+      imageAlt: 'Discover Games Platform Stream',
+    },
+    {
+      title: 'Farworld Stream',
+      date: 'January 2025',
+      description:
+        'Showcased Farworld and explored the evolution of AI in gaming. Discussed their innovative approaches to game development and the future landscape of AI-enhanced gaming experiences.',
+      link: 'https://www.youtube.com/watch?v=8wQHD2qj8bs',
+      image: '/images/farworld.png',
+      imageAlt: 'Farworld AI Gaming Stream',
+    },
+    {
       title: 'Playermint Stream',
       date: 'December 2024',
       description:
