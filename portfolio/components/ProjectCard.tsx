@@ -10,7 +10,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col project-card'>
-      <Link href={project.link} className="linked-image">
+      <Link href={project.link} className="linked-image" {...(project.target && { target: project.target, rel: 'noopener noreferrer' })}>
         <CardMedia component="img" image={project.image} alt={project.imageAlt}/>
       </Link>
       <CardContent>
@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           ))}
         </div>
       </CardContent>
-      <Link href={project.link} className='mt-auto'>
+      <Link href={project.link} className='mt-auto' {...(project.target && { target: project.target, rel: 'noopener noreferrer' })}>
         <Typography className='view-project'>View Project</Typography>
       </Link>
     </Card>

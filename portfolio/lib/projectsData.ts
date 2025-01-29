@@ -29,6 +29,7 @@ export const projects: Project[] = [
     image: '/images/rps-workshop.jpeg',
     imageAlt: 'Rock Paper Scissors Workshop Tutorial Screenshot',
     link: 'https://www.youtube.com/live/V9hxpnm-zEc?si=TLQBMCemCBTqvX6x&t=1',
+    target: '_blank',
     skills: [
       'Unity',
       'Blockchain Gaming',
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     image: '/images/loot-gdc.png',
     imageAlt: 'ChainSafe GDC Lootboxes presentation',
     link: 'https://blog.chainsafe.io/onchain-lootboxes-gdc/',
+    target: '_blank',
     skills: [
       'Blockchain Gaming',
       'Smart Contracts',
@@ -67,7 +69,8 @@ export const projects: Project[] = [
     image: '/images/lilypad-frontend.avif',
     imageAlt:
       'Screenshot of a code editor showing React components for Lilypad Network',
-    link: './lilypad-frontend',
+    link: 'https://blog.lilypadnetwork.org/setting-up-your-lilypad-front-end',
+    target: '_blank',
     skills: [
       'Technical Writing',
       'Documentation',
@@ -87,7 +90,8 @@ export const projects: Project[] = [
     date: 'December 2023',
     image: '/images/lilypad.avif',
     imageAlt: 'Lilypad Network logo showing a modern, stylized lily pad',
-    link: './lilypad',
+    link: 'https://blog.lilypadnetwork.org/hop-into-the-future-with-lilypad-the-distributed-compute-network',
+    target: '_blank',
     skills: [
       'Documentation',
       'Distributed Computing',
@@ -107,6 +111,7 @@ export const projects: Project[] = [
     imageAlt:
       'A circular logo with an M in the middle and colorful clouds at the bottom.',
     link: 'https://www.themachinedreams.com/about',
+    target: '_blank',
     skills: [
       'Python',
       'Typescript',
@@ -176,6 +181,7 @@ export const projects: Project[] = [
     image: '/images/ens-guide.png',
     imageAlt: 'Visualization comparing DNS and ENS domain systems',
     link: 'https://mirror.xyz/jay-albert.eth/VhAJt973aV6vHZ-0-oMqxPML52f-unYe5rE1h0TsmaU',
+    target: '_blank',
     skills: [
       'Web3',
       'ENS',
@@ -253,6 +259,7 @@ export const projects: Project[] = [
     imageAlt:
       'Screenshot of Smilesssvrs NFT artwork from the trading experience',
     link: 'https://jonathan-albert.medium.com/hunting-for-art-b804d2f55dbb',
+    target: '_blank',
     skills: [
       'NFTs',
       'Web3 Security',
@@ -273,6 +280,7 @@ export const projects: Project[] = [
     imageAlt:
       'Graph showing crypto interest rates compared to traditional banking',
     link: 'https://jonathan-albert.medium.com/earn-more-interest-with-crypto-banking-4657bb167a32',
+    target: '_blank',
     skills: [
       'DeFi',
       'Crypto Banking',
