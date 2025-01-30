@@ -42,6 +42,15 @@ export default function SpacesPage() {
       imageAlt: 'Twitter Space on the Rise of Web3 Gaming',
     },
     {
+      title: 'Security Best Practices in Web3',
+      date: 'April 2024',
+      description: 
+        'Discussed essential security considerations and best practices for Web3 developers and users, focusing on protecting assets and maintaining secure environments.',
+      link: 'https://x.com/TimeToTerminal/status/1775168818131722482',
+      image: '/images/web3-security.jpeg',
+      imageAlt: 'Twitter Space on Web3 Security Best Practices',
+    },
+    {
       title: 'Responsible Gaming in Web3',
       date: 'April 2024',
       description:
