@@ -60,6 +60,15 @@ export default function SpacesPage() {
       imageAlt: 'SNEG Twitter Space on Responsible Gaming',
     },
     {
+      title: 'Rewriting the Rules of Game Design',
+      date: 'March 2024',
+      description:
+        'Explored how Web3 technology is transforming traditional game design principles, discussing new opportunities and challenges in blockchain game development.',
+      link: 'https://x.com/ChainSafeGaming/status/1764971150382117222',
+      image: '/images/rewriting-the-rules.jpeg',
+      imageAlt: 'ChainSafe Gaming Twitter Space on Game Design Innovation',
+    },
+    {
       title: 'Gaming Analytics and Growth',
       date: 'May 2023',
       description:
