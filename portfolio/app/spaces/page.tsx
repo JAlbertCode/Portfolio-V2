@@ -33,6 +33,24 @@ export default function SpacesPage() {
       imageAlt: 'Twitter Space on Web3 Game Publishing',
     },
     {
+      title: 'Rise of Web3 Gaming',
+      date: 'September 2024',
+      description:
+        'Explored the growing momentum in Web3 gaming, discussing emerging trends, successful projects, and the future outlook for blockchain-based games.',
+      link: 'https://x.com/_WEB3M_/status/1832141772975444463',
+      image: '/images/rise-of-web3-gaming.jpeg',
+      imageAlt: 'Twitter Space on the Rise of Web3 Gaming',
+    },
+    {
+      title: 'Responsible Gaming in Web3',
+      date: 'April 2024',
+      description:
+        'Discussed the importance of responsible gaming practices in Web3, exploring frameworks and strategies to ensure player well-being in blockchain gaming.',
+      link: 'https://x.com/SNEGbet/status/1777653520088301877',
+      image: '/images/responsible-gaming.jpeg',
+      imageAlt: 'SNEG Twitter Space on Responsible Gaming',
+    },
+    {
       title: 'Gaming Analytics and Growth',
       date: 'May 2023',
       description:
