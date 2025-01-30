@@ -31,6 +31,15 @@ export default function SpacesPage() {
       link: 'https://x.com/_WEB3M_/status/1848050211723067686',
       image: '/images/publishing.jpeg',
       imageAlt: 'Twitter Space on Web3 Game Publishing',
+    },
+    {
+      title: 'Gaming Analytics and Growth',
+      date: 'May 2023',
+      description:
+        'Discussed the role of analytics in gaming with Covalent, exploring how data insights drive game development and player engagement strategies.',
+      link: 'https://x.com/Covalent_HQ/status/1655009610623844353',
+      image: '/images/covalent.jpeg',
+      imageAlt: 'Covalent Twitter Space on Gaming Analytics',
     }
   ]
 
