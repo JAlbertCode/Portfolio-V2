@@ -2,6 +2,25 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
+    title: 'Twitter Spaces on Gaming & AI',
+    description:
+      'Regular speaker in Twitter Spaces discussing the future of gaming, AI integration, and Web3 development.',
+    date: 'Present',
+    image: '/images/game7.jpeg',
+    imageAlt: 'Game7 Twitter Space on AI Agents in Gaming',
+    link: './spaces',
+    skills: [
+      'Public Speaking',
+      'AI in Gaming',
+      'Web3',
+      'Game Development',
+      'Blockchain Gaming',
+      'Community Engagement',
+      'Technical Education',
+      'Industry Trends',
+    ],
+  },
+  {
     title: 'The Future of Gaming Series',
     description:
       'Host regular live streams focused on blockchain gaming, game development, and Web3 technology.',
