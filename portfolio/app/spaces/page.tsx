@@ -6,15 +6,6 @@ import Image from 'next/image'
 export default function SpacesPage() {
   const spaces = [
     {
-      title: 'Future of Web3 Gaming',
-      date: 'February 2025',
-      description:
-        'Discussed the evolving landscape of Web3 gaming and the key trends shaping its future.',
-      link: 'https://x.com/_WEB3M_/status/1889471630860230932',
-      image: '/images/future-web3-gaming.png',
-      imageAlt: 'Twitter Space on Future of Web3 Gaming',
-    },
-    {
       title: 'AI Integration in Gaming',
       date: 'February 2025',
       description:
@@ -22,6 +13,15 @@ export default function SpacesPage() {
       link: 'https://x.com/_WEB3M_/status/1889111873653793027',
       image: '/images/ai-gaming.png',
       imageAlt: 'Twitter Space on AI Integration in Gaming',
+    },
+    {
+      title: 'Future of Web3 Gaming',
+      date: 'February 2025',
+      description:
+        'Discussed the evolving landscape of Web3 gaming and the key trends shaping its future.',
+      link: 'https://x.com/_WEB3M_/status/1889471630860230932',
+      image: '/images/future-web3-gaming.png',
+      imageAlt: 'Twitter Space on Future of Web3 Gaming',
     },
     {
       title: 'Will AI Agents Start the Gaming Bull Run?',
@@ -62,7 +62,7 @@ export default function SpacesPage() {
     {
       title: 'Security Best Practices in Web3',
       date: 'April 2024',
-      description: 
+      description:
         'Discussed essential security considerations and best practices for Web3 developers and users, focusing on protecting assets and maintaining secure environments.',
       link: 'https://x.com/TimeToTerminal/status/1775168818131722482',
       image: '/images/web3-security.jpeg',
@@ -94,7 +94,7 @@ export default function SpacesPage() {
       link: 'https://x.com/Covalent_HQ/status/1655009610623844353',
       image: '/images/covalent.jpeg',
       imageAlt: 'Covalent Twitter Space on Gaming Analytics',
-    }
+    },
   ]
 
   return (
@@ -102,9 +102,10 @@ export default function SpacesPage() {
       <div className="max-w-5xl w-full">
         <h1 className="text-4xl font-bold mb-8">Twitter Spaces</h1>
         <p className="text-lg mb-8">
-          A collection of Twitter Spaces where I discuss various aspects of Web3 gaming,
-          AI integration, and game development. These conversations explore emerging trends
-          and opportunities in the intersection of gaming and blockchain technology.
+          A collection of Twitter Spaces where I discuss various aspects of Web3
+          gaming, AI integration, and game development. These conversations
+          explore emerging trends and opportunities in the intersection of
+          gaming and blockchain technology.
         </p>
 
         <div className="space-y-6">
