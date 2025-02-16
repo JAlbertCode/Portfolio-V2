@@ -6,6 +6,24 @@ import Image from 'next/image'
 export default function SpacesPage() {
   const spaces = [
     {
+      title: 'Future of Web3 Gaming',
+      date: 'February 2025',
+      description:
+        'Discussed the evolving landscape of Web3 gaming and the key trends shaping its future.',
+      link: 'https://x.com/_WEB3M_/status/1889471630860230932',
+      image: '/images/future-web3-gaming.png',
+      imageAlt: 'Twitter Space on Future of Web3 Gaming',
+    },
+    {
+      title: 'AI Integration in Gaming',
+      date: 'February 2025',
+      description:
+        'Explored how artificial intelligence is transforming game development and player experiences in the Web3 space.',
+      link: 'https://x.com/_WEB3M_/status/1889111873653793027',
+      image: '/images/ai-gaming.png',
+      imageAlt: 'Twitter Space on AI Integration in Gaming',
+    },
+    {
       title: 'Will AI Agents Start the Gaming Bull Run?',
       date: 'January 2025',
       description:
