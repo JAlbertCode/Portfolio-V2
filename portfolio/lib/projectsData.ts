@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: 'Twitter Spaces on Gaming & AI',
     description:
       'Regular speaker in Twitter Spaces discussing the future of gaming, AI integration, and Web3 development.',
-    date: 'January 2025',
+    date: 'February 2025',
     image: '/images/game7.jpeg',
     imageAlt: 'Game7 Twitter Space on AI Agents in Gaming',
     link: './spaces',
