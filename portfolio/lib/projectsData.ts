@@ -2,6 +2,25 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
+    title: 'Lilypad Network Frontend Workshop',
+    description:
+      'Live workshop demonstrating how to build a frontend on top of the Lilypad Network, helping developers create interfaces for a decentralized compute network.',
+    date: 'February 2025',
+    image: 'https://i.ytimg.com/vi/6VuEM4l5_oo/maxresdefault.jpg',
+    imageAlt: 'Lilypad Network Frontend Workshop Thumbnail',
+    link: 'https://www.youtube.com/watch?v=6VuEM4l5_oo',
+    target: '_blank',
+    skills: [
+      'Public Speaking',
+      'Technical Education',
+      'Next.js',
+      'Lilypad Network',
+      'Decentralized Computing',
+      'Frontend Development',
+      'Workshop Facilitation',
+    ],
+  },
+  {
     title: 'Twitter Spaces on Gaming & AI',
     description:
       'Regular speaker in Twitter Spaces discussing the future of gaming, AI integration, and Web3 development.',
