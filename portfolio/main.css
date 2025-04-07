@@ -49,6 +49,22 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
+  .card-video {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    background-color: #000;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 8px 0;
+    width: 100%;
+  }
+
   .linked-image {
     transition: all 0.3s ease;
     position: relative;

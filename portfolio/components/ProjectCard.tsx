@@ -11,7 +11,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Card sx={{width: 357, borderRadius: 3, boxShadow: 5}} className='flex flex-col project-card'>
       <Link href={project.link} className="linked-image" {...(project.target && { target: project.target, rel: 'noopener noreferrer' })}>
-        <CardMedia component="img" image={project.image} alt={project.imageAlt}/>
+        {project.image.endsWith('.mp4') ? (
+          <div className="video-container">
+            <video autoPlay loop muted playsInline className="card-video">
+              <source src={project.image} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ) : (
+          <CardMedia component="img" image={project.image} alt={project.imageAlt}/>
+        )}
       </Link>
       <CardContent>
         <Typography variant='h6'>

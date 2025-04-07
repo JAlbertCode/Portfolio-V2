@@ -2,6 +2,24 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
+    title: 'VibeCheck Community App',
+    description:
+      'Wiki-style platform that compares communities and suggests collaboration opportunities. Built on Lilypad Network as part of a weekly app development series.',
+    date: 'April 2025',
+    image: '/images/vibecheck.png',
+    imageAlt: 'VibeCheck Community App screenshot showing community comparison interface',
+    link: 'https://vibecheck-app.vercel.app/',
+    target: '_blank',
+    skills: [
+      'Next.js',
+      'React',
+      'AI Development',
+      'Lilypad',
+      'Rapid Prototyping',
+      'Community Building',
+    ],
+  },
+  {
     title: 'Building RAG Agents on Lilypad',
     description:
       'Live demonstration showing how to build Retrieval-Augmented Generation (RAG) agents on the Lilypad Network, enabling AI agents to access and reason with external knowledge.',
