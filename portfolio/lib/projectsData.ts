@@ -2,6 +2,27 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
+    title: 'Building RAG Agents on Lilypad Network',
+    description:
+      'Live demonstration showing how to build Retrieval-Augmented Generation (RAG) agents on the Lilypad Network, enabling AI agents to access and reason with external knowledge.',
+    date: 'March 2025',
+    image: 'https://i.ytimg.com/vi/I-_9yO4wdig/maxresdefault.jpg',
+    imageAlt: 'RAG Agents on Lilypad Network demonstration thumbnail',
+    link: 'https://www.youtube.com/watch?v=I-_9yO4wdig',
+    target: '_blank',
+    skills: [
+      'AI Development',
+      'RAG Agents',
+      'Lilypad Network',
+      'Decentralized Computing',
+      'Technical Education',
+      'Public Speaking',
+      'Live Demonstration',
+      'Workshop Facilitation',
+      'Developer Relations',
+    ],
+  },
+  {
     title: 'Lilypad Network Frontend Workshop',
     description:
       'Live workshop demonstrating how to build a frontend on top of the Lilypad Network, helping developers create interfaces for a decentralized compute network.',
