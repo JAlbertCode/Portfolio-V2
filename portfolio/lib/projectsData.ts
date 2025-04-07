@@ -41,6 +41,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Sir Croaksworth\'s Roast DApp',
+    description:
+      'A humorous DApp where a pretentious frog banker roasts your crypto wallet transactions. Enter any wallet address and get brutally honest feedback on your investment choices.',
+    date: 'March 2025',
+    image: '/images/roast.png',
+    imageAlt: 'Screenshot of Sir Croaksworth, a frog with a top hat who roasts your crypto wallet transactions',
+    link: 'https://roast-app-delta.vercel.app/',
+    target: '_blank',
+    skills: [
+      'Web3',
+      'DApp Development',
+      'Next.js',
+      'Blockchain',
+      'Cryptocurrency',
+      'UI Design',
+      'Transaction Analysis',
+    ],
+  },
+  {
     title: 'CollabHubs Community Spotlight',
     description: 'Featured as Builder of the Month in CollabHubs Community Spotlight, recognizing contributions to Web3 development, AI, and gaming integrations.',
     date: 'March 2025',
@@ -59,6 +78,7 @@ export const projects: Project[] = [
       'Decentralized Computing',
     ],
   },
+
   {
     title: 'Lilypad Frontend Workshop',
     description:
