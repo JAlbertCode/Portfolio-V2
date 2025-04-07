@@ -1,6 +1,7 @@
 import { Project } from './types'
 
 export const projects: Project[] = [
+
   {
     title: 'VibeCheck Community App',
     description:
@@ -37,6 +38,25 @@ export const projects: Project[] = [
       'Public Speaking',
       'Workshop Facilitation',
       'Dev Rel',
+    ],
+  },
+  {
+    title: 'CollabHubs Community Spotlight',
+    description: 'Featured as Builder of the Month in CollabHubs Community Spotlight, recognizing contributions to Web3 development, AI building, and gaming integrations.',
+    date: 'March 2025',
+    image: '/images/collabhub.png',
+    imageAlt: 'CollabHubs Community Spotlight article featuring Jay Albert as Builder of the Month',
+    link: 'https://medium.com/@_WEB3M_/collabhubs-community-spotlight-builder-of-the-month-a0e639e763cc',
+    target: '_blank',
+    skills: [
+      'Web3',
+      'Community Building',
+      'AI Development',
+      'Blockchain Gaming',
+      'Dev Rel',
+      'Content Creation',
+      'Technical Education',
+      'Decentralized Computing',
     ],
   },
   {
