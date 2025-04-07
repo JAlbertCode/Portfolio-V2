@@ -23,10 +23,10 @@ export const projects: Project[] = [
   {
     title: 'Building RAG Agents on Lilypad',
     description:
-      'Live demonstration showing how to build Retrieval-Augmented Generation (RAG) agents on the Lilypad Network, enabling AI agents to access and reason with external knowledge.',
+      'Live demo showing how to build Retrieval-Augmented Generation (RAG) agents on the Lilypad Network, enabling AI agents to access and reason with external knowledge.',
     date: 'March 2025',
     image: 'https://i.ytimg.com/vi/I-_9yO4wdig/maxresdefault.jpg',
-    imageAlt: 'RAG Agents on Lilypad Network demonstration thumbnail',
+    imageAlt: 'RAG Agents on Lilypad Network demo thumbnail',
     link: 'https://www.youtube.com/watch?v=I-_9yO4wdig',
     target: '_blank',
     skills: [
@@ -42,7 +42,7 @@ export const projects: Project[] = [
   },
   {
     title: 'CollabHubs Community Spotlight',
-    description: 'Featured as Builder of the Month in CollabHubs Community Spotlight, recognizing contributions to Web3 development, AI building, and gaming integrations.',
+    description: 'Featured as Builder of the Month in CollabHubs Community Spotlight, recognizing contributions to Web3 development, AI, and gaming integrations.',
     date: 'March 2025',
     image: '/images/collabhub.png',
     imageAlt: 'CollabHubs Community Spotlight article featuring Jay Albert as Builder of the Month',
@@ -62,7 +62,7 @@ export const projects: Project[] = [
   {
     title: 'Lilypad Frontend Workshop',
     description:
-      'Live workshop demonstrating how to build a frontend on top of the Lilypad Network, helping developers create interfaces for a decentralized compute network.',
+      'Live workshop demo how to build a frontend on top of the Lilypad Network, helping developers create interfaces for a decentralized compute network.',
     date: 'February 2025',
     image: 'https://i.ytimg.com/vi/6VuEM4l5_oo/maxresdefault.jpg',
     imageAlt: 'Lilypad Network Frontend Workshop Thumbnail',
@@ -140,7 +140,7 @@ export const projects: Project[] = [
   {
     title: 'On-Chain Lootboxes at GDC',
     description:
-      'Developed and presented a technical demonstration of on-chain lootboxes at the Game Developers Conference (GDC).',
+      'Developed and presented a technical demo of on-chain lootboxes at the Game Developers Conference (GDC).',
     date: 'April 2024',
     image: '/images/loot-gdc.png',
     imageAlt: 'ChainSafe GDC Lootboxes presentation',
@@ -228,7 +228,7 @@ export const projects: Project[] = [
   {
     title: 'Web2 to Web3 Game Development Workshop',
     description:
-      'Led a hands-on workshop at ETHDenver demonstrating how to transform a traditional game into a blockchain-enabled experience.',
+      'Led a hands-on workshop at ETHDenver demo how to transform a traditional game into a blockchain-enabled experience.',
     date: 'February 2023',
     image: '/images/ethdenver-workshop.avif',
     imageAlt: 'ETHDenver Workshop presentation screenshot',
