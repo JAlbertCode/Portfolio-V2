@@ -174,7 +174,8 @@ export const projects: Project[] = [
     date: 'February 2023',
     image: '/images/ethdenver-workshop.avif',
     imageAlt: 'ETHDenver Workshop presentation screenshot',
-    link: './web3-game-workshop',
+    link: 'https://www.youtube.com/watch?v=c_gONMVIH8o&t=0s',
+    target: '_blank',
     skills: [
       'Game Development',
       'Web3',
