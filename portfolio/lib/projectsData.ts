@@ -13,13 +13,12 @@ export const projects: Project[] = [
     skills: [
       'AI Development',
       'RAG Agents',
-      'Lilypad Network',
+      'Live Demo',
       'Decentralized Computing',
       'Technical Education',
       'Public Speaking',
-      'Live Demonstration',
       'Workshop Facilitation',
-      'Developer Relations',
+      'Dev Rel',
     ],
   },
   {
