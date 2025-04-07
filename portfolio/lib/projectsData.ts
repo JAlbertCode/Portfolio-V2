@@ -2,7 +2,7 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
-    title: 'Building RAG Agents on Lilypad Network',
+    title: 'Building RAG Agents on Lilypad',
     description:
       'Live demonstration showing how to build Retrieval-Augmented Generation (RAG) agents on the Lilypad Network, enabling AI agents to access and reason with external knowledge.',
     date: 'March 2025',
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: 'Lilypad Network Frontend Workshop',
+    title: 'Lilypad Frontend Workshop',
     description:
       'Live workshop demonstrating how to build a frontend on top of the Lilypad Network, helping developers create interfaces for a decentralized compute network.',
     date: 'February 2025',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
       'Unity',
       'Smart Contracts',
       'Live Streaming',
-      'Developer Relations',
+      'Dev Rel',
       'Content Creation',
       'Public Speaking',
     ],
@@ -94,9 +94,9 @@ export const projects: Project[] = [
       'Chainlink VRF',
       'Smart Contracts',
       'Game Development',
+      'Dev Rel',
       'Technical Education',
       'Workshop Facilitation',
-      'Developer Relations',
     ],
   },
   {
@@ -138,7 +138,7 @@ export const projects: Project[] = [
       'Frontend Development',
       'UI Development',
       'Git',
-      'Developer Relations',
+      'Dev Rel',
     ],
   },
   {
@@ -156,7 +156,7 @@ export const projects: Project[] = [
       'Blockchain',
       'Linux',
       'Content Creation',
-      'Developer Relations',
+      'Dev Rel',
       'Technical Writing',
     ],
   },
@@ -202,10 +202,10 @@ export const projects: Project[] = [
       'Smart Contracts',
       'Public Speaking',
       'Technical Education',
+      'Dev Rel',
       'Live Coding',
       'Workshop Facilitation',
       'Blockchain',
-      'Developer Relations',
     ],
   },
   {
