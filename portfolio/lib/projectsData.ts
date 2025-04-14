@@ -78,7 +78,24 @@ export const projects: Project[] = [
       'Decentralized Computing',
     ],
   },
-
+  {
+    title: 'Lilypad Pitch at Crypto\'s Got Talent',
+    description:
+      'Pitched Lilypad Network in the Crypto\'s Got Talent competition hosted by IoTeX, competing for a share of $500,000 in funding for our decentralized AI infrastructure platform.',
+    date: 'March 2025',
+    image: 'https://i.ytimg.com/vi/qUMOPe56vqI/maxresdefault.jpg',
+    imageAlt: 'Lilypad Network pitch at Crypto\'s Got Talent competition thumbnail',
+    link: 'https://youtu.be/qUMOPe56vqI',
+    target: '_blank',
+    skills: [
+      'Public Speaking',
+      'AI Infrastructure',
+      'Web3',
+      'Dev Rel',
+      'Decentralized Computing',      
+      'Fundraising',
+    ],
+  },
   {
     title: 'Lilypad Frontend Workshop',
     description:
@@ -113,7 +130,6 @@ export const projects: Project[] = [
       'Game Development',
       'Blockchain Gaming',
       'Community Engagement',
-      'Technical Education',
       'Industry Trends',
     ],
   },
@@ -140,7 +156,7 @@ export const projects: Project[] = [
   {
     title: 'Rock Paper Scissors Workshop',
     description:
-      'Led an interactive workshop teaching students how to build a blockchain-powered Rock Paper Scissors game using Unity and Chainlink VRF.',
+      'An interactive workshop teaching how to build a blockchain-powered Rock Paper Scissors game with Unity and Chainlink VRF.',
     date: 'December 2024',
     image: '/images/rps-workshop.jpeg',
     imageAlt: 'Rock Paper Scissors Workshop Tutorial Screenshot',
