@@ -1,6 +1,26 @@
 import { Project } from './types'
 
 export const projects: Project[] = [
+  {
+    title: 'Threads, Tools, and Grok: Inside the Generative Future of X',
+    description:
+      'A critical look at Grok AI\'s role in X\'s evolution.',
+    date: 'April 2025',
+    image: '/images/twitter-future.png',
+    imageAlt: 'Medium article about Threads, Tools, and Grok generative AI on X platform',
+    link: 'https://medium.com/@jonathan-albert/threads-tools-and-grok-inside-the-generative-future-of-x-f70c7e347f37',
+    target: '_blank',
+    skills: [
+      'Technical Writing',
+      'AI Analysis',
+      'Social Media',
+      'Generative AI',
+      'Technology Trends',
+      'Medium',
+      'Content Creation',
+      'Research',
+    ],
+  },
 
   {
     title: 'VibeCheck Community App',
