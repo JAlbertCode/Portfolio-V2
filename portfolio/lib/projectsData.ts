@@ -41,6 +41,26 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Web3 Game Mechanic Generator',
+    description: 'A custom GPT that transforms smart contract methods into creative game mechanics and demo ideas.',
+    date: 'April 2025',
+    image: '/images/mechanic-generator.png',
+    imageAlt: 'Screenshot of Web3 Game Mechanic Generator GPT interface',
+    link: 'https://chatgpt.com/g/g-67e71d3f566c81918471509fb5b3b63b-web3-game-mechanic-generator',
+    target: '_blank',
+    skills: [
+      'Generative AI',
+      'Smart Contracts',
+      'Game Design',
+      'Web3',
+      'Blockchain Gaming',
+      'Technical Education',
+      'Dev Rel',
+      'GPT Development',
+      'Prompt Engineering'
+    ],
+  },
+  {
     title: 'Building RAG Agents on Lilypad',
     description:
       'Live demo showing how to build Retrieval-Augmented Generation (RAG) agents on the Lilypad Network, enabling AI agents to access and reason with external knowledge.',
