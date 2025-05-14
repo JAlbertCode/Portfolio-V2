@@ -23,11 +23,7 @@ export default function Clothing() {
                     3. Create augmented reality filters for Snapchat, Facebook, and Instagram so users can post pictures wearing their clothing before having the physical products.
                     </p>
                     <br/>
-                    <div className="video-responsive">
-                        <video controls>
-                            <source src="./videos/Spunizm test.mp4"/>
-                        </video>
-                    </div>
+                    <YoutubeEmbed embedId="kLt6oNk0kuE" />
                     <p> 
                     <br/>
                     4. Create a copy of the 3D models with fewer polygons to be used in Decentraland.
