@@ -28,7 +28,7 @@ export default function Home() {
       <br/>
 
       <p>
-        Want to know Jay on a more personal level? View Jay's Alva Labs test results.
+        Want to know Jay on a more personal level? View Jay&apos;s Alva Labs test results.
       </p>
 
       
