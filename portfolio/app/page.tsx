@@ -21,22 +21,13 @@ export default function Home() {
 
   return (
     <div className="mx-10 max-w-6xl w-full mb-20">
-      <h1>Jonathan Albert&apos;s Portfolio</h1>
+      <h1>Jonathan (Jay) Albert&apos;s Portfolio</h1>
       <p>
-        I am a futurist, reverse engineering the products and services of
-        tomorrow today. Turning visions into projects, projects into milestones,
-        and milestones into tasks providing software development teams with
-        roadmaps to the future. Over a decade of experience gathering
-        requirements, rapid prototyping, managing, and coordinating
-        cross-functional teams in both start-up and global operations. Boundless
-        curiosity has led to work with organizations focused on blockchains,
-        gaming, consulting, augmented reality, finance, politics, and language
-        learning. Intent on bridging the gap between the future and today,
-        confronting any challenge that gets in the way.{' '}
+      Jay is a futurist, reverse-engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks, providing software development teams with roadmaps to the future. With over a decade of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on AI, decentralized computing, blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today, confronting any challenge that gets in the way.{' '}
       </p>
       <br />
       <p>
-        Want to know me on a more personal level? View my Alva Labs test results
+        Want to know Jay on a more personal level? View Jay's Alva Labs test results
       </p>
 
       <div className="flex gap-2">
@@ -57,7 +48,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
+      <br/>
+      <p className="font-semibold">Contact Jay from any platform</p>
       <div className="flex flex-wrap gap-4 mt-10">
         <Link
           target="_blank"
