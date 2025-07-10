@@ -2,6 +2,22 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
+    title: 'Prompt2Flow',
+    description:
+      'Discover, run, and publish AI prompts and flows. Create single prompts or connect them in powerful automation flows. Browse expertly crafted prompts for text generation, code, image creation, and more.',
+    date: 'July 2025',
+    image: '/images/prompt2flow.png',
+    imageAlt: 'Prompt2Flow platform interface showing AI prompt discovery and automation workflows',
+    link: 'https://www.prompt2flow.com',
+    target: '_blank',
+    skills: [
+      'AI Development',
+      'Prompt Engineering',
+      'Automation',
+      'Platform Development',
+    ],
+  },
+  {
     title: 'Lilypad Pitch for IoTeX Competition',
     description:
       'Pitched Lilypad Network in IoTeX "Crypto\'s Got Talent" competition for $500,000 funding. Now being used to raise funds for the project.',
