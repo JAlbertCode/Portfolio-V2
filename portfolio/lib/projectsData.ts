@@ -2,6 +2,24 @@ import { Project } from './types'
 
 export const projects: Project[] = [
   {
+    title: 'Lilypad Pitch for IoTeX Competition',
+    description:
+      'Pitched Lilypad Network in IoTeX "Crypto\'s Got Talent" competition for $500,000 funding. Now being used to raise funds for the project.',
+    date: 'May 2025',
+    image: 'https://i.ytimg.com/vi/fa8RzuGRR7E/maxresdefault.jpg',
+    imageAlt: 'Lilypad Network pitch presentation at IoTeX Crypto\'s Got Talent competition',
+    link: 'https://www.youtube.com/watch?v=fa8RzuGRR7E',
+    target: '_blank',
+    skills: [
+      'Public Speaking',
+      'Fundraising',
+      'AI Infrastructure',
+      'Distributed Computing',
+      'DePIN',
+      'Dev Rel',
+    ],
+  },
+  {
     title: 'Threads, Tools, and Grok: Inside the Generative Future of X',
     description:
       'A critical look at Grok AI\'s role in X\'s evolution.',
