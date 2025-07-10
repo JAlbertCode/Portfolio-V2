@@ -26,10 +26,34 @@ export default function Home() {
       Jay is a futurist, reverse-engineering the products and services of tomorrow today. Turning visions into projects, projects into milestones, and milestones into tasks, providing software development teams with roadmaps to the future. With over a decade of experience gathering requirements, rapid prototyping, managing, and coordinating cross-functional teams in both start-up and global operations. Boundless curiosity has led to work with organizations focused on AI, decentralized computing, blockchains, gaming, consulting, augmented reality, finance, politics, and language learning. Intent on bridging the gap between the future and today, confronting any challenge that gets in the way.{' '}
       </p>
       <br/>
-  
-      <h3 className="font-semibold">Contact Jay from any platform</h3 >
-      <br/>
-      <div className="flex flex-wrap gap-4 ">
+
+      <p>
+        Want to know Jay on a more personal level? View Jay's Alva Labs test results.
+      </p>
+
+      
+      <div className="flex gap-2">
+        <div className="links">
+          <Link
+            target="_blank"
+            href="/documents/Jonathan_ALbert_Personality_Test_Five_Factor_Personality_Theory.pdf"
+          >
+            Personality Profile
+          </Link>
+        </div>
+        <div className="links">
+          <Link
+            target="_blank"
+            href="/documents/Jonathan_Albert_Logical_Ability.pdf"
+          >
+            Logical Ability
+          </Link>
+        </div>
+      </div>
+      
+
+      
+      <div className="flex flex-wrap gap-4 mt-10">
         <Link
           target="_blank"
           href="/documents/Jonathan_Albert_Resume.pdf"
@@ -133,36 +157,8 @@ export default function Home() {
           />
         </Link>
       </div>
-      <br/>
-
-      <h3 className="font-semibold">Cognition</h3>
-      <p>
-        Want to know Jay on a more personal level? View Jay's Alva Labs test results.
-      </p>
-
       
-      <div className="flex gap-2">
-        <div className="links">
-          <Link
-            target="_blank"
-            href="/documents/Jonathan_ALbert_Personality_Test_Five_Factor_Personality_Theory.pdf"
-          >
-            Personality Profile
-          </Link>
-        </div>
-        <div className="links">
-          <Link
-            target="_blank"
-            href="/documents/Jonathan_Albert_Logical_Ability.pdf"
-          >
-            Logical Ability
-          </Link>
-        </div>
-      </div>
-      <br/>
 
-      <h3 className="font-semibold">Skills & Projects</h3>
-      <p>Search for projects by skill</p>
       <SkillsFilter
         skills={allSkills}
         selectedSkills={selectedSkills}
