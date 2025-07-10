@@ -766,6 +766,6 @@ export const filterProjects = (
 ): Project[] => {
   if (selectedSkills.length === 0) return projects
   return projects.filter((project) =>
-    selectedSkills.every((skill) => project.skills.includes(skill))
+    selectedSkills.some((skill) => project.skills.includes(skill))
   )
 }
