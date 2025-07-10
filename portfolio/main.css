@@ -27,6 +27,14 @@
     color: white;
   }
 
+  .skills-overflow {
+    background-color: rgb(107 114 128);
+    opacity: 0.8;
+    font-style: italic;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .filter-tag {
     background-color: theme('colors.dark-turquoise');
     border-radius: theme('borderRadius.md');
