@@ -54,6 +54,20 @@ export default function Home() {
 
       
       <div className="flex flex-wrap gap-4 mt-10">
+      <Link
+          target="_blank"
+          href="https://calendly.com/jonathanalbert0115/15-min-discovery-call-web3-advisory"
+          className="linked-image"
+        >
+          <Image src="/images/calendly-logo.png" width="72" height="72" alt="calendly" />
+        </Link>
+        <Link
+          target="_blank"
+          href="mailto: JonathanAlbert0115@gmail.com"
+          className="linked-image"
+        >
+          <Image src="/images/email.png" width="72" height="72" alt="email" />
+        </Link>
         <Link
           target="_blank"
           href="/documents/Jonathan_Albert_Resume.pdf"
@@ -72,13 +86,6 @@ export default function Home() {
             height="72"
             alt="linkedin"
           />
-        </Link>
-        <Link
-          target="_blank"
-          href="mailto: JonathanAlbert0115@gmail.com"
-          className="linked-image"
-        >
-          <Image src="/images/email.png" width="72" height="72" alt="email" />
         </Link>
         <Link
           target="_blank"
