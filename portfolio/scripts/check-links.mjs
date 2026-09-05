@@ -119,6 +119,9 @@ async function collectReferences() {
   const refs = new Map()
 
   const add = (type, target, source) => {
+    // Targets built at runtime from a template literal cannot be checked
+    // statically; the concrete values are picked up at their call sites.
+    if (target.includes('${')) return
     const key = `${type}::${target}`
     if (!refs.has(key)) refs.set(key, { type, target, sources: new Set() })
     refs.get(key).sources.add(source)

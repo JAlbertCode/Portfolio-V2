@@ -1,27 +1,220 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Palette
+
+   One accent, descended from the turquoise the site has always used but
+   lifted for contrast on a dark ground. Everything else is a neutral ramp.
+   Colours are declared as raw values here and mapped to semantic names in
+   the @theme block below, so a component never names a literal colour.
+--------------------------------------------------------------------------- */
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  color-scheme: dark;
+
+  --bg: #0a0c10;
+  --bg-subtle: #0e1117;
+  --surface: #12161f;
+  --surface-raised: #171c27;
+  --line: #232937;
+  --line-strong: #333b4d;
+
+  --text: #e9edf4;
+  --text-muted: #9aa4b8;
+  --text-faint: #6b7488;
+
+  --accent: #2fd8cd;
+  --accent-hover: #5fe6dd;
+  --accent-contrast: #04231f;
+  --accent-faint: #0f2b2c;
+
+  --warn: #f0b429;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+
+  /* next/font sets --font-instrument and friends on <html>, so these have to
+     resolve there too. Defining them on :root keeps that true. */
+  --font-display: var(--font-instrument, Georgia), 'Times New Roman', serif;
+  --font-body: var(--font-inter, ui-sans-serif), system-ui, sans-serif;
+  --font-mono: var(--font-mono-face, ui-monospace), 'SF Mono', Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fbfbfa;
+  --bg-subtle: #f4f4f2;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --line: #e3e3df;
+  --line-strong: #cdcdc7;
+
+  --text: #16181d;
+  --text-muted: #5b6270;
+  --text-faint: #868d9b;
+
+  --accent: #0b8f8a;
+  --accent-hover: #0a7a76;
+  --accent-contrast: #ffffff;
+  --accent-faint: #e4f4f2;
+
+  --warn: #a86a05;
+  --shadow: 0 1px 2px rgb(20 20 20 / 0.05), 0 8px 24px -14px rgb(20 20 20 / 0.18);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-faint: var(--accent-faint);
+  --color-warn: var(--warn);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* A slightly tighter, more editorial type ramp than the Tailwind default. */
+  --text-display: 4rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* A visible focus ring everywhere, not just where a component remembered. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link: off-screen until focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities used often enough to earn a name
+--------------------------------------------------------------------------- */
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+@utility rule {
+  border-top: 1px solid var(--line);
+}
+
+/* Cards lift very slightly. Enough to read as interactive, not enough to
+   bounce the whole grid around when the pointer crosses it. */
+@utility card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+@utility card-interactive {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+}
+
+/* Long-form prose blocks on detail pages. */
+.prose-body {
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-body p + p {
+  margin-top: 1.25rem;
+}
+.prose-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose-body a:hover {
+  color: var(--accent-hover);
+}
+.prose-body strong {
+  color: var(--text);
+  font-weight: 600;
 }
