@@ -183,7 +183,7 @@ export default async function WorkDetailPage({
 
   return (
     <article className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
-      <Link href="/work" className="label inline-flex items-center gap-2 hover:text-accent">
+      <Link href="/#work" className="label inline-flex items-center gap-2 hover:text-accent">
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path
             d="M13 8H3M7 4L3 8l4 4"
@@ -259,7 +259,7 @@ export default async function WorkDetailPage({
               {entry.practices.map((p) => (
                 <li key={p}>
                   <Link
-                    href={`/work?practice=${encodeURIComponent(p)}`}
+                    href="/#work"
                     className="text-sm text-muted hover:text-accent"
                   >
                     {p}
@@ -275,7 +275,7 @@ export default async function WorkDetailPage({
               {entry.domains.map((d) => (
                 <li key={d}>
                   <Link
-                    href={`/work?field=${encodeURIComponent(d)}`}
+                    href="/#work"
                     className="text-sm text-muted hover:text-accent"
                   >
                     {d}

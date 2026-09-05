@@ -323,3 +323,71 @@ body {
     display: none;
   }
 }
+
+@utility cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.625rem;
+  color: var(--text);
+  font-size: 0.94rem;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+    background: var(--surface);
+  }
+}
+
+/* The three live contact routes. One row beside the primary action on a
+   laptop, one row of three underneath it on a phone. */
+.contact-routes {
+  display: flex;
+  gap: 0.5rem;
+}
+.contact-routes > * {
+  flex: 1;
+}
+
+@media (max-width: 639px) {
+  .cta {
+    width: 100%;
+    justify-content: center;
+    min-height: 54px;
+  }
+  .contact-routes {
+    width: 100%;
+  }
+}
+
+@utility lane {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem 0.95rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 0.625rem;
+  background: var(--surface);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+  }
+}
+
+.lane-title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+.lane:hover .lane-title {
+  color: var(--accent);
+}

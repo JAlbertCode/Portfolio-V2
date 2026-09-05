@@ -6,15 +6,17 @@ import ThemeToggle from './ThemeToggle'
 import { site } from '@/lib/site'
 
 const nav = [
-  { href: '/work', label: 'Work' },
-  { href: '/speaking', label: 'Speaking' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#speaking', label: 'Speaking' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#about', label: 'About' },
 ]
 
 export default function Header() {
   const pathname = usePathname()
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
+  // Sections rather than routes now, so nothing in the nav is ever the current
+  // page except on a write-up, where none of them are.
+  const onHome = pathname === '/'
 
   return (
     <header className="border-b border-line">
@@ -28,9 +30,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
               className={`text-sm transition-colors ${
-                isActive(item.href) ? 'text-text' : 'text-muted hover:text-text'
+                onHome ? 'text-muted hover:text-text' : 'text-muted hover:text-text'
               }`}
             >
               {item.label}

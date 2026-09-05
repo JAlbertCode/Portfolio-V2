@@ -48,13 +48,20 @@ const nextConfig: NextConfig = {
         destination: `/work/${slug}`,
         permanent: true,
       })),
-      // V2's two collection pages. Their contents are now individual entries,
-      // so the closest equivalent is the filtered listing.
-      { source: '/spaces', destination: '/work?form=stream', permanent: true },
-      { source: '/streams', destination: '/work?form=stream', permanent: true },
+      // V2's two collection pages. Their contents are individual entries now.
+      { source: '/spaces', destination: '/#work', permanent: true },
+      { source: '/streams', destination: '/#work', permanent: true },
       // Never had content.
-      { source: '/resources', destination: '/work', permanent: false },
-      { source: '/lifestyle', destination: '/work', permanent: false },
+      { source: '/resources', destination: '/#work', permanent: false },
+      { source: '/lifestyle', destination: '/#work', permanent: false },
+
+      // The site is one page. These were routes in an earlier V3 and are
+      // sections now, so anything already linking to them still lands in the
+      // right place.
+      { source: '/work', destination: '/#work', permanent: false },
+      { source: '/speaking', destination: '/#speaking', permanent: false },
+      { source: '/services', destination: '/#services', permanent: false },
+      { source: '/about', destination: '/#about', permanent: false },
     ]
   },
 }
