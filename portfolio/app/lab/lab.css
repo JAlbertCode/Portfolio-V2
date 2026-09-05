@@ -1005,3 +1005,107 @@
   background: var(--raised);
   box-shadow: var(--lift);
 }
+
+/* =========================================================================
+   Mobile: fewer things, not smaller things
+
+   The targets were never the problem. Every control here clears 48px, well
+   past the 24 by 24 CSS pixels WCAG 2.2 SC 2.5.8 asks for at AA. The problem
+   was that a phone had to scroll past thirteen of them before reaching a
+   single piece of work, and that the header overflowed the viewport.
+
+   Three fixes: the header collapses to a name and a menu, the eight connect
+   actions become three rows instead of eight, and the lanes become a compact
+   two by two rather than four full-width cards.
+   ========================================================================= */
+
+@media (max-width: 767px) {
+  /* Tier 2 goes side by side. Icon over a short label keeps each target
+     comfortably above 48px while taking a third of the vertical space. */
+  [data-dir] .cgrid-2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  [data-dir] .cgrid-2 .cx {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 11px;
+    min-height: 62px;
+  }
+  [data-dir] .cgrid-2 .cx-sub {
+    display: none;
+  }
+  [data-dir] .cgrid-2 .cx-label {
+    font-size: 13px;
+  }
+
+  /* Tier 3 is recognisable by mark alone, so the labels come off and four
+     socials fit on one row. Each anchor still carries an aria-label. */
+  [data-dir] .cgrid-follow {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  [data-dir] .cgrid-follow .cx {
+    justify-content: center;
+    padding: 0;
+    min-height: 52px;
+  }
+  [data-dir] .cgrid-follow .cx-label {
+    display: none;
+  }
+  [data-dir] .cgrid-follow .cx-icon {
+    flex: 0 0 auto;
+  }
+  [data-dir] .cgrid-follow .cx-icon .ci {
+    width: 21px;
+    height: 21px;
+  }
+
+  [data-dir] .cgrid + .cgrid {
+    margin-top: 8px;
+  }
+}
+
+/* V4 header. Below 768px the name is the entire header: the four nav links
+   are the same four destinations as the lane cards a screen below, named
+   worse, and the booking button repeated the one inside the connect block. Two
+   navigations and two booking buttons is one of each too many, so the phone
+   gets neither and the disclosure toggle they would have needed never has to
+   exist. */
+[data-dir='v4'] .v-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--edge);
+}
+[data-dir='v4'] .v-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  [data-dir='v4'] .v-header {
+    padding: 16px 0;
+  }
+  [data-dir='v4'] .v-nav {
+    display: none;
+  }
+
+  /* Four full-width cards is most of a screen. Two by two, tighter. */
+  [data-dir='v4'] .v-lanes {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  [data-dir='v4'] .v-lanes a {
+    padding: 12px 13px 14px !important;
+  }
+  [data-dir='v4'] .v-lane-title {
+    font-size: 15px !important;
+  }
+}

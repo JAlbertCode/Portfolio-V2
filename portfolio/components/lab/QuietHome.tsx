@@ -37,7 +37,7 @@ import { site } from '@/lib/site'
 const LANES = [
   { kicker: 'Run an event', title: 'Book me to speak', href: '/speaking' },
   { kicker: 'Hiring', title: 'See if I fit', href: '/about' },
-  { kicker: 'Need something made', title: 'Work with me', href: '/services' },
+  { kicker: 'Need a build', title: 'Work with me', href: '/services' },
   { kicker: 'Just curious', title: 'Browse everything', href: '/work' },
 ]
 

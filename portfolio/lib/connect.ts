@@ -50,7 +50,7 @@ export const talkActions: ConnectAction[] = [
     icon: 'mail',
     native: true,
   },
-  { label: 'Book 15 minutes', href: site.calendly, icon: 'calendar' },
+  { label: 'Book', href: site.calendly, icon: 'calendar' },
 ]
 
 /** Tier 3. Follow, in the order most people actually use them. */

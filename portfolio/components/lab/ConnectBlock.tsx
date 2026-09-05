@@ -48,6 +48,7 @@ function Row({ action, primary }: { action: ConnectAction; primary?: boolean }) 
   return (
     <a
       href={action.href}
+      aria-label={action.label}
       {...(action.native ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
       className={primary ? 'cx cx-primary' : 'cx'}
     >
@@ -58,9 +59,11 @@ function Row({ action, primary }: { action: ConnectAction; primary?: boolean }) 
         <span className="cx-label">{action.label}</span>
         {action.sublabel ? <span className="cx-sub">{action.sublabel}</span> : null}
       </span>
-      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true" className="cx-chev">
-        <path d="M6 3.5 10.5 8 6 12.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      {primary ? (
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true" className="cx-chev">
+          <path d="M6 3.5 10.5 8 6 12.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ) : null}
     </a>
   )
 }
@@ -82,7 +85,14 @@ export default function ConnectBlock() {
 
       <div className="cgrid cgrid-follow">
         {followActions.map((a) => (
-          <a key={a.label} href={a.href} target="_blank" rel="noopener noreferrer" className="cx cx-compact">
+          <a
+            key={a.label}
+            href={a.href}
+            aria-label={a.label}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cx cx-compact"
+          >
             <span className="cx-icon">
               <Glyph name={a.icon} />
             </span>

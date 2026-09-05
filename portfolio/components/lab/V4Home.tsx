@@ -32,7 +32,7 @@ import { site } from '@/lib/site'
 const LANES = [
   { kicker: 'Run an event', title: 'Book me to speak', href: '/speaking' },
   { kicker: 'Hiring', title: 'See if I fit', href: '/about' },
-  { kicker: 'Need something made', title: 'Work with me', href: '/services' },
+  { kicker: 'Need a build', title: 'Work with me', href: '/services' },
   { kicker: 'Just curious', title: 'Browse everything', href: '/work' },
 ]
 
@@ -46,38 +46,18 @@ export default function V4Home() {
 
       <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 24px 110px' }}>
         {/* ------------------------------------------------------------ header */}
-        <header
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 20,
-            padding: '22px 0',
-            borderBottom: '1px solid var(--edge)',
-          }}
-        >
-          <span className="v-display" style={{ fontSize: 17 }}>
+        <header className="v-header">
+          <a href="/" className="v-display" style={{ fontSize: 17, textDecoration: 'none' }}>
             Jay Albert
-          </span>
-          <nav style={{ marginLeft: 'auto', display: 'flex', gap: 22, alignItems: 'center' }}>
+          </a>
+          {/* Hidden below 768px: the lane cards are this nav, named by what the
+              visitor wants rather than by what the page is called. */}
+          <nav className="v-nav">
             {['Work', 'Speaking', 'Services', 'About'].map((n) => (
               <a key={n} href="#" style={{ fontSize: 14, color: 'var(--ink-2)', textDecoration: 'none' }}>
                 {n}
               </a>
             ))}
-            <a
-              href={site.calendly}
-              style={{
-                fontSize: 13.5,
-                fontWeight: 600,
-                background: 'var(--spot)',
-                color: 'var(--spot-ink)',
-                padding: '8px 13px',
-                borderRadius: 8,
-                textDecoration: 'none',
-              }}
-            >
-              Book a call
-            </a>
           </nav>
         </header>
 
@@ -98,11 +78,7 @@ export default function V4Home() {
             Developer relations and solutions engineering across AI, decentralised compute,
             blockchains, gaming, augmented reality, finance, and civic tech.
           </p>
-          <div className="v-note" style={{ display: 'flex', flexWrap: 'wrap', gap: '0 22px', marginTop: 22 }}>
-            <span>{site.location}</span>
-            <span>{allEntries.length} entries</span>
-            <span>2014&ndash;2026</span>
-          </div>
+          <div className="v-note" style={{ marginTop: 20 }}>{site.location}</div>
         </section>
 
         {/* ----------------------------------------------------------- connect */}
@@ -112,7 +88,7 @@ export default function V4Home() {
 
         {/* ------------------------------------------------------------- lanes */}
         <section style={{ marginTop: 62 }}>
-          <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))' }}>
+          <div className="v-lanes" style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))' }}>
             {LANES.map((l) => (
               <a
                 key={l.title}
@@ -121,7 +97,7 @@ export default function V4Home() {
                 style={{ padding: '17px 18px 19px', textDecoration: 'none', display: 'block' }}
               >
                 <div className="v-note">{l.kicker}</div>
-                <div className="v-display" style={{ fontSize: 19, marginTop: 8 }}>
+                <div className="v-display v-lane-title" style={{ fontSize: 19, marginTop: 8 }}>
                   {l.title}
                 </div>
               </a>
@@ -198,9 +174,8 @@ export default function V4Home() {
 
         {/* ---------------------------------------------------------- long tail */}
         <section style={{ marginTop: 72 }}>
-          <div className="v-note" style={{ marginBottom: 12 }}>Also recent</div>
           <div className="v-rule" />
-          {rest.map((e, i) => (
+          {rest.map((e) => (
             <a
               key={e.slug}
               href={e.href ?? '#'}
@@ -208,8 +183,6 @@ export default function V4Home() {
               data-peek={e.slug}
               {...(e.href?.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
-              <span className="v-note v-idx">{String(i + 1).padStart(2, '0')}</span>
-
               <span className="v-thumb">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
