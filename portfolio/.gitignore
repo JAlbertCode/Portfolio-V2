@@ -36,3 +36,7 @@ next-env.d.ts
 
 # In progress
 app/art-bot
+# link checker output
+link-report.md
+link-report.json
+scripts/.refs.json

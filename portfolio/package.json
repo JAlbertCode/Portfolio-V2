@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:links": "node scripts/check-links.mjs",
+    "check:links:report": "node scripts/check-links.mjs --markdown link-report.md --json link-report.json"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
