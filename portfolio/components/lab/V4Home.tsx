@@ -1,5 +1,6 @@
-import ConnectBlock from './ConnectBlock'
 import HoverPeek from './HoverPeek'
+import SocialIcon from '@/components/SocialIcon'
+import { followActions } from '@/lib/connect'
 import {
   allEntries,
   byMedium,
@@ -13,27 +14,24 @@ import {
 import { site } from '@/lib/site'
 
 /**
- * V4: the first V3's visual language, the Quiet direction's flow.
+ * The banner is a sentence, a button, and four marks.
  *
- * Cards, radius, and the teal accent come back because that was the part that
- * worked. What changes is the order and the density.
+ * Everything else that used to live up here was duplication. The vCard behind
+ * "Save my contact" already carries the email, the Telegram handle and every
+ * social URL, so a row of contact buttons directly beneath it was offering a
+ * second copy of what the first button had just handed over. The four lane
+ * cards were the four nav links wearing more paint. The entry count restated
+ * the list below it.
  *
- * Identity first, because search results and social bios bring people who have
- * no idea who Jay is and cannot be asked to save a contact before they know
- * whose it is. Connect directly beneath, so a business card tap still lands on
- * it within one thumb scroll. Then the lanes, then six cards, then the long
- * tail as a list.
- *
- * The list matters: fifty-six entries as cards is a wall nobody reads and a
- * megabyte of thumbnails nobody sees. As rows it scans in one pass, weighs
- * almost nothing, and stays real crawlable text.
+ * What is left is what a visitor cannot get any other way: who he is, what he
+ * does, one action, and the work.
  */
 
-const LANES = [
-  { kicker: 'Run an event', title: 'Book me to speak', href: '/speaking' },
-  { kicker: 'Hiring', title: 'See if I fit', href: '/about' },
-  { kicker: 'Need a build', title: 'Work with me', href: '/services' },
-  { kicker: 'Just curious', title: 'Browse everything', href: '/work' },
+const NAV = [
+  { label: 'Work', href: '/work' },
+  { label: 'Speaking', href: '/speaking' },
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
 ]
 
 export default function V4Home() {
@@ -45,68 +43,58 @@ export default function V4Home() {
       <HoverPeek items={peekItems} />
 
       <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 24px 110px' }}>
-        {/* ------------------------------------------------------------ header */}
         <header className="v-header">
           <a href="/" className="v-display" style={{ fontSize: 17, textDecoration: 'none' }}>
             Jay Albert
           </a>
-          {/* Hidden below 768px: the lane cards are this nav, named by what the
-              visitor wants rather than by what the page is called. */}
           <nav className="v-nav">
-            {['Work', 'Speaking', 'Services', 'About'].map((n) => (
-              <a key={n} href="#" style={{ fontSize: 14, color: 'var(--ink-2)', textDecoration: 'none' }}>
-                {n}
+            {NAV.map((n) => (
+              <a
+                key={n.label}
+                href={n.href}
+                style={{ fontSize: 14, color: 'var(--ink-2)', textDecoration: 'none' }}
+              >
+                {n.label}
               </a>
             ))}
           </nav>
         </header>
 
-        {/* --------------------------------------------------------------- who */}
-        <section style={{ padding: '64px 0 0', maxWidth: 720 }}>
-          <h1 className="v-display" style={{ fontSize: 'clamp(1.9rem, 4.2vw, 2.9rem)', margin: 0 }}>
+        {/* ------------------------------------------------------------ banner */}
+        <section className="v-banner">
+          <h1 className="v-display v-banner-h">
             I build the reference implementation, then teach the room how to run it.
           </h1>
-          <p
-            style={{
-              fontSize: 16.5,
-              lineHeight: 1.65,
-              color: 'var(--ink-2)',
-              margin: '20px 0 0',
-              maxWidth: '62ch',
-            }}
-          >
-            Developer relations and solutions engineering across AI, decentralised compute,
-            blockchains, gaming, augmented reality, finance, and civic tech.
+
+          <p className="v-banner-p">
+            Developer relations and solutions engineering. {site.location}.
           </p>
-          <div className="v-note" style={{ marginTop: 20 }}>{site.location}</div>
-        </section>
 
-        {/* ----------------------------------------------------------- connect */}
-        <div style={{ maxWidth: 720 }}>
-          <ConnectBlock />
-        </div>
+          <div className="v-banner-actions">
+            <a href="/contact.vcf" className="v-cta">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                <path d="M15.5 20v-1.5a3.5 3.5 0 0 0-3.5-3.5H7a3.5 3.5 0 0 0-3.5 3.5V20" strokeLinecap="round" />
+                <circle cx="9.5" cy="8" r="3.5" />
+                <path d="M17 8h5M19.5 5.5v5" strokeLinecap="round" />
+              </svg>
+              Save my contact
+            </a>
+            <a href={site.calendly} className="v-cta-quiet">
+              Book a call
+            </a>
 
-        {/* ------------------------------------------------------------- lanes */}
-        <section style={{ marginTop: 62 }}>
-          <div className="v-lanes" style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))' }}>
-            {LANES.map((l) => (
-              <a
-                key={l.title}
-                href={l.href}
-                className="v-card"
-                style={{ padding: '17px 18px 19px', textDecoration: 'none', display: 'block' }}
-              >
-                <div className="v-note">{l.kicker}</div>
-                <div className="v-display v-lane-title" style={{ fontSize: 19, marginTop: 8 }}>
-                  {l.title}
-                </div>
-              </a>
-            ))}
+            <div className="v-socials">
+              {followActions.map((a) => (
+                <a key={a.label} href={a.href} aria-label={a.label} target="_blank" rel="noopener noreferrer">
+                  <SocialIcon name={a.icon} className="v-social-mark" />
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ---------------------------------------------------------- featured */}
-        <section style={{ marginTop: 72 }}>
+        <section style={{ marginTop: 76 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 20 }}>
             <h2 className="v-display" style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)', margin: 0 }}>
               Selected
@@ -155,15 +143,7 @@ export default function V4Home() {
                   <span className="v-display" style={{ fontSize: 19, marginTop: 8, display: 'block' }}>
                     {e.title}
                   </span>
-                  <span
-                    style={{
-                      fontSize: 14,
-                      lineHeight: 1.58,
-                      color: 'var(--ink-2)',
-                      marginTop: 8,
-                      display: 'block',
-                    }}
-                  >
+                  <span style={{ fontSize: 14, lineHeight: 1.58, color: 'var(--ink-2)', marginTop: 8, display: 'block' }}>
                     {e.summary}
                   </span>
                 </span>
@@ -172,7 +152,7 @@ export default function V4Home() {
           </div>
         </section>
 
-        {/* ---------------------------------------------------------- long tail */}
+        {/* --------------------------------------------------------- long tail */}
         <section style={{ marginTop: 72 }}>
           <div className="v-rule" />
           {rest.map((e) => (
