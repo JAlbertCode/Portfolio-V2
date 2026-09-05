@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { inter, instrument, mono } from '@/lib/fonts'
+import { labFontVars } from '@/lib/lab-fonts'
 import Script from 'next/script'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import SiteChrome from '@/components/SiteChrome'
 import { site } from '@/lib/site'
 import './globals.css'
 
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${instrument.variable} ${mono.variable}`}
+      className={`${inter.variable} ${instrument.variable} ${mono.variable} ${labFontVars}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
@@ -52,9 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JMRY14WSQ5"

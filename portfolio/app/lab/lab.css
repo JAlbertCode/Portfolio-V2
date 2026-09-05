@@ -1,0 +1,540 @@
+/* ---------------------------------------------------------------------------
+   Design directions for /lab.
+
+   Four identities, each at two intensities, rendered against the real
+   catalogue so they can be compared as working pages rather than as mood
+   boards. Everything is scoped to [data-dir] so nothing here can leak into the
+   live site, and the whole file gets deleted once a direction is chosen and
+   promoted into app/globals.css.
+
+   Intensity is a modifier, not a rebuild: [data-loud] shifts ground, saturation,
+   type scale, and motif density on the same structure.
+--------------------------------------------------------------------------- */
+
+[data-dir] {
+  --ground: #ffffff;
+  --raised: #ffffff;
+  --ink: #111111;
+  --ink-2: #555555;
+  --ink-3: #888888;
+  --edge: #dddddd;
+  --edge-2: #bbbbbb;
+  --spot: #333333;
+  --spot-ink: #ffffff;
+  --radius: 0px;
+  --border-w: 1px;
+  --shadow: none;
+
+  background: var(--ground);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+[data-dir] *,
+[data-dir] *::before,
+[data-dir] *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================================
+   1. WORKSHOP
+   The site as a set of engineering drawings. Everything is dimensioned,
+   numbered, and annotated, which is the visual language that actually joins
+   the AR, hardware, and 3D printing work to the software.
+   ========================================================================= */
+
+[data-dir='workshop'] {
+  --ground: #f4f1ea;
+  --raised: #faf8f4;
+  --ink: #15181b;
+  --ink-2: #4d5257;
+  --ink-3: #8b9096;
+  --edge: #c9c3b6;
+  --edge-2: #15181b;
+  --spot: #c8451c;
+  --spot-ink: #fff;
+  --grid: rgba(21, 24, 27, 0.055);
+  --grid-size: 22px;
+
+  --font-display: var(--f-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--f-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-plex), ui-monospace, monospace;
+
+  font-family: var(--font-body);
+  background-color: var(--ground);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+[data-dir='workshop'][data-loud] {
+  --ground: #071e2f;
+  --raised: #0b2a41;
+  --ink: #e8f4fb;
+  --ink-2: #8fb4cb;
+  --ink-3: #5d829a;
+  --edge: #1d4864;
+  --edge-2: #46d3ff;
+  --spot: #ff7a3d;
+  --spot-ink: #1a0c04;
+  --grid: rgba(70, 211, 255, 0.11);
+  --grid-size: 18px;
+}
+
+/* Corner registration marks. A drawing is cropped, not rounded. */
+[data-dir='workshop'] .w-frame {
+  position: relative;
+  border: 1px solid var(--edge);
+  background: var(--raised);
+}
+[data-dir='workshop'] .w-frame::before,
+[data-dir='workshop'] .w-frame::after {
+  content: '';
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-color: var(--edge-2);
+  pointer-events: none;
+}
+[data-dir='workshop'] .w-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+[data-dir='workshop'] .w-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+[data-dir='workshop'][data-loud] .w-frame::before,
+[data-dir='workshop'][data-loud] .w-frame::after {
+  width: 18px;
+  height: 18px;
+}
+
+/* A dimension line: |<------ 1440 ------>| */
+[data-dir='workshop'] .w-dim {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-3);
+  font-family: var(--font-note);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+[data-dir='workshop'] .w-dim::before,
+[data-dir='workshop'] .w-dim::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+}
+[data-dir='workshop'] .w-tick {
+  width: 1px;
+  height: 9px;
+  background: currentColor;
+}
+
+/* =========================================================================
+   2. TERMINAL
+   The pitch is "run it yourself", so the site behaves like a working
+   environment: a prompt, a real query line, results printed rather than
+   arranged.
+   ========================================================================= */
+
+[data-dir='terminal'] {
+  --ground: #fbfbf8;
+  --raised: #ffffff;
+  --ink: #14171a;
+  --ink-2: #4a5157;
+  --ink-3: #868d94;
+  --edge: #dcdcd4;
+  --edge-2: #b6b6ab;
+  --spot: #a1580a;
+  --spot-ink: #fff;
+
+  --font-display: var(--f-plex), ui-monospace, monospace;
+  --font-body: var(--f-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-plex), ui-monospace, monospace;
+
+  font-family: var(--font-body);
+}
+
+[data-dir='terminal'][data-loud] {
+  --ground: #07090a;
+  --raised: #0d1113;
+  --ink: #ffb000;
+  --ink-2: #c98b12;
+  --ink-3: #7c5a10;
+  --edge: #2a2113;
+  --edge-2: #ffb000;
+  --spot: #ffb000;
+  --spot-ink: #07090a;
+
+  /* Everything is the terminal face once it commits. */
+  --font-body: var(--f-plex), ui-monospace, monospace;
+  text-shadow: 0 0 12px rgba(255, 176, 0, 0.18);
+}
+
+/* Faint scanlines, only at loud. Subtle enough to read through. */
+[data-dir='terminal'][data-loud]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 176, 0, 0.035) 0px,
+    rgba(255, 176, 0, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+[data-dir='terminal'] .t-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  translate: 0 0.16em;
+  background: var(--spot);
+  animation: t-blink 1.05s step-end infinite;
+}
+@keyframes t-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-dir='terminal'] .t-cursor {
+    animation: none;
+  }
+}
+
+[data-dir='terminal'] .t-row {
+  border-bottom: 1px solid var(--edge);
+  transition: background-color 0.12s ease;
+}
+[data-dir='terminal'] .t-row:hover {
+  background: color-mix(in srgb, var(--spot) 8%, transparent);
+}
+
+/* =========================================================================
+   3. ZINE
+   His own publication rather than a product page. Big masthead, thick rules,
+   numbered entries, one loud spot colour doing all the work.
+   ========================================================================= */
+
+[data-dir='zine'] {
+  --ground: #fbf7ef;
+  --raised: #fbf7ef;
+  --ink: #100f0d;
+  --ink-2: #46433d;
+  --ink-3: #79746b;
+  --edge: #100f0d;
+  --edge-2: #100f0d;
+  --spot: #e0301e;
+  --spot-2: #1d3fd8;
+  --spot-ink: #fbf7ef;
+  --rule: 2px;
+
+  --font-display: var(--f-black), Impact, sans-serif;
+  --font-body: var(--f-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-plex), ui-monospace, monospace;
+
+  font-family: var(--font-body);
+}
+
+[data-dir='zine'][data-loud] {
+  --ground: #0b0b0b;
+  --raised: #0b0b0b;
+  --ink: #f7f2e8;
+  --ink-2: #b3ada1;
+  --ink-3: #7d786f;
+  --edge: #f7f2e8;
+  --edge-2: #ff3b00;
+  --spot: #ff3b00;
+  --spot-2: #2b4cff;
+  --spot-ink: #0b0b0b;
+  --rule: 4px;
+}
+
+[data-dir='zine'] .z-rule {
+  border-top: var(--rule) solid var(--edge);
+}
+[data-dir='zine'] .z-hair {
+  border-top: 1px solid var(--edge);
+}
+
+/* Duotone. Restrained keeps the photograph readable, loud flattens it into
+   the spot colour so the page reads as two-colour print. */
+[data-dir='zine'] .z-duo {
+  filter: grayscale(1) contrast(1.08);
+  mix-blend-mode: multiply;
+}
+[data-dir='zine'][data-loud] .z-duo {
+  filter: grayscale(1) contrast(1.5) brightness(0.85);
+  mix-blend-mode: screen;
+}
+[data-dir='zine'] .z-duo-wrap {
+  background: var(--spot);
+}
+
+[data-dir='zine'] .z-numeral {
+  font-family: var(--font-display);
+  line-height: 0.78;
+  color: var(--spot);
+}
+
+[data-dir='zine'][data-loud] .z-sticker {
+  rotate: -3deg;
+}
+
+/* =========================================================================
+   4. ARCADE
+   Chunky, high contrast, and colour-coded by field, which is the one place
+   where a nine-colour palette is doing work rather than showing off.
+   ========================================================================= */
+
+[data-dir='arcade'] {
+  --ground: #fffdf6;
+  --raised: #ffffff;
+  --ink: #100f14;
+  --ink-2: #4b4954;
+  --ink-3: #837f8f;
+  --edge: #100f14;
+  --edge-2: #100f14;
+  --spot: #6b3fd4;
+  --spot-ink: #ffffff;
+  --border-w: 2px;
+  --radius: 4px;
+  --offset: 4px;
+
+  --font-display: var(--f-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--f-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-plex), ui-monospace, monospace;
+
+  font-family: var(--font-body);
+}
+
+[data-dir='arcade'][data-loud] {
+  --ground: #120f2e;
+  --raised: #1b1740;
+  --ink: #fff8ec;
+  --ink-2: #b9b1d8;
+  --ink-3: #837bad;
+  --edge: #000000;
+  --edge-2: #fff8ec;
+  --spot: #ff2e88;
+  --spot-ink: #12071b;
+  --border-w: 3px;
+  --radius: 6px;
+  --offset: 8px;
+}
+
+/* The hard offset shadow is the whole personality. It takes the accent colour
+   of whatever it is describing, so a gaming card throws a magenta shadow. */
+[data-dir='arcade'] .a-block {
+  background: var(--raised);
+  border: var(--border-w) solid var(--edge);
+  border-radius: var(--radius);
+  box-shadow: var(--offset) var(--offset) 0 0 var(--tint, var(--edge));
+  transition:
+    translate 0.12s ease,
+    box-shadow 0.12s ease;
+}
+[data-dir='arcade'] .a-block:hover {
+  translate: calc(var(--offset) * -0.4) calc(var(--offset) * -0.4);
+  box-shadow: calc(var(--offset) * 1.5) calc(var(--offset) * 1.5) 0 0
+    var(--tint, var(--edge));
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-dir='arcade'] .a-block,
+  [data-dir='arcade'] .a-block:hover {
+    translate: none;
+    transition: none;
+  }
+}
+
+/* =========================================================================
+   Shared primitives, expressed through each direction's tokens
+   ========================================================================= */
+
+[data-dir] .lab-note {
+  font-family: var(--font-note);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+[data-dir] .lab-cta {
+  display: inline-block;
+  background: var(--spot);
+  color: var(--spot-ink);
+  border: var(--border-w) solid var(--edge);
+  border-radius: var(--radius);
+  padding: 0.7rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+[data-dir] .lab-cta-ghost {
+  display: inline-block;
+  background: transparent;
+  color: var(--ink);
+  border: var(--border-w) solid var(--edge);
+  border-radius: var(--radius);
+  padding: 0.7rem 1.1rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+[data-dir] .lab-h2 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.05;
+}
+
+[data-dir] .lab-muted {
+  color: var(--ink-2);
+}
+[data-dir] .lab-faint {
+  color: var(--ink-3);
+}
+
+/* =========================================================================
+   Connect block
+   Token-driven so it inherits whichever direction it is dropped into. Sized
+   for a thumb first: 52px rows, 12px gaps, full-bleed on a phone.
+   ========================================================================= */
+
+[data-dir] .cblock {
+  margin: 34px 0 0;
+}
+[data-dir] .cblock-h {
+  margin: 0 0 12px;
+}
+[data-dir] .cgrid {
+  display: grid;
+  gap: 10px;
+}
+[data-dir] .cgrid + .cgrid {
+  margin-top: 10px;
+}
+[data-dir] .cgrid-2 {
+  grid-template-columns: 1fr;
+}
+[data-dir] .cgrid-follow {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+[data-dir] .cx {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 54px;
+  padding: 0 14px;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--raised);
+  border: var(--border-w) solid var(--edge);
+  border-radius: var(--radius);
+  transition:
+    background-color 0.14s ease,
+    border-color 0.14s ease;
+}
+[data-dir] .cx:hover {
+  border-color: var(--spot);
+}
+[data-dir] .cx-primary {
+  background: var(--spot);
+  color: var(--spot-ink);
+  border-color: var(--spot);
+  min-height: 62px;
+}
+[data-dir] .cx-primary .cx-sub {
+  color: var(--spot-ink);
+  opacity: 0.72;
+}
+[data-dir] .cx-primary:hover {
+  border-color: var(--edge);
+}
+
+[data-dir] .cx-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 20px;
+}
+[data-dir] .cx-icon .ci {
+  width: 19px;
+  height: 19px;
+}
+[data-dir] .cx-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+[data-dir] .cx-label {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+[data-dir] .cx-sub {
+  font-family: var(--font-note);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[data-dir] .cx-chev {
+  margin-left: auto;
+  color: var(--ink-3);
+  flex: 0 0 auto;
+}
+[data-dir] .cx-primary .cx-chev {
+  color: var(--spot-ink);
+  opacity: 0.8;
+}
+[data-dir] .cx-compact {
+  min-height: 48px;
+  gap: 10px;
+}
+[data-dir] .cx-compact .cx-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* From tablet up the connect block stops being the main event: three columns,
+   quieter, sitting under the hero rather than in front of it. */
+@media (min-width: 720px) {
+  [data-dir] .cgrid-2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  [data-dir] .cgrid-follow {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  [data-dir] .cx {
+    min-height: 50px;
+  }
+  [data-dir] .cx-primary {
+    min-height: 50px;
+  }
+}
+
+/* The zine direction wants square, printed buttons rather than soft ones. */
+[data-dir='zine'] .cx {
+  border-width: 2px;
+}
+/* Arcade throws its shadow here too, or the block reads as a different site. */
+[data-dir='arcade'] .cx {
+  box-shadow: 3px 3px 0 0 var(--edge);
+}
+[data-dir='arcade'] .cx-primary {
+  box-shadow: 3px 3px 0 0 var(--edge);
+}
