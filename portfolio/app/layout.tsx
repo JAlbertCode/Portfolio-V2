@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { inter, instrument, mono } from '@/lib/fonts'
-import { labFontVars } from '@/lib/lab-fonts'
 import Script from 'next/script'
-import SiteChrome from '@/components/SiteChrome'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import { fontVars } from '@/lib/fonts'
 import { site } from '@/lib/site'
 import './globals.css'
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 /**
  * Applied before first paint so the correct theme is already on the document
- * when the CSS lands. Without this the page flashes dark then corrects itself.
+ * when the CSS lands, otherwise the page flashes dark and then corrects itself.
  */
 const themeInit = `
 (function () {
@@ -40,11 +40,7 @@ const themeInit = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${instrument.variable} ${mono.variable} ${labFontVars}`}
-    >
+    <html lang="en" suppressHydrationWarning className={fontVars}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
@@ -52,7 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <SiteChrome>{children}</SiteChrome>
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JMRY14WSQ5"

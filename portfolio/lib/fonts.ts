@@ -1,49 +1,37 @@
 import localFont from 'next/font/local'
 
 /**
- * Fonts are self-hosted from the @fontsource packages rather than pulled from
- * next/font/google. Two reasons: the build no longer depends on being able to
- * reach fonts.googleapis.com, and no visitor's browser makes a request to
- * Google to render this site.
+ * Three faces, self-hosted from @fontsource rather than fetched from Google:
+ * the build has no network dependency and no visitor's browser calls Google.
  *
- * The weight ranges below are the variable axes each family actually ships.
+ * next/font requires literal paths, so none of these can share a prefix.
  */
 
-export const inter = localFont({
-  src: [
-    {
-      path: '../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2',
-      style: 'normal',
-    },
-    {
-      path: '../node_modules/@fontsource-variable/inter/files/inter-latin-wght-italic.woff2',
-      style: 'italic',
-    },
-  ],
-  weight: '100 900',
-  variable: '--font-inter',
-  display: 'swap',
-  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
-})
-
-export const instrument = localFont({
-  src: '../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2',
-  weight: '400',
-  style: 'normal',
-  variable: '--font-instrument',
+/** Headings. An editorial serif rather than a brand one. */
+export const display = localFont({
+  src: '../node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2',
+  weight: '200 800',
+  variable: '--font-display-face',
   display: 'swap',
   fallback: ['Georgia', 'Times New Roman', 'serif'],
 })
 
+/** Body. Neutral and well drawn, without being Inter. */
+export const body = localFont({
+  src: '../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2',
+  weight: '100 900',
+  variable: '--font-body-face',
+  display: 'swap',
+  fallback: ['ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+})
+
+/** Labels, dates, counts. Designed alongside the body face. */
 export const mono = localFont({
-  src: [
-    {
-      path: '../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2',
-      style: 'normal',
-    },
-  ],
-  weight: '100 800',
+  src: '../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2',
+  weight: '100 900',
   variable: '--font-mono-face',
   display: 'swap',
   fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
 })
+
+export const fontVars = [display.variable, body.variable, mono.variable].join(' ')

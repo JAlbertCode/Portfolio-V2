@@ -90,31 +90,11 @@ export default function EntryCard({
           ))}
         </div>
 
-        <div className="mt-auto pt-4">
-          {unavailable ? (
+        {unavailable ? (
+          <div className="mt-auto pt-4">
             <span className="text-xs leading-relaxed text-faint">{statusNote}</span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent">
-              {hasWriteup(entry) ? 'Read the write-up' : 'View'}
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 16 16"
-                fill="none"
-                aria-hidden="true"
-                className="transition-transform group-hover:translate-x-0.5"
-              >
-                <path
-                  d={external ? 'M5 11L11 5M11 5H6M11 5v5' : 'M3 8h10M9 4l4 4-4 4'}
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          )}
-        </div>
+          </div>
+        ) : null}
       </div>
     </article>
   )
