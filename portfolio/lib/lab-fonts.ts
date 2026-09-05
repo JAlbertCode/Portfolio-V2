@@ -90,6 +90,55 @@ export const geistMono = localFont({
   fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
 })
 
+
+/* -------------------------------------------------------------------------
+   Type pairings for /lab/v4
+
+   Four candidates rendered against the same page so the choice is made by
+   looking rather than by naming a font. Each is deliberately not Inter and not
+   Instrument Serif, which is the pair the first V3 used and the pair that read
+   as default.
+   ------------------------------------------------------------------------- */
+
+/** Pairing A display: a serif with real quirk. Its wonk and optical axes give
+    it character at large sizes without tipping into costume. */
+export const fraunces = localFont({
+  src: '../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-standard-normal.woff2',
+  weight: '100 900',
+  variable: '--f-fraunces',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+})
+
+/** Pairing C display: a quieter editorial serif than Fraunces, closer to a
+    magazine than to a brand. */
+export const newsreader = localFont({
+  src: '../node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2',
+  weight: '200 800',
+  variable: '--f-newsreader',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+})
+
+/** Body and display candidate: slightly condensed, flat terminals, reads
+    contemporary without being neutral to the point of anonymity. */
+export const instrumentSans = localFont({
+  src: '../node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2',
+  weight: '400 700',
+  variable: '--f-instrument-sans',
+  display: 'swap',
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+})
+
+/** Body candidate with a touch more warmth than a pure grotesque. */
+export const schibsted = localFont({
+  src: '../node_modules/@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2',
+  weight: '400 900',
+  variable: '--f-schibsted',
+  display: 'swap',
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+})
+
 export const labFontVars = [
   spaceGrotesk.variable,
   plexMono.variable,
@@ -98,4 +147,8 @@ export const labFontVars = [
   bricolage.variable,
   geist.variable,
   geistMono.variable,
+  fraunces.variable,
+  newsreader.variable,
+  instrumentSans.variable,
+  schibsted.variable,
 ].join(' ')

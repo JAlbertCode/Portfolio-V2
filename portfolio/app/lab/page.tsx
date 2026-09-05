@@ -4,6 +4,10 @@ import { DIRECTIONS } from '@/components/lab/LabSwitcher'
 export const metadata = { title: 'Design directions', robots: { index: false, follow: false } }
 
 const RATIONALE: Record<string, { for: string; against: string }> = {
+  v4: {
+    for: "The first version's look, the newer flow, and four type pairings you can flip between on the same page. Cards and the teal accent stay; the ordering and the long tail come from Quiet.",
+    against: 'Nothing yet. Pick a pairing and it becomes the site.',
+  },
   quiet: {
     for: 'What the current site gets right, executed properly. No cards, no ceremony, hairlines and space instead. The work is a scannable text list rather than a wall of images, which is also what search engines read.',
     against: 'Restraint only reads as confidence when the type and spacing are exactly right. There is nowhere to hide.',

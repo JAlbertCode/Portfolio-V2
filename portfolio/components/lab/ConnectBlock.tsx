@@ -56,7 +56,7 @@ function Row({ action, primary }: { action: ConnectAction; primary?: boolean }) 
       </span>
       <span className="cx-text">
         <span className="cx-label">{action.label}</span>
-        <span className="cx-sub">{action.sublabel}</span>
+        {action.sublabel ? <span className="cx-sub">{action.sublabel}</span> : null}
       </span>
       <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true" className="cx-chev">
         <path d="M6 3.5 10.5 8 6 12.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -67,11 +67,7 @@ function Row({ action, primary }: { action: ConnectAction; primary?: boolean }) 
 
 export default function ConnectBlock() {
   return (
-    <section aria-labelledby="connect-heading" className="cblock">
-      <h2 id="connect-heading" className="lab-note cblock-h">
-        Just met? Start here
-      </h2>
-
+    <section aria-label="Ways to reach Jay" className="cblock">
       <div className="cgrid">
         {saveActions.map((a) => (
           <Row key={a.label} action={a} primary />

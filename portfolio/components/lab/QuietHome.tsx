@@ -77,8 +77,7 @@ export default function QuietHome() {
           </p>
           <p style={{ fontSize: 15.5, lineHeight: 1.65, color: 'var(--ink-2)', margin: '18px 0 0', maxWidth: '62ch' }}>
             Developer relations and solutions engineering across AI, decentralised compute,
-            blockchains, gaming, augmented reality, finance, and civic tech. A decade of it, all
-            catalogued below.
+            blockchains, gaming, augmented reality, finance, and civic tech.
           </p>
 
           <div
@@ -88,10 +87,6 @@ export default function QuietHome() {
             <span>{site.location}</span>
             <span>{allEntries.length} entries</span>
             <span>2014&ndash;2026</span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--ink-2)' }}>
-              <span className="q-live" />
-              open to conversations
-            </span>
           </div>
         </section>
 
@@ -100,7 +95,6 @@ export default function QuietHome() {
 
         {/* ------------------------------------------------------------- lanes */}
         <section style={{ marginTop: 54 }}>
-          <div className="q-num" style={{ paddingBottom: 10 }}>Start where you are</div>
           <div className="q-rule" />
           {LANES.map((l) => (
             <a
@@ -173,7 +167,6 @@ export default function QuietHome() {
 
         {/* ------------------------------------------------------------- index */}
         <section style={{ marginTop: 54 }}>
-          <div className="q-num" style={{ paddingBottom: 10 }}>Index</div>
           <div className="q-rule" />
           <div
             style={{
@@ -232,10 +225,6 @@ export default function QuietHome() {
           </div>
         </section>
 
-        <footer className="q-num" style={{ marginTop: 64, paddingTop: 18, borderTop: '1px solid var(--edge)' }}>
-          {featured.length} featured of {allEntries.length} &middot; oldest{' '}
-          {formatDate(groupByYear(allEntries).at(-1)![1].at(-1)!.date)} &middot; {site.location}
-        </footer>
       </div>
     </>
   )

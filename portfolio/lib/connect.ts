@@ -15,7 +15,12 @@ import { site } from './site'
 
 export interface ConnectAction {
   label: string
-  sublabel: string
+  /**
+   * Only set where it carries information the label does not. "Fastest way to
+   * reach me" under a button marked Telegram is filler; an actual handle or
+   * address is not.
+   */
+  sublabel?: string
   href: string
   icon: string
   /** Opens the phone's own UI rather than a web page. */
@@ -25,6 +30,8 @@ export interface ConnectAction {
 /** Tier 1. One tap, and he is in their phone. */
 export const saveActions: ConnectAction[] = [
   {
+    // The sublabel stays: a vCard is the one action here whose behaviour is not
+    // obvious from its name.
     label: 'Save my contact',
     sublabel: 'Adds straight to your phone',
     href: '/contact.vcf',
@@ -35,12 +42,7 @@ export const saveActions: ConnectAction[] = [
 
 /** Tier 2. Start a conversation now, while they remember why. */
 export const talkActions: ConnectAction[] = [
-  {
-    label: 'Telegram',
-    sublabel: 'Fastest way to reach me',
-    href: 'https://t.me/Jay_Albert',
-    icon: 'Telegram',
-  },
+  { label: 'Telegram', sublabel: '@Jay_Albert', href: 'https://t.me/Jay_Albert', icon: 'Telegram' },
   {
     label: 'Email',
     sublabel: site.email,
@@ -48,20 +50,15 @@ export const talkActions: ConnectAction[] = [
     icon: 'mail',
     native: true,
   },
-  {
-    label: 'Book 15 minutes',
-    sublabel: 'Pick a slot now',
-    href: site.calendly,
-    icon: 'calendar',
-  },
+  { label: 'Book 15 minutes', href: site.calendly, icon: 'calendar' },
 ]
 
 /** Tier 3. Follow, in the order most people actually use them. */
 export const followActions: ConnectAction[] = [
-  { label: 'LinkedIn', sublabel: 'Connect', href: 'https://www.linkedin.com/in/jonathan-albert-profile/', icon: 'LinkedIn' },
-  { label: 'X', sublabel: '@Jay_Albert_', href: 'https://twitter.com/Jay_Albert_', icon: 'X' },
-  { label: 'GitHub', sublabel: 'JAlbertCode', href: 'https://github.com/JAlbertCode', icon: 'GitHub' },
-  { label: 'Medium', sublabel: 'Writing', href: 'https://jonathan-albert.medium.com/', icon: 'Medium' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jonathan-albert-profile/', icon: 'LinkedIn' },
+  { label: 'X', href: 'https://twitter.com/Jay_Albert_', icon: 'X' },
+  { label: 'GitHub', href: 'https://github.com/JAlbertCode', icon: 'GitHub' },
+  { label: 'Medium', href: 'https://jonathan-albert.medium.com/', icon: 'Medium' },
 ]
 
 /**

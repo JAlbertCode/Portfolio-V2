@@ -765,3 +765,243 @@
     order: -1;
   }
 }
+
+/* =========================================================================
+   6. V4
+   The first V3's visual language, the Quiet direction's flow, and the type
+   left as a variable.
+
+   Kept from V3: dark ground with a light counterpart, a single teal accent
+   descended from the colour the site has always used, cards with a soft radius
+   and a hairline border, mono for every label.
+
+   Taken from Quiet: identity before contact before work, a narrow measure on
+   the prose, and the long tail of the catalogue as a scannable list rather
+   than a second wall of cards.
+
+   Type is chosen with [data-type] so four pairings can be compared on the same
+   page instead of argued about by name.
+   ========================================================================= */
+
+[data-dir='v4'] {
+  --ground: #0a0c10;
+  --ground-2: #0e1117;
+  --raised: #12161f;
+  --raised-2: #171c27;
+  --ink: #e9edf4;
+  --ink-2: #9aa4b8;
+  --ink-3: #6b7488;
+  --edge: #232937;
+  --edge-2: #333b4d;
+  --spot: #2fd8cd;
+  --spot-hover: #5fe6dd;
+  --spot-ink: #04231f;
+  --live: #34d17e;
+  --radius: 12px;
+  --border-w: 1px;
+  --lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px -14px rgb(0 0 0 / 0.7);
+
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  letter-spacing: -0.008em;
+}
+
+/* The light counterpart, so the accent still has contrast on paper. */
+[data-dir='v4'][data-loud] {
+  --ground: #fbfbfa;
+  --ground-2: #f4f4f2;
+  --raised: #ffffff;
+  --raised-2: #ffffff;
+  --ink: #16181d;
+  --ink-2: #5b6270;
+  --ink-3: #868d9b;
+  --edge: #e4e4e0;
+  --edge-2: #cdcdc7;
+  --spot: #0b8f8a;
+  --spot-hover: #0a7a76;
+  --spot-ink: #ffffff;
+  --live: #159a5b;
+  --lift: 0 1px 2px rgb(20 20 20 / 0.05), 0 10px 28px -16px rgb(20 20 20 / 0.25);
+}
+
+/* ---------------------------------------------------------- type pairings */
+
+/* A. Fraunces over Instrument Sans. A serif with quirk, a body with flat
+      terminals. The most opinionated of the four. */
+[data-dir='v4'][data-type='a'] {
+  --font-display: var(--f-fraunces), Georgia, serif;
+  --font-body: var(--f-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-geist-mono), ui-monospace, Menlo, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.022em;
+}
+
+/* B. Bricolage over Schibsted. All sans, contemporary, slightly playful
+      without being loud. */
+[data-dir='v4'][data-type='b'] {
+  --font-display: var(--f-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--f-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-mono-face), ui-monospace, Menlo, monospace;
+  --display-weight: 600;
+  --display-tracking: -0.03em;
+}
+
+/* C. Newsreader over Geist. The quietest editorial pairing: a magazine serif
+      with a neutral, well-drawn body. */
+[data-dir='v4'][data-type='c'] {
+  --font-display: var(--f-newsreader), Georgia, serif;
+  --font-body: var(--f-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-geist-mono), ui-monospace, Menlo, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.018em;
+}
+
+/* D. One family for everything. Instrument Sans tightened at display sizes.
+      No serif anywhere, which is the biggest departure from the first V3. */
+[data-dir='v4'][data-type='d'] {
+  --font-display: var(--f-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--f-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-geist-mono), ui-monospace, Menlo, monospace;
+  --display-weight: 600;
+  --display-tracking: -0.035em;
+}
+
+/* ------------------------------------------------------------- primitives */
+
+[data-dir='v4'] .v-display {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+[data-dir='v4'] .v-note {
+  font-family: var(--font-note);
+  font-size: 11px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-dir='v4'] .v-card {
+  background: var(--raised);
+  border: 1px solid var(--edge);
+  border-radius: var(--radius);
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+[data-dir='v4'] a.v-card:hover {
+  border-color: var(--edge-2);
+  transform: translateY(-2px);
+  box-shadow: var(--lift);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-dir='v4'] a.v-card:hover {
+    transform: none;
+  }
+}
+
+[data-dir='v4'] .v-rule {
+  border-top: 1px solid var(--edge);
+}
+
+[data-dir='v4'] .v-live {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--live);
+  translate: 0 -1px;
+}
+
+/* The long tail. Same scannable row as Quiet, wearing V3's colours. */
+[data-dir='v4'] .v-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+  gap: 1.1rem;
+  align-items: baseline;
+  padding: 0.95rem 0.7rem;
+  margin: 0 -0.7rem;
+  border-bottom: 1px solid var(--edge);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.12s ease;
+}
+[data-dir='v4'] .v-row:hover {
+  background: var(--raised);
+}
+[data-dir='v4'] .v-row-title {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  font-size: 18px;
+  color: var(--ink);
+}
+[data-dir='v4'] .v-row:hover .v-row-title {
+  color: var(--spot);
+}
+[data-dir='v4'] .v-row-sum {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin-top: 3px;
+  max-width: 64ch;
+}
+
+[data-dir='v4'] .v-thumb {
+  display: none;
+  position: relative;
+  width: 46px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--ground-2);
+}
+@media (max-width: 767px) {
+  [data-dir='v4'] .v-row {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: start;
+  }
+  [data-dir='v4'] .v-thumb {
+    display: block;
+  }
+  [data-dir='v4'] .v-idx,
+  [data-dir='v4'] .v-row-year {
+    display: none;
+  }
+}
+
+/* Connect block in V3's clothing: cards, not hairlines. */
+[data-dir='v4'] .cx {
+  background: var(--raised);
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+}
+[data-dir='v4'] .cx-primary {
+  background: var(--spot);
+  border-color: var(--spot);
+  color: var(--spot-ink);
+}
+[data-dir='v4'] .cx-primary:hover {
+  background: var(--spot-hover);
+  border-color: var(--spot-hover);
+}
+[data-dir='v4'] .cx-label {
+  font-family: var(--font-body);
+}
+
+/* The hover preview carries over from Quiet, restyled. */
+[data-dir='v4'] .q-peek {
+  border-radius: 10px;
+  border-color: var(--edge-2);
+  background: var(--raised);
+  box-shadow: var(--lift);
+}

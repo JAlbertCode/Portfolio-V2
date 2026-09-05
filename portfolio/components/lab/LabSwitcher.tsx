@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export const DIRECTIONS = [
+  { slug: 'v4', name: 'V4', note: "V3's look, Quiet's flow, type as a variable" },
   { slug: 'quiet', name: 'Quiet', note: 'Fast and plain, done properly' },
   { slug: 'workshop', name: 'Workshop', note: 'Technical drawing' },
   { slug: 'terminal', name: 'Terminal', note: 'Runnable' },
@@ -15,13 +16,29 @@ export type DirectionSlug = (typeof DIRECTIONS)[number]['slug']
  * page. Deliberately styled outside every direction's tokens, in plain neutral
  * chrome, so it never reads as part of the design being judged.
  */
+export const TYPE_PAIRINGS = [
+  { key: 'a', name: 'Fraunces + Instrument Sans' },
+  { key: 'b', name: 'Bricolage + Schibsted' },
+  { key: 'c', name: 'Newsreader + Geist' },
+  { key: 'd', name: 'Instrument Sans only' },
+] as const
+
 export default function LabSwitcher({
   active,
   loud,
+  type,
 }: {
   active: DirectionSlug
   loud: boolean
+  type?: string
 }) {
+  const q = (over: Record<string, string | undefined>) => {
+    const params = new URLSearchParams()
+    const merged = { intensity: loud ? 'loud' : undefined, type, ...over }
+    for (const [k, v] of Object.entries(merged)) if (v) params.set(k, v)
+    const s = params.toString()
+    return s ? `?${s}` : ''
+  }
   return (
     <div
       style={{
@@ -44,7 +61,7 @@ export default function LabSwitcher({
       {DIRECTIONS.map((d) => (
         <Link
           key={d.slug}
-          href={`/lab/${d.slug}${loud ? '?intensity=loud' : ''}`}
+          href={`/lab/${d.slug}${q({})}`}
           style={{
             padding: '4px 9px',
             borderRadius: 4,
@@ -59,8 +76,8 @@ export default function LabSwitcher({
       ))}
       <span style={{ opacity: 0.5, margin: '0 6px 0 14px' }}>intensity</span>
       {[
-        { label: 'restrained', on: !loud, href: `/lab/${active}` },
-        { label: 'loud', on: loud, href: `/lab/${active}?intensity=loud` },
+        { label: active === 'v4' || active === 'quiet' ? 'dark' : 'restrained', on: !loud, href: `/lab/${active}${q({ intensity: undefined })}` },
+        { label: active === 'v4' || active === 'quiet' ? 'light' : 'loud', on: loud, href: `/lab/${active}${q({ intensity: 'loud' })}` },
       ].map((i) => (
         <Link
           key={i.label}
@@ -77,11 +94,30 @@ export default function LabSwitcher({
           {i.label}
         </Link>
       ))}
-      <Link
-        href="/lab"
-        style={{ marginLeft: 'auto', color: '#888', textDecoration: 'none' }}
-      >
-        all eight →
+      {active === 'v4' ? (
+        <>
+          <span style={{ opacity: 0.5, margin: '0 6px 0 14px' }}>type</span>
+          {TYPE_PAIRINGS.map((t) => (
+            <Link
+              key={t.key}
+              href={`/lab/v4${q({ type: t.key })}`}
+              style={{
+                padding: '4px 9px',
+                borderRadius: 4,
+                textDecoration: 'none',
+                background: (type ?? 'a') === t.key ? '#eee' : 'transparent',
+                color: (type ?? 'a') === t.key ? '#141414' : '#bbb',
+                border: '1px solid #333',
+              }}
+            >
+              {t.name}
+            </Link>
+          ))}
+        </>
+      ) : null}
+
+      <Link href="/lab" style={{ marginLeft: 'auto', color: '#888', textDecoration: 'none' }}>
+        index &rarr;
       </Link>
     </div>
   )
