@@ -4,6 +4,10 @@ import { DIRECTIONS } from '@/components/lab/LabSwitcher'
 export const metadata = { title: 'Design directions', robots: { index: false, follow: false } }
 
 const RATIONALE: Record<string, { for: string; against: string }> = {
+  quiet: {
+    for: 'What the current site gets right, executed properly. No cards, no ceremony, hairlines and space instead. The work is a scannable text list rather than a wall of images, which is also what search engines read.',
+    against: 'Restraint only reads as confidence when the type and spacing are exactly right. There is nowhere to hide.',
+  },
   workshop: {
     for: 'The one visual language that joins the AR, hardware, and 3D printing work to the software instead of treating them as unrelated categories. Reads as precise and senior.',
     against: 'Drafting motifs can tip into costume if every element gets a part number.',

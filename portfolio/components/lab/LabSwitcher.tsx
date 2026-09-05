@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export const DIRECTIONS = [
+  { slug: 'quiet', name: 'Quiet', note: 'Fast and plain, done properly' },
   { slug: 'workshop', name: 'Workshop', note: 'Technical drawing' },
   { slug: 'terminal', name: 'Terminal', note: 'Runnable' },
   { slug: 'zine', name: 'Zine', note: 'Editorial' },

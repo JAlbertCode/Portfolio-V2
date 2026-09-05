@@ -66,10 +66,36 @@ export const bricolage = localFont({
   fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 
+
+
+/**
+ * The quiet direction runs on one family plus its mono companion. Geist is
+ * neutral without being Inter: slightly narrower, flatter terminals, and a
+ * mono that is actually designed alongside it rather than borrowed. One family
+ * doing everything is what "plain" looks like when it is done deliberately.
+ */
+export const geist = localFont({
+  src: '../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2',
+  weight: '100 900',
+  variable: '--f-geist',
+  display: 'swap',
+  fallback: ['ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+})
+
+export const geistMono = localFont({
+  src: '../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2',
+  weight: '100 900',
+  variable: '--f-geist-mono',
+  display: 'swap',
+  fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+})
+
 export const labFontVars = [
   spaceGrotesk.variable,
   plexMono.variable,
   archivoBlack.variable,
   archivo.variable,
   bricolage.variable,
+  geist.variable,
+  geistMono.variable,
 ].join(' ')

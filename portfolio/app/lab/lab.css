@@ -538,3 +538,230 @@
 [data-dir='arcade'] .cx-primary {
   box-shadow: 3px 3px 0 0 var(--edge);
 }
+
+/* =========================================================================
+   5. QUIET
+   Fast and plain, executed properly.
+
+   The card is gone. Bordered, rounded, shadowed rectangles are what made the
+   first attempt read like a template, so structure here is carried by
+   hairlines, alignment, and space instead. One family does everything. The
+   palette is neutral on purpose: fifty-six thumbnails already supply more
+   colour than any accent could, and the restraint is what reads as considered
+   rather than decorated.
+   ========================================================================= */
+
+[data-dir='quiet'] {
+  --ground: #ffffff;
+  --raised: #fafafa;
+  --ink: #0b0b0c;
+  --ink-2: #6b6b70;
+  --ink-3: #97979d;
+  --edge: #e8e8e6;
+  --edge-2: #d4d4d1;
+  --spot: #0b0b0c;
+  --spot-ink: #ffffff;
+  --live: #159a5b;
+  --radius: 0px;
+  --border-w: 1px;
+
+  --font-body: var(--f-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--f-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-note: var(--f-geist-mono), ui-monospace, Menlo, monospace;
+
+  font-family: var(--font-body);
+  font-feature-settings: 'cv11', 'ss01';
+  letter-spacing: -0.011em;
+}
+
+[data-dir='quiet'][data-loud] {
+  --ground: #0a0a0b;
+  --raised: #131315;
+  --ink: #ededee;
+  --ink-2: #8e8e94;
+  --ink-3: #67676d;
+  --edge: #1e1e21;
+  --edge-2: #2c2c30;
+  --spot: #ededee;
+  --spot-ink: #0a0a0b;
+  --live: #34d17e;
+}
+
+/* Numbers line up in columns. Non-negotiable once anything is counted. */
+[data-dir='quiet'] .q-num {
+  font-family: var(--font-note);
+  font-variant-numeric: tabular-nums;
+  font-size: 11.5px;
+  color: var(--ink-3);
+  letter-spacing: 0;
+}
+
+[data-dir='quiet'] .q-rule {
+  border-top: 1px solid var(--edge);
+}
+
+/* The work list. A row is text; the image is the reward for pointing at it. */
+[data-dir='quiet'] .q-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+  gap: 1.1rem;
+  align-items: baseline;
+  padding: 1.05rem 0.6rem;
+  margin: 0 -0.6rem;
+  border-bottom: 1px solid var(--edge);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.12s ease;
+}
+[data-dir='quiet'] .q-row:hover {
+  background: var(--raised);
+}
+[data-dir='quiet'] .q-row-title {
+  font-size: 17px;
+  font-weight: 450;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+[data-dir='quiet'] .q-row:hover .q-row-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+[data-dir='quiet'] .q-row-sum {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin-top: 3px;
+  max-width: 62ch;
+  line-height: 1.5;
+}
+
+/* Desktop hover preview. Fixed to the pointer, one image at a time, no
+   library. It is hidden from assistive tech and never rendered on touch,
+   where the row carries its own thumbnail instead. */
+[data-dir='quiet'] .q-peek {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: 260px;
+  aspect-ratio: 16 / 10;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  background: var(--raised);
+  border: 1px solid var(--edge-2);
+  transition: opacity 0.14s ease;
+  will-change: transform;
+}
+[data-dir='quiet'] .q-peek[data-on='1'] {
+  opacity: 1;
+}
+@media (hover: none), (max-width: 767px) {
+  [data-dir='quiet'] .q-peek {
+    display: none;
+  }
+}
+
+/* On touch the thumbnail is just part of the row. */
+[data-dir='quiet'] .q-thumb {
+  display: none;
+  position: relative;
+  width: 46px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: var(--raised);
+}
+@media (max-width: 767px) {
+  [data-dir='quiet'] .q-row {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: start;
+  }
+  [data-dir='quiet'] .q-thumb {
+    display: block;
+  }
+  /* Only the running index and the year go; the metadata line and the lane
+     kickers are still doing work at this width. */
+  [data-dir='quiet'] .q-idx,
+  [data-dir='quiet'] .q-row-year {
+    display: none;
+  }
+}
+
+[data-dir='quiet'] .q-live {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--live);
+  translate: 0 -1px;
+}
+
+/* The connect rows lose their boxes here too. Hairlines only, except the one
+   action that should look like a button, which is the one that matters. */
+[data-dir='quiet'] .cx {
+  border: none;
+  border-bottom: 1px solid var(--edge);
+  border-radius: 0;
+  background: transparent;
+  padding: 0 2px;
+}
+[data-dir='quiet'] .cx:hover {
+  background: var(--raised);
+}
+[data-dir='quiet'] .cx-primary {
+  background: var(--spot);
+  color: var(--spot-ink);
+  border: none;
+  padding: 0 14px;
+}
+[data-dir='quiet'] .cgrid {
+  gap: 0;
+}
+[data-dir='quiet'] .cgrid + .cgrid {
+  margin-top: 0;
+}
+[data-dir='quiet'] .cgrid-follow {
+  gap: 0 22px;
+}
+
+/* Connect block, quiet refinements.
+   Three actions side by side each carrying their own chevron reads as clutter,
+   and the follow row's hairlines break at every gap. Both fixed here rather
+   than in the shared block, because they are only wrong in this direction. */
+@media (min-width: 720px) {
+  [data-dir='quiet'] .cgrid-2 .cx-chev,
+  [data-dir='quiet'] .cgrid-follow .cx-chev {
+    display: none;
+  }
+  [data-dir='quiet'] .cgrid-2 {
+    gap: 0 26px;
+  }
+}
+[data-dir='quiet'] .cgrid-follow {
+  border-bottom: 1px solid var(--edge);
+}
+[data-dir='quiet'] .cgrid-follow .cx {
+  border-bottom: none;
+}
+[data-dir='quiet'] .cx-sub {
+  font-size: 11.5px;
+}
+
+/* Lanes keep their kicker at every width; only the column widths change. */
+[data-dir='quiet'] .q-lane {
+  grid-template-columns: 11rem minmax(0, 1fr) auto;
+}
+@media (max-width: 767px) {
+  [data-dir='quiet'] .q-lane {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 2px;
+    align-items: baseline;
+  }
+  [data-dir='quiet'] .q-lane .q-num {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+}
