@@ -238,13 +238,14 @@ export const entries: Entry[] = [
     slug: 'moddio-stream',
     title: 'Moddio game engine',
     summary:
-      'How Moddio is building AI-assisted game development tooling, and its funding model through indie.fun.',
+      'How Moddio is building AI-assisted game development tooling, and its funding model through indie.fun. Published as \'Game Dev Made Easy: Fast Tools, Fun Creations, Funded Dreams\'.',
     date: '2025-01',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Gaming', 'AI'],
     cover: { src: '/images/Moddio.png', alt: 'Stream banner showing the Moddio game engine' },
-    href: 'https://www.youtube.com/watch?v=OsfmODTBQaA',
+    // V2 had this and the Farworld entry pointing at each other's videos.
+    href: 'https://www.youtube.com/watch?v=8wQHD2qj8bs',
     org: 'ChainSafe Gaming',
   },
   {
@@ -263,13 +264,14 @@ export const entries: Entry[] = [
   {
     slug: 'farworld-stream',
     title: 'Farworld',
-    summary: 'A look at Farworld and how AI is being folded into game production pipelines.',
+    summary:
+      'Farworld turning chat apps into gaming adventures, and where AI fits in a game production pipeline.',
     date: '2025-01',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Gaming', 'AI'],
     cover: { src: '/images/farworld.png', alt: 'Farworld AI gaming stream' },
-    href: 'https://www.youtube.com/watch?v=8wQHD2qj8bs',
+    href: 'https://www.youtube.com/watch?v=OsfmODTBQaA',
     org: 'ChainSafe Gaming',
   },
   {
