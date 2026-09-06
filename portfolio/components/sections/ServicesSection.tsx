@@ -2,6 +2,14 @@ import Link from 'next/link'
 import { isExternal } from '@/lib/content'
 import { services } from '@/lib/site'
 
+/**
+ * Three service cards, and the buttons line up.
+ *
+ * They did not before: each card was as tall as its own content, so the three
+ * calls to action finished at three different heights down the page and the
+ * row had no baseline. The grid stretches the cards to a common height and the
+ * button is pushed to the bottom of each, which is the whole fix.
+ */
 export default function ServicesSection() {
   return (
     <section id="services" className="scroll-mt-20 pt-14 sm:pt-20">
@@ -12,9 +20,9 @@ export default function ServicesSection() {
         wrong problem.
       </p>
 
-      <div className="mt-8 grid gap-5 lg:grid-cols-3">
+      <div className="mt-8 grid items-stretch gap-5 lg:grid-cols-3">
         {services.map((service, i) => (
-          <div key={service.slug} className="flex flex-col border-t border-line pt-4">
+          <div key={service.slug} className="flex h-full flex-col border-t border-line pt-4">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="label">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="font-display text-lg text-text">{service.title}</h3>
@@ -25,6 +33,7 @@ export default function ServicesSection() {
             </div>
             <p className="mt-3 text-sm leading-relaxed text-muted">{service.pitch}</p>
 
+            {service.deliverables?.length ? (
             <ul className="mt-4 space-y-1.5">
               {service.deliverables.map((d) => (
                 <li key={d} className="flex gap-2.5 text-sm leading-relaxed text-text">
@@ -48,18 +57,27 @@ export default function ServicesSection() {
                 </li>
               ))}
             </ul>
+            ) : null}
 
-            <p className="mt-4 border-l border-line pl-3 text-sm italic text-faint">{service.fit}</p>
+            {service.fit ? (
+              <p className="mt-4 border-l border-line pl-3 text-sm italic text-faint">
+                {service.fit}
+              </p>
+            ) : null}
 
-            <Link
-              href={service.cta.href}
-              {...(isExternal(service.cta.href)
-                ? { target: '_blank', rel: 'noopener noreferrer' }
-                : {})}
-              className="cta-ghost mt-6"
-            >
-              {service.cta.label}
-            </Link>
+            {/* mt-auto on the wrapper is what puts every button on the same
+                line; the padding keeps a gap when the card above is short. */}
+            <div className="mt-auto pt-6">
+              <Link
+                href={service.cta.href}
+                {...(isExternal(service.cta.href)
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+                className="cta-ghost w-full"
+              >
+                {service.cta.label}
+              </Link>
+            </div>
           </div>
         ))}
       </div>

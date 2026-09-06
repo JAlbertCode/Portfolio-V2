@@ -166,15 +166,32 @@ export interface Service {
   /** Set where the work runs through a separate brand rather than through Jay. */
   org?: string
   pitch: string
-  /** What the buyer actually receives. */
-  deliverables: string[]
-  /** Who this is for. Written to let the wrong buyer disqualify themselves. */
-  fit: string
+  /**
+   * What the buyer actually receives. Optional, because for work that runs
+   * through another business this page should not be restating its terms.
+   */
+  deliverables?: string[]
+  /**
+   * Who this is for. Written to let the wrong buyer disqualify themselves.
+   * Optional for the same reason.
+   */
+  fit?: string
   cta: { label: string; href: string }
-  /** TODO(jay): fill in or leave null to hide the line. */
+  /**
+   * A price. Leave it null unless Jay has said, here, that he wants that
+   * number on this page: a figure on a services page is an offer, and one
+   * copied from somewhere else is an offer he never made.
+   */
   startingAt: string | null
 }
 
+/**
+ * TODO(jay): sign off on the deliverables and the "best for" line on the first
+ *   two, or cut them. Nobody has confirmed these. They were written here from
+ *   what the work looked like, and a bulleted list of what a buyer receives is
+ *   a specification of the job whether or not it is labelled one. Same class of
+ *   thing as the price that used to sit on the third card.
+ */
 export const services: Service[] = [
   {
     slug: 'advisory',
@@ -205,22 +222,22 @@ export const services: Service[] = [
     startingAt: null,
   },
   {
-    // Everything below is taken from the shop itself rather than described from
-    // memory. Print work runs through Layerworks, which has its own intake
-    // form, so this block exists to hand people over rather than to duplicate it.
+    // No prices, no turnaround, no shipping terms. An earlier version carried
+    // "custom pieces start at $35 with design included, and you get a quote
+    // inside 24 hours", lifted from the wording on the Layerworks commissions
+    // page. It was accurate to that page and still wrong here: it is a
+    // commitment, it was made on Jay's personal site without him agreeing to
+    // it, and two copies of the same terms drift the moment one is edited.
+    //
+    // This block hands people over. The shop states its own terms, and it is
+    // the only place that should.
     slug: '3d-printing',
     title: '3D printing',
     org: 'Layerworks Print Co.',
     pitch:
-      'Stands, mounts, displays, replacement parts, and one-off gifts, made to order through Layerworks Print Co. Stock pieces are on the shop; anything that does not exist yet gets designed for you.',
-    deliverables: [
-      'Describe the object and what it is for, with a photo and rough measurements',
-      'A spinnable 3D preview to approve before anything is made, with the price locked at that step',
-      'Printed in-house in your choice of colours, test-fitted, and shipped free in the US',
-    ],
-    fit: 'Custom pieces start at $35 with design included, and you get a quote inside 24 hours.',
+      'Stands, mounts, displays, replacement parts, and one-off gifts. Print work runs through Layerworks Print Co., which takes the request, quotes it, and makes it.',
     cta: { label: 'Start a request at Layerworks', href: 'https://jalbertcode.github.io/3d-printing-store/#custom' },
-    startingAt: '$35',
+    startingAt: null,
   },
 ]
 

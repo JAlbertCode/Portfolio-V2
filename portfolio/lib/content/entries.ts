@@ -1292,6 +1292,7 @@ export const entries: Entry[] = [
     medium: 'writing',
     practices: ['Writing & Research'],
     domains: ['Civic & Social', 'AI'],
+    cover: { src: '/images/internet-is-the-new-culture.png', alt: 'The Internet Is the New Culture' },
     href: 'https://jonathan-albert.medium.com/the-internet-is-the-new-culture-fd5efd391658',
   },
   {

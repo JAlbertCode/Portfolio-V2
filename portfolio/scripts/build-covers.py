@@ -46,6 +46,17 @@ SIZES = ROOT / 'lib' / 'content' / 'cover-sizes.json'
 
 W, H = 1200, 750           # 16:10
 PAD = 0.94                 # the artwork never touches the tile edge
+
+# Sources smaller than the tile used to be left at native size, because
+# Image.thumbnail only ever shrinks. A 480x360 frame then sat at 40% of a
+# 1200x750 canvas, and eighteen cards of a small picture centred in a large
+# empty rectangle all read as the same empty rectangle. So small sources are
+# allowed to grow, by different amounts depending on what they are: a video
+# frame carries detail that survives being enlarged, a flat mark does not and
+# just turns to mush.
+MAX_UPSCALE_DENSE = 3.0
+MAX_UPSCALE_FLAT = 1.8
+DENSE_COLOURS = 4000       # above this a source is a photograph, not a mark
 SATURATION = 0.92
 MAX_LUMA = 232             # nothing brighter than --text
 PLATE_LUMA = 208           # ceiling for a mark exported onto a white plate
@@ -86,6 +97,24 @@ def trim(im):
     return rgba.crop(box)
 
 
+def is_dense(art):
+    """A photograph or a screen capture, rather than a logo on a field."""
+    colours = art.convert('RGB').getcolors(maxcolors=DENSE_COLOURS + 1)
+    return colours is None or len(colours) > DENSE_COLOURS
+
+
+def fit(art):
+    """Scale to fit inside the padded tile, growing a small source if it can
+    take it. Never crops: the stream banners carry their titles hard against
+    the left edge and a fill-crop sliced them."""
+    limit_w, limit_h = round(W * PAD), round(H * PAD)
+    scale = min(limit_w / art.width, limit_h / art.height)
+    if scale > 1:
+        scale = min(scale, MAX_UPSCALE_DENSE if is_dense(art) else MAX_UPSCALE_FLAT)
+    size = (max(1, round(art.width * scale)), max(1, round(art.height * scale)))
+    return art.resize(size, Image.LANCZOS)
+
+
 def ceiling_for(art):
     """
     A mark exported onto a white plate needs a lower ceiling than a photograph.
@@ -117,8 +146,7 @@ def build(name):
     if im.mode == 'P':
         im = im.convert('RGBA')
 
-    art = trim(im)
-    art.thumbnail((round(W * PAD), round(H * PAD)), Image.LANCZOS)
+    art = fit(trim(im))
 
     tile = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     tile.paste(art, ((W - art.width) // 2, (H - art.height) // 2), art)
