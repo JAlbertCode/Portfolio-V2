@@ -1,4 +1,5 @@
 import ConnectRow from '@/components/ConnectRow'
+import CoverBand from '@/components/CoverBand'
 import Elsewhere from '@/components/Elsewhere'
 import WorkSection from '@/components/sections/WorkSection'
 import { site } from '@/lib/site'
@@ -16,23 +17,27 @@ import { site } from '@/lib/site'
  * The line under the name names three practices rather than one. Developer
  * relations is a thing Jay does, not the category he sits in.
  *
- * The hero occupies about half the container and leaves the rest empty. That
- * is deliberate, but empty space with no edge reads as an unfinished column,
- * so the section closes on a rule that runs the full width. It also gives the
- * work below something to start from.
+ * The hero was half a viewport of nothing: a name, one sentence and six links,
+ * with the work starting below the fold. Restraint is not the same as absence,
+ * and on the page someone reaches by tapping a business card the first screen
+ * has to carry something. So the name is set at the width of the page, the
+ * line and the links sit side by side under it rather than stacked, and the
+ * work itself starts immediately.
  */
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-6 pb-24">
-      <section className="hero-rule pt-14 pb-10 sm:pt-24 sm:pb-12">
-        <h1 className="font-display text-[clamp(2.4rem,7vw,4.25rem)] leading-[1.02] tracking-tight text-text">
-          {site.name}
-        </h1>
-        <p className="mt-4 max-w-[48ch] text-base leading-relaxed text-muted sm:text-[1.05rem]">
-          {site.standfirst} {site.location}.
-        </p>
-        <ConnectRow />
+      <section className="pt-12 pb-9 sm:pt-16 sm:pb-11">
+        <h1 className="hero-name">{site.name}</h1>
+        <div className="hero-line">
+          <p className="max-w-[46ch] text-base leading-relaxed text-muted sm:text-[1.05rem]">
+            {site.standfirst} {site.location}.
+          </p>
+          <ConnectRow />
+        </div>
       </section>
+
+      <CoverBand />
 
       <WorkSection />
       <Elsewhere />

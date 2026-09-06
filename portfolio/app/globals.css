@@ -500,10 +500,103 @@ body {
   }
 }
 
-/* The hero's right-hand half is deliberately empty, so it needs an edge.
-   Without one the column just stops and the page reads as unfinished. */
-.hero-rule {
-  border-bottom: 1px solid var(--line);
+/* ---------------------------------------------------------------------------
+   Hero
+
+   The name is the graphic. There is no photograph and no illustration on this
+   site, so the one thing available to carry the top of the page at scale is
+   the type, and half-committing to that is what made it read as empty rather
+   than as restraint.
+--------------------------------------------------------------------------- */
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 11vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+/* The line and the links share a row so the width is used rather than left
+   trailing off to the right of a 46-character column. */
+.hero-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .hero-line {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  /* ConnectRow supplies its own top margin for the stacked case. */
+  .hero-line > div {
+    margin-top: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Cover band
+
+   Full bleed, and running off the right edge on purpose: the impression being
+   made is that there is a lot of work, and a strip that fits tidily inside the
+   column makes the opposite point.
+--------------------------------------------------------------------------- */
+
+.cover-band {
+  margin: 0 calc(50% - 50vw);
+  padding: 0 max(1.5rem, calc(50vw - 36rem));
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.cover-band::-webkit-scrollbar {
+  display: none;
+}
+
+.cover-band-track {
+  display: flex;
+  gap: 0.5rem;
+  width: max-content;
+  padding-bottom: 0.25rem;
+}
+
+.cover-band-item {
+  flex: none;
+  width: 16.5rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.cover-band-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  opacity: 0.82;
+  transition:
+    opacity 0.25s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cover-band-item:hover .cover-band-img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@media (max-width: 639px) {
+  .cover-band-item {
+    width: 12.5rem;
+  }
 }
 
 /* ---------------------------------------------------------------------------

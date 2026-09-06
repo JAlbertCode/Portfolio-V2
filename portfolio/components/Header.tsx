@@ -35,11 +35,16 @@ export default function Header() {
           </Link>
         )}
 
+        {/* With no wordmark the nav leads, so it stays on the first row and the
+            toggle keeps the right edge. With one, the nav drops below on a
+            phone so the wordmark and the toggle share the top line. */}
         <nav
           aria-label="Main"
-          className={`order-last flex w-full items-center gap-5 sm:order-none sm:w-auto ${
-            home ? 'sm:mr-auto' : ''
-          }`}
+          className={
+            home
+              ? 'mr-auto flex items-center gap-5'
+              : 'order-last flex w-full items-center gap-5 sm:order-none sm:w-auto'
+          }
         >
           {nav.map((item) => (
             <Link
