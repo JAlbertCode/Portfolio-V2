@@ -1306,4 +1306,16 @@ export const entries: Entry[] = [
     href: 'https://docs.midnight.network/blog/partner-sprints-on-midnight',
     org: 'Midnight',
   },
+  {
+    slug: 'hacktoberfest-contributor-guide',
+    title: 'Hacktoberfest contributor guide',
+    summary:
+      'What to contribute to Midnight during Hacktoberfest and how: the repositories that were open, from documentation through contracts and core libraries, and what a qualifying pull request had to look like before the 31st.',
+    date: '2025-10-15',
+    medium: 'writing',
+    practices: ['Writing & Research', 'Developer Relations', 'Community & Education'],
+    domains: ['Blockchain & Web3', 'Developer Tools'],
+    href: 'https://docs.midnight.network/blog/hacktoberfest25',
+    org: 'Midnight',
+  },
 ]
