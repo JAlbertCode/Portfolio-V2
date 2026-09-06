@@ -1,46 +1,38 @@
 import Link from 'next/link'
+import Thumb from './Thumb'
 import { entryYear, isExternal, MEDIUM_LABELS } from '@/lib/content'
 import type { Entry } from '@/lib/content'
 
 /**
- * A row, not a card. Fifty-six entries as cards is a wall nobody reads and a
- * megabyte of thumbnails nobody looks at; as rows the list scans in one pass,
- * weighs almost nothing, and stays real crawlable text.
+ * A row carries its own thumbnail at every width.
  *
- * The cover appears on hover, following the pointer. On touch it sits in the
- * row instead.
+ * The earlier version showed the cover only on hover, which meant the filtered
+ * state had no imagery at all and read like a different, poorer site than the
+ * unfiltered one. It also let the year drift eight hundred pixels from the
+ * title it belonged to. Three columns fix both: the image anchors the left, the
+ * text is held to a readable measure, and the metadata closes the right edge.
  */
 export default function WorkRow({ entry, href }: { entry: Entry; href: string }) {
-  const external = isExternal(href)
-
   return (
     <Link
       href={href}
-      data-peek={entry.slug}
-      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      {...(isExternal(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className="work-row"
     >
       <span className="row-thumb">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={entry.cover.src}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="size-full object-cover"
-        />
+        <Thumb src={entry.cover.src} className="size-full object-cover" />
       </span>
 
       <span className="min-w-0">
-        <span className="row-title block">{entry.title}</span>
-        <span className="row-sum block">{entry.summary}</span>
-        <span className="label mt-1.5 flex flex-wrap gap-3.5">
-          <span>{MEDIUM_LABELS[entry.medium].singular}</span>
-          <span>{entry.domains.join(', ')}</span>
-        </span>
+        <span className="row-title">{entry.title}</span>
+        <span className="row-sum">{entry.summary}</span>
+        <span className="row-fields">{entry.domains.join(', ')}</span>
       </span>
 
-      <span className="label row-year">{entryYear(entry.date)}</span>
+      <span className="row-meta">
+        <span className="row-medium">{MEDIUM_LABELS[entry.medium].singular}</span>
+        <span>{entryYear(entry.date)}</span>
+      </span>
     </Link>
   )
 }

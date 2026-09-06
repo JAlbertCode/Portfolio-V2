@@ -52,7 +52,7 @@ export default function ServicesSection() {
               {...(isExternal(service.cta.href)
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {})}
-              className="cta-ghost mt-auto pt-0 mt-6"
+              className="cta-ghost mt-6"
             >
               {service.cta.label}
             </Link>
