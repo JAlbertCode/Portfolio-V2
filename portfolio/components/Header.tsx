@@ -2,9 +2,11 @@ import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
 import { site } from '@/lib/site'
 
+// "Work" and "Work with me" sat next to each other and the eye read the shared
+// first word before it read the difference. Three distinct words instead.
 const nav = [
   { href: '/#work', label: 'Work' },
-  { href: '/services', label: 'Work with me' },
+  { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
 ]
 

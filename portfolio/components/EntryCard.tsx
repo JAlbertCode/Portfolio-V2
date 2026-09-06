@@ -40,11 +40,11 @@ export default function EntryCard({
 
   return (
     <article
-      className={`group relative flex flex-col overflow-hidden card-interactive ${
+      className={`group relative flex w-full flex-col overflow-hidden card-interactive ${
         unavailable ? 'opacity-75' : ''
       }`}
     >
-      <Cover cover={entry.cover} priority={priority} />
+      <Cover entry={entry} priority={priority} />
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-center gap-2 overflow-hidden">
@@ -77,7 +77,9 @@ export default function EntryCard({
           )}
         </h3>
 
-        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{entry.summary}</p>
+        {entry.summary ? (
+          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{entry.summary}</p>
+        ) : null}
 
         {/* Same treatment the work rows use. These were bordered chips here and
             plain text there, which made one list look like two systems. */}

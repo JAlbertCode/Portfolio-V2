@@ -9,7 +9,7 @@ import Link from 'next/link'
 const destinations = [
   {
     href: '/services',
-    title: 'Work with me',
+    title: 'Services',
     body: 'Speaking and workshops, advisory, custom development, and 3D printing. Formats, scope, and what you actually get.',
     meta: '4 speaking formats · 3 services',
   },

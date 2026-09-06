@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Thumb from './Thumb'
-import { entryYear, isExternal, MEDIUM_LABELS } from '@/lib/content'
+import { entryYear, isExternal, MEDIUM_LABELS, tileFor } from '@/lib/content'
 import type { Entry } from '@/lib/content'
 
 /**
@@ -20,12 +20,14 @@ export default function WorkRow({ entry, href }: { entry: Entry; href: string })
       className="work-row"
     >
       <span className="row-thumb">
-        <Thumb src={entry.cover.src} className="size-full object-cover" />
+        {entry.cover ? (
+          <Thumb src={tileFor(entry.cover.src)} className="size-full object-cover" />
+        ) : null}
       </span>
 
       <span className="min-w-0">
         <span className="row-title">{entry.title}</span>
-        <span className="row-sum">{entry.summary}</span>
+        {entry.summary ? <span className="row-sum">{entry.summary}</span> : null}
         <span className="row-fields">{entry.domains.join(', ')}</span>
       </span>
 

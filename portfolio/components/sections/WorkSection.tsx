@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import EntryCard, { entryHref } from '@/components/EntryCard'
+import Reveal from '@/components/Reveal'
 import WorkRow from '@/components/WorkRow'
 import {
   allEntries,
@@ -55,7 +56,7 @@ export default function WorkSection() {
   const fields = DOMAINS.filter((d) => counts.domain(d as never) > 0 || facets.domain.includes(d))
 
   return (
-    <section id="work" className="scroll-mt-20 pt-16 sm:pt-24">
+    <section id="work" className="scroll-mt-20 pt-10 sm:pt-14">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
         <h2 className="font-display text-2xl text-text sm:text-3xl">Work</h2>
         <p aria-live="polite" className="label">
@@ -99,7 +100,9 @@ export default function WorkSection() {
       {!filtering ? (
         <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((entry, i) => (
-            <EntryCard key={entry.slug} entry={entry} priority={i < 3} />
+            <Reveal key={entry.slug} delay={i * 70} className="flex">
+              <EntryCard entry={entry} priority={i < 3} />
+            </Reveal>
           ))}
         </div>
       ) : null}
@@ -113,8 +116,12 @@ export default function WorkSection() {
           key={filtering ? `f-${facets.medium.join()}-${facets.domain.join()}` : 'all'}
           className="results mt-10 border-t border-line"
         >
-          {visible.map((entry) => (
-            <WorkRow key={entry.slug} entry={entry} href={entryHref(entry) ?? '#work'} />
+          {visible.map((entry, i) => (
+            // The stagger restarts every sixth row. Running it across all 56
+            // would leave the last row waiting two seconds for its turn.
+            <Reveal key={entry.slug} delay={(i % 6) * 45}>
+              <WorkRow entry={entry} href={entryHref(entry) ?? '#work'} />
+            </Reveal>
           ))}
         </div>
       )}

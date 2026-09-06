@@ -49,7 +49,7 @@ export function filterEntries(list: Entry[], facets: Facets): Entry[] {
     if (q) {
       const haystack = [
         entry.title,
-        entry.summary,
+        entry.summary ?? '',
         entry.org ?? '',
         ...entry.practices,
         ...entry.domains,

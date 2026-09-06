@@ -2,7 +2,9 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import type { Cover as CoverData } from '@/lib/content'
+import CoverTile from './CoverTile'
+import { tileFor } from '@/lib/content'
+import type { Entry } from '@/lib/content'
 
 /**
  * V2 autoplayed ten muted videos in the project grid, several of them over
@@ -11,15 +13,20 @@ import type { Cover as CoverData } from '@/lib/content'
  * fetched when someone asks to watch it.
  */
 export default function Cover({
-  cover,
+  entry,
   priority = false,
   sizes = '(min-width: 1024px) 360px, (min-width: 640px) 45vw, 92vw',
 }: {
-  cover: CoverData
+  entry: Entry
   priority?: boolean
   sizes?: string
 }) {
   const [playing, setPlaying] = useState(false)
+  const cover = entry.cover
+
+  // Six entries have no usable source. They get type rather than a stretched
+  // 246px export or a thumbnail hotlinked from someone else's CDN.
+  if (!cover) return <CoverTile />
 
   if (cover.video && playing) {
     return (
@@ -37,9 +44,9 @@ export default function Cover({
   }
 
   return (
-    <div className="relative aspect-16/10 overflow-hidden bg-bg-subtle">
+    <div className="relative aspect-16/10 overflow-hidden bg-surface">
       <Image
-        src={cover.src}
+        src={tileFor(cover.src)}
         alt={cover.alt}
         fill
         sizes={sizes}

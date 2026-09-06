@@ -3,7 +3,7 @@ import ServicesSection from '@/components/sections/ServicesSection'
 import SpeakingSection from '@/components/sections/SpeakingSection'
 
 export const metadata: Metadata = {
-  title: 'Work with me',
+  title: 'Services',
   description:
     'Speaking, advisory, custom development, and 3D printing. Formats, scope, and what you actually get.',
 }

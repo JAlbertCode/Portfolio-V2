@@ -15,11 +15,16 @@ import { site } from '@/lib/site'
  *
  * The line under the name names three practices rather than one. Developer
  * relations is a thing Jay does, not the category he sits in.
+ *
+ * The hero occupies about half the container and leaves the rest empty. That
+ * is deliberate, but empty space with no edge reads as an unfinished column,
+ * so the section closes on a rule that runs the full width. It also gives the
+ * work below something to start from.
  */
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-6 pb-24">
-      <section className="pt-14 sm:pt-24">
+      <section className="hero-rule pt-14 pb-10 sm:pt-24 sm:pb-12">
         <h1 className="font-display text-[clamp(2.4rem,7vw,4.25rem)] leading-[1.02] tracking-tight text-text">
           {site.name}
         </h1>

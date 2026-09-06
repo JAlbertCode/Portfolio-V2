@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { allEntries, formatDate, MEDIUM_LABELS, STATUS_NOTES } from '@/lib/content'
+import { allEntries, coverSize, formatDate, MEDIUM_LABELS, STATUS_NOTES } from '@/lib/content'
 import { writeupFor, writeups } from '@/lib/content/writeups'
 import type { Block } from '@/lib/content/writeups'
 import EntryCard from '@/components/EntryCard'
@@ -25,8 +25,8 @@ export async function generateMetadata({
   if (!entry) return {}
   return {
     title: entry.title,
-    description: entry.summary,
-    openGraph: { title: entry.title, description: entry.summary, images: [entry.cover.src] },
+    description: entry.summary ?? entry.title,
+    openGraph: { title: entry.title, description: entry.summary ?? entry.title, images: entry.cover ? [entry.cover.src] : [] },
   }
 }
 
@@ -182,7 +182,7 @@ export default async function WorkDetailPage({
     .slice(0, 3)
 
   return (
-    <article className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
+    <article className="mx-auto max-w-6xl px-6 pt-10 sm:pt-14">
       <Link href="/#work" className="label inline-flex items-center gap-2 hover:text-accent">
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path
@@ -213,18 +213,41 @@ export default async function WorkDetailPage({
             <h1 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight text-text sm:text-5xl">
               {writeup.heading ?? entry.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{entry.summary}</p>
+            {entry.summary ? (
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{entry.summary}</p>
+            ) : null}
+
+            {entry.href ? (
+              <Link
+                href={entry.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-ghost mt-6 gap-2"
+              >
+                Open the project
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M3 13L13 3M6 3h7v7"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            ) : null}
           </header>
 
-          <Image
-            src={entry.cover.src}
-            alt={entry.cover.alt}
-            width={1600}
-            height={1000}
-            priority
-            sizes="(min-width: 1024px) 720px, 92vw"
-            className="mt-10 w-full rounded-lg border border-line object-cover"
-          />
+          {entry.cover ? (
+            <Image
+              src={entry.cover.src}
+              alt={entry.cover.alt}
+              {...coverSize(entry.cover.src)}
+              priority
+              sizes="(min-width: 1024px) 720px, 92vw"
+              className="mt-10 h-auto w-full rounded-lg border border-line"
+            />
+          ) : null}
 
           {statusNote ? (
             <p className="mt-6 rounded-md border border-line bg-surface px-4 py-3 text-sm text-muted">
@@ -241,19 +264,13 @@ export default async function WorkDetailPage({
           {writeup.blocks?.map((block, i) => <BlockView key={i} block={block} />)}
         </div>
 
+        {/* Metadata only. The action moved into the reading column above: as a
+            filled slab at the top of this rail it was the loudest thing on the
+            page, it left the rest of the rail looking like a column that had
+            run out, and on entries whose artwork is turquoise it read as that
+            company's branding rather than a control. */}
         <aside className="lg:sticky lg:top-24 lg:self-start">
-          {entry.href ? (
-            <Link
-              href={entry.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-md bg-accent px-4 py-2.5 text-center text-sm font-medium text-accent-contrast transition-colors hover:bg-accent-hover"
-            >
-              Open the project
-            </Link>
-          ) : null}
-
-          <div className="mt-7">
+          <div>
             <p className="label">Practice</p>
             <ul className="mt-3 space-y-1.5">
               {entry.practices.map((p) => (
