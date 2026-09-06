@@ -859,9 +859,9 @@ export const entries: Entry[] = [
 
   // ------------------------------------------------- Midnight, 2025 onward
   //
-  // Titles, dates and channel are taken from YouTube's oEmbed record and, for
-  // the three that carry no date in their title, from the uploadDate in the
-  // watch page itself. Each summary is condensed from that video's own
+  // Titles and channel are taken from YouTube's oEmbed record. Dates are the
+  // one in the video title, or the watch page's uploadDate for the three that
+  // carry none. Each summary is condensed from that video's own
   // description, read at the time of writing, with the promotional tail and
   // the link dump cut.
   //
@@ -876,7 +876,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Build Club Demos and a New Partner Sprint',
     summary:
       'Two Build Club dApps demo live, the Kuira Zealy sprint wraps up, a new partner sprint with VIA Labs opens across the Cardano and Midnight bridge, and applications open for the next Build Club cohort.',
-    date: '2026-08',
+    date: '2026-08-26',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -888,7 +888,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Cardano ↔ Midnight + Hack Buenos Aires Winners Demo',
     summary:
       'VIA Labs running between Cardano and Midnight, with a live USDM demo in both directions, plus demos from the Hack Buenos Aires winners.',
-    date: '2026-08',
+    date: '2026-08-12',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -900,7 +900,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Nightpass & Midnight Skills',
     summary:
       'Two projects on privacy-preserving applications and developer tooling: Nightpass, which extends the EU Battery Passport so suppliers can prove compliance without revealing business data, and Midnight Skills, an open knowledge marketplace of Compact examples, SDK guides and dApp templates.',
-    date: '2026-07',
+    date: '2026-07-15',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -912,7 +912,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Mobile dApps on Midnight',
     summary:
       'Kuira Labs on their Android SDK: why it was built, what developers get out of the box, and live demos of mobile applications running on Midnight.',
-    date: '2026-06',
+    date: '2026-06-24',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -924,7 +924,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: EffectStream, Offer Files & Community Updates',
     summary:
       'Data availability and why it matters for multi-chain applications, where EffectStream fits, and Offer Files with zSwap settlement.',
-    date: '2026-06',
+    date: '2026-06-10',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -936,7 +936,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Nightstream Demo, Docs & Zealy Updates',
     summary:
       'Multi-chain development: how Nightstream works, a Midnight to EVM cross-chain template, games and DeFi demos, and a walkthrough of the new leaderboard tutorial and repo.',
-    date: '2026-05',
+    date: '2026-05-27',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -948,7 +948,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Midnight Validators and Beyond',
     summary:
       'Stevan on Midnight validator updates.',
-    date: '2026-05',
+    date: '2026-05-13',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -960,7 +960,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Midnight Leaderboard, Ascend & Community Updates',
     summary:
       'An overview of the Midnight Leaderboard dApp and a walkthrough of the code behind it, an ecosystem partner announcement for Ascend, and bounty programme updates.',
-    date: '2026-04',
+    date: '2026-04-29',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -972,7 +972,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Coding, Wallets & Mobile on Midnight',
     summary:
       'A live coding session, a wallet testing and tooling review, and Brick Towers debuting mobile apps built in the ecosystem.',
-    date: '2026-04',
+    date: '2026-04-01',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -984,7 +984,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Tutorials, Tooling & Community Updates',
     summary:
       'A new Academy module, Build Club updates, tutorials and repos in progress, community dev updates, and the Aliit Fellowship.',
-    date: '2026-03',
+    date: '2026-03-04',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -996,7 +996,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Global Game Jam highlights, community updates and more',
     summary:
       'Two game developers on their Global Game Jam projects and what they learned building with Midnight, plus a community-built Unity and wallet integration.',
-    date: '2026-02',
+    date: '2026-02-04',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Gaming'],
@@ -1008,7 +1008,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang: Contributor Hub highlights, Validator updates and Game Jam',
     summary:
       'Contributor Hub and content bounty highlights, survey results and the technical roadmap, and Game Jam updates.',
-    date: '2026-01',
+    date: '2026-01-28',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Gaming'],
@@ -1020,7 +1020,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang with Erick from Mesh',
     summary:
       'Building dApps on Preview with the MeshJS starter template, an overview of gaming on Midnight, and community updates covering Build Club, the Global Game Jam and a new MCP server.',
-    date: '2026-01',
+    date: '2026-01-07',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1032,7 +1032,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang with Ben Beckmann',
     summary:
       'NIGHT and DUST for developers: a discussion with Ben Beckmann and Lauren Lee on what the two-token design means for people building on the network.',
-    date: '2025-12',
+    date: '2025-12-10',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1044,7 +1044,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang, November 12 2025',
     summary:
       'Building privacy-ready dApps with Arweave and NMKR: what Ar.io is and how it powers privacy-focused apps, and how NMKR adds a privacy layer to NFTs.',
-    date: '2025-11',
+    date: '2025-11-12',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1056,7 +1056,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang, November 5 2025',
     summary:
       'Building and deploying on Midnight end to end: project setup, writing a contract, deploying it to testnet, and interacting with it once it is there.',
-    date: '2025-11',
+    date: '2025-11-05',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1068,7 +1068,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang, October 15 2025',
     summary:
       'A Hacktoberfest session on open source, Midnight\'s contributions and MIPs, and how to get involved.',
-    date: '2025-10',
+    date: '2025-10-15',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1080,7 +1080,7 @@ export const entries: Entry[] = [
     title: 'Fireside Dev Hang, September 10 2025',
     summary:
       'Why NFTs matter and what is available for them: the NFT module library covering standard NFTs and zkNFTs, dApp examples, and a live ticket review.',
-    date: '2025-09',
+    date: '2025-09-10',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1092,7 +1092,7 @@ export const entries: Entry[] = [
     title: 'Hilo Hack Demo Day',
     summary:
       'Teams showing what they built on Midnight across AI, identity, healthcare and finance, from early prototypes to more complete applications. Four-minute demos, each followed by live questions.',
-    date: '2026-05',
+    date: '2026-05-01',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1104,7 +1104,7 @@ export const entries: Entry[] = [
     title: 'LIVE at Consensus: Building Privacy Apps for Real-World Use w/ Hackquest & Midnight DevRel',
     summary:
       'A livestreamed conversation with HackQuest founder Kevin Li on how Midnight supports developers building privacy-focused applications, covering education, developer programmes and hands-on initiatives.',
-    date: '2026-02',
+    date: '2026-02-11',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1116,7 +1116,7 @@ export const entries: Entry[] = [
     title: 'Mini DApp Hackathon Showcase',
     summary:
       'A live showcase of the projects built during the Midnight Mini DApp virtual hackathon.',
-    date: '2025-08',
+    date: '2025-08-22',
     medium: 'stream',
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
@@ -1134,7 +1134,7 @@ export const entries: Entry[] = [
     title: 'Celebrating seven winners from the MLH x Midnight July hack',
     summary:
       'A write-up of the July hackathon, where 84 teams built applications around zero-knowledge technology and seven projects won across the privacy infrastructure and gaming categories.',
-    date: '2026-08',
+    date: '2026-08-20',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
     domains: ['Blockchain & Web3', 'Gaming'],
@@ -1146,7 +1146,7 @@ export const entries: Entry[] = [
     title: 'The Midnight Improvement Proposal Process',
     summary:
       'How protocol changes get made: Midnight Problem Statements name an issue, Midnight Improvement Proposals answer it, and the article walks the token standards through that path from six identified token types to the proposals still being debated.',
-    date: '2026-08',
+    date: '2026-08-04',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -1158,7 +1158,7 @@ export const entries: Entry[] = [
     title: 'The implications of NIGHT and DUST for developers',
     summary:
       'Midnight splits the value token from the resource that pays for transactions. The piece works through what that separation buys a developer: operational cost that does not move with the token price, sponsored onboarding, and execution that never sits in a public mempool.',
-    date: '2026-01',
+    date: '2026-01-19',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -1167,8 +1167,13 @@ export const entries: Entry[] = [
   },
   // ----------------------------------------------------------------- Repos
   //
-  // Found by walking the JAlbertCode account. Every summary below is drawn
-  // from that repository's own README, not from its name: the six here are the
+  // Found by walking the JAlbertCode account. Dates are the last commit on the
+  // default branch, from the GitHub API, which is when the work was last
+  // actually done rather than when the repo happened to be created: the
+  // leaderboard was started in January and still being worked on in May.
+  //
+  // Every summary below is drawn from that repository's own README, not from
+  // its name: the six here are the
   // ones whose READMEs actually describe the project. The rest of the account
   // is forks, empty repos, and stubs, and a description invented for those
   // would be exactly the failure mode this file exists to prevent.
@@ -1177,7 +1182,7 @@ export const entries: Entry[] = [
     title: 'MIP-0014 reference implementation',
     summary:
       'A working reference for the Native Unshielded Token Standard: a fungible asset that lives as unshielded UTXOs on the ledger, publicly valued and owned by an address.',
-    date: '2026-09',
+    date: '2026-09-01',
     medium: 'build',
     practices: ['Engineering', 'Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -1190,7 +1195,7 @@ export const entries: Entry[] = [
     title: 'Layerworks Print Co. storefront',
     summary:
       'The shop front for a small-batch 3D print business: a featured product with an interactive GLB preview and a commissions intake, deployed to Pages by Actions.',
-    date: '2026-08',
+    date: '2026-08-31',
     medium: 'build',
     practices: ['Engineering', 'Product & Design', 'Hardware & Fabrication'],
     domains: ['Consumer & Commerce'],
@@ -1202,7 +1207,7 @@ export const entries: Entry[] = [
     title: 'Family Affairs',
     summary:
       'A competitive family battle card game for two to six players, played live on their own phones.',
-    date: '2026-08',
+    date: '2026-08-17',
     medium: 'build',
     practices: ['Engineering', 'Product & Design'],
     domains: ['Gaming'],
@@ -1214,7 +1219,7 @@ export const entries: Entry[] = [
     title: 'Midnight Leaderboard',
     summary:
       'An arcade-style leaderboard where every score is a new entry, like a cabinet, and the player decides how they appear on it: anonymous, as a wallet address, or under a name they choose.',
-    date: '2026-05',
+    date: '2026-05-15',
     medium: 'build',
     practices: ['Engineering'],
     domains: ['Blockchain & Web3', 'Gaming'],
@@ -1227,7 +1232,7 @@ export const entries: Entry[] = [
     title: 'Locker rental example',
     summary:
       'A locker whose four-digit combination never reaches the chain. Only its hash is stored, and opening the locker produces a proof that the combination matches without revealing the digits.',
-    date: '2026-04',
+    date: '2026-04-01',
     medium: 'build',
     practices: ['Engineering', 'Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -1240,7 +1245,7 @@ export const entries: Entry[] = [
     title: 'Midnight Tip Jar',
     summary:
       'A minimal tip jar: connect a Lace wallet, read balances, and send transfers through the DApp Connector API.',
-    date: '2026-03',
+    date: '2026-03-28',
     medium: 'build',
     practices: ['Engineering'],
     domains: ['Blockchain & Web3'],

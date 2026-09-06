@@ -27,7 +27,15 @@ export interface Entry {
    * reader. That is filler at best and invention at worst.
    */
   summary?: string
-  /** ISO yyyy-mm so entries sort correctly and render in any locale. */
+  /**
+   * ISO, either yyyy-mm or yyyy-mm-dd. Both sort correctly as strings, which
+   * is the whole reason for the format.
+   *
+   * Use the day wherever it is actually known. Month precision put six things
+   * in August 2026 with nothing to separate them, so they fell back to the
+   * order they happen to sit in this file, and a storefront finished on the
+   * 31st appeared below a hangout from the 12th.
+   */
   date: string
 
   medium: Medium
@@ -59,12 +67,22 @@ export function isExternal(href: string | undefined): boolean {
   return Boolean(href && /^https?:\/\//.test(href))
 }
 
-/** "2025-04" -> "April 2025". Kept out of the components so it stays consistent. */
+/**
+ * "2025-04" -> "April 2025", "2026-08-31" -> "August 31, 2026".
+ *
+ * Kept out of the components so it stays consistent, and built from the parts
+ * rather than parsed: `new Date('2026-08-31')` is UTC midnight, which in New
+ * York is the evening of the 30th.
+ */
 export function formatDate(iso: string): string {
-  const [year, month] = iso.split('-')
+  const [year, month, day] = iso.split('-')
   if (!month) return year
-  const date = new Date(Number(year), Number(month) - 1, 1)
-  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  const date = new Date(Number(year), Number(month) - 1, Number(day ?? 1))
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    ...(day ? { day: 'numeric' } : {}),
+  })
 }
 
 export function entryYear(iso: string): number {
