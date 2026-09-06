@@ -23,6 +23,10 @@
     1920,
     1080
   ],
+  "consensus-privacy-apps": [
+    1280,
+    720
+  ],
   "covalent": [
     1200,
     675
@@ -43,9 +47,93 @@
     1438,
     900
   ],
+  "example-locker": [
+    1200,
+    600
+  ],
+  "example-mip-0014": [
+    1200,
+    600
+  ],
+  "family-affairs": [
+    1200,
+    600
+  ],
   "farworld": [
     1948,
     991
+  ],
+  "fireside-2025-09-10": [
+    1280,
+    720
+  ],
+  "fireside-2025-10-15": [
+    1280,
+    720
+  ],
+  "fireside-2025-11-05": [
+    1280,
+    720
+  ],
+  "fireside-2025-11-12": [
+    1280,
+    720
+  ],
+  "fireside-2025-12-10": [
+    1280,
+    720
+  ],
+  "fireside-2026-01-07": [
+    1280,
+    720
+  ],
+  "fireside-2026-01-28": [
+    1280,
+    720
+  ],
+  "fireside-2026-02-04": [
+    1280,
+    720
+  ],
+  "fireside-2026-03-04": [
+    1280,
+    720
+  ],
+  "fireside-2026-04-01": [
+    1280,
+    720
+  ],
+  "fireside-2026-04-29": [
+    1280,
+    720
+  ],
+  "fireside-2026-05-13": [
+    1280,
+    720
+  ],
+  "fireside-2026-05-27": [
+    1280,
+    720
+  ],
+  "fireside-2026-06-10": [
+    1280,
+    720
+  ],
+  "fireside-2026-06-24": [
+    1280,
+    720
+  ],
+  "fireside-2026-07-15": [
+    1280,
+    720
+  ],
+  "fireside-2026-08-12": [
+    1280,
+    720
+  ],
+  "fireside-2026-08-26": [
+    1280,
+    720
   ],
   "future-web3-gaming": [
     740,
@@ -67,6 +155,10 @@
     1948,
     991
   ],
+  "hilo-hack-demo-day": [
+    1280,
+    720
+  ],
   "hunting-art": [
     1378,
     702
@@ -87,9 +179,21 @@
     1600,
     840
   ],
+  "lilypad-cryptos-got-talent": [
+    1280,
+    720
+  ],
   "lilypad-frontend": [
     1600,
     840
+  ],
+  "lilypad-frontend-workshop": [
+    1280,
+    720
+  ],
+  "lilypad-iotex-pitch": [
+    1280,
+    720
   ],
   "livein": [
     1280,
@@ -111,6 +215,14 @@
     1781,
     2015
   ],
+  "midnight-tip-jar": [
+    1200,
+    600
+  ],
+  "mini-dapp-hackathon-showcase": [
+    1280,
+    720
+  ],
   "mobile-vendor": [
     2324,
     1308
@@ -130,6 +242,10 @@
   "quantum-command": [
     1948,
     991
+  ],
+  "rag-agents-on-lilypad": [
+    1280,
+    720
   ],
   "responsible-gaming": [
     1200,
@@ -187,6 +303,10 @@
     1920,
     1080
   ],
+  "web2-to-web3-game-workshop": [
+    1280,
+    720
+  ],
   "web3-security": [
     1200,
     800
@@ -198,5 +318,9 @@
   "wix": [
     1280,
     800
+  ],
+  "zk-leaderboard": [
+    1200,
+    600
   ]
 }

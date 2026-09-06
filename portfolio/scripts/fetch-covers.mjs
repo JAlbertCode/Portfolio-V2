@@ -30,6 +30,21 @@ const ENTRIES = join(ROOT, 'lib/content/entries.ts')
 const IMAGES = join(ROOT, 'public/images')
 const DRY = process.argv.includes('--dry')
 
+/**
+ * --frames: replace the cover of entries that already have one with a still
+ * from inside the video rather than its thumbnail.
+ *
+ * Eighteen of the hangouts are one recurring show, so all eighteen ship the
+ * same green title card. Eighteen near-identical tiles is most of what makes
+ * the catalogue feel like one thing repeated. YouTube exposes three frames
+ * taken from within every video at roughly a quarter, half and three quarters
+ * through, and those differ episode to episode because the footage does.
+ *
+ * Defaults to the Fireside episodes. Pass slugs to pick your own.
+ */
+const FRAMES = process.argv.includes('--frames')
+const FRAME_SLUGS = process.argv.slice(process.argv.indexOf('--frames') + 1).filter((a) => !a.startsWith('--'))
+
 // A bare fetch gets a bot challenge from some hosts. These are the headers a
 // browser actually sends, and they are what got midnight.network to serve the
 // same HTML to node that it serves to Chrome.
@@ -53,18 +68,32 @@ const blocks = src.split(/\n  \},\n/)
 const wanted = []
 for (const block of blocks) {
   const slug = block.match(/slug: '([^']+)'/)?.[1]
-  if (!slug || block.includes('cover: {')) continue
+  if (!slug) continue
   const href = block.match(/href: '([^']+)'/)?.[1]
   const title = block.match(/title: '([^']*)'/)?.[1] ?? block.match(/title: "([^"]*)"/)?.[1] ?? slug
-  wanted.push({ slug, href, title })
+  const hasCover = block.includes('cover: {')
+
+  if (FRAMES) {
+    const chosen = FRAME_SLUGS.length
+      ? FRAME_SLUGS.includes(slug)
+      : title.startsWith('Fireside Dev Hang')
+    if (chosen && youtubeId(href)) wanted.push({ slug, href, title, replace: true })
+    continue
+  }
+
+  if (!hasCover) wanted.push({ slug, href, title })
 }
 
 if (wanted.length === 0) {
-  console.log('Every entry already has a cover. Nothing to do.')
+  console.log(FRAMES ? 'Nothing matched. Nothing to do.' : 'Every entry already has a cover. Nothing to do.')
   process.exit(0)
 }
 
-console.log(`${wanted.length} entries without a cover.\n`)
+console.log(
+  FRAMES
+    ? `${wanted.length} covers to replace with a still from inside the video.\n`
+    : `${wanted.length} entries without a cover.\n`,
+)
 
 function youtubeId(href = '') {
   return href.match(/youtube\.com\/watch\?v=([\w-]+)/)?.[1] ?? href.match(/youtu\.be\/([\w-]+)/)?.[1]
@@ -115,22 +144,28 @@ await mkdir(IMAGES, { recursive: true })
 let lastReason = ''
 
 const found = new Map()
-for (const { slug, href, title } of wanted) {
+for (const { slug, href, title, replace } of wanted) {
   if (!href) {
     console.log(`${slug.padEnd(34)} no link to look at`)
     continue
   }
 
-  try {
-    await access(join(IMAGES, `${slug}.jpg`))
-    console.log(`${slug.padEnd(34)} already downloaded`)
-    found.set(slug, { ext: 'jpg', title })
-    continue
-  } catch {}
+  if (!replace) {
+    try {
+      await access(join(IMAGES, `${slug}.jpg`))
+      console.log(`${slug.padEnd(34)} already downloaded`)
+      found.set(slug, { ext: 'jpg', title })
+      continue
+    } catch {}
+  }
 
   const id = youtubeId(href)
   let candidates
-  if (id) {
+  if (id && replace) {
+    // Half way in first: a quarter is often still the title card, and three
+    // quarters is often the sign-off.
+    candidates = [2, 1, 3].map((n) => `https://i.ytimg.com/vi/${id}/hq${n}.jpg`)
+  } else if (id) {
     candidates = [
       `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
       `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
@@ -169,14 +204,23 @@ if (DRY) {
 let out = src
 let patched = 0
 for (const [slug, { ext, title }] of found) {
-  const re = new RegExp(`(slug: '${slug}',[\\s\\S]*?\\n)(    href: ')`)
-  if (!re.test(out)) continue
   const alt = title.replace(/'/g, "\\'")
-  out = out.replace(re, `$1    cover: { src: '/images/${slug}.${ext}', alt: '${alt}' },\n$2`)
+
+  const existing = new RegExp(`(slug: '${slug}',[\\s\\S]*?cover: \\{ src: ')[^']+(')`)
+  if (existing.test(out)) {
+    out = out.replace(existing, `$1/images/${slug}.${ext}$2`)
+    patched++
+    continue
+  }
+
+  const insert = new RegExp(`(slug: '${slug}',[\\s\\S]*?\\n)(    href: ')`)
+  if (!insert.test(out)) continue
+  out = out.replace(insert, `$1    cover: { src: '/images/${slug}.${ext}', alt: '${alt}' },\n$2`)
   patched++
 }
 await writeFile(ENTRIES, out)
 
 console.log(`\nDownloaded ${found.size}, wrote ${patched} covers into entries.ts.`)
+if (FRAMES) console.log('Those are stills from inside the videos, not the thumbnails.')
 console.log('Alt text is the entry title for now. Anything worth describing better, describe.')
 console.log('\nNext: python3 scripts/build-covers.py --all')

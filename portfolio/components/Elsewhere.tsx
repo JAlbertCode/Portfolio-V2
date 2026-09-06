@@ -5,6 +5,9 @@ import Link from 'next/link'
  * substance that clicking is an informed decision rather than a guess. The
  * earlier version of this site linked to them with the words "Speaking" and
  * "Services" and nobody clicked, because nothing told them what was behind.
+ *
+ * It sits above the catalogue. At the bottom it was behind eighty-seven cards,
+ * which is not a place anyone arrives still looking for a link.
  */
 const destinations = [
   {
@@ -23,7 +26,7 @@ const destinations = [
 
 export default function Elsewhere() {
   return (
-    <section className="mt-16 grid gap-4 border-t border-line pt-10 sm:grid-cols-2 sm:pt-12">
+    <section className="grid gap-4 sm:grid-cols-2">
       {destinations.map((d) => (
         <Link key={d.href} href={d.href} className="lane">
           <span className="label">{d.meta}</span>

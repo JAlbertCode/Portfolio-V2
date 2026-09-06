@@ -36,8 +36,13 @@ export default function Home() {
         </div>
       </section>
 
-      <WorkSection />
+      {/* Above the work, not below it. Underneath eighty-seven cards these
+          two were past the point where anyone was still looking for a link:
+          the reader is scrolling the catalogue by then, not hunting for the
+          rest of the site. */}
       <Elsewhere />
+
+      <WorkSection />
     </div>
   )
 }
