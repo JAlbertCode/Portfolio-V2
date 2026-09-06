@@ -121,10 +121,20 @@ def build(name):
     return art.size, out.stat().st_size, ceiling, share, im.size
 
 
+def every_cover_named_in_entries():
+    """Read the covers straight out of the data, so the two cannot drift."""
+    import re
+    src = (ROOT / 'lib' / 'content' / 'entries.ts').read_text()
+    return sorted(set(re.findall(r"src: '/images/([^']+)'", src)))
+
+
 if __name__ == '__main__':
     names = sys.argv[1:]
+    if names == ['--all']:
+        names = every_cover_named_in_entries()
     if not names:
-        print('pass cover filenames'); raise SystemExit(1)
+        print('usage: build-covers.py --all | <filename> [<filename> ...]')
+        raise SystemExit(1)
     OUT.mkdir(parents=True, exist_ok=True)
     sizes = {}
     total = 0

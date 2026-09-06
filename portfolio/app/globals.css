@@ -505,3 +505,127 @@ body {
 .hero-rule {
   border-bottom: 1px solid var(--line);
 }
+
+/* ---------------------------------------------------------------------------
+   The catalogue
+
+   One list at two sizes, beside a frame that shows whatever the pointer is
+   resting on. The large size is not decoration: it marks the entries that open
+   into a write-up here rather than leaving the site, which is a difference a
+   reader can act on and the only reason two sizes exist.
+--------------------------------------------------------------------------- */
+
+.work-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Years give eighty-six rows somewhere to breathe, and need no explaining. */
+.work-year {
+  padding: 2.25rem 0 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.results > div:first-child .work-year {
+  padding-top: 1.1rem;
+}
+
+.work-row-flat {
+  grid-template-columns: minmax(0, 1fr) 5rem;
+}
+
+.work-row-feature {
+  grid-template-columns: 11rem minmax(0, 1fr) 5.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.work-row-feature .row-title {
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.work-row-feature .row-sum {
+  margin-top: 0.45rem;
+  font-size: 0.9375rem;
+}
+
+/* The one fact a row cannot show by looking at it: whether the click stays
+   on the site or leaves it. */
+.row-flag {
+  margin-top: 0.35rem;
+  color: var(--accent);
+}
+
+.work-preview {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .work-layout {
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: 3rem;
+    align-items: start;
+  }
+  .work-preview {
+    display: block;
+    position: sticky;
+    top: 6rem;
+  }
+  /* Only drawn when there is something in it. An empty bordered box pinned
+     beside the list reads as a component that failed to load, and thirty of
+     the newest entries have no cover yet. */
+  .work-preview-frame {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 0.625rem;
+  }
+  .work-preview-frame:has(img) {
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .work-preview-img {
+    object-fit: cover;
+    animation: preview-in 0.28s ease both;
+  }
+  @keyframes preview-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  /* With the frame carrying the image, the row thumbnail is the same picture
+     twice on one line. Below this width there is no frame, so it stays. */
+  .work-layout .row-thumb {
+    display: none;
+  }
+  .work-layout .work-row {
+    grid-template-columns: minmax(0, 1fr) 5.5rem;
+  }
+  .work-layout .work-row-feature {
+    grid-template-columns: minmax(0, 1fr) 5.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-preview-img {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .work-row-flat {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work-row-feature {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+  .work-row-feature.work-row-flat {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work-row-feature .row-title {
+    font-size: 1.25rem;
+  }
+}

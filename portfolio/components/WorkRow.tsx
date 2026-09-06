@@ -4,26 +4,47 @@ import { entryYear, isExternal, MEDIUM_LABELS, tileFor } from '@/lib/content'
 import type { Entry } from '@/lib/content'
 
 /**
- * A row carries its own thumbnail at every width.
+ * A row in the catalogue, in one of two sizes.
  *
- * The earlier version showed the cover only on hover, which meant the filtered
- * state had no imagery at all and read like a different, poorer site than the
- * unfiltered one. It also let the year drift eight hundred pixels from the
- * title it belonged to. Three columns fix both: the image anchors the left, the
- * text is held to a readable measure, and the metadata closes the right edge.
+ * The large size is for entries that open into a write-up on this site rather
+ * than bouncing straight out to someone else's page. That is a real difference
+ * to a reader, it is the difference Jay said nobody would have guessed at, and
+ * it gives a list of eighty-six things a rhythm without inventing a rule.
+ *
+ * It replaced a grid of "featured" cards above the list, which looked
+ * different for a reason held in a boolean nobody could see, and which by then
+ * was showing 2023 work at three times the size of last month's.
  */
-export default function WorkRow({ entry, href }: { entry: Entry; href: string }) {
+export default function WorkRow({
+  entry,
+  href,
+  feature = false,
+  onFocus,
+}: {
+  entry: Entry
+  href: string
+  feature?: boolean
+  onFocus?: () => void
+}) {
   return (
     <Link
       href={href}
       {...(isExternal(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="work-row"
+      className={`work-row ${feature ? 'work-row-feature' : ''} ${
+        entry.cover ? '' : 'work-row-flat'
+      }`}
+      onMouseEnter={onFocus}
+      onFocus={onFocus}
     >
-      <span className="row-thumb">
-        {entry.cover ? (
+      {/* Omitted rather than left empty when there is no cover: an empty
+          bordered square on every row reads as an image that failed. Above
+          1100px the preview frame carries the image and this is hidden for
+          every row alike. */}
+      {entry.cover ? (
+        <span className="row-thumb">
           <Thumb src={tileFor(entry.cover.src)} className="size-full object-cover" />
-        ) : null}
-      </span>
+        </span>
+      ) : null}
 
       <span className="min-w-0">
         <span className="row-title">{entry.title}</span>
@@ -34,6 +55,9 @@ export default function WorkRow({ entry, href }: { entry: Entry; href: string })
       <span className="row-meta">
         <span className="row-medium">{MEDIUM_LABELS[entry.medium].singular}</span>
         <span>{entryYear(entry.date)}</span>
+        {/* The one thing a row cannot show by looking at it: whether the click
+            stays here or leaves. */}
+        {feature ? <span className="row-flag">Write-up</span> : null}
       </span>
     </Link>
   )
