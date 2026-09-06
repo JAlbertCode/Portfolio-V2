@@ -236,23 +236,38 @@ if (DRY) {
 
 // Patch entries.ts. The cover goes immediately before href, which every entry
 // reached here has, so the field order stays the same as the hand-written ones.
-let out = src
+// Patch entries.ts one entry at a time.
+//
+// This used to run two regexes over the whole file, both starting at a slug
+// and scanning forward with [\s\S]*?. That is unbounded: on an entry with no
+// cover the scan ran straight past the end of it and rewrote the cover of some
+// later entry instead, so a downloaded image landed on the wrong piece of work
+// and the entry it belonged to still had none. Splitting on the entry boundary
+// first makes that impossible, because no pattern can see outside its own
+// block.
+const parts = src.split('\n  },\n')
 let patched = 0
-for (const [slug, { ext, title }] of found) {
-  const alt = title.replace(/'/g, "\\'")
+for (let i = 0; i < parts.length; i++) {
+  const slug = parts[i].match(/slug: '([^']+)'/)?.[1]
+  if (!slug || !found.has(slug)) continue
 
-  const existing = new RegExp(`(slug: '${slug}',[\\s\\S]*?cover: \\{ src: ')[^']+(')`)
-  if (existing.test(out)) {
-    out = out.replace(existing, `$1/images/${slug}.${ext}$2`)
-    patched++
+  const { ext, title } = found.get(slug)
+  const want = `/images/${slug}.${ext}`
+  const alt = title.replace(/'/g, "\\'")
+  const current = parts[i].match(/cover: \{[\s\S]*?src: '([^']+)'/)
+
+  if (current) {
+    parts[i] = parts[i].replace(current[1], want)
+  } else if (/\n    href: '/.test(parts[i])) {
+    parts[i] = parts[i].replace(/\n(    href: ')/, `\n    cover: { src: '${want}', alt: '${alt}' },\n$1`)
+  } else {
+    console.log(`${slug.padEnd(34)} downloaded, but the entry has no href to sit before`)
     continue
   }
-
-  const insert = new RegExp(`(slug: '${slug}',[\\s\\S]*?\\n)(    href: ')`)
-  if (!insert.test(out)) continue
-  out = out.replace(insert, `$1    cover: { src: '/images/${slug}.${ext}', alt: '${alt}' },\n$2`)
   patched++
 }
+const out = parts.join('\n  },\n')
+
 await writeFile(ENTRIES, out)
 
 console.log(`\nDownloaded ${found.size}, wrote ${patched} covers into entries.ts.`)

@@ -11,19 +11,21 @@ import Link from 'next/link'
  * So: a rule, two columns of type, an arrow. Different enough from a card that
  * the eye reads it as navigation and moves on, present enough that someone who
  * wants the rest of the site finds it without scrolling past everything else.
+ *
+ * Two type styles, not three. It also carried a mono count line, which put a
+ * display face, a body face and a mono face in a block four lines tall, and
+ * that is what read as a mesh rather than as one thing.
  */
 const destinations = [
   {
     href: '/services',
     title: 'Services',
     body: 'Speaking and workshops, advisory, custom development, and 3D printing. Formats, scope, and what you actually get.',
-    meta: '4 speaking formats · 3 services',
   },
   {
     href: '/about',
     title: 'About',
     body: 'Where I have worked, what the catalogue is actually made of when you count it by practice, and a resume.',
-    meta: 'Career · resume',
   },
 ]
 
@@ -45,7 +47,6 @@ export default function Elsewhere() {
             </svg>
           </span>
           <span className="elsewhere-body">{d.body}</span>
-          <span className="label">{d.meta}</span>
         </Link>
       ))}
     </nav>

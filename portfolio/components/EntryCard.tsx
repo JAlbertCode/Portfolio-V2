@@ -68,7 +68,10 @@ export default function EntryCard({
           ) : null}
         </div>
 
-        <h3 className="mt-2.5 font-display text-xl leading-snug text-text">
+        {/* Two lines, always. A three-line title used to push the summary
+            under it down and take the whole card out of step with its
+            neighbours. */}
+        <h3 className="mt-2.5 line-clamp-2 font-display text-xl leading-snug text-text">
           {linkable ? (
             <Link
               href={href!}
@@ -86,13 +89,28 @@ export default function EntryCard({
           <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{entry.summary}</p>
         ) : null}
 
-        <p className="mt-4 flex flex-wrap items-center gap-x-2 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
+        {/* mt-auto pins this to the bottom of the card. Clamping the title and
+            the summary makes every card the same shape, but a two-line summary
+            still leaves a gap a three-line one does not, and without this the
+            fields line floats up with it and the row loses its baseline. */}
+        <p className="mt-auto flex flex-wrap items-center gap-x-2 pt-4 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
           <span>{entry.domains.join(', ')}</span>
           {/* The two things a card cannot show by looking at it: whether the
               click stays on the site, and whether the date above is when this
-              was made or when it last changed. */}
-          {entry.updated ? <span>Updated</span> : null}
-          {hasWriteup(entry) ? <span className="text-accent">Write-up</span> : null}
+              was made or when it last changed. Separated, because run together
+              with the fields they read as one more field. */}
+          {entry.updated ? (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>Updated</span>
+            </>
+          ) : null}
+          {hasWriteup(entry) ? (
+            <>
+              <span aria-hidden="true">·</span>
+              <span className="text-accent">Write-up</span>
+            </>
+          ) : null}
         </p>
 
         {unavailable ? (
