@@ -81,10 +81,11 @@ export default function EntryCard({
           <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{entry.summary}</p>
         ) : null}
 
-        {/* Same treatment the work rows use. These were bordered chips here and
-            plain text there, which made one list look like two systems. */}
-        <p className="mt-4 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
-          {entry.domains.join(', ')}
+        <p className="mt-4 flex flex-wrap items-center gap-x-2 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
+          <span>{entry.domains.join(', ')}</span>
+          {/* The one thing a card cannot show by looking at it: whether the
+              click stays on the site or leaves it. */}
+          {hasWriteup(entry) ? <span className="text-accent">Write-up</span> : null}
         </p>
 
         {unavailable ? (

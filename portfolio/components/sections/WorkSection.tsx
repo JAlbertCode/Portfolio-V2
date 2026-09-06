@@ -1,34 +1,30 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { entryHref, hasWriteup } from '@/components/EntryCard'
+import EntryCard from '@/components/EntryCard'
 import Reveal from '@/components/Reveal'
-import WorkPreview from '@/components/WorkPreview'
-import WorkRow from '@/components/WorkRow'
 import {
   allEntries,
   DOMAINS,
   emptyFacets,
-  entryYear,
   facetCounts,
   filterEntries,
   MEDIUMS,
   MEDIUM_LABELS,
 } from '@/lib/content'
-import type { Domain, Entry, Facets, Medium } from '@/lib/content'
+import type { Domain, Facets, Medium } from '@/lib/content'
 
 /**
- * The whole catalogue, on the page someone already landed on.
+ * The whole catalogue, as cards, newest first.
  *
- * One list, in date order, at two sizes: entries with a write-up on this site
- * are set large, the rest are compact. There used to be a grid of cards above
- * this driven by a `featured` flag, which meant the biggest things on the page
- * differed from the smallest for a reason that existed only in the data, and
- * which had gone stale: it was showing 2023 work while last month's sat in a
- * row underneath.
+ * It went to rows for a while on the theory that eighty-six of anything wants
+ * a dense list. It does not: the work is visual, and a list of titles throws
+ * away the only thing that makes a portfolio worth opening.
  *
- * Years are marked because eighty-six rows need somewhere to breathe, and a
- * year is the one division that needs no explaining.
+ * One treatment for everything. There used to be a grid of cards above a list
+ * of rows, split by a `featured` flag, which meant the biggest things on the
+ * page differed from the smallest for a reason held in the data and invisible
+ * on the screen. Everything is a card now and the order is the date.
  *
  * Filter state is local rather than in the URL: on a single page the URL is
  * carrying the section anchor, and a filter competing for the same address
@@ -37,7 +33,6 @@ import type { Domain, Entry, Facets, Medium } from '@/lib/content'
 export default function WorkSection() {
   const [facets, setFacets] = useState<Facets>(emptyFacets)
   const [expanded, setExpanded] = useState(false)
-  const [active, setActive] = useState<Entry | null>(null)
 
   const filtering = facets.medium.length > 0 || facets.domain.length > 0
   const results = useMemo(() => filterEntries(allEntries, facets), [facets])
@@ -56,9 +51,9 @@ export default function WorkSection() {
     setExpanded(true)
   }
 
-  // Enough to cross into the previous year, so the marker that gives the list
-  // its rhythm is visible before anyone decides whether to keep going.
-  const visible = expanded || filtering ? results : results.slice(0, 22)
+  // Six full rows on a laptop before the ask. Enough to read as a body of work
+  // rather than a sample, without putting eighty-six images on first paint.
+  const visible = expanded || filtering ? results : results.slice(0, 18)
 
   // A chip nothing can reach is noise. Unfiltered every count is above zero, so
   // this only ever hides options the current selection has already ruled out.
@@ -111,29 +106,17 @@ export default function WorkSection() {
           Nothing matches that combination. The count on each chip shows what is still reachable.
         </p>
       ) : (
-        <div className="work-layout mt-10" onMouseLeave={() => setActive(null)}>
-          <div
-            key={filtering ? `f-${facets.medium.join()}-${facets.domain.join()}` : 'all'}
-            className="results border-t border-line"
-          >
-            {visible.map((entry, i) => (
-              <div key={entry.slug}>
-                {entryYear(entry.date) !== entryYear(visible[i - 1]?.date ?? '') ? (
-                  <p className="work-year">{entryYear(entry.date)}</p>
-                ) : null}
-                <Reveal delay={(i % 6) * 45}>
-                  <WorkRow
-                    entry={entry}
-                    href={entryHref(entry) ?? '#work'}
-                    feature={hasWriteup(entry)}
-                    onFocus={() => setActive(entry)}
-                  />
-                </Reveal>
-              </div>
-            ))}
-          </div>
-
-          <WorkPreview entry={active} />
+        <div
+          key={filtering ? `f-${facets.medium.join()}-${facets.domain.join()}` : 'all'}
+          className="results mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {visible.map((entry, i) => (
+            // The stagger restarts every third card so it runs across a row
+            // rather than counting all the way down the page.
+            <Reveal key={entry.slug} delay={(i % 3) * 70} className="flex">
+              <EntryCard entry={entry} priority={i < 3} />
+            </Reveal>
+          ))}
         </div>
       )}
 
@@ -141,7 +124,7 @@ export default function WorkSection() {
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className="mt-6 w-full rounded-lg border border-line py-3 text-sm text-text transition-colors hover:border-line-strong"
+          className="mt-8 w-full rounded-lg border border-line py-3 text-sm text-text transition-colors hover:border-line-strong"
         >
           Show the other {results.length - visible.length}
         </button>

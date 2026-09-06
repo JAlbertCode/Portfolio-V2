@@ -1,5 +1,4 @@
 import ConnectRow from '@/components/ConnectRow'
-import CoverBand from '@/components/CoverBand'
 import Elsewhere from '@/components/Elsewhere'
 import WorkSection from '@/components/sections/WorkSection'
 import { site } from '@/lib/site'
@@ -36,8 +35,6 @@ export default function Home() {
           <ConnectRow />
         </div>
       </section>
-
-      <CoverBand />
 
       <WorkSection />
       <Elsewhere />
