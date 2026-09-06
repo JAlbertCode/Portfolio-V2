@@ -17,7 +17,7 @@ export const site = {
 
   /** One line. This is the meta description and the line under the name. */
   tagline:
-    'Developer relations and solutions engineering. Reference implementations, workshops, and the documentation in between.',
+    'Developer relations. Reference implementations, workshops, and the documentation in between.',
 
   /**
    * The home page intro. Two short paragraphs, not the V2 wall of text.

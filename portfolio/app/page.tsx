@@ -26,7 +26,7 @@ export default function Home() {
           {site.name}
         </h1>
         <p className="mt-4 max-w-[46ch] text-base leading-relaxed text-muted sm:text-[1.05rem]">
-          Developer relations and solutions engineering. {site.location}.
+          Developer relations. {site.location}.
         </p>
         <ConnectRow />
         <IntentLanes />

@@ -80,7 +80,7 @@ export function buildVCard(): string {
     'N:Albert;Jonathan;;;',
     'FN:Jonathan Albert',
     'NICKNAME:Jay',
-    `TITLE:${esc('Developer Relations and Solutions Engineering')}`,
+    `TITLE:${esc('Developer Relations')}`,
     `EMAIL;TYPE=INTERNET,PREF:${site.email}`,
     `URL:${site.url}`,
     `ADR;TYPE=WORK:;;;${esc(site.location)};;;`,

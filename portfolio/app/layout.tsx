@@ -9,7 +9,7 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — developer relations and solutions engineering`,
+    default: `${site.name} — developer relations`,
     template: `%s — ${site.shortName}`,
   },
   description: site.tagline,
