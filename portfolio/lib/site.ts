@@ -7,8 +7,13 @@
  */
 
 export const site = {
-  name: 'Jonathan Albert',
-  shortName: 'Jay Albert',
+  /**
+   * Jay, not Jonathan. It is what he goes by online and at work, so it is what
+   * the site says everywhere someone reads it. `legalName` exists only for the
+   * structured data and the footer, where the full form belongs.
+   */
+  name: 'Jay Albert',
+  legalName: 'Jonathan Albert',
   location: 'New York City',
   url: 'https://jonathanalbert.com',
   email: 'JonathanAlbert0115@gmail.com',
@@ -60,7 +65,8 @@ export interface SocialLink {
  */
 export const socials: SocialLink[] = [
   { label: 'Telegram', href: 'https://t.me/Jay_Albert', icon: '/images/telegram.png', primary: true },
-  { label: 'X', href: 'https://twitter.com/Jay_Albert_', icon: '/images/twitter.png', primary: true },
+  // He still calls it Twitter, so the site does.
+  { label: 'Twitter', href: 'https://twitter.com/Jay_Albert_', icon: '/images/twitter.png', primary: true },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/jonathan-albert-profile/',

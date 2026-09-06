@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="mt-24 border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 sm:flex-row sm:items-end sm:justify-between">
         <p className="text-xs text-faint">
-          {site.name}, {site.location}
+          {site.legalName}, {site.location}
         </p>
 
         <ul className="flex flex-wrap gap-x-5 gap-y-2">

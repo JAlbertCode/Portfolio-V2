@@ -861,16 +861,21 @@ export const entries: Entry[] = [
   //
   // Titles, dates and channel are taken from YouTube's oEmbed record and, for
   // the three that carry no date in their title, from the uploadDate in the
-  // watch page itself. Nothing else about these is written down anywhere
-  // public, so nothing else is claimed: no summary, and no statement of
-  // whether Jay hosted or appeared, because he has not said which is which and
-  // the recordings do not say either. Both are his to fill in.
+  // watch page itself. Each summary is condensed from that video's own
+  // description, read at the time of writing, with the promotional tail and
+  // the link dump cut.
+  //
+  // Still not claimed: whether Jay hosted or appeared. The descriptions name
+  // him for particular segments in a few of these and say nothing either way
+  // in the rest, so the entries say nothing either way in all of them.
   //
   // No cover. Their only published thumbnails live on YouTube's CDN, and
   // hotlinking those is what put a broken image on the home page.
   {
     slug: 'fireside-2026-08-26',
     title: 'Fireside Dev Hang: Build Club Demos and a New Partner Sprint',
+    summary:
+      'Two Build Club dApps demo live, the Kuira Zealy sprint wraps up, a new partner sprint with VIA Labs opens across the Cardano and Midnight bridge, and applications open for the next Build Club cohort.',
     date: '2026-08',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -881,6 +886,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-08-12',
     title: 'Fireside Dev Hang: Cardano ↔ Midnight + Hack Buenos Aires Winners Demo',
+    summary:
+      'VIA Labs running between Cardano and Midnight, with a live USDM demo in both directions, plus demos from the Hack Buenos Aires winners.',
     date: '2026-08',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -891,6 +898,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-07-15',
     title: 'Fireside Dev Hang: Nightpass & Midnight Skills',
+    summary:
+      'Two projects on privacy-preserving applications and developer tooling: Nightpass, which extends the EU Battery Passport so suppliers can prove compliance without revealing business data, and Midnight Skills, an open knowledge marketplace of Compact examples, SDK guides and dApp templates.',
     date: '2026-07',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -901,6 +910,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-06-24',
     title: 'Fireside Dev Hang: Mobile dApps on Midnight',
+    summary:
+      'Kuira Labs on their Android SDK: why it was built, what developers get out of the box, and live demos of mobile applications running on Midnight.',
     date: '2026-06',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -911,6 +922,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-06-10',
     title: 'Fireside Dev Hang: EffectStream, Offer Files & Community Updates',
+    summary:
+      'Data availability and why it matters for multi-chain applications, where EffectStream fits, and Offer Files with zSwap settlement.',
     date: '2026-06',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -921,6 +934,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-05-27',
     title: 'Fireside Dev Hang: Nightstream Demo, Docs & Zealy Updates',
+    summary:
+      'Multi-chain development: how Nightstream works, a Midnight to EVM cross-chain template, games and DeFi demos, and a walkthrough of the new leaderboard tutorial and repo.',
     date: '2026-05',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -931,6 +946,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-05-13',
     title: 'Fireside Dev Hang: Midnight Validators and Beyond',
+    summary:
+      'Stevan on Midnight validator updates.',
     date: '2026-05',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -941,6 +958,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-04-29',
     title: 'Fireside Dev Hang: Midnight Leaderboard, Ascend & Community Updates',
+    summary:
+      'An overview of the Midnight Leaderboard dApp and a walkthrough of the code behind it, an ecosystem partner announcement for Ascend, and bounty programme updates.',
     date: '2026-04',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -951,6 +970,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-04-01',
     title: 'Fireside Dev Hang: Coding, Wallets & Mobile on Midnight',
+    summary:
+      'A live coding session, a wallet testing and tooling review, and Brick Towers debuting mobile apps built in the ecosystem.',
     date: '2026-04',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -961,6 +982,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-03-04',
     title: 'Fireside Dev Hang: Tutorials, Tooling & Community Updates',
+    summary:
+      'A new Academy module, Build Club updates, tutorials and repos in progress, community dev updates, and the Aliit Fellowship.',
     date: '2026-03',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -971,6 +994,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-02-04',
     title: 'Fireside Dev Hang: Global Game Jam highlights, community updates and more',
+    summary:
+      'Two game developers on their Global Game Jam projects and what they learned building with Midnight, plus a community-built Unity and wallet integration.',
     date: '2026-02',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -981,6 +1006,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-01-28',
     title: 'Fireside Dev Hang: Contributor Hub highlights, Validator updates and Game Jam',
+    summary:
+      'Contributor Hub and content bounty highlights, survey results and the technical roadmap, and Game Jam updates.',
     date: '2026-01',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -991,6 +1018,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2026-01-07',
     title: 'Fireside Dev Hang with Erick from Mesh',
+    summary:
+      'Building dApps on Preview with the MeshJS starter template, an overview of gaming on Midnight, and community updates covering Build Club, the Global Game Jam and a new MCP server.',
     date: '2026-01',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1001,6 +1030,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2025-12-10',
     title: 'Fireside Dev Hang with Ben Beckmann',
+    summary:
+      'NIGHT and DUST for developers: a discussion with Ben Beckmann and Lauren Lee on what the two-token design means for people building on the network.',
     date: '2025-12',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1011,6 +1042,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2025-11-12',
     title: 'Fireside Dev Hang, November 12 2025',
+    summary:
+      'Building privacy-ready dApps with Arweave and NMKR: what Ar.io is and how it powers privacy-focused apps, and how NMKR adds a privacy layer to NFTs.',
     date: '2025-11',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1021,6 +1054,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2025-11-05',
     title: 'Fireside Dev Hang, November 5 2025',
+    summary:
+      'Building and deploying on Midnight end to end: project setup, writing a contract, deploying it to testnet, and interacting with it once it is there.',
     date: '2025-11',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1031,6 +1066,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2025-10-15',
     title: 'Fireside Dev Hang, October 15 2025',
+    summary:
+      'A Hacktoberfest session on open source, Midnight\'s contributions and MIPs, and how to get involved.',
     date: '2025-10',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1041,6 +1078,8 @@ export const entries: Entry[] = [
   {
     slug: 'fireside-2025-09-10',
     title: 'Fireside Dev Hang, September 10 2025',
+    summary:
+      'Why NFTs matter and what is available for them: the NFT module library covering standard NFTs and zkNFTs, dApp examples, and a live ticket review.',
     date: '2025-09',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1051,6 +1090,8 @@ export const entries: Entry[] = [
   {
     slug: 'hilo-hack-demo-day',
     title: 'Hilo Hack Demo Day',
+    summary:
+      'Teams showing what they built on Midnight across AI, identity, healthcare and finance, from early prototypes to more complete applications. Four-minute demos, each followed by live questions.',
     date: '2026-05',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1061,6 +1102,8 @@ export const entries: Entry[] = [
   {
     slug: 'consensus-privacy-apps',
     title: 'LIVE at Consensus: Building Privacy Apps for Real-World Use w/ Hackquest & Midnight DevRel',
+    summary:
+      'A livestreamed conversation with HackQuest founder Kevin Li on how Midnight supports developers building privacy-focused applications, covering education, developer programmes and hands-on initiatives.',
     date: '2026-02',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1071,6 +1114,8 @@ export const entries: Entry[] = [
   {
     slug: 'mini-dapp-hackathon-showcase',
     title: 'Mini DApp Hackathon Showcase',
+    summary:
+      'A live showcase of the projects built during the Midnight Mini DApp virtual hackathon.',
     date: '2025-08',
     medium: 'stream',
     practices: ['Developer Relations'],

@@ -31,7 +31,7 @@ export default function Header() {
             href="/"
             className="mr-auto whitespace-nowrap font-display text-lg tracking-tight text-text"
           >
-            {site.shortName}
+            {site.name}
           </Link>
         )}
 
