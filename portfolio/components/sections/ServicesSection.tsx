@@ -15,9 +15,13 @@ export default function ServicesSection() {
       <div className="mt-8 grid gap-5 lg:grid-cols-3">
         {services.map((service, i) => (
           <div key={service.slug} className="flex flex-col border-t border-line pt-4">
-            <div className="flex items-baseline gap-3">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="label">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="font-display text-lg text-text">{service.title}</h3>
+              {service.org ? <span className="label">{service.org}</span> : null}
+              {service.startingAt ? (
+                <span className="label ml-auto">from {service.startingAt}</span>
+              ) : null}
             </div>
             <p className="mt-3 text-sm leading-relaxed text-muted">{service.pitch}</p>
 

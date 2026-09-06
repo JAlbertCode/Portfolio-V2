@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import SocialIcon from './SocialIcon'
+import SocialLink from './SocialLink'
 import { site, socials } from '@/lib/site'
 
 /**
@@ -24,18 +23,7 @@ export default function Footer() {
         <ul className="flex flex-wrap gap-x-5 gap-y-2">
           {socials.map((s) => (
             <li key={s.label}>
-              <Link
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-sm text-muted transition-colors hover:text-text"
-              >
-                <SocialIcon
-                  name={s.label}
-                  className="size-4 shrink-0 opacity-50 transition-opacity group-hover:opacity-100"
-                />
-                {s.label}
-              </Link>
+              <SocialLink label={s.label} href={s.href} icon={s.label} />
             </li>
           ))}
         </ul>

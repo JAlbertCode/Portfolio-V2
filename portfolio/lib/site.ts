@@ -152,6 +152,8 @@ export const speakingProof: Array<{ value: string; label: string }> = []
 export interface Service {
   slug: string
   title: string
+  /** Set where the work runs through a separate brand rather than through Jay. */
+  org?: string
   pitch: string
   /** What the buyer actually receives. */
   deliverables: string[]
@@ -192,20 +194,22 @@ export const services: Service[] = [
     startingAt: null,
   },
   {
+    // Everything below is taken from the shop itself rather than described from
+    // memory. Print work runs through Layerworks, which has its own intake
+    // form, so this block exists to hand people over rather than to duplicate it.
     slug: '3d-printing',
     title: '3D printing',
+    org: 'Layerworks Print Co.',
     pitch:
-      'Design and print work off a Bambu Lab X2D. Functional parts, prototypes, and one-off objects that are easier to make than to buy.',
+      'Stands, mounts, displays, replacement parts, and one-off gifts, made to order through Layerworks Print Co. Stock pieces are on the shop; anything that does not exist yet gets designed for you.',
     deliverables: [
-      'A conversation about what the part needs to do',
-      'A model, or printing from one you already have',
-      'The printed part, iterated until it fits',
+      'Describe the object and what it is for, with a photo and rough measurements',
+      'A spinnable 3D preview to approve before anything is made, with the price locked at that step',
+      'Printed in-house in your choice of colours, test-fitted, and shipped free in the US',
     ],
-    fit: 'Best for prototypes, replacement parts, and small runs. Not a production shop.',
-    // TODO(jay): print requests should go through the main site rather than
-    // email. Replace this href with that URL and the label if it needs one.
-    cta: { label: 'Send a print request', href: `mailto:${site.email}?subject=3D print request` },
-    startingAt: null,
+    fit: 'Custom pieces start at $35 with design included, and you get a quote inside 24 hours.',
+    cta: { label: 'Start a request at Layerworks', href: 'https://jalbertcode.github.io/3d-printing-store/#custom' },
+    startingAt: '$35',
   },
 ]
 

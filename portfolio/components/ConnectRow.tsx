@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import SocialIcon from './SocialIcon'
+import SocialLink from './SocialLink'
 import { followActions, talkActions } from '@/lib/connect'
 
 /**
@@ -45,18 +45,9 @@ export default function ConnectRow() {
           ))}
         </div>
 
-        <div className="-ml-2.5 flex w-full items-center gap-0.5 sm:ml-auto sm:w-auto">
+        <div className="flex w-full flex-wrap items-center gap-x-5 sm:ml-auto sm:w-auto">
           {followActions.map((a) => (
-            <Link
-              key={a.label}
-              href={a.href}
-              aria-label={a.label}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grid size-[42px] place-items-center rounded-lg text-faint transition-colors hover:text-text"
-            >
-              <SocialIcon name={a.icon} className="size-[18px]" />
-            </Link>
+            <SocialLink key={a.label} label={a.label} href={a.href} icon={a.icon} />
           ))}
         </div>
       </div>

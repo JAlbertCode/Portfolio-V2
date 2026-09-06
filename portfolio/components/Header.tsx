@@ -11,19 +11,20 @@ const nav = [
 export default function Header() {
   return (
     <header className="border-b border-line">
+      {/* DOM order is name, nav, toggle. On a phone the nav is ordered last so
+          it wraps to its own row and the toggle stays up beside the name; from
+          640px the order is natural and everything sits on one line. */}
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-2 px-6 py-4 sm:h-16 sm:flex-nowrap sm:py-0">
         <Link
           href="/"
-          className="mr-auto whitespace-nowrap font-display text-lg tracking-tight text-text sm:mr-0"
+          className="mr-auto whitespace-nowrap font-display text-lg tracking-tight text-text"
         >
           {site.shortName}
         </Link>
 
-        <ThemeToggle />
-
         <nav
           aria-label="Main"
-          className="order-last flex w-full items-center gap-5 sm:order-none sm:ml-auto sm:w-auto"
+          className="order-last flex w-full items-center gap-5 sm:order-none sm:w-auto"
         >
           {nav.map((item) => (
             <Link
@@ -35,6 +36,8 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        <ThemeToggle />
       </div>
     </header>
   )

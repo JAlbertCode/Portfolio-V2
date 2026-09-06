@@ -1,4 +1,4 @@
-import { site } from './site'
+import { site, socials } from './site'
 
 /**
  * The connect surface.
@@ -53,13 +53,16 @@ export const talkActions: ConnectAction[] = [
   { label: 'Book', href: site.calendly, icon: 'calendar' },
 ]
 
-/** Tier 3. Follow, in the order most people actually use them. */
-export const followActions: ConnectAction[] = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jonathan-albert-profile/', icon: 'LinkedIn' },
-  { label: 'X', href: 'https://twitter.com/Jay_Albert_', icon: 'X' },
-  { label: 'GitHub', href: 'https://github.com/JAlbertCode', icon: 'GitHub' },
-  { label: 'Medium', href: 'https://jonathan-albert.medium.com/', icon: 'Medium' },
-]
+/**
+ * Tier 3. Follow.
+ *
+ * Derived from the single social list in site.ts rather than retyped, because
+ * two hand-maintained copies of the same four links is how they drift apart.
+ * The ones marked primary are the four worth showing in the first ten seconds.
+ */
+export const followActions: ConnectAction[] = socials
+  .filter((s) => s.primary)
+  .map((s) => ({ label: s.label, href: s.href, icon: s.label }))
 
 /**
  * The vCard served at /contact.vcf.

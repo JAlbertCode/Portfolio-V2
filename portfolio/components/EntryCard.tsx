@@ -79,16 +79,11 @@ export default function EntryCard({
 
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{entry.summary}</p>
 
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {entry.domains.slice(0, 3).map((domain) => (
-            <span
-              key={domain}
-              className="rounded border border-line px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-faint"
-            >
-              {domain}
-            </span>
-          ))}
-        </div>
+        {/* Same treatment the work rows use. These were bordered chips here and
+            plain text there, which made one list look like two systems. */}
+        <p className="mt-4 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
+          {entry.domains.join(', ')}
+        </p>
 
         {unavailable ? (
           <div className="mt-auto pt-4">
