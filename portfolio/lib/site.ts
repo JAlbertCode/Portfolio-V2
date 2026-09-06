@@ -48,23 +48,28 @@ export interface SocialLink {
   primary?: boolean
 }
 
+/**
+ * Order matters: the primary four lead the row on the home page, and people
+ * meeting Jay reach for a messaging app or a follow, not a repository.
+ *
+ * TODO(jay): add WhatsApp. The glyph is already in SocialIcon; it needs
+ *   { label: 'WhatsApp', href: 'https://wa.me/<number in full international
+ *   form, digits only>', icon: '', primary: true }
+ * and one of the current four dropped to primary: false so the lead row stays
+ * at four.
+ */
 export const socials: SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com/JAlbertCode', icon: '/images/github.png', primary: true },
+  { label: 'Telegram', href: 'https://t.me/Jay_Albert', icon: '/images/telegram.png', primary: true },
+  { label: 'X', href: 'https://twitter.com/Jay_Albert_', icon: '/images/twitter.png', primary: true },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/jonathan-albert-profile/',
     icon: '/images/linkedin.png',
     primary: true,
   },
-  { label: 'X', href: 'https://twitter.com/Jay_Albert_', icon: '/images/twitter.png', primary: true },
-  {
-    label: 'Medium',
-    href: 'https://jonathan-albert.medium.com/',
-    icon: '/images/medium.png',
-    primary: true,
-  },
+  { label: 'GitHub', href: 'https://github.com/JAlbertCode', icon: '/images/github.png', primary: true },
+  { label: 'Medium', href: 'https://jonathan-albert.medium.com/', icon: '/images/medium.png' },
   { label: 'Mirror', href: 'https://mirror.xyz/jay-albert.eth', icon: '/images/mirror.png' },
-  { label: 'Telegram', href: 'https://t.me/Jay_Albert', icon: '/images/telegram.png' },
   {
     label: 'Discord',
     href: 'https://discordapp.com/users/649469511749337089',

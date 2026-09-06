@@ -4,103 +4,40 @@ import { site, socials } from './site'
  * The connect surface.
  *
  * This site is the destination for a business card tap, so on a phone the
- * first screen has to be the thing the person actually wants in that moment:
- * they just met Jay, their phone is already in their hand, and they want to
- * save him and follow him before the conversation ends. The portfolio is what
- * they scroll to afterwards, not what they have to get past.
+ * first screen has to carry the thing the person actually wants in that
+ * moment: they just met Jay and they want to reach him or follow him before
+ * the conversation ends. The portfolio is what they scroll to afterwards.
  *
- * Three tiers, in the order someone standing at a conference actually needs
- * them: save the contact, open a conversation, follow.
+ * One row, one visual treatment. An earlier version split these into bordered
+ * buttons for "contact" and plain links for "follow", which put a box around
+ * Telegram but not X and read as arbitrary, because it was.
  */
 
 export interface ConnectAction {
   label: string
-  /**
-   * Only set where it carries information the label does not. "Fastest way to
-   * reach me" under a button marked Telegram is filler; an actual handle or
-   * address is not.
-   */
-  sublabel?: string
   href: string
   icon: string
   /** Opens the phone's own UI rather than a web page. */
   native?: boolean
 }
 
-/** Tier 1. One tap, and he is in their phone. */
-export const saveActions: ConnectAction[] = [
-  {
-    // The sublabel stays: a vCard is the one action here whose behaviour is not
-    // obvious from its name.
-    label: 'Save my contact',
-    sublabel: 'Adds straight to your phone',
-    href: '/contact.vcf',
-    icon: 'contact',
-    native: true,
-  },
-]
-
 /**
- * Everything that is not the primary action.
- *
- * These used to be split into "contact routes" with bordered buttons and
- * "follow" as plain icons, on the theory that doing something now and
- * subscribing to something later deserve different weight. Nobody could see
- * that rule, including Jay: Telegram is a social platform that got a box while
- * X did not, and Email and Book are not social at all. The rule is now one
- * anybody can state after a second of looking. One button, then links.
- */
-export const talkActions: ConnectAction[] = [
-  { label: 'Email', href: `mailto:${site.email}`, icon: 'Email', native: true },
-  { label: 'Telegram', href: 'https://t.me/Jay_Albert', icon: 'Telegram' },
-  { label: 'Book', href: site.calendly, icon: 'Book' },
-]
-
-/**
- * Tier 3. Follow.
- *
- * Derived from the single social list in site.ts rather than retyped, because
- * two hand-maintained copies of the same four links is how they drift apart.
- * The ones marked primary are the four worth showing in the first ten seconds.
+ * Follows and DMs, from the single social list in site.ts rather than retyped,
+ * because two hand-maintained copies of the same links is how they drift
+ * apart. The ones marked primary are the ones worth the first ten seconds.
  */
 export const followActions: ConnectAction[] = socials
   .filter((s) => s.primary)
   .map((s) => ({ label: s.label, href: s.href, icon: s.label }))
 
-/** The single row that follows the primary action, in reading order. */
-export const secondaryLinks: ConnectAction[] = [...talkActions, ...followActions]
-
 /**
- * The vCard served at /contact.vcf.
- *
- * Built from lib/site.ts so it cannot drift from the rest of the page. Tapping
- * it on iOS or Android opens the system "add contact" sheet rather than
- * downloading a file someone then has to find, which is the entire point.
- *
- * CRLF line endings and the escaping below are required by RFC 6350; a vCard
- * with bare newlines is rejected by iOS.
+ * The slower channels. Telegram is deliberately absent: it is a primary social
+ * and already arrives through followActions.
  */
-export function buildVCard(): string {
-  const esc = (v: string) => v.replace(/([\\,;])/g, '\\$1').replace(/\n/g, '\\n')
+export const talkActions: ConnectAction[] = [
+  { label: 'Email', href: `mailto:${site.email}`, icon: 'Email', native: true },
+  { label: 'Book', href: site.calendly, icon: 'Book' },
+]
 
-  const lines = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'N:Albert;Jonathan;;;',
-    'FN:Jonathan Albert',
-    'NICKNAME:Jay',
-    `TITLE:${esc('Developer Relations')}`,
-    `EMAIL;TYPE=INTERNET,PREF:${site.email}`,
-    `URL:${site.url}`,
-    `ADR;TYPE=WORK:;;;${esc(site.location)};;;`,
-    `NOTE:${esc('Reference implementations, workshops, and the documentation in between. Everything at ' + site.url)}`,
-    `X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/jonathan-albert-profile/`,
-    `X-SOCIALPROFILE;TYPE=twitter:https://twitter.com/Jay_Albert_`,
-    `X-SOCIALPROFILE;TYPE=github:https://github.com/JAlbertCode`,
-    `X-SOCIALPROFILE;TYPE=telegram:https://t.me/Jay_Albert`,
-    `REV:${new Date().toISOString().replace(/\.\d{3}/, '')}`,
-    'END:VCARD',
-  ]
-
-  return lines.join('\r\n') + '\r\n'
-}
+/** The whole row, in reading order. */
+export const secondaryLinks: ConnectAction[] = [...followActions, ...talkActions]
