@@ -1,13 +1,16 @@
 import Link from 'next/link'
 
 /**
- * The two pages the home page does not contain, previewed with enough
- * substance that clicking is an informed decision rather than a guess. The
- * earlier version of this site linked to them with the words "Speaking" and
- * "Services" and nobody clicked, because nothing told them what was behind.
+ * The two pages the home page does not contain.
  *
- * It sits above the catalogue. At the bottom it was behind eighty-seven cards,
- * which is not a place anyone arrives still looking for a link.
+ * It reads as a strip, not as cards. It sits directly above eighty-nine actual
+ * cards, and anything with a border and a hover lift there is a card competing
+ * with the catalogue on the catalogue's own terms and losing: two odd tiles
+ * with no image at the top of a grid of tiles with images.
+ *
+ * So: a rule, two columns of type, an arrow. Different enough from a card that
+ * the eye reads it as navigation and moves on, present enough that someone who
+ * wants the rest of the site finds it without scrolling past everything else.
  */
 const destinations = [
   {
@@ -26,14 +29,25 @@ const destinations = [
 
 export default function Elsewhere() {
   return (
-    <section className="grid gap-4 sm:grid-cols-2">
+    <nav aria-label="Rest of the site" className="elsewhere">
       {destinations.map((d) => (
-        <Link key={d.href} href={d.href} className="lane">
+        <Link key={d.href} href={d.href} className="elsewhere-item">
+          <span className="elsewhere-head">
+            <span className="elsewhere-title">{d.title}</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span className="elsewhere-body">{d.body}</span>
           <span className="label">{d.meta}</span>
-          <span className="lane-title">{d.title}</span>
-          <span className="mt-1 text-sm leading-relaxed text-muted">{d.body}</span>
         </Link>
       ))}
-    </section>
+    </nav>
   )
 }

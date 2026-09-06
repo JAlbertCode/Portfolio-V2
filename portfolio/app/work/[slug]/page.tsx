@@ -166,6 +166,43 @@ function BlockView({ block }: { block: Block }) {
   }
 }
 
+/**
+ * One row of the rail. Rendered whether or not it has anything in it, so the
+ * panel is the same height and the same shape on every entry.
+ */
+function RailSection({
+  label,
+  items,
+  href,
+}: {
+  label: string
+  items: readonly string[]
+  href?: string
+}) {
+  return (
+    <div className="rail-section">
+      <p className="label">{label}</p>
+      {items.length === 0 ? (
+        <p className="rail-empty">None</p>
+      ) : (
+        <ul className="mt-2.5 space-y-1.5">
+          {items.map((item) => (
+            <li key={item} className="rail-item">
+              {href ? (
+                <Link href={href} className="transition-colors hover:text-accent">
+                  {item}
+                </Link>
+              ) : (
+                item
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 export default async function WorkDetailPage({
   params,
 }: {
@@ -264,59 +301,28 @@ export default async function WorkDetailPage({
           {writeup.blocks?.map((block, i) => <BlockView key={i} block={block} />)}
         </div>
 
-        {/* Metadata only. The action moved into the reading column above: as a
-            filled slab at the top of this rail it was the loudest thing on the
-            page, it left the rest of the rail looking like a column that had
-            run out, and on entries whose artwork is turquoise it read as that
-            company's branding rather than a control. */}
+        {/*
+          Every entry gets the same rail, in the same order, in one treatment.
+          It used to render Practice and Field as plain links and Built with as
+          bordered mono chips, so one panel carried two visual systems, and the
+          whole Built with block vanished on entries with no tech, which made
+          the rail a different shape depending on which page you were on.
+
+          Now a section is always present and always looks the same. Where
+          there is nothing to list it says so in one word rather than
+          disappearing, because a rail that changes shape page to page is the
+          thing that reads as unfinished.
+        */}
         <aside className="lg:sticky lg:top-24 lg:self-start">
-          <div>
-            <p className="label">Practice</p>
-            <ul className="mt-3 space-y-1.5">
-              {entry.practices.map((p) => (
-                <li key={p}>
-                  <Link
-                    href="/#work"
-                    className="text-sm text-muted hover:text-accent"
-                  >
-                    {p}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-7">
-            <p className="label">Field</p>
-            <ul className="mt-3 space-y-1.5">
-              {entry.domains.map((d) => (
-                <li key={d}>
-                  <Link
-                    href="/#work"
-                    className="text-sm text-muted hover:text-accent"
-                  >
-                    {d}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {entry.tech?.length ? (
-            <div className="mt-7">
-              <p className="label">Built with</p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {entry.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded border border-line px-1.5 py-0.5 font-mono text-[10px] text-faint"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ) : null}
+          <RailSection label="Form" items={[MEDIUM_LABELS[entry.medium].singular]} />
+          <RailSection
+            label={entry.updated ? 'Updated' : 'Published'}
+            items={[formatDate(entry.updated ?? entry.date)]}
+          />
+          <RailSection label="Practice" items={entry.practices} href="/#work" />
+          <RailSection label="Field" items={entry.domains} href="/#work" />
+          <RailSection label="Built with" items={entry.tech ?? []} />
+          <RailSection label="Organisation" items={entry.org ? [entry.org] : []} />
         </aside>
       </div>
 

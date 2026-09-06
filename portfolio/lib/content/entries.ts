@@ -425,7 +425,7 @@ export const entries: Entry[] = [
     slug: 'loot-gdc',
     title: 'Loot GDC',
     summary:
-      'A lootbox scavenger hunt run across the GDC venue and online. Players claimed boxes from QR codes and booths without knowing they had just created a wallet and signed a transaction. Nine studios contributed prizes.',
+      'A lootbox scavenger hunt across the GDC venue and online. Players claimed boxes from QR codes without knowing they had just created a wallet.',
     date: '2024-04',
     medium: 'build',
     practices: ['Product & Design', 'Engineering', 'Developer Relations'],
@@ -880,7 +880,7 @@ export const entries: Entry[] = [
     slug: 'fireside-2026-08-26',
     title: 'Fireside Dev Hang: Build Club Demos and a New Partner Sprint',
     summary:
-      'Two Build Club dApps demo live, the Kuira Zealy sprint wraps up, a new partner sprint with VIA Labs opens across the Cardano and Midnight bridge, and applications open for the next Build Club cohort.',
+      'Two Build Club dApps demo live, the Kuira sprint wraps up, and a new partner sprint opens across the Cardano and Midnight bridge.',
     date: '2026-08-26',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -906,7 +906,7 @@ export const entries: Entry[] = [
     slug: 'fireside-2026-07-15',
     title: 'Fireside Dev Hang: Nightpass & Midnight Skills',
     summary:
-      'Two projects on privacy-preserving applications and developer tooling: Nightpass, which extends the EU Battery Passport so suppliers can prove compliance without revealing business data, and Midnight Skills, an open knowledge marketplace of Compact examples, SDK guides and dApp templates.',
+      'Two projects on privacy-preserving tooling: Nightpass, proving battery-passport compliance without revealing business data, and Midnight Skills.',
     date: '2026-07-15',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -945,7 +945,7 @@ export const entries: Entry[] = [
     slug: 'fireside-2026-05-27',
     title: 'Fireside Dev Hang: Nightstream Demo, Docs & Zealy Updates',
     summary:
-      'Multi-chain development: how Nightstream works, a Midnight to EVM cross-chain template, games and DeFi demos, and a walkthrough of the new leaderboard tutorial and repo.',
+      'Multi-chain development: how Nightstream works, a Midnight to EVM template, and a walkthrough of the new leaderboard tutorial.',
     date: '2026-05-27',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1036,7 +1036,7 @@ export const entries: Entry[] = [
     slug: 'fireside-2026-01-07',
     title: 'Fireside Dev Hang with Erick from Mesh',
     summary:
-      'Building dApps on Preview with the MeshJS starter template, an overview of gaming on Midnight, and community updates covering Build Club, the Global Game Jam and a new MCP server.',
+      'Building dApps on Preview with the MeshJS starter template, an overview of gaming on Midnight, and a new MCP server.',
     date: '2026-01-07',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1114,7 +1114,7 @@ export const entries: Entry[] = [
     slug: 'hilo-hack-demo-day',
     title: 'Hilo Hack Demo Day',
     summary:
-      'Teams showing what they built on Midnight across AI, identity, healthcare and finance, from early prototypes to more complete applications. Four-minute demos, each followed by live questions.',
+      'Teams showing what they built on Midnight across AI, identity, healthcare and finance. Four-minute demos, each followed by live questions.',
     date: '2026-05-01',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1127,7 +1127,7 @@ export const entries: Entry[] = [
     slug: 'consensus-privacy-apps',
     title: 'LIVE at Consensus: Building Privacy Apps for Real-World Use w/ Hackquest & Midnight DevRel',
     summary:
-      'A livestreamed conversation with HackQuest founder Kevin Li on how Midnight supports developers building privacy-focused applications, covering education, developer programmes and hands-on initiatives.',
+      'A livestreamed conversation with HackQuest founder Kevin Li on supporting developers building privacy-focused applications.',
     date: '2026-02-11',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -1159,7 +1159,7 @@ export const entries: Entry[] = [
     slug: 'mlh-midnight-july-hack-winners',
     title: 'Celebrating seven winners from the MLH x Midnight July hack',
     summary:
-      'A write-up of the July hackathon, where 84 teams built applications around zero-knowledge technology and seven projects won across the privacy infrastructure and gaming categories.',
+      'A write-up of the July hackathon: 84 teams built on zero-knowledge technology and seven won across privacy infrastructure and gaming.',
     date: '2026-08-20',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
@@ -1171,7 +1171,7 @@ export const entries: Entry[] = [
     slug: 'midnight-improvement-proposal-process',
     title: 'The Midnight Improvement Proposal Process',
     summary:
-      'How protocol changes get made: Midnight Problem Statements name an issue, Midnight Improvement Proposals answer it, and the article walks the token standards through that path from six identified token types to the proposals still being debated.',
+      'How protocol changes get made: problem statements name an issue, improvement proposals answer it, and the token standards walk that path.',
     date: '2026-08-04',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
@@ -1183,7 +1183,7 @@ export const entries: Entry[] = [
     slug: 'night-and-dust-for-developers',
     title: 'The implications of NIGHT and DUST for developers',
     summary:
-      'Midnight splits the value token from the resource that pays for transactions. The piece works through what that separation buys a developer: operational cost that does not move with the token price, sponsored onboarding, and execution that never sits in a public mempool.',
+      'Midnight splits the value token from the one that pays for transactions. What that separation buys a developer, worked through end to end.',
     date: '2026-01-19',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
@@ -1208,7 +1208,8 @@ export const entries: Entry[] = [
     title: 'MIP-0014 reference implementation',
     summary:
       'A working reference for the Native Unshielded Token Standard: a fungible asset that lives as unshielded UTXOs on the ledger, publicly valued and owned by an address.',
-    date: '2026-09-01',
+    date: '2026-08-11',
+    updated: '2026-09-01',
     medium: 'build',
     practices: ['Engineering', 'Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
@@ -1222,7 +1223,8 @@ export const entries: Entry[] = [
     title: 'Layerworks Print Co. storefront',
     summary:
       'The shop front for a small-batch 3D print business: a featured product with an interactive GLB preview and a commissions intake, deployed to Pages by Actions.',
-    date: '2026-08-31',
+    date: '2026-08-30',
+    updated: '2026-08-31',
     medium: 'build',
     practices: ['Engineering', 'Product & Design', 'Hardware & Fabrication'],
     domains: ['Consumer & Commerce'],
@@ -1235,7 +1237,8 @@ export const entries: Entry[] = [
     title: 'Family Affairs',
     summary:
       'A competitive family battle card game for two to six players, played live on their own phones.',
-    date: '2026-08-17',
+    date: '2026-08-15',
+    updated: '2026-08-17',
     medium: 'build',
     practices: ['Engineering', 'Product & Design'],
     domains: ['Gaming'],
@@ -1247,8 +1250,9 @@ export const entries: Entry[] = [
     slug: 'zk-leaderboard',
     title: 'Midnight Leaderboard',
     summary:
-      'An arcade-style leaderboard where every score is a new entry, like a cabinet, and the player decides how they appear on it: anonymous, as a wallet address, or under a name they choose.',
-    date: '2026-05-15',
+      'An arcade-style leaderboard where the player decides how they appear: anonymous, as a wallet address, or under a name they choose.',
+    date: '2026-01-29',
+    updated: '2026-05-15',
     medium: 'build',
     practices: ['Engineering'],
     domains: ['Blockchain & Web3', 'Gaming'],
@@ -1261,7 +1265,7 @@ export const entries: Entry[] = [
     slug: 'example-locker',
     title: 'Locker rental example',
     summary:
-      'A locker whose four-digit combination never reaches the chain. Only its hash is stored, and opening the locker produces a proof that the combination matches without revealing the digits.',
+      'A locker whose four-digit combination never reaches the chain. Opening it proves the combination matches without revealing the digits.',
     date: '2026-04-01',
     medium: 'build',
     practices: ['Engineering', 'Developer Relations'],
@@ -1276,7 +1280,8 @@ export const entries: Entry[] = [
     title: 'Midnight Tip Jar',
     summary:
       'A minimal tip jar: connect a Lace wallet, read balances, and send transfers through the DApp Connector API.',
-    date: '2026-03-28',
+    date: '2025-10-27',
+    updated: '2026-03-28',
     medium: 'build',
     practices: ['Engineering'],
     domains: ['Blockchain & Web3'],
@@ -1288,6 +1293,8 @@ export const entries: Entry[] = [
   {
     slug: 'internet-is-the-new-culture',
     title: 'The Internet Is the New Culture',
+    summary:
+      'An argument that infrastructure, not geography, now shapes culture: the same apps and algorithms produce the same behaviours city to city.',
     date: '2025-04-25',
     medium: 'writing',
     practices: ['Writing & Research'],
@@ -1299,7 +1306,7 @@ export const entries: Entry[] = [
     slug: 'partner-sprints-on-midnight',
     title: 'Partner sprints on Midnight',
     summary:
-      'How the tri-weekly partner sprints run: two weeks of quests, a working dApp at the end, and prizes funded by the partner. Written up from the first two, with Midnames and 1AM.',
+      'How the tri-weekly partner sprints run: two weeks of quests, a working dApp at the end, prizes funded by the partner.',
     date: '2026-05-13',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations'],
@@ -1311,7 +1318,7 @@ export const entries: Entry[] = [
     slug: 'hacktoberfest-contributor-guide',
     title: 'Hacktoberfest contributor guide',
     summary:
-      'What to contribute to Midnight during Hacktoberfest and how: the repositories that were open, from documentation through contracts and core libraries, and what a qualifying pull request had to look like before the 31st.',
+      'What was open to contribute to during Hacktoberfest, from documentation through contracts and core libraries, and what a qualifying PR looked like.',
     date: '2025-10-15',
     medium: 'writing',
     practices: ['Writing & Research', 'Developer Relations', 'Community & Education'],

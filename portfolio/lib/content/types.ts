@@ -37,6 +37,17 @@ export interface Entry {
    * 31st appeared below a hangout from the 12th.
    */
   date: string
+  /**
+   * When the work last changed, if it has changed since. The catalogue sorts
+   * on this: something Jay came back to in May is more worth a visitor's time
+   * than something finished in May and untouched since, and ordering purely by
+   * first publication buries it.
+   *
+   * Only set where a source actually records it. For a repository that is the
+   * last commit on the default branch. An article or a recording does not get
+   * one, because nothing revised them.
+   */
+  updated?: string
 
   medium: Medium
   practices: Practice[]
@@ -87,6 +98,23 @@ export function formatDate(iso: string): string {
 
 export function entryYear(iso: string): number {
   return Number(iso.split('-')[0])
+}
+
+/**
+ * "2026-08-31" -> "Aug 2026". For cards, where the line already carries the
+ * form and the organisation and the full date pushed it into an ellipsis. The
+ * exact day is on the detail page, in the rail.
+ */
+export function formatDateShort(iso: string): string {
+  const [year, month] = iso.split('-')
+  if (!month) return year
+  const date = new Date(Number(year), Number(month) - 1, 1)
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+}
+
+/** What the catalogue sorts on: the last time this changed. */
+export function entryRank(entry: { date: string; updated?: string }): string {
+  return entry.updated ?? entry.date
 }
 
 /**

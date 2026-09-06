@@ -1,14 +1,22 @@
 import { entries } from './entries'
 import type { Entry } from './types'
-import { entryYear } from './types'
+import { entryRank, entryYear } from './types'
 import type { Domain, Medium, Practice } from './taxonomy'
 
 export * from './taxonomy'
 export * from './types'
 export { entries }
 
-/** Newest first. The source file is kept in order, but never rely on that. */
-export const allEntries: Entry[] = [...entries].sort((a, b) => b.date.localeCompare(a.date))
+/**
+ * Most recently touched first, which is not the same as most recently made.
+ * A repository started in January and still being worked on in May belongs
+ * above one finished in March, because there is something new to look at.
+ *
+ * The source file is kept roughly in order, but never rely on that.
+ */
+export const allEntries: Entry[] = [...entries].sort((a, b) =>
+  entryRank(b).localeCompare(entryRank(a)),
+)
 
 export const featured: Entry[] = allEntries.filter((e) => e.featured)
 

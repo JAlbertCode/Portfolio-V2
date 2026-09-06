@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Cover from './Cover'
-import { formatDate, isExternal, MEDIUM_LABELS, STATUS_NOTES } from '@/lib/content'
+import { formatDateShort, isExternal, MEDIUM_LABELS, STATUS_NOTES } from '@/lib/content'
 import type { Entry } from '@/lib/content'
 import { writeupFor } from '@/lib/content/writeups'
 
@@ -52,7 +52,12 @@ export default function EntryCard({
           <span aria-hidden="true" className="text-faint">
             ·
           </span>
-          <span className="label whitespace-nowrap">{formatDate(entry.date)}</span>
+          {/* The date shown is the one the catalogue is ordered by. Short,
+              because this line already carries the form and the organisation
+              and the full date pushed all three into an ellipsis. */}
+          <span className="label whitespace-nowrap">
+            {formatDateShort(entry.updated ?? entry.date)}
+          </span>
           {entry.org ? (
             <>
               <span aria-hidden="true" className="text-faint">
@@ -83,8 +88,10 @@ export default function EntryCard({
 
         <p className="mt-4 flex flex-wrap items-center gap-x-2 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
           <span>{entry.domains.join(', ')}</span>
-          {/* The one thing a card cannot show by looking at it: whether the
-              click stays on the site or leaves it. */}
+          {/* The two things a card cannot show by looking at it: whether the
+              click stays on the site, and whether the date above is when this
+              was made or when it last changed. */}
+          {entry.updated ? <span>Updated</span> : null}
           {hasWriteup(entry) ? <span className="text-accent">Write-up</span> : null}
         </p>
 

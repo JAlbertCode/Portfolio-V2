@@ -455,3 +455,106 @@ body {
     margin-top: 0;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Detail page rail
+
+   The same sections in the same order on every entry, in one treatment. Two
+   of them link into the filtered catalogue and the rest do not, which is a
+   difference in behaviour rather than in kind, so it shows up as a hover
+   colour and nothing else.
+--------------------------------------------------------------------------- */
+
+.rail-section + .rail-section {
+  margin-top: 1.6rem;
+}
+.rail-item {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+.rail-empty {
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--text-faint);
+}
+
+/* ---------------------------------------------------------------------------
+   Elsewhere
+
+   Navigation, sitting immediately above a grid of cards. Deliberately not a
+   card: no border, no fill, no lift. The arrow moves on hover and the title
+   takes the accent, which is enough to say it is a link without competing
+   with the eighty-nine tiles below it.
+--------------------------------------------------------------------------- */
+
+.elsewhere {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  .elsewhere {
+    grid-template-columns: 1fr 1fr;
+  }
+  .elsewhere-item + .elsewhere-item {
+    border-left: 1px solid var(--line);
+    padding-left: 2rem;
+  }
+}
+
+.elsewhere-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.4rem 0;
+}
+.elsewhere-item + .elsewhere-item {
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 640px) {
+  .elsewhere-item + .elsewhere-item {
+    border-top: 0;
+  }
+}
+
+.elsewhere-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  transition: color 0.16s ease;
+}
+.elsewhere-head svg {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.elsewhere-item:hover .elsewhere-head {
+  color: var(--accent);
+}
+.elsewhere-item:hover .elsewhere-head svg {
+  transform: translateX(4px);
+}
+
+.elsewhere-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.elsewhere-body {
+  max-width: 44ch;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elsewhere-head svg {
+    transition: none;
+  }
+  .elsewhere-item:hover .elsewhere-head svg {
+    transform: none;
+  }
+}

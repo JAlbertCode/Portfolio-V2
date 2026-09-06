@@ -26,13 +26,17 @@ import type { Domain, Facets, Medium } from '@/lib/content'
  * page differed from the smallest for a reason held in the data and invisible
  * on the screen. Everything is a card now and the order is the date.
  *
+ * Everything is on the page. It used to show eighteen and hide the rest
+ * behind a button, which is a strange thing to do on a page whose whole
+ * purpose is the catalogue: the count in the heading says eighty-nine and then
+ * the page shows you a fifth of it. Images below the fold are lazy anyway.
+ *
  * Filter state is local rather than in the URL: on a single page the URL is
  * carrying the section anchor, and a filter competing for the same address
  * scrolls the reader somewhere they did not ask to go.
  */
 export default function WorkSection() {
   const [facets, setFacets] = useState<Facets>(emptyFacets)
-  const [expanded, setExpanded] = useState(false)
 
   const filtering = facets.medium.length > 0 || facets.domain.length > 0
   const results = useMemo(() => filterEntries(allEntries, facets), [facets])
@@ -48,12 +52,7 @@ export default function WorkSection() {
           : [...current, value],
       } as Facets
     })
-    setExpanded(true)
   }
-
-  // Six full rows on a laptop before the ask. Enough to read as a body of work
-  // rather than a sample, without putting eighty-six images on first paint.
-  const visible = expanded || filtering ? results : results.slice(0, 18)
 
   // A chip nothing can reach is noise. Unfiltered every count is above zero, so
   // this only ever hides options the current selection has already ruled out.
@@ -110,7 +109,7 @@ export default function WorkSection() {
           key={filtering ? `f-${facets.medium.join()}-${facets.domain.join()}` : 'all'}
           className="results mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {visible.map((entry, i) => (
+          {results.map((entry, i) => (
             // The stagger restarts every third card so it runs across a row
             // rather than counting all the way down the page.
             <Reveal key={entry.slug} delay={(i % 3) * 70} className="flex">
@@ -120,15 +119,6 @@ export default function WorkSection() {
         </div>
       )}
 
-      {!expanded && !filtering && results.length > visible.length ? (
-        <button
-          type="button"
-          onClick={() => setExpanded(true)}
-          className="mt-8 w-full rounded-lg border border-line py-3 text-sm text-text transition-colors hover:border-line-strong"
-        >
-          Show the other {results.length - visible.length}
-        </button>
-      ) : null}
     </section>
   )
 }

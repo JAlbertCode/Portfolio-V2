@@ -60,6 +60,32 @@ const HEADERS = {
 }
 const MIN_BYTES = 6000 // YouTube serves a 120x90 placeholder with a 200 for a missing maxres
 
+/**
+ * Image URLs resolved by hand, for pages whose HTML this script cannot get.
+ *
+ * The five below all publish a perfectly good og:image, and every one of them
+ * refused a plain fetch even with browser headers. The tags were read out of
+ * the live DOM instead, so the URLs are the same ones the page declares, they
+ * just skip the step that keeps failing. The image hosts themselves serve
+ * these without complaint.
+ *
+ * Delete an entry here the moment its page starts answering normally.
+ */
+const OG_OVERRIDES = {
+  'mlh-midnight-july-hack-winners':
+    'https://cdn.sanity.io/images/330xhmya/production/3b105228d6e8fee0afbd6a48107e59d1bad7a0a4-1920x1080.jpg',
+  'midnight-improvement-proposal-process':
+    'https://cdn.sanity.io/images/330xhmya/production/f1d5099719381a196fbb07cc95a2866a43a88524-1920x1080.jpg',
+  'night-and-dust-for-developers':
+    'https://cdn.sanity.io/images/330xhmya/production/6c7db093bb8dd865a53394b55cc5665e25c25793-3840x2160.png',
+  // Both docs.midnight.network posts declare the same house banner. Real, and
+  // the same picture twice, so swap one out if two identical tiles bother you.
+  'partner-sprints-on-midnight': 'https://docs.midnight.network/img/blog/ecosystem.jpg',
+  'hacktoberfest-contributor-guide': 'https://docs.midnight.network/img/blog/ecosystem.jpg',
+  'internet-is-the-new-culture':
+    'https://miro.medium.com/v2/resize:fit:1024/1*HRRSZBxUeG8wLTujSZYysg.png',
+}
+
 const src = await readFile(ENTRIES, 'utf8')
 
 /** Entry objects, in the shape this file is written in. */
@@ -119,9 +145,16 @@ async function ogImage(pageUrl) {
   return new URL(m[1], pageUrl).href
 }
 
-/** Returns the saved extension, or null. */
+/** Returns the saved extension, or null. Never throws: one unreachable host
+ *  used to take the whole run down with an unhandled rejection. */
 async function download(url, slug) {
-  const res = await fetch(url, { headers: HEADERS })
+  let res
+  try {
+    res = await fetch(url, { headers: HEADERS })
+  } catch (e) {
+    lastReason = `could not reach ${new URL(url).host}: ${e.cause?.code ?? e.message}`
+    return null
+  }
   if (!res.ok) {
     lastReason = `image returned ${res.status}`
     return null
@@ -170,6 +203,8 @@ for (const { slug, href, title, replace } of wanted) {
       `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
       `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
     ]
+  } else if (OG_OVERRIDES[slug]) {
+    candidates = [OG_OVERRIDES[slug]]
   } else {
     const og = await ogImage(href)
     if (og.startsWith('!')) {
