@@ -3,6 +3,12 @@ import type { Entry } from './types'
 /**
  * Every piece of work on the site, newest first.
  *
+ * Sourcing rule: a summary may only state what the linked artifact or Jay
+ * states. V2's own descriptions are not a source; several were generated and at
+ * least one ("presented at Game Developers Conference") turned a campaign he
+ * built into a talk he never gave. When V2's wording is ambiguous, open the
+ * link and read it.
+ *
  * `date` is ISO yyyy-mm so sorting is a string compare and rendering is a
  * locale call. `practices` and `domains` come from the controlled lists in
  * taxonomy.ts; `tech` is free text and never becomes a filter.
@@ -194,7 +200,8 @@ export const entries: Entry[] = [
   {
     slug: 'space-future-of-web3-gaming',
     title: 'The future of Web3 gaming',
-    summary: 'A panel on where Web3 gaming is heading and which trends are actually holding up.',
+    summary:
+      'Where Web3 gaming is heading and which of the trends were actually holding up.',
     date: '2025-02',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -223,7 +230,7 @@ export const entries: Entry[] = [
     slug: 'space-leaders-in-ai',
     title: 'Leaders in AI: shaping the next era of automation',
     summary:
-      'A panel on how AI is reshaping development workflows and where the new openings are.',
+      'How AI is reshaping development workflows, and where that opens something new up.',
     date: '2025-01',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -238,7 +245,7 @@ export const entries: Entry[] = [
     slug: 'moddio-stream',
     title: 'Moddio game engine',
     summary:
-      'How Moddio is building AI-assisted game development tooling, and its funding model through indie.fun. Published as \'Game Dev Made Easy: Fast Tools, Fun Creations, Funded Dreams\'.',
+      'How Moddio is building AI-assisted game development tooling, and its funding model through indie.fun. Published as "Game Dev Made Easy: Fast Tools, Fun Creations, Funded Dreams".',
     date: '2025-01',
     medium: 'stream',
     practices: ['Developer Relations'],
@@ -423,16 +430,20 @@ export const entries: Entry[] = [
     org: 'ChainSafe Gaming',
   },
   {
-    slug: 'onchain-lootboxes-gdc',
-    title: 'On-chain lootboxes at GDC',
+    // Checked against the article itself, not against V2's description of it.
+    // This was a campaign Jay built and then wrote up, not a talk he gave: his
+    // own words in the piece are "I joined Chainsafe Gaming in January, and the
+    // Loot GDC experience was my first big challenge".
+    slug: 'loot-gdc',
+    title: 'Loot GDC',
     summary:
-      'A technical session at the Game Developers Conference on implementing lootbox mechanics on-chain, and the fairness argument for doing so.',
+      'A lootbox scavenger hunt run across the GDC venue and online. Players claimed boxes from QR codes and booths without knowing they had just created a wallet and signed a transaction. Nine studios contributed prizes.',
     date: '2024-04',
-    medium: 'talk',
-    practices: ['Developer Relations', 'Writing & Research'],
+    medium: 'build',
+    practices: ['Product & Design', 'Engineering', 'Developer Relations'],
     domains: ['Gaming', 'Blockchain & Web3'],
-    tech: ['Solidity', 'Smart contracts'],
-    cover: { src: '/images/loot-gdc.png', alt: 'ChainSafe GDC lootboxes presentation' },
+    tech: ['Solidity', 'Chainlink VRF', 'Cometh', 'Web3Auth', 'web3.unity'],
+    cover: { src: '/images/loot-gdc.png', alt: 'The Loot GDC campaign artwork' },
     href: 'https://blog.chainsafe.io/onchain-lootboxes-gdc/',
     org: 'ChainSafe Gaming',
     featured: true,
@@ -619,7 +630,7 @@ export const entries: Entry[] = [
     slug: 'invisible-maze-game',
     title: 'Invisible Maze',
     summary:
-      'A maze you cannot see, built to walk newcomers through their first MetaMask connection and their first steps in Decentraland.',
+      'A maze you cannot see, built to walk newcomers through connecting MetaMask and finding their way around Decentraland.',
     date: '2022-01',
     medium: 'build',
     practices: ['Product & Design', 'Community & Education'],

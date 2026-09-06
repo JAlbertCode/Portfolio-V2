@@ -4,7 +4,7 @@ import { services } from '@/lib/site'
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="scroll-mt-20 pt-24">
+    <section id="services" className="scroll-mt-20 pt-14 sm:pt-20">
       <h2 className="font-display text-2xl text-text sm:text-3xl">Work with me</h2>
       <p className="mt-4 max-w-[62ch] text-[0.97rem] leading-relaxed text-muted">
         Three ways, deliberately narrow. Each starts with a short conversation about whether I am

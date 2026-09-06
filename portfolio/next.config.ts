@@ -59,9 +59,8 @@ const nextConfig: NextConfig = {
       // sections now, so anything already linking to them still lands in the
       // right place.
       { source: '/work', destination: '/#work', permanent: false },
-      { source: '/speaking', destination: '/#speaking', permanent: false },
-      { source: '/services', destination: '/#services', permanent: false },
-      { source: '/about', destination: '/#about', permanent: false },
+      // Speaking is part of working with him, not a separate offer.
+      { source: '/speaking', destination: '/services#speaking', permanent: false },
     ]
   },
 }

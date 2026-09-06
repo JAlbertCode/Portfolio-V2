@@ -1,11 +1,15 @@
 import Link from 'next/link'
-import { byMedium, formatDate, isExternal } from '@/lib/content'
+import { byMedium } from '@/lib/content'
 import { site, speakingFormats, speakingTopics } from '@/lib/site'
 
 /**
  * Everything an event organiser needs, on the page they already landed on.
  * Behind its own route this was invisible: nobody clicks "Speaking" to find
  * out whether the person speaks.
+ *
+ * There is no list of recent sessions here. It was the same talks the
+ * catalogue above already lists, printed a second time on the same page; the
+ * Talk and Stream chips reach them.
  */
 export default function SpeakingSection() {
   const sessions = [...byMedium('talk'), ...byMedium('stream')].sort((a, b) =>
@@ -13,7 +17,7 @@ export default function SpeakingSection() {
   )
 
   return (
-    <section id="speaking" className="scroll-mt-20 pt-24">
+    <section id="speaking" className="scroll-mt-20 pt-16 sm:pt-24">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
         <h2 className="font-display text-2xl text-text sm:text-3xl">Speaking</h2>
         <p className="label">{sessions.length} on record</p>
@@ -42,22 +46,6 @@ export default function SpeakingSection() {
           <li key={t} className="flex gap-3 border-b border-line py-2.5 text-sm text-text">
             <span aria-hidden="true" className="mt-1.5 size-1 shrink-0 rounded-full bg-accent" />
             {t}
-          </li>
-        ))}
-      </ul>
-
-      <p className="label mt-12 mb-3">Recent sessions</p>
-      <ul className="grid gap-x-10 sm:grid-cols-2">
-        {sessions.slice(0, 10).map((s) => (
-          <li key={s.slug}>
-            <Link
-              href={s.href ?? '#work'}
-              {...(isExternal(s.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="flex items-baseline justify-between gap-4 border-b border-line py-2.5 text-sm text-text hover:text-accent"
-            >
-              <span className="truncate">{s.title}</span>
-              <span className="label whitespace-nowrap">{formatDate(s.date)}</span>
-            </Link>
           </li>
         ))}
       </ul>

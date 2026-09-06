@@ -4,21 +4,27 @@ import { site } from '@/lib/site'
 
 const nav = [
   { href: '/#work', label: 'Work' },
-  { href: '/#speaking', label: 'Speaking' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#about', label: 'About' },
+  { href: '/services', label: 'Work with me' },
+  { href: '/about', label: 'About' },
 ]
 
 export default function Header() {
   return (
     <header className="border-b border-line">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-5 px-6">
-        <Link href="/" className="whitespace-nowrap font-display text-lg tracking-tight text-text">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-2 px-6 py-4 sm:h-16 sm:flex-nowrap sm:py-0">
+        <Link
+          href="/"
+          className="mr-auto whitespace-nowrap font-display text-lg tracking-tight text-text sm:mr-0"
+        >
           {site.shortName}
         </Link>
 
-        <nav aria-label="Main" className="ml-auto flex items-center gap-5">
-          <span className="hidden items-center gap-5 sm:flex">
+        <ThemeToggle />
+
+        <nav
+          aria-label="Main"
+          className="order-last flex w-full items-center gap-5 sm:order-none sm:ml-auto sm:w-auto"
+        >
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -28,8 +34,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          </span>
-          <ThemeToggle />
         </nav>
       </div>
     </header>

@@ -12,7 +12,7 @@ export default function ConnectRow() {
   return (
     <div className="mt-9">
       <div className="flex flex-wrap items-center gap-2">
-        <Link href="/contact.vcf" className="cta shrink-0">
+        <Link href="/contact.vcf" className="cta shrink-0" title="Downloads a vCard">
           <svg
             viewBox="0 0 24 24"
             width="18"
@@ -29,7 +29,7 @@ export default function ConnectRow() {
             <circle cx="9.5" cy="8" r="3.5" />
             <path d="M17 8h5M19.5 5.5v5" strokeLinecap="round" />
           </svg>
-          Save my contact
+          Add to contacts
         </Link>
 
         <div className="contact-routes">
@@ -45,7 +45,7 @@ export default function ConnectRow() {
           ))}
         </div>
 
-        <div className="ml-auto flex items-center gap-0.5">
+        <div className="-ml-2.5 flex w-full items-center gap-0.5 sm:ml-auto sm:w-auto">
           {followActions.map((a) => (
             <Link
               key={a.label}
@@ -60,6 +60,10 @@ export default function ConnectRow() {
           ))}
         </div>
       </div>
+
+      <p className="mt-2.5 text-xs text-faint">
+        Add to contacts saves a card with my email, Telegram and links straight into your phone.
+      </p>
     </div>
   )
 }

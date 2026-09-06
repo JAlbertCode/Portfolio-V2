@@ -15,18 +15,28 @@ export const site = {
   calendly: 'https://calendly.com/jonathanalbert0115/15-min-discovery-call-web3-advisory',
   resume: '/documents/Jonathan_Albert_Resume.pdf',
 
-  /** One line. This is the meta description and the line under the name. */
+  /**
+   * One line. Meta description, and the line under the name.
+   *
+   * Deliberately plural. Developer relations is one of the things Jay does,
+   * not the category he sits in, and a single job title here would narrow a
+   * decade of product, engineering, community and hardware work down to the
+   * most recent job.
+   */
   tagline:
-    'Developer relations. Reference implementations, workshops, and the documentation in between.',
+    'Product, engineering, and developer relations. Building across AI, games, hardware, and the web since 2014.',
+
+  /** The line under the name. Shorter than the tagline, same job. */
+  standfirst: 'Product, engineering, and developer relations.',
 
   /**
-   * The home page intro. Two short paragraphs, not the V2 wall of text.
-   * TODO(jay): rewrite in your own voice. This is a compression of the V2 copy,
-   * not a replacement for what you would actually say.
+   * TODO(jay): rewrite in your own voice. This is a compression of the V2 copy
+   * and a correction of an earlier draft that read as though developer
+   * relations were the whole job.
    */
   intro: [
-    'I work at the point where a technology stops being a whitepaper and starts being something a developer can run. That means writing the reference implementation, standing up the workshop, and staying in the room while people hit the errors.',
-    'A decade of it across AI, decentralised compute, blockchains, gaming, augmented reality, finance, and civic tech. Some of it shipped, some of it was a three-day game jam, all of it is here.',
+    'I build things and then help other people build them. Some of that is product and engineering work, some is developer relations, some is community, and some of it is a printer running overnight in the corner of the room.',
+    'A decade of it across AI, decentralised compute, blockchains, gaming, augmented reality, finance, and civic tech. Some shipped, some was a three-day game jam, all of it is here.',
   ],
 } as const
 
@@ -82,6 +92,11 @@ export interface SpeakingFormat {
   length: string
 }
 
+/**
+ * TODO(jay): check the venue claims. Anything naming a specific conference has
+ * to be verifiable, and one of these previously named GDC on the strength of a
+ * campaign you ran there rather than a talk you gave.
+ */
 export const speakingFormats: SpeakingFormat[] = [
   {
     title: 'Hands-on workshop',
@@ -92,7 +107,7 @@ export const speakingFormats: SpeakingFormat[] = [
   {
     title: 'Conference talk',
     detail:
-      'A technical session with a working demo rather than an architecture diagram. Delivered at GDC and ETHDenver among others.',
+      'A technical session with a working demo rather than an architecture diagram. Delivered at ETHDenver among others.',
     length: '20 to 45 minutes',
   },
   {
@@ -109,13 +124,19 @@ export const speakingFormats: SpeakingFormat[] = [
   },
 ]
 
+/**
+ * TODO(jay): confirm or replace. These are topics drawn from work in the
+ * catalogue, but what you are willing to stand on a stage and defend is yours
+ * to decide, not something to infer from a project list.
+ */
 export const speakingTopics: string[] = [
-  'Developer relations that produces working software, not just content',
   'Getting a game team from Web2 to on-chain without rewriting the game',
   'Retrieval-augmented agents on decentralised compute',
-  'What actually makes a developer workshop land',
   'On-chain randomness, lootboxes, and provable fairness',
-  'Building an AI-assisted review pipeline for hackathons',
+  'Shipping augmented reality on hardware people already own',
+  'Building a community that outlives the project that started it',
+  'Developer relations that produces working software, not just content',
+  'What a decade of prototypes teaches you about what to build next',
 ]
 
 /**
@@ -146,7 +167,7 @@ export const services: Service[] = [
     slug: 'advisory',
     title: 'Advisory and consultation',
     pitch:
-      'A working session on a specific problem: your developer funnel, your docs, your go-to-market for a technical product, or whether the integration you are scoping is worth doing.',
+      'A working session on a specific problem: what to build next, whether the integration you are scoping is worth doing, how to get a technical product in front of the people who would use it, or why your developer funnel leaks.',
     deliverables: [
       'A 15 minute call to establish whether I am useful to you',
       'A written summary of what we decided and what I would do next',
@@ -181,8 +202,9 @@ export const services: Service[] = [
       'The printed part, iterated until it fits',
     ],
     fit: 'Best for prototypes, replacement parts, and small runs. Not a production shop.',
-    // TODO(jay): point this at the intake form once it exists.
-    cta: { label: 'Send me a print request', href: `mailto:${site.email}?subject=3D print request` },
+    // TODO(jay): print requests should go through the main site rather than
+    // email. Replace this href with that URL and the label if it needs one.
+    cta: { label: 'Send a print request', href: `mailto:${site.email}?subject=3D print request` },
     startingAt: null,
   },
 ]
@@ -221,7 +243,7 @@ export const roles: Role[] = [
     title: 'Developer relations',
     period: '2024',
     detail:
-      'Ran the weekly stream series, presented on-chain lootboxes at GDC, and taught the web3.unity SDK through live workshops.',
+      'Ran the weekly stream series, built and shipped the Loot GDC campaign, and taught the web3.unity SDK through live workshops.',
     href: 'https://gaming.chainsafe.io',
   },
   {

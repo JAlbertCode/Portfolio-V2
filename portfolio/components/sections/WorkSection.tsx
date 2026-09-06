@@ -55,7 +55,7 @@ export default function WorkSection() {
   const fields = DOMAINS.filter((d) => counts.domain(d as never) > 0 || facets.domain.includes(d))
 
   return (
-    <section id="work" className="scroll-mt-20 pt-24">
+    <section id="work" className="scroll-mt-20 pt-16 sm:pt-24">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
         <h2 className="font-display text-2xl text-text sm:text-3xl">Work</h2>
         <p aria-live="polite" className="label">
