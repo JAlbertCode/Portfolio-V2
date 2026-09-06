@@ -31,6 +31,14 @@ from pathlib import Path
 import json
 import sys
 
+# AVIF support is not in every Pillow build. Three covers are .avif, and
+# without this they cannot be decoded. Optional: if the plugin is missing the
+# run skips those files and keeps any tile already built for them.
+try:
+    import pillow_avif  # noqa: F401
+except ImportError:
+    pass
+
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'public' / 'images'
 OUT = ROOT / 'public' / 'covers'
@@ -136,13 +144,29 @@ if __name__ == '__main__':
         print('usage: build-covers.py --all | <filename> [<filename> ...]')
         raise SystemExit(1)
     OUT.mkdir(parents=True, exist_ok=True)
-    sizes = {}
+
+    # Merged, not replaced. A file this run could not decode still has a tile
+    # and a recorded size from a run that could, and dropping it would leave
+    # the detail page guessing the aspect ratio.
+    sizes = json.loads(SIZES.read_text()) if SIZES.exists() else {}
+
     total = 0
+    skipped = []
     for n in names:
         if n in UNUSABLE:
             print(f'{n:34s} skipped, renders as a typographic tile')
             continue
-        size, b, ceiling, share, natural = build(n)
+        try:
+            size, b, ceiling, share, natural = build(n)
+        except Exception as e:
+            # One unreadable file used to take the whole run down with it,
+            # after most of the tiles had already been written and before the
+            # size map was saved.
+            have = (OUT / (Path(n).stem + '.webp')).exists()
+            print(f'{n:34s} SKIPPED  {type(e).__name__}: {e}'
+                  f"{'  (keeping the tile already built)' if have else ''}")
+            skipped.append(n)
+            continue
         sizes[Path(n).stem] = list(natural)
         total += b
         plate = 'plate' if ceiling == PLATE_LUMA else ''
@@ -151,4 +175,13 @@ if __name__ == '__main__':
     # real dimensions. Reading them at render time would mean shipping an image
     # library to the server for a number that never changes.
     SIZES.write_text(json.dumps(dict(sorted(sizes.items())), indent=2) + '\n')
-    print(f'{len(names)} sources, {total/1024/1024:.1f} MB, sizes -> {SIZES.name}')
+    built = len(names) - len(skipped)
+    print(f'\n{built} of {len(names)} built, {total/1024/1024:.1f} MB, sizes -> {SIZES.name}')
+
+    if skipped:
+        print(f'\nSkipped {len(skipped)}: ' + ', '.join(skipped))
+        if any(n.lower().endswith('.avif') for n in skipped):
+            print('Those are AVIF. This Pillow cannot decode them:')
+            print('  pip install pillow-avif-plugin')
+            print('Their tiles are already committed, so this is only a problem')
+            print('if you replace one of the source files.')

@@ -30,7 +30,19 @@ const ENTRIES = join(ROOT, 'lib/content/entries.ts')
 const IMAGES = join(ROOT, 'public/images')
 const DRY = process.argv.includes('--dry')
 
-const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 portfolio-cover-fetch'
+// A bare fetch gets a bot challenge from some hosts. These are the headers a
+// browser actually sends, and they are what got midnight.network to serve the
+// same HTML to node that it serves to Chrome.
+const HEADERS = {
+  'user-agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+  'accept-language': 'en-US,en;q=0.9',
+  'sec-fetch-dest': 'document',
+  'sec-fetch-mode': 'navigate',
+  'sec-fetch-site': 'none',
+  'upgrade-insecure-requests': '1',
+}
 const MIN_BYTES = 6000 // YouTube serves a 120x90 placeholder with a 200 for a missing maxres
 
 const src = await readFile(ENTRIES, 'utf8')
@@ -58,23 +70,38 @@ function youtubeId(href = '') {
   return href.match(/youtube\.com\/watch\?v=([\w-]+)/)?.[1] ?? href.match(/youtu\.be\/([\w-]+)/)?.[1]
 }
 
+/** Returns the image URL, or a string starting with '!' explaining why not. */
 async function ogImage(pageUrl) {
-  const res = await fetch(pageUrl, { headers: { 'user-agent': UA } })
-  if (!res.ok) return null
+  let res
+  try {
+    res = await fetch(pageUrl, { headers: HEADERS, redirect: 'follow' })
+  } catch (e) {
+    return `!fetch failed: ${e.message}`
+  }
+  if (!res.ok) return `!page returned ${res.status}`
+
   const html = await res.text()
   const m =
     html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ??
     html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ??
-    html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
-  return m ? new URL(m[1], pageUrl).href : null
+    html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ??
+    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i)
+  if (!m) return '!page has no og:image or twitter:image'
+  return new URL(m[1], pageUrl).href
 }
 
 /** Returns the saved extension, or null. */
 async function download(url, slug) {
-  const res = await fetch(url, { headers: { 'user-agent': UA } })
-  if (!res.ok) return null
+  const res = await fetch(url, { headers: HEADERS })
+  if (!res.ok) {
+    lastReason = `image returned ${res.status}`
+    return null
+  }
   const buf = Buffer.from(await res.arrayBuffer())
-  if (buf.length < MIN_BYTES) return null
+  if (buf.length < MIN_BYTES) {
+    lastReason = `image was only ${buf.length} bytes`
+    return null
+  }
   const type = res.headers.get('content-type') ?? ''
   const ext = type.includes('png') ? 'png' : type.includes('webp') ? 'webp' : 'jpg'
   if (!DRY) await writeFile(join(IMAGES, `${slug}.${ext}`), buf)
@@ -82,6 +109,10 @@ async function download(url, slug) {
 }
 
 await mkdir(IMAGES, { recursive: true })
+
+// Set by download() so a failure can say what actually went wrong instead of
+// reporting "nothing usable published" for every cause alike.
+let lastReason = ''
 
 const found = new Map()
 for (const { slug, href, title } of wanted) {
@@ -98,10 +129,22 @@ for (const { slug, href, title } of wanted) {
   } catch {}
 
   const id = youtubeId(href)
-  const candidates = id
-    ? [`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`, `https://i.ytimg.com/vi/${id}/hqdefault.jpg`]
-    : [await ogImage(href)].filter(Boolean)
+  let candidates
+  if (id) {
+    candidates = [
+      `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
+      `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+    ]
+  } else {
+    const og = await ogImage(href)
+    if (og.startsWith('!')) {
+      console.log(`${slug.padEnd(34)} ${og.slice(1)}`)
+      continue
+    }
+    candidates = [og]
+  }
 
+  lastReason = 'no candidate worked'
   let saved = null
   for (const url of candidates) {
     saved = await download(url, slug)
@@ -112,7 +155,7 @@ for (const { slug, href, title } of wanted) {
     console.log(`${slug.padEnd(34)} ${(saved.bytes / 1024).toFixed(0).padStart(5)} KB  ${saved.ext}`)
     found.set(slug, { ext: saved.ext, title })
   } else {
-    console.log(`${slug.padEnd(34)} nothing usable published`)
+    console.log(`${slug.padEnd(34)} ${lastReason}`)
   }
 }
 
