@@ -40,17 +40,20 @@ export const saveActions: ConnectAction[] = [
   },
 ]
 
-/** Tier 2. Start a conversation now, while they remember why. */
+/**
+ * Everything that is not the primary action.
+ *
+ * These used to be split into "contact routes" with bordered buttons and
+ * "follow" as plain icons, on the theory that doing something now and
+ * subscribing to something later deserve different weight. Nobody could see
+ * that rule, including Jay: Telegram is a social platform that got a box while
+ * X did not, and Email and Book are not social at all. The rule is now one
+ * anybody can state after a second of looking. One button, then links.
+ */
 export const talkActions: ConnectAction[] = [
-  { label: 'Telegram', sublabel: '@Jay_Albert', href: 'https://t.me/Jay_Albert', icon: 'Telegram' },
-  {
-    label: 'Email',
-    sublabel: site.email,
-    href: `mailto:${site.email}`,
-    icon: 'mail',
-    native: true,
-  },
-  { label: 'Book', href: site.calendly, icon: 'calendar' },
+  { label: 'Email', href: `mailto:${site.email}`, icon: 'Email', native: true },
+  { label: 'Telegram', href: 'https://t.me/Jay_Albert', icon: 'Telegram' },
+  { label: 'Book', href: site.calendly, icon: 'Book' },
 ]
 
 /**
@@ -63,6 +66,9 @@ export const talkActions: ConnectAction[] = [
 export const followActions: ConnectAction[] = socials
   .filter((s) => s.primary)
   .map((s) => ({ label: s.label, href: s.href, icon: s.label }))
+
+/** The single row that follows the primary action, in reading order. */
+export const secondaryLinks: ConnectAction[] = [...talkActions, ...followActions]
 
 /**
  * The vCard served at /contact.vcf.
