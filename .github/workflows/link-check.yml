@@ -113,6 +113,17 @@ jobs:
               })
             }
 
+      # Only the scheduled and manual runs can fail.
+      #
+      # A pull request touching one CSS file was failing because a video on
+      # someone else's platform had been taken down. That is real information,
+      # and it is already captured: the weekly run files a rolling issue and
+      # closes it when the links resolve again. What it is not is a reason to
+      # block a change, because nobody reviewing that PR can fix YouTube.
+      #
+      # The check still runs on every pull request and still writes its report
+      # to the run summary, so a link this branch actually broke is visible
+      # before merge. It just does not gate the merge.
       - name: Fail if anything is broken
-        if: steps.check.outcome == 'failure'
+        if: github.event_name != 'pull_request' && steps.check.outcome == 'failure'
         run: exit 1
