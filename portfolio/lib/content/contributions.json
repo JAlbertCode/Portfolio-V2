@@ -1,0 +1,130 @@
+{
+  "query": "is:pr is:merged author:JAlbertCode -user:JAlbertCode",
+  "generated": "2026-09-07",
+  "total": 66,
+  "repoCount": 20,
+  "first": "2020-08-04",
+  "last": "2026-09-01",
+  "repos": [
+    {
+      "repo": "midnightntwrk/midnight-docs",
+      "count": 12,
+      "first": "2025-10-15",
+      "last": "2026-08-18"
+    },
+    {
+      "repo": "ChainSafe/game-docs-v2",
+      "count": 9,
+      "first": "2024-01-25",
+      "last": "2025-01-07"
+    },
+    {
+      "repo": "Grace-Potter/grace-potter",
+      "count": 7,
+      "first": "2020-08-04",
+      "last": "2020-08-12"
+    },
+    {
+      "repo": "midnightntwrk/midnight-leaderboard",
+      "count": 5,
+      "first": "2026-05-07",
+      "last": "2026-05-15"
+    },
+    {
+      "repo": "midnightntwrk/example-counter",
+      "count": 4,
+      "first": "2026-03-05",
+      "last": "2026-08-14"
+    },
+    {
+      "repo": "sholom1/GGJ2025-Bubbles",
+      "count": 4,
+      "first": "2025-01-25",
+      "last": "2025-01-26"
+    },
+    {
+      "repo": "midnightntwrk/dApp-idea-board",
+      "count": 3,
+      "first": "2025-10-15",
+      "last": "2025-10-22"
+    },
+    {
+      "repo": "midnightntwrk/example-bboard",
+      "count": 3,
+      "first": "2026-03-05",
+      "last": "2026-04-16"
+    },
+    {
+      "repo": "midnightntwrk/midnight-awesome-dapps",
+      "count": 3,
+      "first": "2025-09-24",
+      "last": "2026-07-13"
+    },
+    {
+      "repo": "midnightntwrk/midnight-dust-generator",
+      "count": 3,
+      "first": "2026-03-05",
+      "last": "2026-04-27"
+    },
+    {
+      "repo": "Werewolf-Capstone/Werewolf-Final",
+      "count": 2,
+      "first": "2020-09-01",
+      "last": "2020-09-07"
+    },
+    {
+      "repo": "midnightntwrk/example-nft-contracts",
+      "count": 2,
+      "first": "2026-05-06",
+      "last": "2026-05-12"
+    },
+    {
+      "repo": "midnightntwrk/midnight-improvement-proposals",
+      "count": 2,
+      "first": "2026-07-29",
+      "last": "2026-09-01"
+    },
+    {
+      "repo": "Lilypad-Tech/lilypad-docs",
+      "count": 1,
+      "first": "2025-06-13",
+      "last": "2025-06-13"
+    },
+    {
+      "repo": "Mackenzie-OO7/midnight-doc-manager",
+      "count": 1,
+      "first": "2026-03-20",
+      "last": "2026-03-20"
+    },
+    {
+      "repo": "PBillingsby/lilypad-rag-agent",
+      "count": 1,
+      "first": "2025-03-25",
+      "last": "2025-03-25"
+    },
+    {
+      "repo": "Werewolf-Capstone/Werewolf",
+      "count": 1,
+      "first": "2020-08-31",
+      "last": "2020-08-31"
+    },
+    {
+      "repo": "midnightntwrk/example-kitties",
+      "count": 1,
+      "first": "2026-08-07",
+      "last": "2026-08-07"
+    },
+    {
+      "repo": "midnightntwrk/example-zkloan",
+      "count": 1,
+      "first": "2026-04-30",
+      "last": "2026-04-30"
+    },
+    {
+      "repo": "midnightntwrk/midnight-tip-jar",
+      "count": 1,
+      "first": "2026-04-08",
+      "last": "2026-04-08"
+    }
+  ]
+}

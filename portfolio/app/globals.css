@@ -1,27 +1,579 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Palette
+
+   One accent, descended from the turquoise the site has always used but
+   lifted for contrast on a dark ground. Everything else is a neutral ramp.
+   Colours are declared as raw values here and mapped to semantic names in
+   the @theme block below, so a component never names a literal colour.
+--------------------------------------------------------------------------- */
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  color-scheme: dark;
+
+  --bg: #0a0c10;
+  --bg-subtle: #0e1117;
+  --surface: #12161f;
+  --surface-raised: #171c27;
+  --line: #232937;
+  --line-strong: #333b4d;
+
+  --text: #e9edf4;
+  --text-muted: #9aa4b8;
+  --text-faint: #6b7488;
+
+  --accent: #2fd8cd;
+  --accent-hover: #5fe6dd;
+  --accent-contrast: #04231f;
+  --accent-faint: #0f2b2c;
+
+  --warn: #f0b429;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+
+  /* next/font sets --font-instrument and friends on <html>, so these have to
+     resolve there too. Defining them on :root keeps that true. */
+  --font-display: var(--font-display-face, Georgia), 'Times New Roman', serif;
+  --font-body: var(--font-body-face, ui-sans-serif), system-ui, sans-serif;
+  --font-mono: var(--font-mono-face, ui-monospace), 'SF Mono', Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fbfbfa;
+  --bg-subtle: #f4f4f2;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --line: #e3e3df;
+  --line-strong: #cdcdc7;
+
+  --text: #16181d;
+  --text-muted: #5b6270;
+  --text-faint: #868d9b;
+
+  --accent: #0b8f8a;
+  --accent-hover: #0a7a76;
+  --accent-contrast: #ffffff;
+  --accent-faint: #e4f4f2;
+
+  --warn: #a86a05;
+  --shadow: 0 1px 2px rgb(20 20 20 / 0.05), 0 8px 24px -14px rgb(20 20 20 / 0.18);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-faint: var(--accent-faint);
+  --color-warn: var(--warn);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* A slightly tighter, more editorial type ramp than the Tailwind default. */
+  --text-display: 4rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* A visible focus ring everywhere, not just where a component remembered. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link: off-screen until focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities used often enough to earn a name
+--------------------------------------------------------------------------- */
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+@utility rule {
+  border-top: 1px solid var(--line);
+}
+
+/* Cards lift very slightly. Enough to read as interactive, not enough to
+   bounce the whole grid around when the pointer crosses it. */
+@utility card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+@utility card-interactive {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+}
+
+/* Long-form prose blocks on detail pages. */
+.prose-body {
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-body p + p {
+  margin-top: 1.25rem;
+}
+.prose-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose-body a:hover {
+  color: var(--accent-hover);
+}
+.prose-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+   Home page primitives
+--------------------------------------------------------------------------- */
+
+@utility cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 50px;
+  padding: 0 1.25rem;
+  border-radius: 0.625rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 0.97rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: var(--accent-hover);
+  }
+}
+
+/* Results fade rather than snap when the filter changes. */
+.results {
+  animation: results-in 0.22s ease;
+}
+@keyframes results-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .results {
+    animation: none;
+  }
+}
+
+@utility cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.625rem;
+  color: var(--text);
+  font-size: 0.94rem;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+    background: var(--surface);
+  }
+}
+
+@media (max-width: 639px) {
+  .cta {
+    width: 100%;
+    justify-content: center;
+    min-height: 54px;
+  }
+}
+
+
+
+/*
+ * The filters were the one control on the site speaking a different language.
+ *
+ * Two things gave them away. They were 999px pills, on a site whose every
+ * other rectangle is a small radius: cards 0.75rem, buttons 0.625rem, inputs
+ * 0.375rem. And the selected state was a solid accent fill, when accent
+ * appears nowhere else as a fill, only as a word ("Write-up") and one thin
+ * bar on About. Thirteen of them sit in a row directly above the catalogue,
+ * so selecting three made the filters the loudest thing on a page whose
+ * subject is the work underneath them.
+ *
+ * Now: the same radius family as everything else, one step below the buttons
+ * because a chip is the smallest control here, and a selected chip is marked
+ * with an accent edge and a wash rather than a flood. Accent stays an accent.
+ */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0 0.65rem;
+  font-size: 0.8125rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition:
+    border-color 0.14s ease,
+    color 0.14s ease,
+    background-color 0.14s ease,
+    opacity 0.14s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+    color: var(--text);
+  }
+}
+
+/*
+ * Unreachable, not gone.
+ *
+ * A chip whose count has fallen to zero used to be removed from the row. That
+ * kept the row honest and made it jump: pick "Talk" and the field row loses
+ * four of its nine chips, everything after the gap slides left, and the chip
+ * that was under the cursor is now a different chip. The row is a fixed set
+ * of options, so it should be a fixed set of positions. Ruled-out options stay
+ * where they are, dimmed and not clickable, which also answers the question
+ * the disappearing version could not: what did that selection rule out.
+ */
+@utility chip-out {
+  opacity: 0.42;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--line);
+    color: var(--text-muted);
+  }
+}
+
+@utility chip-on {
+  border-color: var(--accent);
+  background: var(--accent-faint);
+  color: var(--text);
+
+  &:hover {
+    border-color: var(--accent-hover);
+    background: var(--accent-faint);
+    color: var(--text);
+  }
+}
+
+.chip-count {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-faint);
+}
+.chip-on .chip-count {
+  color: var(--accent);
+}
+
+@utility clear-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition:
+    border-color 0.14s ease,
+    color 0.14s ease;
+
+  &:hover {
+    border-color: var(--line-strong);
+    color: var(--text);
+  }
+}
+/* ---------------------------------------------------------------------------
+   Covers
+
+   Every tile is generated by scripts/build-covers.py at 1200x750 on a
+   transparent ground, so the card paints the space around the artwork and one
+   tile is correct in both themes. Nothing crops: the stream banners carry
+   their titles hard against the left edge and a fill-crop sliced them.
+--------------------------------------------------------------------------- */
+
+/* Entries with no usable source image. The tile stays empty rather than
+   repeating the title printed directly beneath it. */
+.cover-tile {
+  aspect-ratio: 16 / 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------------------------------------------------------------------------
+   Motion
+
+   One idea: things arrive from slightly below and slightly transparent. Cards
+   stagger across a row on their way in. Nothing moves on its own after that,
+   and none of it runs for anyone who has asked for reduced motion.
+--------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Hero
+
+   The name is the graphic. There is no photograph and no illustration on this
+   site, so the one thing available to carry the top of the page at scale is
+   the type, and half-committing to that is what made it read as empty rather
+   than as restraint.
+--------------------------------------------------------------------------- */
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+/* The line and the links share a row so the width is used rather than left
+   trailing off to the right of a 46-character column. */
+.hero-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .hero-line {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  /* ConnectRow supplies its own top margin for the stacked case. */
+  .hero-line > div {
+    margin-top: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Detail page rail
+
+   The same sections in the same order on every entry, in one treatment. Two
+   of them link into the filtered catalogue and the rest do not, which is a
+   difference in behaviour rather than in kind, so it shows up as a hover
+   colour and nothing else.
+--------------------------------------------------------------------------- */
+
+.rail-section + .rail-section {
+  margin-top: 1.6rem;
+}
+.rail-item {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+.rail-empty {
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--text-faint);
+}
+
+/* ---------------------------------------------------------------------------
+   Elsewhere
+
+   Navigation, sitting immediately above a grid of cards. Deliberately not a
+   card: no border, no fill, no lift. The arrow moves on hover and the title
+   takes the accent, which is enough to say it is a link without competing
+   with the eighty-nine tiles below it.
+--------------------------------------------------------------------------- */
+
+.elsewhere {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  .elsewhere {
+    grid-template-columns: 1fr 1fr;
+  }
+  .elsewhere-item + .elsewhere-item {
+    border-left: 1px solid var(--line);
+    padding-left: 2rem;
+  }
+}
+
+.elsewhere-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.4rem 0;
+}
+.elsewhere-item + .elsewhere-item {
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 640px) {
+  .elsewhere-item + .elsewhere-item {
+    border-top: 0;
+  }
+}
+
+.elsewhere-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  transition: color 0.16s ease;
+}
+.elsewhere-head svg {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.elsewhere-item:hover .elsewhere-head {
+  color: var(--accent);
+}
+.elsewhere-item:hover .elsewhere-head svg {
+  transform: translateX(4px);
+}
+
+.elsewhere-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.elsewhere-body {
+  max-width: 44ch;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elsewhere-head svg {
+    transition: none;
+  }
+  .elsewhere-item:hover .elsewhere-head svg {
+    transform: none;
+  }
 }

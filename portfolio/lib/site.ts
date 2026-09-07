@@ -1,0 +1,357 @@
+/**
+ * Everything about Jay that is not a portfolio entry. Kept in one file so the
+ * copy can be edited without opening a component.
+ *
+ * Anything marked TODO is a deliberate blank: it needs a real answer from Jay
+ * rather than a plausible-sounding one written for him.
+ */
+
+export const site = {
+  /**
+   * Jay, not Jonathan. It is what he goes by online and at work, so it is what
+   * the site says everywhere someone reads it. `legalName` exists only for the
+   * structured data and the footer, where the full form belongs.
+   */
+  name: 'Jay Albert',
+  legalName: 'Jonathan Albert',
+  location: 'New York City',
+  url: 'https://jonathanalbert.com',
+  email: 'JonathanAlbert0115@gmail.com',
+  /**
+   * Where the call gets booked. Named for the job, not the vendor: this was
+   * `calendly`, and the move to Google appointment schedules touched five call
+   * sites for no reason other than the field name.
+   *
+   * Jay runs three schedules, 15, 30 and 60 minutes. Only the 15 is linked.
+   * The site's job is to get a stranger to a first conversation, and three
+   * doors asks them to guess how much of his time they are worth before they
+   * have spoken to him. The longer two are for people he sends the link to.
+   */
+  booking: 'https://calendar.app.google/6BF9ydwKr4EKJpZGA',
+  resume: '/documents/Jonathan_Albert_Resume.pdf',
+
+  /**
+   * Alva Labs assessments Jay sat and published on V2, both still in
+   * public/documents. They are his own results about himself, which is the
+   * only reason they belong on the site: nobody is asked to take a test, and
+   * nothing here is inferred from them.
+   */
+  assessments: [
+    {
+      label: 'Personality profile',
+      note: 'Five Factor',
+      href: '/documents/Jonathan_ALbert_Personality_Test_Five_Factor_Personality_Theory.pdf',
+    },
+    {
+      label: 'Logical ability',
+      note: 'Alva Labs',
+      href: '/documents/Jonathan_Albert_Logical_Ability.pdf',
+    },
+  ],
+
+  /**
+   * One line. Meta description, and the line under the name.
+   *
+   * Deliberately plural. Developer relations is one of the things Jay does,
+   * not the category he sits in, and a single job title here would narrow a
+   * decade of product, engineering, community and hardware work down to the
+   * most recent job.
+   */
+  tagline:
+    'Product, engineering, and developer relations. Building across AI, games, hardware, and the web since 2014.',
+
+  /** The line under the name. Shorter than the tagline, same job. */
+  standfirst: 'Product, engineering, and developer relations.',
+
+  /**
+   * TODO(jay): rewrite in your own voice. This is a compression of the V2 copy
+   * and a correction of an earlier draft that read as though developer
+   * relations were the whole job.
+   */
+  intro: [
+    'I build things and then help other people build them. Some of that is product and engineering work, some is developer relations, some is community, and some is 3D printing.',
+    'A decade of it across AI, decentralised compute, blockchains, gaming, augmented reality, finance, and civic tech. All of it is on this site, including the things that never shipped.',
+  ],
+} as const
+
+export interface SocialLink {
+  label: string
+  href: string
+  /** Shown in the compact footer row as well as the full contact list. */
+  primary?: boolean
+}
+
+/**
+ * Order matters: the primary four lead the row on the home page, and people
+ * meeting Jay reach for a messaging app or a follow, not a repository.
+ *
+ * Each entry once carried an icon field naming a PNG. Nothing ever read it:
+ * the footer passes the label and connect.ts maps the label, and both resolve
+ * against the inline glyph table in SocialIcon. Nine PNG logos sat in public/
+ * looking referenced because a dead field named them.
+ */
+export const socials: SocialLink[] = [
+  // 1 917, not 917. wa.me takes the number in full international form, and
+  // without the country code WhatsApp reads the leading 91 as India.
+  { label: 'WhatsApp', href: 'https://wa.me/19176864852', primary: true },
+  { label: 'Telegram', href: 'https://t.me/Jay_Albert', primary: true },
+  // He still calls it Twitter, so the site does.
+  { label: 'Twitter', href: 'https://twitter.com/Jay_Albert_', primary: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jonathan-albert-profile/', primary: true },
+  // Not primary. The lead row is for someone who has just met Jay and wants to
+  // reach him or follow him before the conversation ends, and that is a
+  // messaging app or a feed rather than a repository. GitHub is still in the
+  // footer, and the work it holds is the whole page above it.
+  { label: 'GitHub', href: 'https://github.com/JAlbertCode' },
+  { label: 'Medium', href: 'https://jonathan-albert.medium.com/' },
+  { label: 'Mirror', href: 'https://mirror.xyz/jay-albert.eth' },
+  { label: 'Discord', href: 'https://discordapp.com/users/649469511749337089' },
+  { label: 'Instagram', href: 'https://www.instagram.com/jonathanalbert0115/' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@jay_albert_?_t=8gYzNbPEty6&_r=1' },
+]
+
+/* -------------------------------------------------------------------------
+   Speaking
+   ------------------------------------------------------------------------- */
+
+export interface SpeakingFormat {
+  title: string
+  detail: string
+  length: string
+}
+
+/**
+ * TODO(jay): check the venue claims. Anything naming a specific conference has
+ * to be verifiable, and one of these previously named GDC on the strength of a
+ * campaign you ran there rather than a talk you gave.
+ */
+export const speakingFormats: SpeakingFormat[] = [
+  {
+    title: 'Hands-on workshop',
+    detail:
+      'I write the code live and the room follows, so everyone leaves with something running on their own machine.',
+    length: '60 to 120 minutes',
+  },
+  {
+    title: 'Conference talk',
+    detail:
+      'A technical session built around a working demo. Delivered at ETHDenver among others.',
+    length: '20 to 45 minutes',
+  },
+  {
+    title: 'Panel or Space',
+    detail:
+      'Moderating, or on the panel.',
+    length: '45 to 90 minutes',
+  },
+  {
+    title: 'Live stream or podcast',
+    detail:
+      'Long-form conversation with a founder or a team, usually walking through what they built and why. Ran a weekly series of these.',
+    length: '30 to 60 minutes',
+  },
+]
+
+/*
+ * There was a `speakingTopics` list here, seven subjects drawn from the
+ * catalogue, and a `speakingProof` array that was always empty. Both are gone.
+ *
+ * The topics were the site offering talks on Jay's behalf that he had never
+ * agreed to give, which is the same fault as the price that used to sit on the
+ * 3D printing card. The Speaking section now counts the fields he has actually
+ * spoken in, off the talks themselves.
+ */
+
+/* -------------------------------------------------------------------------
+   Services
+   ------------------------------------------------------------------------- */
+
+export interface Service {
+  slug: string
+  title: string
+  /** Set where the work runs through a separate brand rather than through Jay. */
+  org?: string
+  pitch: string
+  /**
+   * What the buyer actually receives. Optional, because for work that runs
+   * through another business this page should not be restating its terms.
+   */
+  deliverables?: string[]
+  /**
+   * Who this is for. Written to let the wrong buyer disqualify themselves.
+   * Optional for the same reason.
+   */
+  fit?: string
+  cta: { label: string; href: string }
+  /** A second path for people who do not need the call. */
+  secondary?: { label: string; href: string }
+  /**
+   * A price. Leave it null unless Jay has said, here, that he wants that
+   * number on this page: a figure on a services page is an offer, and one
+   * copied from somewhere else is an offer he never made.
+   */
+  startingAt: string | null
+}
+
+/**
+ * TODO(jay): sign off on the deliverables and the "best for" line on the first
+ *   two, or cut them. Nobody has confirmed these. They were written here from
+ *   what the work looked like, and a bulleted list of what a buyer receives is
+ *   a specification of the job whether or not it is labelled one. Same class of
+ *   thing as the price that used to sit on the third card.
+ */
+export const services: Service[] = [
+  {
+    slug: 'advisory',
+    title: 'Advisory and consultation',
+    pitch:
+      'A working session on a specific problem: what to build next, whether the integration you are scoping is worth doing, how to get a technical product in front of the people who would use it, or why your developer funnel leaks.',
+    // "A 15 minute call to establish whether I am useful to you" was the first
+    // line here. It restated the button directly beneath it, and it stated the
+    // terms of the booking page, which is a second copy of something that
+    // already has an authoritative version. Same rule as the 3D printing card:
+    // the place that takes the booking is the place that describes it.
+    deliverables: [
+      'A written summary of what we decided and what I would do next',
+      'Follow-on sessions if the work warrants them',
+    ],
+    fit: 'Best for teams with a product already in the world and a specific question about it.',
+    cta: { label: 'Book a 15 minute call', href: site.booking },
+    startingAt: null,
+  },
+  {
+    slug: 'custom-development',
+    title: 'Custom development',
+    pitch:
+      'Reference implementations, developer tooling, integration work, and prototypes. The kind of build that has to be correct because other people are going to copy it.',
+    deliverables: [
+      'A scoped build with a fixed deliverable',
+      'Source in your repository, documented, with the setup path tested from scratch',
+      'A handover session with the team who will own it',
+    ],
+    fit: 'Best for teams who need something built well enough to hand to their developers as an example.',
+    cta: { label: 'Book a 15 minute call', href: site.booking },
+    startingAt: null,
+  },
+  {
+    // No prices, no turnaround, no shipping terms. An earlier version carried
+    // "custom pieces start at $35 with design included, and you get a quote
+    // inside 24 hours", lifted from the wording on the Layerworks commissions
+    // page. It was accurate to that page and still wrong here: it is a
+    // commitment, it was made on Jay's personal site without him agreeing to
+    // it, and two copies of the same terms drift the moment one is edited.
+    //
+    // This block hands people over. The shop states its own terms, and it is
+    // the only place that should.
+    slug: '3d-printing',
+    title: '3D printing',
+    org: 'Layerworks Print Co.',
+    pitch:
+      'Stands, mounts, displays, replacement parts, and one-off gifts. Custom pieces start with a call to work out what it needs to do. Print work runs through Layerworks Print Co., which quotes it and makes it.',
+    cta: { label: 'Book a 15 minute call', href: site.booking },
+    // Custom work starts with the call like everything else. Anything already
+    // designed does not need one, so the pitch sends those straight to the shop.
+    secondary: {
+      label: 'Order something already designed',
+      href: 'https://jalbertcode.github.io/3d-printing-store/',
+    },
+    startingAt: null,
+  },
+]
+
+/* -------------------------------------------------------------------------
+   Career
+   ------------------------------------------------------------------------- */
+
+export interface Role {
+  org: string
+  title: string
+  /** Free text, e.g. "2023 - 2025". Left as text because some of these overlap. */
+  period: string
+  detail: string
+  href?: string
+}
+
+/**
+ * TODO(jay): this is assembled from organisations that already appear in the
+ * portfolio entries, with the dates left deliberately vague where the site did
+ * not already state them. Correct the periods, add anything missing, and
+ * decide what you want said about your current role. Nothing here should be a
+ * guess once you have been through it.
+ */
+/**
+ * The whole history, from Jay's own LinkedIn.
+ *
+ * It used to list three roles and stop, which meant the About page omitted
+ * his current job. Titles, employers and periods are exactly as they appear
+ * there; the detail line is condensed from the bullets on that entry and adds
+ * nothing to them.
+ */
+export const roles: Role[] = [
+  {
+    org: 'Midnight Foundation',
+    title: 'DevRel Engineer',
+    period: 'Aug 2025 - present',
+    detail:
+      'Reference dApp examples, technical writing, developer programmes, and the weekly Fireside Dev Hang.',
+    href: 'https://midnight.network',
+  },
+  {
+    org: 'OMM Games',
+    title: 'Advisor',
+    period: 'Mar 2025 - present',
+    detail: 'Advising on developer-facing product.',
+  },
+  {
+    org: 'Lilypad Network',
+    title: 'Developer relations',
+    period: 'Jan 2025 - Aug 2025',
+    detail:
+      'Tutorials, live coding demos, and a gamified module-building process to onboard developers. Ran Twitter Spaces and outreach into the AI, Web3 and DeSci communities.',
+    href: 'https://lilypadnetwork.org',
+  },
+  {
+    org: 'ChainSafe Gaming',
+    title: 'Developer Relations Specialist',
+    period: '2024 - 2025',
+    detail:
+      'Led a team of nine to launch a dApp shown to over 40,000 users, onboarded game studios onto B3, and built courses for the Unity SDK, IPFS and smart contracts.',
+    href: 'https://gaming.chainsafe.io',
+  },
+  {
+    org: 'Godwoken Blockchain',
+    title: 'Blockchain Incubator Manager and Developer Relations',
+    period: '2022 - 2023',
+    detail:
+      'Ran a portfolio of projects on a combined $220K budget, from dApp launches through to marketing, and led development workshops at ETHDenver and ETHIndia.',
+  },
+  {
+    org: 'Smith + Crown',
+    title: 'Blockchain Consulting Project Manager',
+    period: '2022',
+    detail:
+      'Advised corporations and DAOs on meta governance, token design, and how crypto-economic design shapes user behaviour.',
+  },
+  {
+    org: 'Mix3d',
+    title: 'Co-founder, Head of Operations and Community',
+    period: '2021 - 2022',
+    detail:
+      'Grew a Web3 community past 100 members, five of whom went on to roles at Web3 companies, alongside group investments, NFT launches and a proof-of-concept game in Decentraland.',
+  },
+  {
+    org: 'OppenheimerFunds',
+    title: 'Digital Operations Manager',
+    period: '2014 - 2019',
+    detail:
+      'Marketing, research and project operations. Worked with an eleven-person product and engineering team in two-week sprints on new fund creation, risk and data accuracy.',
+  },
+  {
+    org: 'The Fourth Branch',
+    title: 'COO and Co-founder',
+    period: '2013 - 2017',
+    detail:
+      'Co-founded a platform that tracked and summarised long-form bills in Congress. Wireframed and designed the product, and drove content to over 30,000 followers.',
+  },
+]
+

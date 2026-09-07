@@ -1,0 +1,129 @@
+name: Link check
+
+# The portfolio points at a lot of other people's platforms. Articles get
+# unpublished, videos get pulled, side-project deployments lapse. This walks
+# every link and asset on a schedule and files an issue when something rots.
+
+on:
+  schedule:
+    # 09:00 UTC every Monday.
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'portfolio/lib/**'
+      - 'portfolio/app/**'
+      - 'portfolio/components/**'
+      - 'portfolio/scripts/check-links.mjs'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No install step: the checker deliberately has zero dependencies so it
+      # runs from a bare checkout.
+      - name: Check links and assets
+        id: check
+        continue-on-error: true
+        run: node scripts/check-links.mjs --markdown link-report.md --json link-report.json
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: |
+            portfolio/link-report.md
+            portfolio/link-report.json
+          retention-days: 90
+
+      - name: Summarise on the run page
+        run: cat link-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      # One rolling issue rather than a new one every week. If it is already
+      # open we replace the body so it always shows the current state; if the
+      # last run fixed everything we close it.
+      - name: File or update the issue
+        if: github.event_name != 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const report = fs.readFileSync('portfolio/link-report.md', 'utf8')
+            const data = JSON.parse(fs.readFileSync('portfolio/link-report.json', 'utf8'))
+            const broken = data.results.filter(r => r.status === 'broken')
+            const TITLE = 'Broken links on the portfolio'
+
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'link-rot',
+            })
+            const existing = open.find(i => i.title === TITLE)
+
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            const body = `${report}\n\n---\n[Full run](${runUrl})`
+
+            if (broken.length === 0) {
+              if (existing) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  body: `All links resolve again as of ${new Date().toISOString().slice(0, 10)}. Closing.`,
+                })
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  state: 'closed',
+                })
+              }
+              return
+            }
+
+            if (existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              })
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: TITLE,
+                labels: ['link-rot'],
+                body,
+              })
+            }
+
+      # Only the scheduled and manual runs can fail.
+      #
+      # A pull request touching one CSS file was failing because a video on
+      # someone else's platform had been taken down. That is real information,
+      # and it is already captured: the weekly run files a rolling issue and
+      # closes it when the links resolve again. What it is not is a reason to
+      # block a change, because nobody reviewing that PR can fix YouTube.
+      #
+      # The check still runs on every pull request and still writes its report
+      # to the run summary, so a link this branch actually broke is visible
+      # before merge. It just does not gate the merge.
+      - name: Fail if anything is broken
+        if: github.event_name != 'pull_request' && steps.check.outcome == 'failure'
+        run: exit 1
