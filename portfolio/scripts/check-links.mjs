@@ -63,6 +63,14 @@ const BOT_WALLED_HOSTS = [
   'www.linkedin.com',
   'linkedin.com',
   'medium.com',
+  // Every *.medium.com publication is its own subdomain, and the host match
+  // below is exact, so the bare domain never covered jonathan-albert.medium.com.
+  'jonathan-albert.medium.com',
+  // Both Midnight sites sit behind a bot wall. Verified by hand on 2026-09-07:
+  // every one of the six URLs the checker called broken renders fine in a
+  // browser, including the two docs.midnight.network posts with Jay's byline.
+  'midnight.network',
+  'docs.midnight.network',
   'chatgpt.com',
   'discordapp.com',
   'discord.com',
@@ -239,6 +247,20 @@ async function checkExternal(url) {
       const note = redirected ? `redirects to ${res.url}` : ''
 
       if (res.ok) return { status: redirected ? 'redirect' : 'ok', code: res.status, note }
+
+      // 403, 401 and 429 mean "we will not tell you", not "this is gone". No
+      // amount of retrying from CI distinguishes a bot wall from a dead page,
+      // so these can never be a hard failure: they would fail the build for a
+      // third party's WAF rule change, which nobody here can fix. 404 and 410
+      // still break, because those are the codes that actually mean absent.
+      if (res.status === 401 || res.status === 403 || res.status === 429) {
+        return {
+          status: 'warning',
+          code: res.status,
+          note: `${host} refused an automated request; verify by hand`,
+        }
+      }
+
       if (botWalled) {
         return {
           status: 'warning',

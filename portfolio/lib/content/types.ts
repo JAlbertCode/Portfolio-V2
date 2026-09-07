@@ -118,7 +118,7 @@ export function entryRank(entry: { date: string; updated?: string }): string {
 }
 
 /**
- * The normalised tile for a cover: /images/thing.png -> /covers/thing.webp.
+ * The normalised tile for a cover: an images path becomes a covers webp.
  *
  * Entries name the original file, because that is the real artifact and the
  * detail page shows it at full fidelity and its own aspect. Cards and rows

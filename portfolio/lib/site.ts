@@ -77,7 +77,6 @@ export const site = {
 export interface SocialLink {
   label: string
   href: string
-  icon: string
   /** Shown in the compact footer row as well as the full contact list. */
   primary?: boolean
 }
@@ -86,40 +85,29 @@ export interface SocialLink {
  * Order matters: the primary four lead the row on the home page, and people
  * meeting Jay reach for a messaging app or a follow, not a repository.
  *
- * TODO(jay): add WhatsApp. The glyph is already in SocialIcon; it needs
- *   { label: 'WhatsApp', href: 'https://wa.me/<number in full international
- *   form, digits only>', icon: '', primary: true }
- * and one of the current four dropped to primary: false so the lead row stays
- * at four.
+ * Each entry once carried an icon field naming a PNG. Nothing ever read it:
+ * the footer passes the label and connect.ts maps the label, and both resolve
+ * against the inline glyph table in SocialIcon. Nine PNG logos sat in public/
+ * looking referenced because a dead field named them.
  */
 export const socials: SocialLink[] = [
-  { label: 'Telegram', href: 'https://t.me/Jay_Albert', icon: '/images/telegram.png', primary: true },
+  // 1 917, not 917. wa.me takes the number in full international form, and
+  // without the country code WhatsApp reads the leading 91 as India.
+  { label: 'WhatsApp', href: 'https://wa.me/19176864852', primary: true },
+  { label: 'Telegram', href: 'https://t.me/Jay_Albert', primary: true },
   // He still calls it Twitter, so the site does.
-  { label: 'Twitter', href: 'https://twitter.com/Jay_Albert_', icon: '/images/twitter.png', primary: true },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/jonathan-albert-profile/',
-    icon: '/images/linkedin.png',
-    primary: true,
-  },
-  { label: 'GitHub', href: 'https://github.com/JAlbertCode', icon: '/images/github.png', primary: true },
-  { label: 'Medium', href: 'https://jonathan-albert.medium.com/', icon: '/images/medium.png' },
-  { label: 'Mirror', href: 'https://mirror.xyz/jay-albert.eth', icon: '/images/mirror.png' },
-  {
-    label: 'Discord',
-    href: 'https://discordapp.com/users/649469511749337089',
-    icon: '/images/discord.png',
-  },
-  {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/jonathanalbert0115/',
-    icon: '/images/instagram.png',
-  },
-  {
-    label: 'TikTok',
-    href: 'https://www.tiktok.com/@jay_albert_?_t=8gYzNbPEty6&_r=1',
-    icon: '/images/tiktok.png',
-  },
+  { label: 'Twitter', href: 'https://twitter.com/Jay_Albert_', primary: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jonathan-albert-profile/', primary: true },
+  // Not primary. The lead row is for someone who has just met Jay and wants to
+  // reach him or follow him before the conversation ends, and that is a
+  // messaging app or a feed rather than a repository. GitHub is still in the
+  // footer, and the work it holds is the whole page above it.
+  { label: 'GitHub', href: 'https://github.com/JAlbertCode' },
+  { label: 'Medium', href: 'https://jonathan-albert.medium.com/' },
+  { label: 'Mirror', href: 'https://mirror.xyz/jay-albert.eth' },
+  { label: 'Discord', href: 'https://discordapp.com/users/649469511749337089' },
+  { label: 'Instagram', href: 'https://www.instagram.com/jonathanalbert0115/' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@jay_albert_?_t=8gYzNbPEty6&_r=1' },
 ]
 
 /* -------------------------------------------------------------------------
