@@ -261,28 +261,79 @@ export interface Role {
  * decide what you want said about your current role. Nothing here should be a
  * guess once you have been through it.
  */
+/**
+ * The whole history, from Jay's own LinkedIn.
+ *
+ * It used to list three roles and stop, which meant the About page omitted
+ * his current job. Titles, employers and periods are exactly as they appear
+ * there; the detail line is condensed from the bullets on that entry and adds
+ * nothing to them.
+ */
 export const roles: Role[] = [
+  {
+    org: 'Midnight Foundation',
+    title: 'DevRel Engineer',
+    period: 'Aug 2025 - present',
+    detail:
+      'Reference dApp examples, technical writing, developer programmes, and the weekly Fireside Dev Hang.',
+    href: 'https://midnight.network',
+  },
+  {
+    org: 'OMM Games',
+    title: 'Advisor',
+    period: 'Mar 2025 - present',
+    detail: 'Advising on developer-facing product.',
+  },
   {
     org: 'Lilypad Network',
     title: 'Developer relations',
-    period: '2023 - 2025',
+    period: 'Jan 2025 - Aug 2025',
     detail:
-      'Documentation, frontend guides, workshops, and the pitch that became the project fundraising material.',
+      'Tutorials, live coding demos, and a gamified module-building process to onboard developers. Ran Twitter Spaces and outreach into the AI, Web3 and DeSci communities.',
     href: 'https://lilypadnetwork.org',
   },
   {
     org: 'ChainSafe Gaming',
-    title: 'Developer relations',
-    period: '2024',
+    title: 'Developer Relations Specialist',
+    period: '2024 - 2025',
     detail:
-      'Ran the weekly stream series, built and shipped the Loot GDC campaign, and taught the web3.unity SDK through live workshops.',
+      'Led a team of nine to launch a dApp shown to over 40,000 users, onboarded game studios onto B3, and built courses for the Unity SDK, IPFS and smart contracts.',
     href: 'https://gaming.chainsafe.io',
   },
   {
+    org: 'Godwoken Blockchain',
+    title: 'Blockchain Incubator Manager and Developer Relations',
+    period: '2022 - 2023',
+    detail:
+      'Ran a portfolio of projects on a combined $220K budget, from dApp launches through to marketing, and led development workshops at ETHDenver and ETHIndia.',
+  },
+  {
+    org: 'Smith + Crown',
+    title: 'Blockchain Consulting Project Manager',
+    period: '2022',
+    detail:
+      'Advised corporations and DAOs on meta governance, token design, and how crypto-economic design shapes user behaviour.',
+  },
+  {
     org: 'Mix3d',
-    title: 'Co-founder',
+    title: 'Co-founder, Head of Operations and Community',
     period: '2021 - 2022',
     detail:
-      'Built a learning community past 100 members, several of whom went on to roles at Coinbase and Protocol Labs.',
+      'Grew a Web3 community past 100 members, five of whom went on to roles at Web3 companies, alongside group investments, NFT launches and a proof-of-concept game in Decentraland.',
+  },
+  {
+    org: 'OppenheimerFunds',
+    title: 'Digital Operations Manager',
+    period: '2014 - 2019',
+    detail:
+      'Marketing, research and project operations. Worked with an eleven-person product and engineering team in two-week sprints on new fund creation, risk and data accuracy.',
+  },
+  {
+    org: 'The Fourth Branch',
+    title: 'COO and Co-founder',
+    period: '2013 - 2017',
+    detail:
+      'Co-founded a platform that tracked and summarised long-form bills in Congress. Wireframed and designed the product, and drove content to over 30,000 followers.',
   },
 ]
+
