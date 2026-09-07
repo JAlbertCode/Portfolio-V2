@@ -68,7 +68,22 @@ export default function ServicesSection() {
 
             {/* mt-auto on the wrapper is what puts every button on the same
                 line; the padding keeps a gap when the card above is short. */}
+            {/* The button is the last thing in every card, which is the only
+                reason the three of them line up. The one card with a second
+                path puts it above the button rather than below: underneath, it
+                pushed that card's button up off the row while the other two
+                stayed on the floor. */}
             <div className="mt-auto pt-6">
+              {service.secondary ? (
+                <Link
+                  href={service.secondary.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-3 block text-center text-sm text-muted underline-offset-4 hover:text-text hover:underline"
+                >
+                  {service.secondary.label}
+                </Link>
+              ) : null}
               <Link
                 href={service.cta.href}
                 {...(isExternal(service.cta.href)

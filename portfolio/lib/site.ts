@@ -17,7 +17,17 @@ export const site = {
   location: 'New York City',
   url: 'https://jonathanalbert.com',
   email: 'JonathanAlbert0115@gmail.com',
-  calendly: 'https://calendly.com/jonathanalbert0115/15-min-discovery-call-web3-advisory',
+  /**
+   * Where the call gets booked. Named for the job, not the vendor: this was
+   * `calendly`, and the move to Google appointment schedules touched five call
+   * sites for no reason other than the field name.
+   *
+   * Jay runs three schedules, 15, 30 and 60 minutes. Only the 15 is linked.
+   * The site's job is to get a stranger to a first conversation, and three
+   * doors asks them to guess how much of his time they are worth before they
+   * have spoken to him. The longer two are for people he sends the link to.
+   */
+  booking: 'https://calendar.app.google/6BF9ydwKr4EKJpZGA',
   resume: '/documents/Jonathan_Albert_Resume.pdf',
 
   /**
@@ -131,19 +141,19 @@ export const speakingFormats: SpeakingFormat[] = [
   {
     title: 'Hands-on workshop',
     detail:
-      'Everyone leaves with something running on their own machine. I write the code live and the room follows, so the failure modes get hit in the room rather than afterwards.',
+      'I write the code live and the room follows, so everyone leaves with something running on their own machine.',
     length: '60 to 120 minutes',
   },
   {
     title: 'Conference talk',
     detail:
-      'A technical session with a working demo rather than an architecture diagram. Delivered at ETHDenver among others.',
+      'A technical session built around a working demo. Delivered at ETHDenver among others.',
     length: '20 to 45 minutes',
   },
   {
     title: 'Panel or Space',
     detail:
-      'Moderating or on the panel. Comfortable being the person who asks the question everyone is avoiding.',
+      'Moderating, or on the panel.',
     length: '45 to 90 minutes',
   },
   {
@@ -185,6 +195,8 @@ export interface Service {
    */
   fit?: string
   cta: { label: string; href: string }
+  /** A second path for people who do not need the call. */
+  secondary?: { label: string; href: string }
   /**
    * A price. Leave it null unless Jay has said, here, that he wants that
    * number on this page: a figure on a services page is an offer, and one
@@ -208,7 +220,7 @@ export const services: Service[] = [
       'A working session on a specific problem: what to build next, whether the integration you are scoping is worth doing, how to get a technical product in front of the people who would use it, or why your developer funnel leaks.',
     // "A 15 minute call to establish whether I am useful to you" was the first
     // line here. It restated the button directly beneath it, and it stated the
-    // terms of the Calendly booking, which is a second copy of something that
+    // terms of the booking page, which is a second copy of something that
     // already has an authoritative version. Same rule as the 3D printing card:
     // the place that takes the booking is the place that describes it.
     deliverables: [
@@ -216,7 +228,7 @@ export const services: Service[] = [
       'Follow-on sessions if the work warrants them',
     ],
     fit: 'Best for teams with a product already in the world and a specific question about it.',
-    cta: { label: 'Book a 15 minute call', href: site.calendly },
+    cta: { label: 'Book a 15 minute call', href: site.booking },
     startingAt: null,
   },
   {
@@ -230,7 +242,7 @@ export const services: Service[] = [
       'A handover session with the team who will own it',
     ],
     fit: 'Best for teams who need something built well enough to hand to their developers as an example.',
-    cta: { label: 'Start a conversation', href: `mailto:${site.email}?subject=Custom development` },
+    cta: { label: 'Book a 15 minute call', href: site.booking },
     startingAt: null,
   },
   {
@@ -247,8 +259,14 @@ export const services: Service[] = [
     title: '3D printing',
     org: 'Layerworks Print Co.',
     pitch:
-      'Stands, mounts, displays, replacement parts, and one-off gifts. Print work runs through Layerworks Print Co., which takes the request, quotes it, and makes it.',
-    cta: { label: 'Start a request at Layerworks', href: 'https://jalbertcode.github.io/3d-printing-store/#custom' },
+      'Stands, mounts, displays, replacement parts, and one-off gifts. Custom pieces start with a call to work out what it needs to do. Print work runs through Layerworks Print Co., which quotes it and makes it.',
+    cta: { label: 'Book a 15 minute call', href: site.booking },
+    // Custom work starts with the call like everything else. Anything already
+    // designed does not need one, so the pitch sends those straight to the shop.
+    secondary: {
+      label: 'Order something already designed',
+      href: 'https://jalbertcode.github.io/3d-printing-store/',
+    },
     startingAt: null,
   },
 ]

@@ -44,8 +44,8 @@ export default function SpeakingSection() {
       </div>
 
       <p className="mt-4 max-w-[62ch] text-[0.97rem] leading-relaxed text-muted">
-        Workshops where the room compiles a contract, and panels where the interesting part was the
-        disagreement. Most of it has video you can watch before deciding.
+        Workshops where the room writes code, conference talks, panels, and live streams. Most of
+        it has video you can watch before deciding.
       </p>
 
       <div className="mt-8 grid gap-x-10 gap-y-5 sm:grid-cols-2">
@@ -80,7 +80,7 @@ export default function SpeakingSection() {
       </p>
 
       <Link
-        href={site.calendly}
+        href={site.booking}
         target="_blank"
         rel="noopener noreferrer"
         className="cta mt-8"

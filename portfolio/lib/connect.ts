@@ -36,7 +36,7 @@ export const followActions: ConnectAction[] = socials
  */
 export const talkActions: ConnectAction[] = [
   { label: 'Email', href: `mailto:${site.email}`, icon: 'Email', native: true },
-  { label: 'Book', href: site.calendly, icon: 'Book' },
+  { label: 'Book', href: site.booking, icon: 'Book' },
 ]
 
 /** The whole row, in reading order. */
