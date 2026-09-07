@@ -13,12 +13,13 @@ import { services } from '@/lib/site'
 export default function ServicesSection() {
   return (
     <section id="services" className="scroll-mt-20 pt-14 sm:pt-20">
+      {/*
+        No standfirst. It said every service starts with a short conversation,
+        which is not true of the third one: a print request goes to Layerworks
+        and gets quoted, with no call in it. It also restated the three buttons
+        underneath, which each already name exactly what starts the engagement.
+      */}
       <h2 className="font-display text-2xl text-text sm:text-3xl">Services</h2>
-      <p className="mt-4 max-w-[62ch] text-[0.97rem] leading-relaxed text-muted">
-        Three ways, deliberately narrow. Each starts with a short conversation about whether I am
-        the right person, because the fastest way to waste a budget is to hire someone for the
-        wrong problem.
-      </p>
 
       <div className="mt-8 grid items-stretch gap-5 lg:grid-cols-3">
         {services.map((service, i) => (

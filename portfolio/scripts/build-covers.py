@@ -26,7 +26,7 @@ are 1.97:1 and carry their titles hard against the left edge, so filling a
 Sources stay untouched in public/images. This writes public/covers.
 """
 
-from PIL import Image, ImageChops, ImageEnhance
+from PIL import Image, ImageChops, ImageEnhance, ImageFilter
 from pathlib import Path
 import json
 import sys
@@ -61,6 +61,22 @@ SATURATION = 0.92
 MAX_LUMA = 232             # nothing brighter than --text
 PLATE_LUMA = 208           # ceiling for a mark exported onto a white plate
 PLATE_SHARE = 0.32         # ... which is any tile this much near-white
+
+# One inset, for all of them.
+#
+# There was briefly a second path here: sources already cut to 16:10 filled
+# the tile edge to edge while everything else stayed inset. It fixed a real
+# problem (a photograph shrunk inside a 36px ring and desaturated looks like a
+# mistake) and created a worse one, because a grid of ninety cards where five
+# bleed and eighty-five have a margin does not read as two treatments. It
+# reads as five broken cards.
+#
+# So the inset is the style, and the colour problem is fixed where it actually
+# lived: in the grade. A photograph now keeps its saturation. It is still held
+# under the same luminance ceiling as everything else, which is the one rule
+# that has to apply to all of them or a bright tile outshines the text next to
+# it.
+PHOTO_SATURATION = 1.0
 
 # Too small or too empty for any treatment to rescue. These render as a
 # typographic tile in the app instead, which is honest and stays sharp.
@@ -115,6 +131,22 @@ def fit(art):
     return art.resize(size, Image.LANCZOS)
 
 
+def sharpen(art):
+    """One light unsharp pass after the downscale.
+
+    A 5000px photograph reduced to 1128px loses acutance: that is what
+    resampling does, and every image pipeline that ships photographs puts it
+    back. Without it the photographs in this catalogue read as soft next to
+    the screenshots, which are native-resolution captures that were barely
+    scaled at all. Marks are left alone; sharpening a logo only crawls its
+    edges.
+    """
+    rgb = ImageEnhance.Sharpness(art.convert('RGB')).enhance(1.0)
+    rgb = rgb.filter(ImageFilter.UnsharpMask(radius=1.1, percent=68, threshold=3))
+    rgb.putalpha(art.getchannel('A'))
+    return rgb
+
+
 def ceiling_for(art):
     """
     A mark exported onto a white plate needs a lower ceiling than a photograph.
@@ -131,10 +163,10 @@ def ceiling_for(art):
     return (PLATE_LUMA if share > PLATE_SHARE else MAX_LUMA), share
 
 
-def grade(im, ceiling):
+def grade(im, ceiling, saturation=SATURATION):
     """Grade the colour channels and leave alpha alone."""
     alpha = im.getchannel('A')
-    rgb = ImageEnhance.Color(im.convert('RGB')).enhance(SATURATION)
+    rgb = ImageEnhance.Color(im.convert('RGB')).enhance(saturation)
     lut = [min(i, ceiling) for i in range(256)]
     rgb = rgb.point(lut * 3)
     rgb.putalpha(alpha)
@@ -146,14 +178,20 @@ def build(name):
     if im.mode == 'P':
         im = im.convert('RGBA')
 
+    out = OUT / (Path(name).stem + '.webp')
     art = fit(trim(im))
+    if is_dense(art):
+        art = sharpen(art)
 
     tile = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     tile.paste(art, ((W - art.width) // 2, (H - art.height) // 2), art)
 
     ceiling, share = ceiling_for(art)
-    out = OUT / (Path(name).stem + '.webp')
-    grade(tile, ceiling).save(out, 'WEBP', quality=84, method=6)
+    # A photograph keeps its colour; a mark on a plate is still pulled back a
+    # little, because a dozen saturated brand marks in one grid fight.
+    saturation = PHOTO_SATURATION if is_dense(art) else SATURATION
+    quality = 88 if is_dense(art) else 84
+    grade(tile, ceiling, saturation).save(out, 'WEBP', quality=quality, method=6)
     return art.size, out.stat().st_size, ceiling, share, im.size
 
 

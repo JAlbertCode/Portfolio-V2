@@ -44,7 +44,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body>
+      {/*
+        Extensions write to <body> before React hydrates. ColorZilla adds
+        cz-shortcut-listen, Grammarly adds data-gr-ext-installed, and each one
+        is a mismatch React reports as a hydration error on a page that is in
+        fact fine. suppressHydrationWarning here covers this element's own
+        attributes and nothing else: a real mismatch inside Header, main or
+        Footer still reports normally, which is the point of putting it on the
+        body rather than higher up.
+
+        <html> already carries it, for the theme script that sets data-theme
+        before first paint.
+      */}
+      <body suppressHydrationWarning>
         <a href="#main" className="skip-link">
           Skip to content
         </a>

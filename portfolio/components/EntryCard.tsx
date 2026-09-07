@@ -95,16 +95,12 @@ export default function EntryCard({
             fields line floats up with it and the row loses its baseline. */}
         <p className="mt-auto flex flex-wrap items-center gap-x-2 pt-4 font-mono text-[0.6875rem] tracking-[0.08em] text-faint">
           <span>{entry.domains.join(', ')}</span>
-          {/* The two things a card cannot show by looking at it: whether the
-              click stays on the site, and whether the date above is when this
-              was made or when it last changed. Separated, because run together
-              with the fields they read as one more field. */}
-          {entry.updated ? (
-            <>
-              <span aria-hidden="true">·</span>
-              <span>Updated</span>
-            </>
-          ) : null}
+          {/* This line once also said "Updated" next to the date. It told a
+              reader nothing they could act on: the catalogue is ordered by
+              last change either way, and whether a date is a publish date or
+              a revision date does not change whether the work is worth
+              opening. The ordering still uses `updated`; the card no longer
+              narrates it. */}
           {hasWriteup(entry) ? (
             <>
               <span aria-hidden="true">·</span>

@@ -5,6 +5,8 @@ import type { Domain, Medium, Practice } from './taxonomy'
 
 export * from './taxonomy'
 export * from './types'
+export * from './youtube'
+export * from './contributions'
 export { entries }
 
 /**

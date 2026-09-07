@@ -54,9 +54,10 @@ export default function WorkSection() {
     })
   }
 
-  // A chip nothing can reach is noise. Unfiltered every count is above zero, so
-  // this only ever hides options the current selection has already ruled out.
-  const fields = DOMAINS.filter((d) => counts.domain(d as never) > 0 || facets.domain.includes(d))
+  // Every field, always, in the same order. Filtering used to drop the ones
+  // that had fallen to zero, which made the row change length under the
+  // cursor; they are dimmed instead. See `chip-out` in globals.css.
+  const fields = DOMAINS
 
   return (
     <section id="work" className="scroll-mt-20 pt-4 sm:pt-6">
@@ -72,9 +73,9 @@ export default function WorkSection() {
         ) : null}
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-x-5">
-        <p className="label pt-1.5">Form</p>
-        <div className="flex flex-wrap gap-1.5">
+      <div className="mt-6 grid gap-x-5 gap-y-3 sm:grid-cols-[auto_minmax(0,1fr)]">
+        <p className="label flex min-h-[30px] items-center">Form</p>
+        <div className="flex flex-wrap gap-2">
           {MEDIUMS.map((m) => (
             <Chip
               key={m}
@@ -86,8 +87,8 @@ export default function WorkSection() {
           ))}
         </div>
 
-        <p className="label pt-1.5">Field</p>
-        <div className="flex flex-wrap gap-1.5">
+        <p className="label flex min-h-[30px] items-center">Field</p>
+        <div className="flex flex-wrap gap-2">
           {fields.map((d) => (
             <Chip
               key={d}
@@ -134,12 +135,18 @@ function Chip({
   active: boolean
   onClick: () => void
 }) {
+  // Zero and not already chosen means the current selection has ruled it out.
+  // A selected chip is never out, even at zero, or there would be no way to
+  // undo the click that emptied the grid.
+  const out = count === 0 && !active
+
   return (
     <button
       type="button"
       aria-pressed={active}
+      disabled={out}
       onClick={onClick}
-      className={`chip ${active ? 'chip-on' : ''}`}
+      className={`chip ${active ? 'chip-on' : ''} ${out ? 'chip-out' : ''}`}
     >
       {label}
       <span className="chip-count">{count}</span>

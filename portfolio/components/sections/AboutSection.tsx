@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { activeYears, allEntries, PRACTICES } from '@/lib/content'
+import {
+  activeYears,
+  allEntries,
+  contributions,
+  contributionsSearchUrl,
+  PRACTICES,
+} from '@/lib/content'
 import { roles, site } from '@/lib/site'
 
 export default function AboutSection() {
@@ -20,9 +26,22 @@ export default function AboutSection() {
         ))}
       </div>
 
-      <Link href={site.resume} target="_blank" className="cta-ghost mt-6">
-        Download the resume
-      </Link>
+      {/* The resume and the two Alva Labs assessments sit in one row because
+          they answer the same question in three registers: what Jay has done,
+          how he works, and how he thinks. V2 linked the assessments from the
+          home page under "want to know Jay on a more personal level"; they
+          belong here, next to the career, not above the work. */}
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link href={site.resume} target="_blank" className="cta-ghost">
+          Download the resume
+        </Link>
+        {site.assessments.map((a) => (
+          <Link key={a.href} href={a.href} target="_blank" className="cta-ghost gap-2">
+            {a.label}
+            <span className="label">{a.note}</span>
+          </Link>
+        ))}
+      </div>
 
       {/* Counted from the catalogue rather than asserted. */}
       <div className="mt-14 max-w-xl">
@@ -41,6 +60,32 @@ export default function AboutSection() {
           ))}
         </div>
       </div>
+
+      {/*
+        One line, not a chart.
+        This was briefly twenty rows of repo names with a bar each, ranked by
+        merged pull requests. The ranking was the problem: twelve PRs to a docs
+        repo can be twelve typo fixes and one PR to example-zkloan can be a
+        whole reference implementation, so the number looked rigorous while
+        measuring nothing comparable. The practice bars above work because each
+        unit is an entry Jay curated. These units are not alike.
+        What is worth saying is that the work cleared someone else's review,
+        and the link lets anyone re-run the count rather than take it.
+      */}
+      <p className="mt-6 text-sm leading-relaxed text-muted">
+        Another {contributions.total} pull requests merged into{' '}
+        {contributions.repoCount} repositories I do not own, between{' '}
+        {contributions.first.slice(0, 4)} and {contributions.last.slice(0, 4)}.{' '}
+        <Link
+          href={contributionsSearchUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent"
+        >
+          The search
+        </Link>
+        .
+      </p>
 
       <p className="label mt-14 mb-3">Where</p>
       <ul>

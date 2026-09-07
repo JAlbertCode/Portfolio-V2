@@ -21,6 +21,25 @@ export const site = {
   resume: '/documents/Jonathan_Albert_Resume.pdf',
 
   /**
+   * Alva Labs assessments Jay sat and published on V2, both still in
+   * public/documents. They are his own results about himself, which is the
+   * only reason they belong on the site: nobody is asked to take a test, and
+   * nothing here is inferred from them.
+   */
+  assessments: [
+    {
+      label: 'Personality profile',
+      note: 'Five Factor',
+      href: '/documents/Jonathan_ALbert_Personality_Test_Five_Factor_Personality_Theory.pdf',
+    },
+    {
+      label: 'Logical ability',
+      note: 'Alva Labs',
+      href: '/documents/Jonathan_Albert_Logical_Ability.pdf',
+    },
+  ],
+
+  /**
    * One line. Meta description, and the line under the name.
    *
    * Deliberately plural. Developer relations is one of the things Jay does,
@@ -40,8 +59,8 @@ export const site = {
    * relations were the whole job.
    */
   intro: [
-    'I build things and then help other people build them. Some of that is product and engineering work, some is developer relations, some is community, and some of it is a printer running overnight in the corner of the room.',
-    'A decade of it across AI, decentralised compute, blockchains, gaming, augmented reality, finance, and civic tech. Some shipped, some was a three-day game jam, all of it is here.',
+    'I build things and then help other people build them. Some of that is product and engineering work, some is developer relations, some is community, and some is 3D printing.',
+    'A decade of it across AI, decentralised compute, blockchains, gaming, augmented reality, finance, and civic tech. All of it is on this site, including the things that never shipped.',
   ],
 } as const
 
@@ -135,26 +154,15 @@ export const speakingFormats: SpeakingFormat[] = [
   },
 ]
 
-/**
- * TODO(jay): confirm or replace. These are topics drawn from work in the
- * catalogue, but what you are willing to stand on a stage and defend is yours
- * to decide, not something to infer from a project list.
+/*
+ * There was a `speakingTopics` list here, seven subjects drawn from the
+ * catalogue, and a `speakingProof` array that was always empty. Both are gone.
+ *
+ * The topics were the site offering talks on Jay's behalf that he had never
+ * agreed to give, which is the same fault as the price that used to sit on the
+ * 3D printing card. The Speaking section now counts the fields he has actually
+ * spoken in, off the talks themselves.
  */
-export const speakingTopics: string[] = [
-  'Getting a game team from Web2 to on-chain without rewriting the game',
-  'Retrieval-augmented agents on decentralised compute',
-  'On-chain randomness, lootboxes, and provable fairness',
-  'Shipping augmented reality on hardware people already own',
-  'Building a community that outlives the project that started it',
-  'Developer relations that produces working software, not just content',
-  'What a decade of prototypes teaches you about what to build next',
-]
-
-/**
- * TODO(jay): swap in real numbers or delete the block. An empty stat is worse
- * than no stat, and an invented one is worse than both.
- */
-export const speakingProof: Array<{ value: string; label: string }> = []
 
 /* -------------------------------------------------------------------------
    Services
@@ -198,8 +206,12 @@ export const services: Service[] = [
     title: 'Advisory and consultation',
     pitch:
       'A working session on a specific problem: what to build next, whether the integration you are scoping is worth doing, how to get a technical product in front of the people who would use it, or why your developer funnel leaks.',
+    // "A 15 minute call to establish whether I am useful to you" was the first
+    // line here. It restated the button directly beneath it, and it stated the
+    // terms of the Calendly booking, which is a second copy of something that
+    // already has an authoritative version. Same rule as the 3D printing card:
+    // the place that takes the booking is the place that describes it.
     deliverables: [
-      'A 15 minute call to establish whether I am useful to you',
       'A written summary of what we decided and what I would do next',
       'Follow-on sessions if the work warrants them',
     ],
@@ -213,7 +225,7 @@ export const services: Service[] = [
     pitch:
       'Reference implementations, developer tooling, integration work, and prototypes. The kind of build that has to be correct because other people are going to copy it.',
     deliverables: [
-      'A scoped build with a fixed deliverable, not an open-ended retainer',
+      'A scoped build with a fixed deliverable',
       'Source in your repository, documented, with the setup path tested from scratch',
       'A handover session with the team who will own it',
     ],

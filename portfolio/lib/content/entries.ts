@@ -297,7 +297,7 @@ export const entries: Entry[] = [
     domains: ['Gaming', 'Blockchain & Web3'],
     tech: ['Unity', 'C#', 'Chainlink VRF', 'Solidity'],
     cover: { src: '/images/rps-workshop.jpeg', alt: 'Rock paper scissors workshop screenshot' },
-    href: 'https://www.youtube.com/live/V9hxpnm-zEc?si=TLQBMCemCBTqvX6x&t=1',
+    href: 'https://www.youtube.com/live/V9hxpnm-zEc',
     org: 'ChainSafe Gaming',
   },
   {
@@ -561,7 +561,7 @@ export const entries: Entry[] = [
     domains: ['Gaming', 'Blockchain & Web3'],
     tech: ['Unity', 'C#', 'Solidity'],
     cover: { src: '/images/web2-to-web3-game-workshop.jpg', alt: 'Web2 to Web3 game development workshop' },
-    href: 'https://www.youtube.com/watch?v=c_gONMVIH8o&t=0s',
+    href: 'https://www.youtube.com/watch?v=c_gONMVIH8o',
     detail: 'web3-game-workshop',
     org: 'ETHDenver',
     featured: true,
@@ -886,7 +886,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2026-08-26.jpg', alt: 'Fireside Dev Hang: Build Club Demos and a New Partner Sprint' },
-    href: 'https://www.youtube.com/watch?v=D8gG7MgVaqo',
+    href: 'https://www.youtube.com/watch?v=D8gG7MgVaqo&t=28',
     org: 'Midnight',
   },
   {
@@ -899,7 +899,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2026-08-12.jpg', alt: 'Fireside Dev Hang: Cardano ↔ Midnight + Hack Buenos Aires Winners Demo' },
-    href: 'https://www.youtube.com/watch?v=j7n_tVuAXJY',
+    href: 'https://www.youtube.com/watch?v=j7n_tVuAXJY&t=1789',
     org: 'Midnight',
   },
   {
@@ -912,7 +912,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
     cover: { src: '/images/fireside-2026-07-15.jpg', alt: 'Fireside Dev Hang: Nightpass & Midnight Skills' },
-    href: 'https://www.youtube.com/watch?v=SFPftUbx8MU',
+    href: 'https://www.youtube.com/watch?v=SFPftUbx8MU&t=179',
     org: 'Midnight',
   },
   {
@@ -925,7 +925,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2026-06-24.jpg', alt: 'Fireside Dev Hang: Mobile dApps on Midnight' },
-    href: 'https://www.youtube.com/watch?v=LnuLQCFW-SA',
+    href: 'https://www.youtube.com/watch?v=LnuLQCFW-SA&t=28',
     org: 'Midnight',
   },
   {
@@ -938,7 +938,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
     cover: { src: '/images/fireside-2026-06-10.jpg', alt: 'Fireside Dev Hang: EffectStream, Offer Files & Community Updates' },
-    href: 'https://www.youtube.com/watch?v=dwsO4q8SKwo',
+    href: 'https://www.youtube.com/watch?v=dwsO4q8SKwo&t=26',
     org: 'Midnight',
   },
   {
@@ -951,7 +951,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
     cover: { src: '/images/fireside-2026-05-27.jpg', alt: 'Fireside Dev Hang: Nightstream Demo, Docs & Zealy Updates' },
-    href: 'https://www.youtube.com/watch?v=LSHlK9jLbVk',
+    href: 'https://www.youtube.com/watch?v=LSHlK9jLbVk&t=28',
     org: 'Midnight',
   },
   {
@@ -964,7 +964,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2026-05-13.jpg', alt: 'Fireside Dev Hang: Midnight Validators and Beyond' },
-    href: 'https://www.youtube.com/watch?v=VNarrbnp01M',
+    href: 'https://www.youtube.com/watch?v=VNarrbnp01M&t=96',
     org: 'Midnight',
   },
   {
@@ -977,7 +977,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2026-04-29.jpg', alt: 'Fireside Dev Hang: Midnight Leaderboard, Ascend & Community Updates' },
-    href: 'https://www.youtube.com/watch?v=Bd5GZW1HgvQ',
+    href: 'https://www.youtube.com/watch?v=Bd5GZW1HgvQ&t=25',
     org: 'Midnight',
   },
   {
@@ -990,7 +990,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3', 'Developer Tools'],
     cover: { src: '/images/fireside-2026-04-01.jpg', alt: 'Fireside Dev Hang: Coding, Wallets & Mobile on Midnight' },
-    href: 'https://www.youtube.com/watch?v=qelrd9u7Eu8',
+    href: 'https://www.youtube.com/watch?v=qelrd9u7Eu8&t=28',
     org: 'Midnight',
   },
   {
@@ -1042,7 +1042,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2026-01-07.jpg', alt: 'Fireside Dev Hang with Erick from Mesh' },
-    href: 'https://www.youtube.com/watch?v=MAeO80EgMjQ',
+    href: 'https://www.youtube.com/watch?v=MAeO80EgMjQ&t=4',
     org: 'Midnight',
   },
   {
@@ -1055,7 +1055,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2025-12-10.jpg', alt: 'Fireside Dev Hang with Ben Beckmann' },
-    href: 'https://www.youtube.com/watch?v=IFVd9GxeqcQ',
+    href: 'https://www.youtube.com/watch?v=IFVd9GxeqcQ&t=13',
     org: 'Midnight',
   },
   {
@@ -1068,7 +1068,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2025-11-12.jpg', alt: 'Fireside Dev Hang, November 12 2025' },
-    href: 'https://www.youtube.com/watch?v=VkVqXjESaww',
+    href: 'https://www.youtube.com/watch?v=VkVqXjESaww&t=12',
     org: 'Midnight',
   },
   {
@@ -1081,7 +1081,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2025-11-05.jpg', alt: 'Fireside Dev Hang, November 5 2025' },
-    href: 'https://www.youtube.com/watch?v=VRzk8bXFMqM',
+    href: 'https://www.youtube.com/watch?v=VRzk8bXFMqM&t=3248',
     org: 'Midnight',
   },
   {
@@ -1094,7 +1094,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2025-10-15.jpg', alt: 'Fireside Dev Hang, October 15 2025' },
-    href: 'https://www.youtube.com/watch?v=hfbyh3kJQo0',
+    href: 'https://www.youtube.com/watch?v=hfbyh3kJQo0&t=12',
     org: 'Midnight',
   },
   {
@@ -1107,7 +1107,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/fireside-2025-09-10.jpg', alt: 'Fireside Dev Hang, September 10 2025' },
-    href: 'https://www.youtube.com/watch?v=0yabI2MvN9E',
+    href: 'https://www.youtube.com/watch?v=0yabI2MvN9E&t=12',
     org: 'Midnight',
   },
   {
@@ -1133,7 +1133,7 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/consensus-privacy-apps.jpg', alt: 'LIVE at Consensus: Building Privacy Apps for Real-World Use w/ Hackquest & Midnight DevRel' },
-    href: 'https://www.youtube.com/watch?v=4EM8rk1K4LA',
+    href: 'https://www.youtube.com/watch?v=4EM8rk1K4LA&t=70',
     org: 'Midnight',
   },
   {
@@ -1146,12 +1146,68 @@ export const entries: Entry[] = [
     practices: ['Developer Relations'],
     domains: ['Blockchain & Web3'],
     cover: { src: '/images/mini-dapp-hackathon-showcase.jpg', alt: 'Mini DApp Hackathon Showcase' },
-    href: 'https://www.youtube.com/watch?v=ELq-mE9-08E',
+    href: 'https://www.youtube.com/watch?v=ELq-mE9-08E&t=158',
     org: 'Midnight',
   },
 
   // --------------------------------------------------------------- Writing
   //
+  // Hack Buenos Aires. Every claim here has a source. The role is what Jay
+  // said he did. The numbers are read off the closing slide, photographed at
+  // the event (Foto/DIA 2/3542135421.jpg): "26 PROJECTS / 20 BEGINNER" and
+  // "100% CODE COMPILED / A FIRST IN MIDNIGHT HISTORY". Nothing here is
+  // inferred from the event site, which publishes neither number.
+  //
+  // The cover is the whole room mid-session, and the video is the event
+  // recap, cut down from the 267 MB master to 39 MB of h264. It plays on
+  // click; the grid never autoplays it.
+  {
+    slug: 'hack-buenos-aires',
+    title: 'Hack Buenos Aires',
+    summary:
+      'Kicked off the event, mentored the teams, and ran the judging. 26 projects shipped and every one of them compiled, a first in Midnight history.',
+    date: '2026-08-07',
+    medium: 'talk',
+    practices: ['Developer Relations', 'Community & Education'],
+    domains: ['Blockchain & Web3', 'Developer Tools'],
+    tech: ['Compact', 'Midnight'],
+    cover: {
+      src: '/images/hack-buenos-aires-room.png',
+      alt: 'The main room at Hack Buenos Aires from the back, a talk on the stage screen and the tables full under the hexagon ceiling',
+      video: '/videos/hack-buenos-aires.mp4',
+    },
+    href: 'https://hackbuenosaires.com/',
+    org: 'Midnight',
+    featured: true,
+  },
+  // Read at the time of writing. The regulation, the date and the quoted
+  // promise are the article's own opening paragraph, not background I filled
+  // in: the UK Home Office laid the regulations on 30 June 2026, and the
+  // policing minister's line was that digital ID would prove age "without
+  // revealing any additional personal details".
+  //
+  // The cover is drawn, not found. dev.to serves its hero from a CDN neither
+  // this machine nor the container can reach, and hotlinking someone else's
+  // CDN is how a catalogue rots. So this one is built here, in the site's own
+  // faces and palette, and it draws the argument the article makes rather
+  // than decorating it: the fields a digital ID check hands over, struck
+  // through, against the single bit a proof hands over instead.
+  {
+    slug: 'age-checks-zero-knowledge',
+    title: 'Age Checks Are Going Digital. They Should Go Zero-Knowledge.',
+    summary:
+      'The UK will accept digital proof of age for alcohol sales. A provider holding your ID asks you to trust it; a zero-knowledge proof does not.',
+    date: '2026-07-27',
+    medium: 'writing',
+    practices: ['Writing & Research'],
+    domains: ['Blockchain & Web3', 'Civic & Social'],
+    tech: ['Zero-knowledge proofs'],
+    cover: {
+      src: '/images/age-checks-digital-id.png',
+      alt: 'What a digital ID check hands over, five fields struck through, beside what a zero-knowledge proof hands over: over 18, and nothing else',
+    },
+    href: 'https://dev.to/jay_albert_2a00c1d45c9b39/age-checks-are-going-digital-they-should-go-zero-knowledge-14h6',
+  },
   // All three carry Jay's byline on midnight.network. Summaries are drawn from
   // the articles themselves, read at the time of writing, not from their
   // titles.

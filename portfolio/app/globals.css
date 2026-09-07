@@ -312,16 +312,37 @@ body {
   color: var(--accent);
 }
 
+/*
+ * The filters were the one control on the site speaking a different language.
+ *
+ * Two things gave them away. They were 999px pills, on a site whose every
+ * other rectangle is a small radius: cards 0.75rem, buttons 0.625rem, inputs
+ * 0.375rem. And the selected state was a solid accent fill, when accent
+ * appears nowhere else as a fill, only as a word ("Write-up") and one thin
+ * bar on About. Thirteen of them sit in a row directly above the catalogue,
+ * so selecting three made the filters the loudest thing on a page whose
+ * subject is the work underneath them.
+ *
+ * Now: the same radius family as everything else, one step below the buttons
+ * because a chip is the smallest control here, and a selected chip is marked
+ * with an accent edge and a wash rather than a flood. Accent stays an accent.
+ */
 @utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 30px;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  padding: 0 0.65rem;
   font-size: 0.8125rem;
+  line-height: 1;
   color: var(--text-muted);
   transition:
     border-color 0.14s ease,
     color 0.14s ease,
-    background-color 0.14s ease;
+    background-color 0.14s ease,
+    opacity 0.14s ease;
 
   &:hover {
     border-color: var(--line-strong);
@@ -329,35 +350,58 @@ body {
   }
 }
 
+/*
+ * Unreachable, not gone.
+ *
+ * A chip whose count has fallen to zero used to be removed from the row. That
+ * kept the row honest and made it jump: pick "Talk" and the field row loses
+ * four of its nine chips, everything after the gap slides left, and the chip
+ * that was under the cursor is now a different chip. The row is a fixed set
+ * of options, so it should be a fixed set of positions. Ruled-out options stay
+ * where they are, dimmed and not clickable, which also answers the question
+ * the disappearing version could not: what did that selection rule out.
+ */
+@utility chip-out {
+  opacity: 0.42;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--line);
+    color: var(--text-muted);
+  }
+}
+
 @utility chip-on {
   border-color: var(--accent);
-  background: var(--accent);
-  color: var(--accent-contrast);
+  background: var(--accent-faint);
+  color: var(--text);
 
   &:hover {
     border-color: var(--accent-hover);
-    background: var(--accent-hover);
-    color: var(--accent-contrast);
+    background: var(--accent-faint);
+    color: var(--text);
   }
 }
 
 .chip-count {
-  margin-left: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-variant-numeric: tabular-nums;
   color: var(--text-faint);
 }
 .chip-on .chip-count {
-  color: currentColor;
-  opacity: 0.65;
+  color: var(--accent);
 }
 
 @utility clear-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.2rem 0.65rem;
+  border-radius: 0.5rem;
+  padding: 0 0.55rem;
   font-size: 0.75rem;
+  line-height: 1;
   color: var(--text-muted);
   transition:
     border-color 0.14s ease,
