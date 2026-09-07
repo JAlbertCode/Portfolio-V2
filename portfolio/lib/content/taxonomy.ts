@@ -74,26 +74,3 @@ export const STATUS_NOTES: Record<Status, string | null> = {
   offline: 'The host for this one has since gone away, so the link no longer resolves.',
 }
 
-/**
- * A colour per field.
- *
- * This is not decoration. Nine fields is more than anyone holds in working
- * memory, and a consistent colour lets someone scanning the catalogue see that
- * three cards in a row are all gaming without reading three labels. Directions
- * that want a single accent can ignore this map; the Arcade direction is built
- * on it.
- *
- * Two values per field so both a light and a dark ground get adequate contrast
- * against the same identity.
- */
-export const DOMAIN_COLORS: Record<Domain, { light: string; dark: string }> = {
-  AI: { light: '#0F7B8A', dark: '#3BD9E8' },
-  'Blockchain & Web3': { light: '#6B3FD4', dark: '#A98BFF' },
-  Gaming: { light: '#C4267E', dark: '#FF63B4' },
-  'AR & VR': { light: '#1F6DD0', dark: '#66B2FF' },
-  'Developer Tools': { light: '#2F7A3E', dark: '#63D97C' },
-  Finance: { light: '#8A6A0A', dark: '#E8BE3C' },
-  'Music & Art': { light: '#C0442A', dark: '#FF8A63' },
-  'Civic & Social': { light: '#4A5A6B', dark: '#9BB0C4' },
-  'Consumer & Commerce': { light: '#A03A6B', dark: '#F291C0' },
-}

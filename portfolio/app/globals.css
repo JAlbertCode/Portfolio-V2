@@ -285,32 +285,7 @@ body {
   }
 }
 
-@utility lane {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 0.85rem 0.95rem 0.95rem;
-  border: 1px solid var(--line);
-  border-radius: 0.625rem;
-  background: var(--surface);
-  transition:
-    border-color 0.15s ease,
-    background-color 0.15s ease;
 
-  &:hover {
-    border-color: var(--line-strong);
-  }
-}
-
-.lane-title {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  line-height: 1.2;
-  color: var(--text);
-}
-.lane:hover .lane-title {
-  color: var(--accent);
-}
 
 /*
  * The filters were the one control on the site speaking a different language.

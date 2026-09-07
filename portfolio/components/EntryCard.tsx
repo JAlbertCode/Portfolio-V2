@@ -10,12 +10,12 @@ import { writeupFor } from '@/lib/content/writeups'
  * before its write-up exists, and this keeps that from producing a card that
  * links to a 404 in the meantime.
  */
-export function entryHref(entry: Entry): string | undefined {
+function entryHref(entry: Entry): string | undefined {
   if (entry.detail && writeupFor(entry.detail)) return `/work/${entry.detail}`
   return entry.href
 }
 
-export function hasWriteup(entry: Entry): boolean {
+function hasWriteup(entry: Entry): boolean {
   return Boolean(entry.detail && writeupFor(entry.detail))
 }
 

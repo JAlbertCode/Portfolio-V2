@@ -26,9 +26,6 @@ export function byMedium(medium: Medium): Entry[] {
   return allEntries.filter((e) => e.medium === medium)
 }
 
-export function bySlug(slug: string): Entry | undefined {
-  return allEntries.find((e) => e.slug === slug)
-}
 
 export interface Facets {
   medium: Medium[]
@@ -90,16 +87,6 @@ export function facetCounts(list: Entry[], facets: Facets) {
   }
 }
 
-/** Entries grouped by year, newest year first, for the timeline listing. */
-export function groupByYear(list: Entry[]): Array<[number, Entry[]]> {
-  const groups = new Map<number, Entry[]>()
-  for (const entry of list) {
-    const year = entryYear(entry.date)
-    if (!groups.has(year)) groups.set(year, [])
-    groups.get(year)!.push(entry)
-  }
-  return [...groups.entries()].sort((a, b) => b[0] - a[0])
-}
 
 /** Every distinct year with work in it, for the "since" line on the home page. */
 export const activeYears = {

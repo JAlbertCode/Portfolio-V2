@@ -32,12 +32,3 @@ export const contributionsSearchUrl = `https://github.com/search?q=${encodeURICo
   contributions.query,
 )}&type=pullrequests`
 
-/** The owner half of "owner/repo". */
-export function repoOwner(repo: string): string {
-  return repo.split('/')[0]
-}
-
-/** The repo half, which is what anyone actually recognises. */
-export function repoName(repo: string): string {
-  return repo.split('/')[1] ?? repo
-}

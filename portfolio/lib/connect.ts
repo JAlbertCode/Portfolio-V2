@@ -22,22 +22,18 @@ export interface ConnectAction {
 }
 
 /**
- * Follows and DMs, from the single social list in site.ts rather than retyped,
- * because two hand-maintained copies of the same links is how they drift
- * apart. The ones marked primary are the ones worth the first ten seconds.
+ * The whole row, in reading order: the socials worth the first ten seconds,
+ * then the two slower channels.
+ *
+ * The follows come from the single social list in site.ts rather than being
+ * retyped, because two hand-maintained copies of the same links is how they
+ * drift apart. Telegram is not repeated at the end: it is a primary social and
+ * already arrives through the filter.
  */
-export const followActions: ConnectAction[] = socials
-  .filter((s) => s.primary)
-  .map((s) => ({ label: s.label, href: s.href, icon: s.label }))
-
-/**
- * The slower channels. Telegram is deliberately absent: it is a primary social
- * and already arrives through followActions.
- */
-export const talkActions: ConnectAction[] = [
+export const secondaryLinks: ConnectAction[] = [
+  ...socials
+    .filter((s) => s.primary)
+    .map((s) => ({ label: s.label, href: s.href, icon: s.label })),
   { label: 'Email', href: `mailto:${site.email}`, icon: 'Email', native: true },
   { label: 'Book', href: site.booking, icon: 'Book' },
 ]
-
-/** The whole row, in reading order. */
-export const secondaryLinks: ConnectAction[] = [...followActions, ...talkActions]

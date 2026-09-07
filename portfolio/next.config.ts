@@ -31,6 +31,14 @@ const LEGACY_PROJECT_ROUTES = [
 ]
 
 const nextConfig: NextConfig = {
+  /**
+   * Turbopack walks up from the entry looking for a lockfile and found one in
+   * the home directory, outside this repository, which made it guess the wrong
+   * project root. Pinning it here stops the warning and stops a stray lockfile
+   * anywhere above the repo from changing how the build resolves.
+   */
+  turbopack: { root: __dirname },
+
   images: {
     // Remote covers (currently YouTube thumbnails) still go through the Next
     // image pipeline rather than being dropped in as raw <img>.
