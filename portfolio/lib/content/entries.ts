@@ -1232,7 +1232,7 @@ export const entries: Entry[] = [
     practices: ['Engineering', 'Product & Design', 'Hardware & Fabrication'],
     domains: ['Consumer & Commerce'],
     tech: ['React', 'Vite', 'Tailwind', 'Framer Motion'],
-    cover: { src: '/images/layerworks-storefront.png', alt: 'A render of the capsule slab, the featured print on the storefront' },
+    cover: { src: '/images/layerworks-storefront.png', alt: 'The Layerworks storefront, with the capsule slab in its 3D viewer and the dimension callouts' },
     href: 'https://jalbertcode.github.io/3d-printing-store/',
   },
   {
@@ -1246,7 +1246,7 @@ export const entries: Entry[] = [
     practices: ['Engineering', 'Product & Design'],
     domains: ['Gaming'],
     tech: ['TypeScript'],
-    cover: { src: '/images/family-affairs.webp', alt: 'Character art from the Family Affairs deck' },
+    cover: { src: '/images/family-affairs.png', alt: 'The Family Affairs join screen, with the family artwork and the four-letter room code flow' },
     href: 'https://github.com/JAlbertCode/family-affairs',
   },
   {
@@ -1260,7 +1260,7 @@ export const entries: Entry[] = [
     practices: ['Engineering'],
     domains: ['Blockchain & Web3', 'Gaming'],
     tech: ['TypeScript', 'Compact'],
-    cover: { src: '/images/zk-leaderboard.png', alt: 'Midnight Leaderboard' },
+    cover: { src: '/images/zk-leaderboard.png', alt: 'The Midnight Leaderboard running on preprod, with the click challenge and live entries' },
     href: 'https://github.com/JAlbertCode/zk-leaderboard',
     org: 'Midnight',
   },
